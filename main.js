@@ -90,6 +90,30 @@ async function submitToResend(payload) {
 }
 
 /* ─────────────────────────────────────
+   GETRESPONSE INTEGRATION
+   Calls a Netlify Function (netlify/functions/subscribe.js) so the
+   GetResponse API key stays server-side instead of living in this file.
+   Set GETRESPONSE_API_KEY in the Netlify dashboard (Site settings ->
+   Environment variables), then replace each TODO list ID below with the
+   real campaignId from GetResponse for that list.
+───────────────────────────────────── */
+const GETRESPONSE_LISTS = {
+    KIT_STRIP: 'TODO_LIST_ID_KIT_STRIP', // homepage inline strip (#kitForm)
+    WAITLIST: 'TODO_LIST_ID_WAITLIST',   // Money Lab waitlist (#waitlistForm)
+    FREE_KIT: 'TODO_LIST_ID_FREE_KIT',   // /free-kit opt-in (#optinForm)
+};
+
+async function subscribeToGetResponse(email, listId) {
+    const res = await fetch('/.netlify/functions/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, listId }),
+    });
+    if (!res.ok) throw new Error(`GetResponse subscribe failed: ${res.status}`);
+    return res.json();
+}
+
+/* ─────────────────────────────────────
    FREE KIT STRIP FORM (homepage inline strip)
 ───────────────────────────────────── */
 const kitForm = document.getElementById('kitForm');
@@ -100,6 +124,11 @@ if (kitForm) {
         const btn = kitForm.querySelector('button');
         btn.disabled = true;
         await submitToSupabase('leads', { email, source: 'kit-strip' });
+        try {
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.KIT_STRIP);
+        } catch (err) {
+            console.error('subscribeToGetResponse failed:', err);
+        }
         btn.textContent = 'Check Your Inbox!';
         kitForm.querySelector('input').value = '';
     });
@@ -120,6 +149,11 @@ if (waitlistForm) {
         btn.textContent = 'Joining...';
         // TODO: Replace with Supabase insert into `waitlist` table (columns: id, email, created_at)
         await submitToSupabase('waitlist', { email, created_at: new Date().toISOString() });
+        try {
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.WAITLIST);
+        } catch (err) {
+            console.error('subscribeToGetResponse failed:', err);
+        }
         waitlistForm.style.display = 'none';
         if (msg) msg.classList.add('show');
     });
@@ -162,6 +196,12 @@ if (optinForm) {
             await submitToResend({ email, subject: 'Your Free Money Kit is Here 🌱' });
         } catch (err) {
             console.error('submitToResend failed:', err);
+        }
+
+        try {
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.FREE_KIT);
+        } catch (err) {
+            console.error('subscribeToGetResponse failed:', err);
         }
 
         localStorage.setItem('ws_email', email);
