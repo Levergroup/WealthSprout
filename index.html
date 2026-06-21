@@ -150,455 +150,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <style>
-        /* ─────────────────────────────────────
-           TOKENS
-        ───────────────────────────────────── */
-        :root {
-            --green:        #1E5C3A;
-            --green-dark:   #143d27;
-            --green-mid:    #2a7a4f;
-            --gold:         #F0A500;
-            --gold-light:   #FFB930;
-            --sage:         #A8C5A0;
-            --sage-light:   #D4E8D0;
-            --cream:        #F8F6F0;
-            --coral:        #F28B6E;
-            --ink:          #1A1A2E;
-            --ink-mid:      #2e2e42;
-            --muted:        #6B7280;
-            --line:         #E5E7EB;
-            --white:        #FFFFFF;
-            --radius:       12px;
-            --shadow:       0 8px 32px rgba(26,26,46,.08);
-        }
-
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--ink);
-            background: var(--white);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        h1,h2,h3 { font-family: 'DM Serif Display', serif; line-height: 1.18; }
-        a { text-decoration: none; color: inherit; }
-        img { max-width: 100%; display: block; }
-
-        .wrap {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .section    { padding: 88px 0; }
-        .section-sm { padding: 56px 0; }
-
-        /* ─────────────────────────────────────
-           BUTTONS
-        ───────────────────────────────────── */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 14px 28px;
-            border-radius: 8px;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            transition: all .2s;
-            border: 2px solid transparent;
-            white-space: nowrap;
-        }
-        .btn-gold   { background:var(--gold); color:var(--ink); }
-        .btn-gold:hover { background:var(--gold-light); transform:translateY(-1px); }
-        .btn-white  { background:transparent; color:#fff; border-color:rgba(255,255,255,.5); }
-        .btn-white:hover { border-color:#fff; background:rgba(255,255,255,.1); }
-        .btn-green  { background:var(--green); color:#fff; }
-        .btn-green:hover { background:var(--green-mid); }
-        .btn-outline { background:transparent; color:var(--green); border-color:var(--green); }
-        .btn-outline:hover { background:var(--green); color:#fff; }
-        .btn-sm { padding:10px 20px; font-size:14px; }
-
-        /* ─────────────────────────────────────
-           LABELS
-        ───────────────────────────────────── */
-        .eyebrow {
-            display: inline-block;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 800;
-            font-size: 11px;
-            letter-spacing: .1em;
-            text-transform: uppercase;
-            color: var(--green);
-            background: var(--sage-light);
-            padding: 4px 12px;
-            border-radius: 100px;
-            margin-bottom: 14px;
-        }
-        .eyebrow-dark { background: rgba(255,255,255,.12); color: var(--sage-light); }
-        .section-title { font-size: clamp(26px, 3vw, 42px); margin-bottom: 14px; }
-        .section-sub   { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.7; }
-        .t-center { text-align:center; }
-        .t-center .section-sub { margin: 0 auto; }
-
-        /* ─────────────────────────────────────
-           NAVBAR
-        ───────────────────────────────────── */
-        .nav {
-            position: fixed; top:0; left:0; right:0; z-index:900;
-            background: rgba(255,255,255,.97);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--line);
-            transition: box-shadow .3s;
-        }
-        .nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.07); }
-        .nav-inner {
-            max-width: 1180px; margin: 0 auto; padding: 0 24px;
-            display: flex; align-items: center; justify-content: space-between;
-            height: 70px;
-        }
-        .logo {
-            display: flex; align-items: center; gap: 10px;
-            font-family: 'DM Serif Display', serif;
-            font-size: 21px; color: var(--green);
-        }
-        .logo-mark {
-            width:34px; height:34px; background:var(--green);
-            border-radius:8px; display:flex; align-items:center;
-            justify-content:center; font-size:17px; flex-shrink:0;
-        }
-        .logo span { color:var(--gold); }
-        .nav-links {
-            display:flex; align-items:center; gap:28px; list-style:none;
-        }
-        .nav-links a {
-            font-family:'Nunito',sans-serif; font-weight:600; font-size:14px;
-            color:var(--ink); transition:color .2s;
-        }
-        .nav-links a:hover { color:var(--green); }
-        .nav-cta {
-            background:var(--green); color:#fff !important;
-            padding:9px 18px; border-radius:8px;
-        }
-        .nav-cta:hover { background:var(--green-mid) !important; }
-        .nav-toggle { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:6px; }
-        .nav-toggle span { width:22px; height:2px; background:var(--ink); border-radius:2px; }
-
-        /* ─────────────────────────────────────
-           HERO
-        ───────────────────────────────────── */
-        .hero {
-            padding-top: 70px;
-            background: linear-gradient(140deg, var(--green-dark) 0%, var(--green) 55%, #2d7a50 100%);
-            color: #fff; overflow: hidden; position: relative;
-        }
-        .hero::after {
-            content:'';
-            position:absolute; top:-30%; right:-15%;
-            width:500px; height:500px;
-            background:radial-gradient(circle, rgba(240,165,0,.18) 0%, transparent 70%);
-            pointer-events:none;
-        }
-        .hero-grid {
-            max-width:1180px; margin:0 auto; padding:80px 24px 64px;
-            display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
-            position:relative; z-index:1;
-        }
-        .hero-badge {
-            display:inline-flex; align-items:center; gap:6px;
-            background:rgba(240,165,0,.18); border:1px solid rgba(240,165,0,.35);
-            color:var(--gold-light); padding:6px 14px; border-radius:100px;
-            font-family:'Nunito',sans-serif; font-weight:700; font-size:12px;
-            letter-spacing:.06em; text-transform:uppercase; margin-bottom:20px;
-        }
-        .hero h1 { font-size:clamp(34px,4vw,56px); margin-bottom:20px; }
-        .hero h1 em { font-style:italic; color:var(--gold); }
-        .hero p { font-size:17px; color:rgba(255,255,255,.82); margin-bottom:34px; line-height:1.72; }
-        .hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
-        .hero-stats {
-            display:flex; gap:36px; margin-top:48px; padding-top:32px;
-            border-top:1px solid rgba(255,255,255,.14); flex-wrap:wrap;
-        }
-        .hstat-n {
-            font-family:'DM Serif Display',serif; font-size:30px; color:var(--gold); line-height:1;
-        }
-        .hstat-l { font-size:12px; color:rgba(255,255,255,.6); font-family:'Nunito',sans-serif; margin-top:2px; }
-
-        /* hero right — product cards */
-        .hero-cards { display:flex; flex-direction:column; gap:12px; position:relative; z-index:1; }
-        .hcard {
-            background:rgba(255,255,255,.1); backdrop-filter:blur(8px);
-            border:1px solid rgba(255,255,255,.14); border-radius:10px;
-            padding:14px 18px; display:flex; align-items:center; gap:14px;
-            transition:all .2s;
-        }
-        .hcard:hover { background:rgba(255,255,255,.16); transform:translateX(4px); }
-        .hcard-icon {
-            width:40px; height:40px; border-radius:8px;
-            display:flex; align-items:center; justify-content:center; font-size:19px; flex-shrink:0;
-        }
-        .ic-sage  { background:rgba(168,197,160,.3); }
-        .ic-coral { background:rgba(242,139,110,.3); }
-        .ic-gold  { background:rgba(240,165,0,.25); }
-        .ic-ink   { background:rgba(255,255,255,.14); }
-        .hcard h4 { font-family:'Nunito',sans-serif; font-weight:700; font-size:13px; color:#fff; }
-        .hcard p  { font-size:11px; color:rgba(255,255,255,.55); margin:0; }
-        .hcard-price { margin-left:auto; font-family:'Nunito',sans-serif; font-weight:800; color:var(--gold); font-size:14px; }
-        .hcard.vault-hcard { background:rgba(240,165,0,.16); border-color:rgba(240,165,0,.3); }
-
-        /* ─────────────────────────────────────
-           SOCIAL PROOF
-        ───────────────────────────────────── */
-        .social-proof { background:var(--cream); }
-        .proof-stats {
-            display:flex; justify-content:center; gap:56px; flex-wrap:wrap;
-            padding-bottom:48px; margin-bottom:48px; border-bottom:1px solid var(--line);
-        }
-        .pstat { text-align:center; }
-        .pstat-n { font-family:'DM Serif Display',serif; font-size:38px; color:var(--gold); line-height:1; }
-        .pstat-l { font-family:'Nunito',sans-serif; font-weight:600; font-size:13px; color:var(--muted); margin-top:6px; }
-        .testimonials { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
-        .tcard { background:var(--sage-light); border-radius:var(--radius); padding:28px; }
-        .tstars { color:var(--gold); font-size:15px; letter-spacing:3px; margin-bottom:14px; }
-        .tquote { font-family:'DM Serif Display',serif; font-style:italic; font-size:17px; color:var(--ink); line-height:1.55; margin-bottom:18px; }
-        .tauthor { font-family:'Nunito',sans-serif; font-weight:700; font-size:13px; color:var(--green); }
-        .tauthor span { font-weight:600; color:var(--muted); }
-
-        /* ─────────────────────────────────────
-           TRUST BAR
-        ───────────────────────────────────── */
-        .trust-bar { background:var(--cream); border-bottom:1px solid var(--line); padding:18px 24px; }
-        .trust-inner {
-            max-width:1180px; margin:0 auto;
-            display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap;
-        }
-        .titem {
-            display:flex; align-items:center; gap:8px;
-            font-family:'Nunito',sans-serif; font-weight:600; font-size:13px; color:var(--muted);
-        }
-
-        /* ─────────────────────────────────────
-           FREE KIT STRIP
-        ───────────────────────────────────── */
-        .kit-strip { background:var(--gold); padding:22px 24px; }
-        .kit-inner {
-            max-width:1180px; margin:0 auto;
-            display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
-        }
-        .kit-text h3 { font-family:'DM Serif Display',serif; font-size:22px; color:var(--ink); }
-        .kit-text p  { font-family:'Nunito',sans-serif; font-size:13px; color:var(--ink-mid); opacity:.75; }
-        .kit-form { display:flex; gap:10px; flex-wrap:wrap; }
-        .kit-form input {
-            padding:11px 16px; border-radius:8px; border:none;
-            font-family:'Nunito',sans-serif; font-size:14px; min-width:210px; outline:none;
-        }
-        .kit-form button {
-            padding:11px 22px; background:var(--green); color:#fff; border:none;
-            border-radius:8px; font-family:'Nunito',sans-serif; font-weight:700; font-size:14px; cursor:pointer;
-        }
-        .kit-form button:hover { background:var(--green-mid); }
-
-        /* ─────────────────────────────────────
-           PROBLEM SECTION
-        ───────────────────────────────────── */
-        .problem { background:var(--ink); color:#fff; }
-        .problem-grid {
-            display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;
-        }
-        .big-stats { display:flex; flex-direction:column; gap:28px; margin-top:36px; }
-        .bstat { display:flex; gap:18px; align-items:flex-start; }
-        .bstat-n {
-            font-family:'DM Serif Display',serif; font-size:44px; color:var(--gold);
-            line-height:1; flex-shrink:0; min-width:90px;
-        }
-        .bstat-t { font-size:14px; color:rgba(255,255,255,.72); padding-top:10px; line-height:1.6; }
-        .prob-right h2 { color:#fff; margin-bottom:18px; }
-        .prob-right p  { color:rgba(255,255,255,.72); font-size:15px; line-height:1.72; margin-bottom:14px; }
-        .no-list { list-style:none; display:flex; flex-direction:column; gap:10px; margin-top:22px; }
-        .no-list li {
-            display:flex; gap:10px; align-items:flex-start;
-            font-family:'Nunito',sans-serif; font-size:14px; color:rgba(255,255,255,.78);
-        }
-        .no-list li::before { content:'✗'; color:var(--coral); font-weight:700; flex-shrink:0; }
-
-        /* ─────────────────────────────────────
-           PRODUCTS
-        ───────────────────────────────────── */
-        .products-bg { background:var(--cream); }
-        .plist {
-            display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:48px;
-        }
-        .pcard {
-            background:#fff; border-radius:var(--radius);
-            border:1px solid var(--line); display:flex; flex-direction:column;
-            transition:all .25s;
-        }
-        .pcard:hover { transform:translateY(-4px); box-shadow:var(--shadow); border-color:var(--sage); }
-        .pcard-top { padding:22px 22px 0; display:flex; justify-content:space-between; align-items:flex-start; }
-        .tier-pill {
-            font-family:'Nunito',sans-serif; font-weight:800; font-size:10px;
-            letter-spacing:.08em; text-transform:uppercase; padding:4px 10px; border-radius:100px;
-        }
-        .pill-free  { background:var(--sage-light); color:var(--green); }
-        .pill-t1    { background:#FEF3EE; color:var(--coral); }
-        .pill-t2    { background:var(--sage-light); color:var(--green); }
-        .pill-t3    { background:#FFF8E7; color:#B8860B; }
-        .pill-t4    { background:var(--ink); color:#fff; }
-        .pill-app   { background:var(--sage-light); color:var(--green); }
-        .pcard-body { padding:14px 22px 22px; flex:1; display:flex; flex-direction:column; }
-        .pcard-emoji { font-size:34px; margin-bottom:10px; }
-        .pcard h3 { font-size:19px; margin-bottom:6px; }
-        .pcard-age { font-family:'Nunito',sans-serif; font-weight:600; font-size:12px; color:var(--muted); margin-bottom:10px; }
-        .pcard-desc { font-size:13px; color:var(--muted); line-height:1.65; margin-bottom:16px; flex:1; }
-        .pcard-feats { list-style:none; display:flex; flex-direction:column; gap:7px; margin-bottom:18px; }
-        .pcard-feats li {
-            display:flex; align-items:flex-start; gap:8px;
-            font-family:'Nunito',sans-serif; font-size:13px; color:var(--ink-mid);
-        }
-        .pcard-feats li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
-        .pcard-foot {
-            display:flex; align-items:center; justify-content:space-between;
-            gap:12px; padding-top:16px; border-top:1px solid var(--line);
-        }
-        .pcard-price { font-family:'DM Serif Display',serif; font-size:22px; color:var(--ink); }
-        .pcard-price span { font-family:'Nunito',sans-serif; font-size:11px; color:var(--muted); font-weight:600; margin-left:2px; }
-
-        /* ─────────────────────────────────────
-           VAULT BUNDLE
-        ───────────────────────────────────── */
-        .vault-section { background:linear-gradient(135deg, var(--ink) 0%, var(--ink-mid) 100%); color:#fff; }
-        .vault-grid { display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; }
-        .vault-badge {
-            display:inline-flex; align-items:center; gap:6px;
-            background:rgba(240,165,0,.16); border:1px solid rgba(240,165,0,.35);
-            color:var(--gold-light); padding:6px 14px; border-radius:100px;
-            font-family:'Nunito',sans-serif; font-weight:800; font-size:11px;
-            letter-spacing:.08em; text-transform:uppercase; margin-bottom:18px;
-        }
-        .vault-grid h2 { color:#fff; margin-bottom:16px; }
-        .vault-copy { color:rgba(255,255,255,.72); font-size:15px; line-height:1.7; margin-bottom:24px; }
-        .vault-feats { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:8px; }
-        .vault-feats li {
-            display:flex; gap:10px; align-items:flex-start;
-            font-family:'Nunito',sans-serif; font-size:14px; color:rgba(255,255,255,.85);
-        }
-        .vault-feats li::before { content:'✓'; color:var(--gold); font-weight:800; flex-shrink:0; }
-        .vault-card {
-            background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14);
-            border-radius:var(--radius); padding:36px; text-align:center;
-        }
-        .vault-card .retail {
-            font-family:'Nunito',sans-serif; font-size:14px; color:rgba(255,255,255,.5);
-            text-decoration:line-through;
-        }
-        .vault-card .price {
-            font-family:'DM Serif Display',serif; font-size:52px; color:var(--gold); line-height:1; margin:8px 0 12px;
-        }
-        .vault-card .save {
-            display:inline-block; background:rgba(240,165,0,.16); color:var(--gold-light);
-            font-family:'Nunito',sans-serif; font-weight:700; font-size:12px;
-            padding:5px 14px; border-radius:100px; margin-bottom:24px;
-        }
-        .vault-card .btn { width:100%; justify-content:center; }
-
-        /* ─────────────────────────────────────
-           HOW IT WORKS
-        ───────────────────────────────────── */
-        .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:48px; }
-        .step { text-align:center; }
-        .step-n {
-            width:48px; height:48px; border-radius:50%; background:var(--green); color:#fff;
-            display:flex; align-items:center; justify-content:center;
-            font-family:'DM Serif Display',serif; font-size:20px; margin:0 auto 18px;
-        }
-        .step h3 { font-size:18px; margin-bottom:8px; }
-        .step p { font-size:14px; color:var(--muted); line-height:1.65; }
-
-        /* ─────────────────────────────────────
-           FAQ
-        ───────────────────────────────────── */
-        .faq-bg { background:var(--cream); }
-        .faq-list { max-width:720px; margin:48px auto 0; display:flex; flex-direction:column; gap:12px; }
-        .faq-item { border:1px solid var(--line); border-radius:10px; background:#fff; overflow:hidden; }
-        .faq-q {
-            width:100%; text-align:left; background:none; border:none; padding:18px 20px;
-            display:flex; justify-content:space-between; align-items:center; gap:16px; cursor:pointer;
-            font-family:'Nunito',sans-serif; font-weight:700; font-size:15px; color:var(--ink);
-        }
-        .faq-q .icon {
-            flex-shrink:0; width:22px; height:22px; border-radius:50%;
-            background:var(--sage-light); color:var(--green);
-            display:flex; align-items:center; justify-content:center; font-size:14px;
-            transition:transform .25s;
-        }
-        .faq-item.open .faq-q .icon { transform:rotate(45deg); }
-        .faq-a { max-height:0; overflow:hidden; transition:max-height .25s ease; }
-        .faq-a p { padding:0 20px 18px; font-size:14px; color:var(--muted); line-height:1.7; }
-
-        /* ─────────────────────────────────────
-           FINAL CTA
-        ───────────────────────────────────── */
-        .final-cta { background:var(--green); color:#fff; text-align:center; }
-        .final-cta h2 { color:#fff; margin-bottom:14px; }
-        .final-cta p { color:rgba(255,255,255,.78); font-size:16px; max-width:520px; margin:0 auto 30px; }
-        .final-cta .hero-btns { justify-content:center; }
-
-        /* ─────────────────────────────────────
-           FOOTER
-        ───────────────────────────────────── */
-        .footer { background:var(--ink); color:rgba(255,255,255,.6); padding:64px 0 28px; }
-        .footer-grid {
-            display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px;
-            padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1);
-        }
-        .footer-brand .logo { color:#fff; margin-bottom:12px; }
-        .footer-brand p { font-size:13px; line-height:1.7; max-width:280px; margin-bottom:18px; }
-        .footer-social { display:flex; gap:10px; }
-        .footer-social a {
-            width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.08);
-            display:flex; align-items:center; justify-content:center; transition:background .2s;
-            font-family:'Nunito',sans-serif; font-weight:700; font-size:11px; color:#fff;
-        }
-        .footer-social a:hover { background:var(--green-mid); }
-        .footer-col h4 {
-            font-family:'Nunito',sans-serif; font-weight:700; font-size:13px; color:#fff;
-            text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;
-        }
-        .footer-col ul { list-style:none; display:flex; flex-direction:column; gap:10px; }
-        .footer-col a { font-size:13px; transition:color .2s; }
-        .footer-col a:hover { color:#fff; }
-        .footer-bottom {
-            display:flex; justify-content:space-between; align-items:center;
-            flex-wrap:wrap; gap:12px; padding-top:24px; font-size:12px;
-        }
-
-        /* ─────────────────────────────────────
-           RESPONSIVE
-        ───────────────────────────────────── */
-        @media (max-width: 900px) {
-            .hero-grid, .problem-grid, .vault-grid { grid-template-columns:1fr; gap:40px; }
-            .plist { grid-template-columns:repeat(2,1fr); }
-            .steps { grid-template-columns:1fr; gap:36px; }
-            .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
-            .testimonials { grid-template-columns:1fr; }
-            .proof-stats { gap:32px; }
-        }
-        @media (max-width: 720px) {
-            .nav-links {
-                position:fixed; top:70px; left:0; right:0; background:#fff;
-                flex-direction:column; align-items:flex-start; padding:20px 24px; gap:18px;
-                border-bottom:1px solid var(--line); display:none;
-            }
-            .nav-links.open { display:flex; }
-            .nav-toggle { display:flex; }
-            .plist { grid-template-columns:1fr; }
-            .kit-inner { flex-direction:column; align-items:flex-start; }
-            .footer-grid { grid-template-columns:1fr; gap:28px; }
-            .footer-bottom { flex-direction:column; align-items:flex-start; }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -606,11 +158,23 @@
         <div class="nav-inner">
             <a href="#" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#programs">Programs</a></li>
+                <li class="nav-item-drop">
+                    <a href="#programs" class="nav-drop-label">Programs <span class="car">▾</span></a>
+                    <div class="nav-megadrop">
+                        <a href="/free-kit" class="mega-link"><span class="mega-icon">🌱</span><div class="mega-text"><h5>My First Money Kit</h5><p>Ages 5–10</p></div><span class="mega-price">Free</span></a>
+                        <a href="/checkout/money-seeds" class="mega-link"><span class="mega-icon">🐷</span><div class="mega-text"><h5>Money Seeds</h5><p>Ages 5–8</p></div><span class="mega-price">$17</span></a>
+                        <a href="/checkout/money-moves" class="mega-link"><span class="mega-icon">📈</span><div class="mega-text"><h5>Money Moves</h5><p>Ages 9–12</p></div><span class="mega-price">$24</span></a>
+                        <a href="/programs/wealth-blueprint" class="mega-link"><span class="mega-icon">🧭</span><div class="mega-text"><h5>Wealth Blueprint</h5><p>Ages 13–15</p></div><span class="mega-price">$29</span></a>
+                        <a href="/programs/launch-rich" class="mega-link"><span class="mega-icon">🚀</span><div class="mega-text"><h5>Launch Rich</h5><p>Ages 16–18</p></div><span class="mega-price">$34</span></a>
+                        <div class="mega-divider"></div>
+                        <a href="/programs/vault" class="mega-link mega-vault"><span class="mega-icon">⭐</span><div class="mega-text"><h5>The WealthSprout Vault</h5><p>All 4 + bonus guide</p></div><span class="mega-price">$67</span></a>
+                    </div>
+                </li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#vault">The Vault</a></li>
                 <li><a href="#faq">FAQ</a></li>
-                <li><a href="#free-kit" class="nav-cta">Get the Free Kit</a></li>
+                <li><a href="/coming-soon" class="nav-signin">Sign In</a></li>
+                <li><a href="/free-kit" class="nav-cta">Get the Free Kit →</a></li>
             </ul>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
                 <span></span><span></span><span></span>
@@ -625,7 +189,7 @@
                 <h1>Grow Smart.<br><em>Start Young.</em></h1>
                 <p>WealthSprout teaches kids ages 5–18 the financial skills school never taught — saving, budgeting, investing, and building real wealth. Age-matched workbooks parents and kids actually enjoy.</p>
                 <div class="hero-btns">
-                    <a href="#free-kit" class="btn btn-gold">Get the Free Starter Kit</a>
+                    <a href="/free-kit" class="btn btn-gold">Get the Free Starter Kit</a>
                     <a href="#programs" class="btn btn-white">See All Programs</a>
                 </div>
                 <div class="hero-stats">
@@ -741,100 +305,121 @@
             <div class="plist">
 
                 <div class="pcard">
-                    <div class="pcard-top"><span class="tier-pill pill-free">Free</span></div>
+                    <div class="pcard-top"><span class="tier-pill pill-free">FREE</span></div>
                     <div class="pcard-body">
                         <div class="pcard-emoji">🌱</div>
                         <h3>My First Money Kit</h3>
-                        <div class="pcard-age">Ages 5–10</div>
-                        <p class="pcard-desc">A 12-page printable PDF to introduce the basics: the 3-Jar System, a savings tracker, and a full parent guide.</p>
+                        <div class="pcard-age">The 3-Jar System · Ages 5–10</div>
+                        <p class="pcard-desc">Most kids have no idea why they're saving — they're just told to. This free 12-page kit changes that. Your child will set up their first real savings goal and understand exactly what it's for. One weekend. Zero cost.</p>
                         <ul class="pcard-feats">
-                            <li>The 3-Jar System (Save · Spend · Give)</li>
-                            <li>Printable savings tracker</li>
-                            <li>Step-by-step parent guide</li>
+                            <li>Your child sets up their Spend, Save &amp; Give jars — today</li>
+                            <li>They track their first real savings goal from day one</li>
+                            <li>You get a step-by-step parent guide — no finance background needed</li>
                         </ul>
-                        <div class="pcard-foot">
+                        <div class="pcard-foot pcard-foot-stack">
                             <div class="pcard-price">Free</div>
-                            <a href="#free-kit" class="btn btn-outline btn-sm">Download</a>
+                            <a href="/free-kit" class="btn btn-green pcard-full">Get Instant Access — Free →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="pcard">
-                    <div class="pcard-top"><span class="tier-pill pill-t1">Ages 5–8</span></div>
+                    <div class="pcard-top"><span class="tier-pill pill-t1">AGES 5–8</span></div>
                     <div class="pcard-body">
                         <div class="pcard-emoji">🐷</div>
                         <h3>Money Seeds</h3>
                         <div class="pcard-age">A Kid's First Financial Playbook</div>
-                        <p class="pcard-desc">A 40-page illustrated workbook covering earning, saving, and giving — the three roots of every good money habit.</p>
+                        <p class="pcard-desc">By page 10, your child will understand something most adults never learned — that money is a tool, not just something you spend. 40 illustrated pages built for early readers who are ready for real concepts.</p>
                         <ul class="pcard-feats">
-                            <li>40 pages of illustrated activities</li>
-                            <li>Earning, saving &amp; giving basics</li>
-                            <li>Built for early readers</li>
+                            <li>She'll explain the difference between needs and wants — without you prompting her</li>
+                            <li>He'll set a savings goal and track it himself, week by week</li>
+                            <li>They'll ask to put birthday money in their save jar</li>
                         </ul>
-                        <div class="pcard-foot">
+                        <div class="pcard-proof">
+                            <div class="tstars">★★★★★</div>
+                            <p>"She set up her jars the same afternoon." <span>— Sarah M., mom of Emma, 7</span></p>
+                        </div>
+                        <div class="pcard-foot pcard-foot-stack">
                             <div class="pcard-price">$17<span>/ one-time</span></div>
-                            <a href="#" class="btn btn-outline btn-sm">Get It</a>
+                            <!-- TODO: Replace with Stripe payment link for Money Seeds -->
+                            <a href="/checkout/money-seeds" class="btn btn-gold pcard-full">Get Money Seeds →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="pcard">
-                    <div class="pcard-top"><span class="tier-pill pill-t2">Ages 9–12</span></div>
+                    <div class="pcard-top"><span class="tier-pill pill-t2">AGES 9–12</span></div>
                     <div class="pcard-body">
                         <div class="pcard-emoji">📈</div>
                         <h3>Money Moves</h3>
                         <div class="pcard-age">The Smart Kid's Guide to Building Wealth</div>
-                        <p class="pcard-desc">A 52-page workbook covering compound interest, budgeting, and an introduction to investing.</p>
+                        <p class="pcard-desc">Your 10-year-old already knows money matters. This 52-page workbook gives them the real concepts — compound interest, budgeting, and what a stock actually is — explained the way a smart kid actually understands.</p>
                         <ul class="pcard-feats">
-                            <li>Compound interest, explained simply</li>
-                            <li>Real budgeting practice</li>
-                            <li>Intro to how investing works</li>
+                            <li>They'll calculate compound interest and immediately want to start saving more</li>
+                            <li>They'll build a real budget for their actual income — allowance, chores, or both</li>
+                            <li>They'll understand what a stock is and be able to explain it to you</li>
                         </ul>
-                        <div class="pcard-foot">
+                        <div class="pcard-proof">
+                            <div class="tstars">★★★★★</div>
+                            <p>"He explained compound interest to his grandfather at dinner." <span>— Marcus T., dad of Jake, 11</span></p>
+                        </div>
+                        <div class="pcard-foot pcard-foot-stack">
                             <div class="pcard-price">$24<span>/ one-time</span></div>
-                            <a href="#" class="btn btn-outline btn-sm">Get It</a>
+                            <!-- TODO: Replace with Stripe payment link for Money Moves -->
+                            <a href="/checkout/money-moves" class="btn btn-gold pcard-full">Get Money Moves →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="pcard">
-                    <div class="pcard-top"><span class="tier-pill pill-t3">Ages 13–15</span></div>
+                    <div class="pcard-top"><span class="tier-pill pill-t3">AGES 13–15</span></div>
                     <div class="pcard-body">
                         <div class="pcard-emoji">🧭</div>
                         <h3>Wealth Blueprint</h3>
                         <div class="pcard-age">A Teen's Guide to Investing, Business &amp; Real Money</div>
-                        <p class="pcard-desc">A 60-page workbook covering stocks, Roth IRAs, and side hustles — built for teens ready to put money to work.</p>
+                        <p class="pcard-desc">Your teenager is three years from adulthood and school has taught them nothing about money. This 60-page workbook covers the concepts that will actually matter — stocks, index funds, Roth IRAs, and how to build a side income. Written for teens who are ready to take it seriously.</p>
                         <ul class="pcard-feats">
-                            <li>Stocks &amp; index funds, explained</li>
-                            <li>What a Roth IRA actually is</li>
-                            <li>First side-hustle planning</li>
+                            <li>They'll understand what an index fund is and why it beats picking stocks</li>
+                            <li>They'll know exactly how to open a Roth IRA — and why starting at 14 is a superpower</li>
+                            <li>They'll have a real side hustle plan they can execute this month</li>
                         </ul>
-                        <div class="pcard-foot">
+                        <div class="pcard-proof">
+                            <div class="tstars">★★★★★</div>
+                            <p>"She opened a Roth IRA two weeks after finishing this." <span>— David K., dad of Priya, 14</span></p>
+                        </div>
+                        <div class="pcard-foot pcard-foot-stack">
                             <div class="pcard-price">$29<span>/ one-time</span></div>
-                            <a href="#" class="btn btn-outline btn-sm">Get It</a>
+                            <a href="/programs/wealth-blueprint" class="btn btn-gold pcard-full">Get Wealth Blueprint →</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="pcard">
-                    <div class="pcard-top"><span class="tier-pill pill-t4">Ages 16–18</span></div>
+                    <div class="pcard-top"><span class="tier-pill pill-t4">AGES 16–18</span></div>
                     <div class="pcard-body">
                         <div class="pcard-emoji">🚀</div>
                         <h3>Launch Rich</h3>
                         <div class="pcard-age">The High Schooler's Complete Money Playbook</div>
-                        <p class="pcard-desc">A 70-page guide covering credit, investing, student loans, and wealth planning — for the years right before they're on their own.</p>
+                        <p class="pcard-desc">College, first jobs, first credit cards, first paychecks — and nobody explains any of it. This 70-page guide gives your teenager a complete financial operating system before they need it. So they start adulthood ahead instead of catching up.</p>
                         <ul class="pcard-feats">
-                            <li>Credit scores &amp; how to build one</li>
-                            <li>Student loans, decoded</li>
-                            <li>A real wealth-planning framework</li>
+                            <li>They'll understand exactly what happens to their first paycheck before it hits their bank</li>
+                            <li>They'll build credit before they turn 18 — the right way</li>
+                            <li>They'll have a 10-year wealth roadmap mapped from age 17 to 27</li>
                         </ul>
-                        <div class="pcard-foot">
+                        <div class="pcard-proof">
+                            <div class="tstars">★★★★★</div>
+                            <p>"He actually read the whole thing. I've never seen that." <span>— Jennifer L., mom of Zach, 17</span></p>
+                        </div>
+                        <div class="pcard-foot pcard-foot-stack">
                             <div class="pcard-price">$34<span>/ one-time</span></div>
-                            <a href="#" class="btn btn-outline btn-sm">Get It</a>
+                            <a href="/programs/launch-rich" class="btn btn-gold pcard-full">Get Launch Rich →</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- WealthSprout App card intentionally removed from grid rendering.
+                     "Coming Soon" next to paid products undercut the lineup, so this is
+                     now a waitlist teaser section instead — see #money-lab below.
                 <div class="pcard">
                     <div class="pcard-top"><span class="tier-pill pill-app">Coming Soon</span></div>
                     <div class="pcard-body">
@@ -852,6 +437,7 @@
                         </div>
                     </div>
                 </div>
+                -->
 
             </div>
         </div>
@@ -874,7 +460,7 @@
                 <div class="retail">Retail value $104</div>
                 <div class="price">$67</div>
                 <span class="save">Save over 35%</span>
-                <a href="#" class="btn btn-gold">Get The Vault</a>
+                <a href="/programs/vault" class="btn btn-gold">Get The Vault →</a>
             </div>
         </div>
     </section>
@@ -903,6 +489,24 @@
                     <p>Follow the built-in parent guide — no finance background required.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="waitlist-section section-sm" id="money-lab">
+        <div class="wrap waitlist-inner">
+            <span class="eyebrow">Coming Soon</span>
+            <h2>The WealthSprout Money Lab</h2>
+            <p class="waitlist-sub">Interactive calculators, games, and goal trackers built to go alongside every workbook. Launching soon.</p>
+            <div class="waitlist-feats">
+                <span>📈 Compound Interest Machine</span>
+                <span>🎯 Savings Goal Tracker</span>
+                <span>🎮 Money Games by Age Tier</span>
+            </div>
+            <form class="waitlist-form" id="waitlistForm">
+                <input type="email" id="waitlistEmail" placeholder="Get early access →" required>
+                <button type="submit" class="btn btn-green">Notify Me</button>
+            </form>
+            <p class="waitlist-msg" id="waitlistMsg">You're on the list! We'll reach out when it's ready.</p>
         </div>
     </section>
 
@@ -936,7 +540,7 @@
             <h2>Give Them a Head Start Money Can't Buy Later</h2>
             <p>Start with the free kit today, or jump straight into the program built for your kid's age.</p>
             <div class="hero-btns">
-                <a href="#free-kit" class="btn btn-gold">Get the Free Starter Kit</a>
+                <a href="/free-kit" class="btn btn-gold">Get the Free Starter Kit</a>
                 <a href="#vault" class="btn btn-white">Explore The Vault</a>
             </div>
         </div>
@@ -958,11 +562,11 @@
                 <div class="footer-col">
                     <h4>Programs</h4>
                     <ul>
-                        <li><a href="#free-kit">My First Money Kit</a></li>
-                        <li><a href="#programs">Money Seeds</a></li>
-                        <li><a href="#programs">Money Moves</a></li>
-                        <li><a href="#programs">Wealth Blueprint</a></li>
-                        <li><a href="#programs">Launch Rich</a></li>
+                        <li><a href="/free-kit">My First Money Kit</a></li>
+                        <li><a href="/checkout/money-seeds">Money Seeds</a></li>
+                        <li><a href="/checkout/money-moves">Money Moves</a></li>
+                        <li><a href="/programs/wealth-blueprint">Wealth Blueprint</a></li>
+                        <li><a href="/programs/launch-rich">Launch Rich</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -987,46 +591,7 @@
         </div>
     </footer>
 
-    <script>
-        const nav = document.getElementById('nav');
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('scrolled', window.scrollY > 8);
-        });
-
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        navToggle.addEventListener('click', () => {
-            const open = navLinks.classList.toggle('open');
-            navToggle.setAttribute('aria-expanded', String(open));
-        });
-        navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            navToggle.setAttribute('aria-expanded', 'false');
-        }));
-
-        document.querySelectorAll('.faq-item').forEach(item => {
-            const q = item.querySelector('.faq-q');
-            const a = item.querySelector('.faq-a');
-            q.addEventListener('click', () => {
-                const isOpen = item.classList.contains('open');
-                document.querySelectorAll('.faq-item.open').forEach(other => {
-                    other.classList.remove('open');
-                    other.querySelector('.faq-a').style.maxHeight = null;
-                });
-                if (!isOpen) {
-                    item.classList.add('open');
-                    a.style.maxHeight = a.scrollHeight + 'px';
-                }
-            });
-        });
-
-        const kitForm = document.getElementById('kitForm');
-        kitForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            kitForm.querySelector('button').textContent = 'Check Your Inbox!';
-            kitForm.querySelector('input').value = '';
-        });
-    </script>
+    <script src="main.js"></script>
 
 </body>
 </html>
