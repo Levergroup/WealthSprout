@@ -721,6 +721,13 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .vlp-who-card p { font-size:14px; color:var(--muted); line-height:1.65; }
 .vlp-who-icon { font-size:32px; margin-bottom:12px; display:block; }
 
+.lp-who { background:var(--cream); padding:72px 0; }
+.lp-who-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:32px; }
+.lp-who-card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
+.lp-who-card h4 { font-size:18px; margin-bottom:10px; font-family:'Nunito',sans-serif; font-weight:800; color:var(--ink); }
+.lp-who-card p { font-size:14px; color:var(--muted); line-height:1.65; }
+.lp-who-icon { font-size:32px; margin-bottom:12px; display:block; }
+
 /* ─────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────── */
@@ -731,7 +738,7 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
     .footer-grid { grid-template-columns:1fr 1fr; gap:32px; }
     .testimonials { grid-template-columns:1fr; }
     .proof-stats { gap:32px; }
-    .vlp-grid, .vlp-who-grid { grid-template-columns:1fr; }
+    .vlp-grid, .vlp-who-grid, .lp-who-grid { grid-template-columns:1fr; }
 }
 @media (max-width: 720px) {
     .nav-links {
