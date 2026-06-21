@@ -613,6 +613,7 @@ img { max-width: 100%; display: block; }
 .vlp-hero { background:linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, #2d7a50 100%); padding:72px 0 56px; text-align:center; color:#fff; }
 .vlp-hero h1 { color:#fff; font-size:44px; margin-bottom:18px; }
 .vlp-hero .sub { font-size:17px; color:rgba(255,255,255,.85); max-width:600px; margin:0 auto 32px; line-height:1.7; }
+.vlp-hero .lp-trust { color:rgba(255,255,255,.8); }
 .vlp-stats { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:36px; }
 .vlp-stat { text-align:center; }
 .vlp-stat-n { font-family:'DM Serif Display',serif; font-size:26px; color:var(--gold); }
@@ -629,10 +630,12 @@ img { max-width: 100%; display: block; }
 .vlp-pcard ul li { display:flex; gap:6px; font-size:13px; color:var(--ink-mid); font-family:'Nunito',sans-serif; }
 .vlp-pcard ul li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
 .vlp-pcard .retail-price { font-size:12px; color:var(--muted); font-family:'Nunito',sans-serif; font-weight:700; padding-top:10px; border-top:1px solid var(--line); }
+.vlp-bonus-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
 .vlp-bonus { background:var(--sage-light); border-radius:var(--radius); padding:22px; margin-top:20px; }
 .vlp-bonus h4 { font-size:16px; font-family:'Nunito',sans-serif; font-weight:800; color:var(--green); margin-bottom:6px; }
 .vlp-bonus p { font-size:13px; color:var(--ink-mid); line-height:1.6; }
 .vlp-bonus .val { font-size:11px; color:var(--muted); font-weight:700; margin-top:6px; display:block; }
+.vlp-bonus-row .vlp-bonus { margin-top:0; }
 
 .vlp-pricing { background:var(--ink); padding:72px 0; text-align:center; }
 .vlp-pricing .pre { color:rgba(255,255,255,.65); font-family:'Nunito',sans-serif; font-size:14px; margin-bottom:18px; }
@@ -647,6 +650,7 @@ img { max-width: 100%; display: block; }
 .vlp-who-card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
 .vlp-who-card h4 { font-size:18px; margin-bottom:10px; font-family:'Nunito',sans-serif; font-weight:800; color:var(--ink); }
 .vlp-who-card p { font-size:14px; color:var(--muted); line-height:1.65; }
+.vlp-who-icon { font-size:32px; margin-bottom:12px; display:block; }
 
 /* ─────────────────────────────────────
    RESPONSIVE
