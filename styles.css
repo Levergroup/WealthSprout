@@ -496,57 +496,126 @@ img { max-width: 100%; display: block; }
 .nav-minimal .nav-inner { justify-content:center; }
 
 /* ─────────────────────────────────────
-   FREE KIT PAGE
+   FREE KIT PAGE (shared containers)
 ───────────────────────────────────── */
 .optin-page { background:var(--cream); min-height:100vh; }
 .optin-wrap { max-width:560px; margin:0 auto; padding:56px 24px 64px; }
-.optin-hero { text-align:center; margin-bottom:36px; }
-.optin-eyebrow {
-    display:inline-block; background:var(--gold); color:var(--ink);
-    font-family:'Nunito',sans-serif; font-weight:800; font-size:11px;
-    letter-spacing:.08em; text-transform:uppercase; padding:6px 14px;
-    border-radius:100px; margin-bottom:18px;
-}
-.optin-hero h1 { font-size:38px; margin-bottom:16px; }
-.optin-hero .sub { font-family:'Inter',sans-serif; font-size:17px; color:var(--muted); line-height:1.65; }
-
-.book-mockup {
-    width:220px; margin:0 auto 36px; background:var(--green);
-    border-radius:10px; padding:32px 20px; text-align:center;
-    box-shadow:0 20px 40px rgba(26,26,46,.18); transform:rotate(-2deg);
-}
-.book-mockup .sprout { font-size:40px; margin-bottom:14px; }
-.book-mockup h4 { font-family:'DM Serif Display',serif; font-size:18px; color:#fff; margin-bottom:8px; }
-.book-mockup p { font-family:'Nunito',sans-serif; font-size:12px; color:var(--sage-light); font-weight:600; }
-
-.whats-inside { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px; margin-bottom:32px; }
-.whats-inside h3 { font-size:16px; margin-bottom:16px; font-family:'Nunito',sans-serif; font-weight:800; color:var(--ink); }
-.inside-list { list-style:none; display:flex; flex-direction:column; gap:14px; }
-.inside-list li { display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--ink-mid); line-height:1.55; }
-.inside-list li::before { content:'✓'; color:var(--gold); font-weight:800; flex-shrink:0; margin-top:1px; }
-
-.optin-form input {
-    width:100%; padding:16px 18px; border-radius:8px; border:1px solid var(--line);
-    font-family:'Nunito',sans-serif; font-size:15px; margin-bottom:12px; outline:none;
-}
-.optin-form input:focus { border-color:var(--green); }
-.optin-form button {
-    width:100%; padding:16px; background:var(--gold); color:var(--ink); border:none;
-    border-radius:8px; font-family:'Nunito',sans-serif; font-weight:700; font-size:16px; cursor:pointer;
-    transition:background .2s;
-}
-.optin-form button:hover { background:var(--gold-light); }
-.optin-fine { font-size:11px; color:var(--muted); font-style:italic; text-align:center; margin-top:12px; line-height:1.6; }
-
-.optin-divider { height:1px; background:var(--sage); margin:40px 0 24px; }
-.optin-foot { text-align:center; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); }
-.optin-foot a { color:var(--green); font-weight:600; }
-.optin-foot a:hover { text-decoration:underline; }
 
 .confirm-box { text-align:center; padding:40px 0; }
 .confirm-box .check { font-size:48px; margin-bottom:18px; }
 .confirm-box h1 { font-size:32px; margin-bottom:14px; }
 .confirm-box p { font-family:'Inter',sans-serif; font-size:16px; color:var(--muted); margin-bottom:30px; }
+
+/* ─────────────────────────────────────
+   FREE KIT OPT-IN (/free-kit) — high-conversion build
+───────────────────────────────────── */
+body[data-page="free-kit-optin"] { padding-top:40px; }
+
+.fk-topbar {
+    position:fixed; top:0; left:0; width:100%; height:40px; z-index:200;
+    background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:0 16px; font-family:'Nunito',sans-serif; font-weight:700; font-size:13px;
+}
+.fk-topbar .short { display:none; }
+
+.fk-logo { display:flex; justify-content:center; margin:32px 0; }
+
+.fk-microstats {
+    text-align:center; font-family:'Nunito',sans-serif; font-size:12px; color:var(--muted); margin-bottom:28px;
+}
+
+.fk-hero { text-align:center; margin-bottom:32px; }
+.fk-eyebrow {
+    display:inline-block; background:var(--gold); color:var(--ink);
+    font-family:'Nunito',sans-serif; font-weight:800; font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; padding:6px 14px;
+    border-radius:100px; margin-bottom:18px;
+}
+.fk-hero h1 { font-size:40px; line-height:1.15; margin-bottom:16px; }
+.fk-hero .sub { font-family:'Inter',sans-serif; font-size:17px; color:var(--muted); max-width:480px; margin:0 auto; line-height:1.7; }
+
+.fk-mockup-wrap { text-align:center; margin:32px auto; }
+.fk-mockup {
+    width:220px; height:280px; margin:0 auto; position:relative;
+    background:linear-gradient(145deg, var(--green), var(--green-mid));
+    border-radius:12px; box-shadow:8px 8px 0px var(--gold), 0 20px 40px rgba(0,0,0,.2);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    transform:rotate(-2deg); transition:transform .3s ease;
+}
+.fk-mockup:hover { transform:rotate(0deg) scale(1.02); }
+.fk-mockup-brand { position:absolute; top:14px; left:14px; font-family:'Nunito',sans-serif; font-size:10px; color:rgba(255,255,255,.5); }
+.fk-mockup .emoji { font-size:48px; margin-bottom:10px; }
+.fk-mockup .title { font-family:'DM Serif Display',serif; font-size:20px; color:#fff; text-align:center; margin-bottom:6px; }
+.fk-mockup .meta { font-family:'Nunito',sans-serif; font-size:12px; color:rgba(255,255,255,.65); text-align:center; }
+.fk-mockup-accent { position:absolute; bottom:0; left:0; width:100%; height:4px; background:var(--gold); border-radius:0 0 12px 12px; }
+.fk-mockup-caption { text-align:center; font-family:'Nunito',sans-serif; font-size:12px; color:var(--muted); font-style:italic; margin-top:14px; }
+
+.fk-inside { margin:0 auto 32px; max-width:480px; }
+.fk-inside h3 { font-size:22px; text-align:center; margin-bottom:24px; }
+.fk-inside-row { display:flex; align-items:flex-start; gap:14px; margin-bottom:16px; text-align:left; }
+.fk-inside-row:last-child { margin-bottom:0; }
+.fk-check {
+    flex-shrink:0; width:28px; height:28px; border-radius:50%; margin-top:1px;
+    background:var(--gold); color:var(--ink); display:flex; align-items:center; justify-content:center;
+    font-weight:800; font-size:14px;
+}
+.fk-inside-row h5 { font-family:'Nunito',sans-serif; font-weight:700; font-size:15px; color:var(--ink); margin-bottom:4px; }
+.fk-inside-row p { font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); line-height:1.6; }
+
+.fk-urgency { text-align:center; margin:0 auto 32px; }
+.fk-urgency span {
+    display:inline-block; background:var(--sage-light); color:var(--green);
+    font-family:'Nunito',sans-serif; font-weight:700; font-size:12px; padding:8px 18px; border-radius:100px;
+}
+
+.fk-form-card { background:#fff; border-radius:16px; padding:32px; box-shadow:0 4px 24px rgba(0,0,0,.08); max-width:480px; margin:0 auto 32px; }
+.fk-form-label { text-align:center; font-family:'Nunito',sans-serif; font-weight:700; font-size:13px; color:var(--green); margin-bottom:14px; letter-spacing:.03em; }
+.fk-form-card input[type="email"] {
+    width:100%; height:52px; border:2px solid var(--line); border-radius:8px;
+    font-family:'Nunito',sans-serif; font-size:15px; padding:0 16px; margin-bottom:12px; outline:none;
+    transition:border-color .2s;
+}
+.fk-form-card input[type="email"]:focus { border-color:var(--green); }
+.fk-form-error { display:none; color:var(--coral); font-family:'Nunito',sans-serif; font-size:12px; margin:-4px 0 12px; }
+.fk-form-error.show { display:block; }
+.fk-submit-btn {
+    width:100%; height:56px; background:var(--gold); color:var(--ink); border:none;
+    border-radius:8px; font-family:'Nunito',sans-serif; font-weight:700; font-size:17px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    transition:background .2s, transform .2s;
+}
+.fk-submit-btn:hover { background:var(--gold-light); transform:translateY(-1px); }
+.fk-submit-btn:disabled { cursor:not-allowed; }
+.fk-spinner {
+    display:none; width:16px; height:16px; border:2px solid rgba(26,26,46,.3);
+    border-top-color:var(--ink); border-radius:50%; animation:fk-spin .6s linear infinite;
+}
+.fk-submit-btn.loading .fk-spinner { display:inline-block; }
+@keyframes fk-spin { to { transform:rotate(360deg); } }
+.fk-form-trust { text-align:center; font-family:'Nunito',sans-serif; font-size:12px; color:var(--muted); margin-top:14px; }
+.fk-form-fine { text-align:center; font-family:'Nunito',sans-serif; font-size:11px; color:var(--muted); font-style:italic; margin-top:4px; line-height:1.6; }
+
+.fk-testimonials { margin:0 auto 32px; }
+.fk-t-card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px; margin-bottom:12px; }
+.fk-t-card:last-child { margin-bottom:0; }
+.fk-t-stars { color:var(--gold); font-size:14px; margin-bottom:10px; }
+.fk-t-quote { font-family:'Inter',sans-serif; font-size:14px; font-style:italic; color:var(--ink); line-height:1.6; margin-bottom:10px; }
+.fk-t-name { font-family:'Nunito',sans-serif; font-size:12px; color:var(--muted); }
+
+.fk-risk { background:var(--sage-light); border-radius:12px; padding:20px; max-width:420px; margin:0 auto 28px; text-align:center; }
+.fk-risk .icon { font-size:32px; margin-bottom:10px; }
+.fk-risk h4 { font-family:'Nunito',sans-serif; font-weight:700; font-size:15px; color:var(--ink); margin-bottom:8px; }
+.fk-risk p { font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); line-height:1.6; }
+
+.fk-secondary-cta { text-align:center; font-family:'Inter',sans-serif; font-size:14px; color:var(--muted); margin-bottom:8px; }
+.fk-secondary-cta a { color:var(--green); font-weight:600; }
+.fk-secondary-cta a:hover { text-decoration:underline; }
+
+.fk-legal-footer { text-align:center; padding:24px 0 40px; }
+.fk-legal-footer .links { font-family:'Nunito',sans-serif; font-size:11px; color:var(--muted); margin-bottom:6px; }
+.fk-legal-footer .links a { color:var(--muted); }
+.fk-legal-footer .links a:hover { color:var(--ink); }
+.fk-legal-footer .copy { font-family:'Nunito',sans-serif; font-size:10px; color:var(--muted); opacity:.8; }
 
 /* ─────────────────────────────────────
    LANDING PAGES (Wealth Blueprint / Launch Rich / Vault)
@@ -679,5 +748,12 @@ img { max-width: 100%; display: block; }
     .footer-grid { grid-template-columns:1fr; gap:28px; }
     .footer-bottom { flex-direction:column; align-items:flex-start; }
     .lp-hero h1 { font-size:30px; }
-    .book-mockup { transform:none; }
+}
+@media (max-width: 480px) {
+    .fk-topbar .full { display:none; }
+    .fk-topbar .short { display:inline; }
+    .fk-hero h1 { font-size:32px; }
+    .fk-mockup { width:180px; height:230px; }
+    .fk-form-card { padding:20px; }
+    .fk-t-card { padding:16px; }
 }

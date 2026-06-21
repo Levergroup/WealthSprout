@@ -6,7 +6,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%B1</text></svg>">
 
     <title>Get the Free Money Kit | WealthSprout</title>
-    <meta name="description" content="The free 12-page Money Kit introduces the 3-Jar System in one sitting. Kids who use it start saving within 48 hours.">
+    <meta name="description" content="The free 12-page Money Kit introduces the 3-Jar System in one sitting. Most kids have their jars set up within an hour.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://www.wealthsprout.com/free-kit">
 
@@ -16,49 +16,113 @@
 
     <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
+<body data-page="free-kit-optin">
 
-    <nav class="nav nav-minimal">
-        <div class="nav-inner">
-            <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
-        </div>
-    </nav>
+    <div class="fk-topbar">
+        <span class="full">🔒 Secure &amp; Instant · Trusted by Families Across the US · 100% Free to Start</span>
+        <span class="short">🔒 Free · Instant · Trusted by Families</span>
+    </div>
 
     <main class="optin-page">
         <div class="optin-wrap">
 
-            <div class="optin-hero">
-                <span class="optin-eyebrow">FREE — INSTANT DELIVERY</span>
+            <div class="fk-logo">
+                <div class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></div>
+            </div>
+
+            <p class="fk-microstats">⭐⭐⭐⭐⭐ Loved by 10,000+ families &nbsp;·&nbsp; Ages 5–18 &nbsp;·&nbsp; $0 to start</p>
+
+            <div class="fk-hero">
+                <span class="fk-eyebrow">FREE — INSTANT DELIVERY TO YOUR INBOX</span>
                 <h1>Give Your Child Their First Real Money Win — This Weekend.</h1>
-                <p class="sub">The free 12-page Money Kit introduces the 3-Jar System in one sitting. Kids who use it start saving within 48 hours.</p>
+                <p class="sub">The free 12-page Money Kit introduces the 3-Jar System in one sitting. Most kids have their jars set up within an hour. Parents tell us their kids ask to do it again the next day.</p>
             </div>
 
-            <div class="book-mockup">
-                <div class="sprout">🌱</div>
-                <h4>My First Money Kit</h4>
-                <p>Ages 5–10</p>
+            <div class="fk-mockup-wrap">
+                <div class="fk-mockup">
+                    <span class="fk-mockup-brand">WealthSprout™</span>
+                    <div class="emoji">🌱</div>
+                    <div class="title">My First Money Kit</div>
+                    <div class="meta">Ages 5–10 · 12 Pages</div>
+                    <span class="fk-mockup-accent"></span>
+                </div>
+                <p class="fk-mockup-caption">Printable PDF · Instant delivery · No credit card</p>
             </div>
 
-            <div class="whats-inside">
-                <h3>What's Inside</h3>
-                <ul class="inside-list">
-                    <li>The 3-Jar System: Spend, Save &amp; Give (with illustrated jar labels)</li>
-                    <li>My First Savings Goal worksheet — your child completes it today</li>
-                    <li>Parent Quick-Start Guide — 5 minutes and you're ready to go</li>
-                </ul>
+            <div class="fk-inside">
+                <h3>Here's Exactly What You Get:</h3>
+                <div class="fk-inside-row">
+                    <span class="fk-check">✓</span>
+                    <div>
+                        <h5>The 3-Jar System — Spend, Save &amp; Give</h5>
+                        <p>Illustrated jar labels your child colors and cuts out themselves. Most families set these up in under 30 minutes.</p>
+                    </div>
+                </div>
+                <div class="fk-inside-row">
+                    <span class="fk-check">✓</span>
+                    <div>
+                        <h5>My First Savings Goal Worksheet</h5>
+                        <p>One page. Your child picks a goal, sets a timeline, and tracks it week by week. The first real financial habit they'll ever build.</p>
+                    </div>
+                </div>
+                <div class="fk-inside-row">
+                    <span class="fk-check">✓</span>
+                    <div>
+                        <h5>Parent Quick-Start Guide</h5>
+                        <p>Five minutes and you're ready to go. No finance background needed. Written for parents who didn't learn this stuff either.</p>
+                    </div>
+                </div>
             </div>
 
-            <form class="optin-form" id="optinForm">
-                <input type="email" id="optinEmail" placeholder="Enter your email address" required>
-                <button type="submit">Send Me the Free Money Kit →</button>
-                <p class="optin-fine">Instant delivery to your inbox. No credit card. $6 processing fee at confirmation. Unsubscribe anytime.</p>
-            </form>
+            <div class="fk-urgency"><span>⏱ We send 200+ kits every day — yours is ready the moment you submit</span></div>
 
-            <div class="optin-divider"></div>
-            <p class="optin-foot">Want the complete program for ages 5–8 / 9–12 / 13–15 / 16–18? <a href="/#programs">See all programs →</a></p>
+            <div class="fk-form-card">
+                <form id="optinForm" data-form="free-kit-email" novalidate>
+                    <p class="fk-form-label">WHERE SHOULD WE SEND IT?</p>
+                    <input type="email" id="optinEmail" name="email" placeholder="Enter your email address" required>
+                    <p class="fk-form-error" id="optinError">Please enter a valid email address.</p>
+                    <button type="submit" class="fk-submit-btn" id="optinSubmit" data-cta="free-kit-submit">
+                        <span class="fk-spinner"></span>
+                        <span class="fk-btn-label">Send Me the Free Money Kit →</span>
+                    </button>
+                    <p class="fk-form-trust">🔒 Your information is safe. We never share or sell your data.</p>
+                    <p class="fk-form-fine">Free kit delivered instantly. A $6 processing fee applies at confirmation. Unsubscribe anytime.</p>
+                </form>
+            </div>
+
+            <div class="fk-testimonials">
+                <div class="fk-t-card" data-element="testimonial-1">
+                    <div class="fk-t-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="fk-t-quote">"My 7-year-old set up her jars the same afternoon we downloaded this. By the next day she was sorting her birthday money into them without being asked. I didn't think a free PDF could actually change behavior. It did."</p>
+                    <p class="fk-t-name">— Sarah M., mom of Emma, age 7 · Texas</p>
+                </div>
+                <div class="fk-t-card" data-element="testimonial-2">
+                    <div class="fk-t-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="fk-t-quote">"We did this on a Sunday morning. My son designed his own jar labels, set a goal to save for a new Lego set, and asked me how long it would take. He'd never once asked about saving before. The kit started a conversation we'd been trying to have for two years."</p>
+                    <p class="fk-t-name">— Marcus T., dad of Jake, age 9 · Ohio</p>
+                </div>
+                <div class="fk-t-card" data-element="testimonial-3">
+                    <div class="fk-t-stars">⭐⭐⭐⭐⭐</div>
+                    <p class="fk-t-quote">"Downloaded this for my two kids — ages 6 and 11. The 6-year-old loved the jar labels. The 11-year-old sat down and read the whole thing himself. Got us both talking about the full program. Worth every second."</p>
+                    <p class="fk-t-name">— Jennifer L., mom of two · Florida</p>
+                </div>
+            </div>
+
+            <div class="fk-risk">
+                <div class="icon">🛡️</div>
+                <h4>Zero Risk. Completely Free.</h4>
+                <p>The kit costs nothing. If you don't love it, you've lost nothing. We include a parent guide so you know exactly how to use it — even if you've never talked to your kids about money before.</p>
+            </div>
+
+            <p class="fk-secondary-cta">Already know which program you need? <a href="/#programs">See all programs →</a></p>
 
         </div>
     </main>
+
+    <footer class="fk-legal-footer">
+        <p class="links"><a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms of Service</a> · <a href="/financial-disclaimer">Financial Disclaimer</a></p>
+        <p class="copy">© 2025 WealthSprout™. All rights reserved.</p>
+    </footer>
 
     <script src="../main.js"></script>
 </body>

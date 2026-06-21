@@ -72,6 +72,24 @@ async function submitToSupabase(table, row) {
 }
 
 /* ─────────────────────────────────────
+   RESEND STUB
+   TODO: Resend's API key is secret and must never be called directly
+   from browser JS. Wire this to a server endpoint / Edge Function
+   (e.g. POST /api/send-welcome-email) that holds the key server-side
+   and calls Resend from there, e.g.:
+   // const res = await fetch('/api/send-welcome-email', {
+   //     method: 'POST',
+   //     headers: { 'Content-Type': 'application/json' },
+   //     body: JSON.stringify(payload)
+   // });
+   // if (!res.ok) throw new Error('Failed to send welcome email');
+───────────────────────────────────── */
+async function submitToResend(payload) {
+    console.log('[stub] would send welcome email via server endpoint:', payload);
+    return Promise.resolve({ ok: true });
+}
+
+/* ─────────────────────────────────────
    FREE KIT STRIP FORM (homepage inline strip)
 ───────────────────────────────────── */
 const kitForm = document.getElementById('kitForm');
@@ -112,15 +130,41 @@ if (waitlistForm) {
 ───────────────────────────────────── */
 const optinForm = document.getElementById('optinForm');
 if (optinForm) {
+    const optinInput = document.getElementById('optinEmail');
+    const optinError = document.getElementById('optinError');
+    const optinBtn = document.getElementById('optinSubmit');
+    const optinBtnLabel = optinBtn.querySelector('.fk-btn-label');
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     optinForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const input = optinForm.querySelector('input');
-        const btn = optinForm.querySelector('button');
-        const email = input.value;
-        btn.disabled = true;
-        btn.textContent = 'Sending...';
-        // TODO: Replace with Supabase insert into `leads` table (columns: id, email, source: 'free-kit', created_at)
-        await submitToSupabase('leads', { email, source: 'free-kit', created_at: new Date().toISOString() });
-        window.location.href = '/free-kit/confirm';
+        const email = optinInput.value.trim();
+
+        if (!email || !emailPattern.test(email)) {
+            optinError.classList.add('show');
+            return;
+        }
+        optinError.classList.remove('show');
+
+        optinBtn.disabled = true;
+        optinBtn.classList.add('loading');
+        optinBtnLabel.textContent = 'Sending...';
+
+        try {
+            // TODO: Replace with Supabase insert into `leads` table (columns: id, email, source: 'free-kit', created_at)
+            await submitToSupabase('leads', { email, source: 'free-kit', created_at: new Date().toISOString() });
+        } catch (err) {
+            console.error('submitToSupabase failed:', err);
+        }
+
+        try {
+            // TODO: Replace with real welcome email trigger (subject "Your Free Money Kit is Here 🌱", placeholder PDF URL)
+            await submitToResend({ email, subject: 'Your Free Money Kit is Here 🌱' });
+        } catch (err) {
+            console.error('submitToResend failed:', err);
+        }
+
+        localStorage.setItem('ws_email', email);
+        window.location.href = `/free-kit/thank-you?email=${encodeURIComponent(email)}`;
     });
 }
