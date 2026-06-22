@@ -462,7 +462,7 @@ img { max-width: 100%; display: block; }
 ───────────────────────────────────── */
 .footer { background:var(--ink); color:rgba(255,255,255,.6); padding:64px 0 28px; }
 .footer-grid {
-    display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px;
+    display:grid; grid-template-columns:2fr 1fr 1fr 1fr 1fr; gap:40px;
     padding-bottom:40px; border-bottom:1px solid rgba(255,255,255,.1);
 }
 .footer-brand .logo { color:#fff; margin-bottom:12px; }
@@ -488,6 +488,8 @@ img { max-width: 100%; display: block; }
 .footer-minimal { background:var(--ink); color:rgba(255,255,255,.5); padding:28px 0; text-align:center; font-size:12px; font-family:'Nunito',sans-serif; }
 .footer-minimal a { color:rgba(255,255,255,.7); }
 .footer-minimal a:hover { color:#fff; }
+.footer-minimal .footer-legal-links { font-size:11px; margin-bottom:10px; }
+.footer-minimal .footer-legal-links a { margin:0 2px; }
 
 /* ─────────────────────────────────────
    MINIMAL NAV (opt-in / landing pages)
@@ -616,6 +618,7 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .fk-legal-footer .links a { color:var(--muted); }
 .fk-legal-footer .links a:hover { color:var(--ink); }
 .fk-legal-footer .copy { font-family:'Nunito',sans-serif; font-size:10px; color:var(--muted); opacity:.8; }
+.fk-legal-footer .copy a { color:var(--green); text-decoration:underline; opacity:1; }
 
 /* ─────────────────────────────────────
    LANDING PAGES (Wealth Blueprint / Launch Rich / Vault)
@@ -729,6 +732,85 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .lp-who-icon { font-size:32px; margin-bottom:12px; display:block; }
 
 /* ─────────────────────────────────────
+   LEGAL PAGES (Privacy, Cookies, Terms, Disclosures)
+───────────────────────────────────── */
+.legal-page { background:var(--cream); min-height:100vh; padding:48px 0 80px; }
+.legal-wrap { max-width:760px; margin:0 auto; padding:0 24px; }
+.legal-wrap h1 { font-size:clamp(28px,4vw,38px); color:var(--ink); margin-bottom:14px; }
+.legal-updated {
+    display:inline-block; font-family:'Nunito',sans-serif; font-weight:700; font-size:13px;
+    color:var(--green); background:var(--sage-light); padding:6px 14px;
+    border-radius:100px; margin-bottom:32px;
+}
+.legal-intro { font-family:'Inter',sans-serif; font-size:16px; color:var(--muted); line-height:1.8; margin-bottom:8px; }
+.legal-wrap h2 {
+    font-family:'Nunito',sans-serif; font-weight:700; font-size:21px; color:var(--green);
+    margin:40px 0 14px; line-height:1.4;
+}
+.legal-wrap h3 { font-family:'Nunito',sans-serif; font-weight:700; font-size:16px; color:var(--ink); margin:22px 0 10px; }
+.legal-wrap p { font-family:'Inter',sans-serif; font-size:15.5px; color:var(--ink-mid); line-height:1.8; margin-bottom:14px; }
+.legal-wrap ul, .legal-wrap ol { padding-left:22px; margin-bottom:16px; }
+.legal-wrap li { font-family:'Inter',sans-serif; font-size:15.5px; color:var(--ink-mid); line-height:1.8; margin-bottom:8px; }
+.legal-wrap a { color:var(--green); text-decoration:underline; text-decoration-color:var(--sage); }
+.legal-wrap a:hover { color:var(--green-mid); }
+.legal-wrap strong { color:var(--ink); }
+.legal-contact { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px 26px; margin-top:32px; }
+.legal-contact p:last-child { margin-bottom:0; }
+
+/* ─────────────────────────────────────
+   COOKIE CONSENT — banner + preferences modal
+───────────────────────────────────── */
+.cookie-banner {
+    position:fixed; left:0; right:0; bottom:0; z-index:999;
+    background:var(--green); color:#fff; padding:18px 24px;
+    box-shadow:0 -4px 24px rgba(0,0,0,.18); display:none;
+}
+.cookie-banner.show { display:block; }
+.cookie-banner-inner {
+    max-width:1180px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;
+}
+.cookie-banner-inner p { font-family:'Inter',sans-serif; font-size:13px; line-height:1.6; color:rgba(255,255,255,.92); max-width:680px; margin:0; }
+.cookie-banner-inner a { color:#fff; text-decoration:underline; }
+.cookie-banner-btns { display:flex; gap:10px; flex-shrink:0; flex-wrap:wrap; }
+.btn-cookie-manage, .btn-cookie-accept {
+    font-family:'Nunito',sans-serif; font-weight:700; font-size:13px; padding:10px 18px;
+    border-radius:8px; cursor:pointer; border:2px solid transparent; white-space:nowrap;
+}
+.btn-cookie-manage { background:transparent; color:#fff; border-color:rgba(255,255,255,.4); }
+.btn-cookie-manage:hover { border-color:#fff; }
+.btn-cookie-accept { background:var(--gold); color:var(--ink); }
+.btn-cookie-accept:hover { background:var(--gold-light); }
+
+.cookie-modal { position:fixed; inset:0; z-index:1000; background:rgba(26,26,46,.6); display:none; align-items:center; justify-content:center; padding:24px; }
+.cookie-modal.show { display:flex; }
+.cookie-modal-box { background:#fff; border-radius:var(--radius); padding:32px; max-width:440px; width:100%; max-height:85vh; overflow-y:auto; }
+.cookie-modal-box h3 { font-family:'DM Serif Display',serif; font-size:24px; color:var(--ink); margin-bottom:10px; }
+.cookie-modal-box > p { font-family:'Inter',sans-serif; font-size:14px; color:var(--muted); line-height:1.6; margin-bottom:20px; }
+.cookie-modal-row { display:flex; justify-content:space-between; align-items:center; gap:16px; padding:14px 0; border-top:1px solid var(--line); }
+.cookie-modal-row:first-of-type { border-top:none; }
+.cookie-modal-row h5 { font-family:'Nunito',sans-serif; font-weight:700; font-size:14px; color:var(--ink); margin-bottom:3px; }
+.cookie-modal-row p { font-family:'Inter',sans-serif; font-size:12px; color:var(--muted); line-height:1.5; margin:0; }
+.cookie-toggle-locked {
+    font-family:'Nunito',sans-serif; font-weight:700; font-size:11px; color:var(--green);
+    background:var(--sage-light); padding:4px 10px; border-radius:100px; flex-shrink:0; white-space:nowrap;
+}
+.cookie-switch { position:relative; display:inline-block; width:42px; height:24px; flex-shrink:0; }
+.cookie-switch input { opacity:0; width:0; height:0; }
+.cookie-switch-slider { position:absolute; cursor:pointer; inset:0; background:var(--line); border-radius:100px; transition:.2s; }
+.cookie-switch-slider::before { content:''; position:absolute; width:18px; height:18px; left:3px; bottom:3px; background:#fff; border-radius:50%; transition:.2s; }
+.cookie-switch input:checked + .cookie-switch-slider { background:var(--green); }
+.cookie-switch input:checked + .cookie-switch-slider::before { transform:translateX(18px); }
+.cookie-modal-btns { display:flex; gap:10px; margin-top:24px; }
+.cookie-modal-btns .btn-cookie-manage, .cookie-modal-btns .btn-cookie-accept { flex:1; justify-content:center; text-align:center; }
+.cookie-modal-btns .btn-cookie-manage { color:var(--ink); border-color:var(--line); }
+.cookie-modal-close {
+    position:absolute; top:16px; right:18px; background:none; border:none; cursor:pointer;
+    font-size:20px; color:var(--muted); line-height:1; padding:4px;
+}
+.cookie-modal-box { position:relative; }
+
+/* ─────────────────────────────────────
    RESPONSIVE
 ───────────────────────────────────── */
 @media (max-width: 900px) {
@@ -739,6 +821,9 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
     .testimonials { grid-template-columns:1fr; }
     .proof-stats { gap:32px; }
     .vlp-grid, .vlp-who-grid, .lp-who-grid { grid-template-columns:1fr; }
+    .cookie-banner-inner { flex-direction:column; align-items:flex-start; }
+    .cookie-banner-btns { width:100%; }
+    .cookie-banner-btns button { flex:1; }
 }
 @media (max-width: 720px) {
     .nav-links {
@@ -763,4 +848,6 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
     .fk-mockup { width:180px; height:230px; }
     .fk-form-card { padding:20px; }
     .fk-t-card { padding:16px; }
+    .legal-page { padding:32px 0 56px; }
+    .cookie-modal-box { padding:24px; }
 }

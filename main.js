@@ -160,6 +160,137 @@ if (waitlistForm) {
 }
 
 /* ─────────────────────────────────────
+   COOKIE CONSENT — banner + preferences modal
+   Stores choice in localStorage as `ws_cookie_consent`. Analytics/marketing
+   scripts must call `window.wsHasConsent('analytics'|'marketing')` before
+   loading — nothing is injected until the visitor has chosen.
+───────────────────────────────────── */
+(function initCookieConsent() {
+    const STORAGE_KEY = 'ws_cookie_consent';
+
+    function getConsent() {
+        try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY));
+        } catch {
+            return null;
+        }
+    }
+
+    function saveConsent(analytics, marketing) {
+        const consent = { necessary: true, analytics, marketing, ts: new Date().toISOString() };
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
+        document.dispatchEvent(new CustomEvent('ws-cookie-consent', { detail: consent }));
+        return consent;
+    }
+
+    window.wsHasConsent = function (category) {
+        const consent = getConsent();
+        return !!(consent && consent[category]);
+    };
+
+    // TODO: hook real tracking snippets here, gated by consent:
+    // if (window.wsHasConsent('analytics')) { /* load GA4 (gtag.js) */ }
+    // if (window.wsHasConsent('marketing')) { /* load Meta Pixel */ }
+    function applyConsent() {
+        const consent = getConsent();
+        if (!consent) return;
+        if (consent.analytics) {
+            // TODO: inject GA4 gtag.js snippet
+        }
+        if (consent.marketing) {
+            // TODO: inject Meta Pixel snippet
+        }
+    }
+
+    function injectMarkup() {
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.id = 'cookieBanner';
+        banner.innerHTML = `
+            <div class="cookie-banner-inner">
+                <p>We use cookies to improve your experience and to show you relevant content. We also use cookies for advertising and analytics. See our <a href="/cookie-policy">Cookie Policy</a> to learn more.</p>
+                <div class="cookie-banner-btns">
+                    <button type="button" class="btn-cookie-manage" id="cookieManageBtn">Manage Preferences</button>
+                    <button type="button" class="btn-cookie-accept" id="cookieAcceptBtn">Accept All</button>
+                </div>
+            </div>`;
+
+        const modal = document.createElement('div');
+        modal.className = 'cookie-modal';
+        modal.id = 'cookieModal';
+        modal.innerHTML = `
+            <div class="cookie-modal-box">
+                <button type="button" class="cookie-modal-close" id="cookieModalClose" aria-label="Close">&times;</button>
+                <h3>Cookie Preferences</h3>
+                <p>Choose which cookies you're okay with. Strictly necessary cookies keep the site and checkout working and can't be turned off.</p>
+                <div class="cookie-modal-row">
+                    <div><h5>Strictly Necessary</h5><p>Session, login, and Stripe checkout. Always on.</p></div>
+                    <span class="cookie-toggle-locked">Always On</span>
+                </div>
+                <div class="cookie-modal-row">
+                    <div><h5>Analytics</h5><p>Helps us understand how visitors use the site (Google Analytics).</p></div>
+                    <label class="cookie-switch"><input type="checkbox" id="cookieAnalyticsToggle"><span class="cookie-switch-slider"></span></label>
+                </div>
+                <div class="cookie-modal-row">
+                    <div><h5>Marketing</h5><p>Used for ad targeting and retargeting on Google &amp; Meta.</p></div>
+                    <label class="cookie-switch"><input type="checkbox" id="cookieMarketingToggle"><span class="cookie-switch-slider"></span></label>
+                </div>
+                <div class="cookie-modal-btns">
+                    <button type="button" class="btn-cookie-manage" id="cookieModalCancel">Cancel</button>
+                    <button type="button" class="btn-cookie-accept" id="cookieModalSave">Save Preferences</button>
+                </div>
+            </div>`;
+
+        document.body.appendChild(banner);
+        document.body.appendChild(modal);
+        return { banner, modal };
+    }
+
+    function run() {
+        const existing = getConsent();
+        const { banner, modal } = injectMarkup();
+        const analyticsToggle = document.getElementById('cookieAnalyticsToggle');
+        const marketingToggle = document.getElementById('cookieMarketingToggle');
+
+        function openModal() {
+            const consent = getConsent();
+            analyticsToggle.checked = !!(consent && consent.analytics);
+            marketingToggle.checked = !!(consent && consent.marketing);
+            modal.classList.add('show');
+        }
+        function closeModal() { modal.classList.remove('show'); }
+        function hideBanner() { banner.classList.remove('show'); }
+
+        if (!existing) {
+            banner.classList.add('show');
+        }
+
+        document.getElementById('cookieAcceptBtn').addEventListener('click', () => {
+            saveConsent(true, true);
+            hideBanner();
+            applyConsent();
+        });
+        document.getElementById('cookieManageBtn').addEventListener('click', openModal);
+        document.getElementById('cookieModalClose').addEventListener('click', closeModal);
+        document.getElementById('cookieModalCancel').addEventListener('click', closeModal);
+        document.getElementById('cookieModalSave').addEventListener('click', () => {
+            saveConsent(analyticsToggle.checked, marketingToggle.checked);
+            closeModal();
+            hideBanner();
+            applyConsent();
+        });
+
+        applyConsent();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', run);
+    } else {
+        run();
+    }
+})();
+
+/* ─────────────────────────────────────
    FREE KIT OPT-IN FORM (/free-kit)
 ───────────────────────────────────── */
 const optinForm = document.getElementById('optinForm');
