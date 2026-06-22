@@ -18,18 +18,32 @@ if (navToggle && navLinks) {
         const open = navLinks.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', String(open));
     });
-    navLinks.querySelectorAll(':scope > li > a').forEach(link => link.addEventListener('click', () => {
+    navLinks.querySelectorAll(':scope > li > a:not(.nav-drop-label)').forEach(link => link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         navToggle.setAttribute('aria-expanded', 'false');
     }));
 }
 
 /* ─────────────────────────────────────
-   NAV — Programs megadropdown (tap to open on mobile)
+   NAV — Programs megadropdown
+   Desktop: hover-intent with a short close delay, so moving the
+   cursor from the label down into the panel (crossing the gap
+   between them) doesn't close it before it's reached.
+   Mobile: tap the label to toggle.
 ───────────────────────────────────── */
 document.querySelectorAll('.nav-item-drop').forEach(item => {
     const label = item.querySelector('.nav-drop-label');
     if (!label) return;
+    let closeTimer = null;
+    item.addEventListener('mouseenter', () => {
+        if (window.innerWidth <= 720) return;
+        clearTimeout(closeTimer);
+        item.classList.add('open');
+    });
+    item.addEventListener('mouseleave', () => {
+        if (window.innerWidth <= 720) return;
+        closeTimer = setTimeout(() => item.classList.remove('open'), 250);
+    });
     label.addEventListener('click', (e) => {
         if (window.innerWidth > 720) return;
         e.preventDefault();

@@ -142,14 +142,14 @@ img { max-width: 100%; display: block; }
 .nav-item-drop { position:relative; }
 .nav-drop-label { display:flex; align-items:center; gap:5px; cursor:pointer; }
 .nav-drop-label .car { font-size:10px; transition:transform .2s; color:var(--muted); }
-.nav-item-drop:hover .car { transform:rotate(180deg); }
+.nav-item-drop.open .car { transform:rotate(180deg); }
 .nav-megadrop {
     position:absolute; top:calc(100% + 14px); left:50%; transform:translateX(-50%);
     background:#fff; border-radius:12px; box-shadow:0 16px 40px rgba(26,26,46,.14);
     width:300px; padding:10px; opacity:0; visibility:hidden; pointer-events:none;
     transition:opacity .18s, visibility .18s, transform .18s;
 }
-.nav-item-drop:hover .nav-megadrop {
+.nav-item-drop.open .nav-megadrop {
     opacity:1; visibility:visible; pointer-events:auto; transform:translateX(-50%) translateY(0);
 }
 .mega-link {
