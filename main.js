@@ -72,6 +72,29 @@ document.querySelectorAll('.faq-item').forEach(item => {
 });
 
 /* ─────────────────────────────────────
+   PRODUCT PAGE — hero personalization
+   Reads ?from=quiz&concern=... and swaps the hero headline on any
+   page whose H1 carries [data-hero-headline]. Concern copy is the
+   same across every product page, so it lives here once rather than
+   being redeclared per page.
+───────────────────────────────────── */
+(function personalizeHero() {
+    const CONCERN_HEADLINES = {
+        saving: "You said they have no concept of saving. Here's where that changes.",
+        generational: "You're breaking a cycle. This is the first step.",
+        investing: "They're ready to learn how money actually grows. Let's go.",
+        credit: "Credit mistakes happen young. Here's how to get ahead of them.",
+        business: "The entrepreneurial instinct is there. Now give it direction.",
+    };
+    const headline = document.querySelector('[data-hero-headline]');
+    if (!headline) return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('from') !== 'quiz') return;
+    const override = CONCERN_HEADLINES[params.get('concern')];
+    if (override) headline.textContent = override;
+})();
+
+/* ─────────────────────────────────────
    SUPABASE STUBS
    TODO: Replace with real Supabase project URL + anon key,
    e.g. via `createClient(SUPABASE_URL, SUPABASE_ANON_KEY)` from

@@ -738,6 +738,107 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .lp-who-icon { font-size:32px; margin-bottom:12px; display:block; }
 
 /* ─────────────────────────────────────
+   PRODUCT PAGE V2 — gradient hero, personalization-ready,
+   richer mid-page sections. Additive only; .lp-* rules above are
+   untouched so pages not yet migrated keep rendering as before.
+───────────────────────────────────── */
+.pp-hero { padding:56px 0 64px; color:#fff; }
+.pp-hero-charcoal { background:linear-gradient(140deg, var(--ink) 0%, var(--ink-mid) 100%); }
+.pp-hero-inner { max-width:1080px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; }
+.pp-hero-badge {
+    display:inline-flex; align-items:center; gap:6px; background:rgba(240,165,0,.18);
+    border:1px solid rgba(240,165,0,.35); color:var(--gold-light); padding:6px 14px;
+    border-radius:100px; font-family:'Nunito',sans-serif; font-weight:800; font-size:11px;
+    letter-spacing:.08em; text-transform:uppercase; margin-bottom:18px;
+}
+.pp-hero h1 { color:#fff; font-size:clamp(28px,4vw,46px); line-height:1.12; margin-bottom:18px; }
+.pp-hero .sub { font-family:'Inter',sans-serif; font-size:17px; color:rgba(255,255,255,.82); line-height:1.7; max-width:480px; margin-bottom:28px; }
+.pp-hero-btns { display:flex; flex-direction:column; gap:12px; max-width:380px; margin-bottom:20px; }
+.pp-hero-trust { display:flex; flex-wrap:wrap; gap:6px 18px; font-family:'Nunito',sans-serif; font-size:12px; color:rgba(255,255,255,.7); }
+.pp-hero-visual { text-align:center; }
+.pp-hero-chips { display:flex; justify-content:center; gap:10px; margin-top:20px; flex-wrap:wrap; }
+.pp-chip { background:rgba(255,255,255,.15); border-radius:100px; padding:6px 14px; font-family:'Nunito',sans-serif; font-weight:700; font-size:12px; color:#fff; }
+
+.pp-mockup-wrap { text-align:center; }
+.pp-mockup {
+    width:220px; height:280px; margin:0 auto; position:relative; border-radius:12px;
+    box-shadow:10px 10px 0px rgba(240,165,0,.4), 0 20px 40px rgba(0,0,0,.25);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    transform:rotate(-3deg); transition:transform .3s ease;
+}
+.pp-mockup:hover { transform:rotate(0deg) scale(1.03); }
+.pp-mockup-brand { position:absolute; top:14px; left:14px; font-family:'Nunito',sans-serif; font-size:10px; color:rgba(255,255,255,.5); }
+.pp-mockup .emoji { font-size:48px; margin-bottom:10px; }
+.pp-mockup .title { font-family:'DM Serif Display',serif; font-size:20px; color:#fff; text-align:center; }
+.pp-mockup-charcoal { background:linear-gradient(145deg, var(--ink), var(--ink-mid)); }
+
+.pp-trustbar { background:#fff; border-bottom:1px solid var(--sage); padding:16px 24px; }
+.pp-trustbar-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
+.pp-trustbar-item { font-family:'Nunito',sans-serif; font-size:13px; color:var(--muted); display:flex; align-items:center; gap:6px; white-space:nowrap; }
+
+.pp-built { background:var(--cream); padding:72px 24px; }
+.pp-built-inner { max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:start; }
+.pp-eyebrow-pill { display:inline-block; background:var(--sage-light); color:var(--green); font-family:'Nunito',sans-serif; font-weight:800; font-size:11px; letter-spacing:.06em; text-transform:uppercase; padding:6px 14px; border-radius:100px; margin-bottom:16px; }
+.pp-built h2 { font-size:32px; color:var(--ink); margin-bottom:16px; }
+.pp-built-sub { font-family:'Inter',sans-serif; font-size:16px; color:var(--muted); line-height:1.7; margin-bottom:24px; }
+.pp-fit-label { font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; color:var(--green); margin-bottom:12px; }
+.pp-fit-label.not { color:var(--muted); margin-top:20px; }
+.pp-fit-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.pp-fit-list li { font-family:'Nunito',sans-serif; font-size:15px; color:var(--ink); display:flex; gap:10px; line-height:1.5; }
+.pp-fit-list li::before { content:'✓'; color:var(--gold); font-weight:800; flex-shrink:0; }
+.pp-fit-list.not li { font-size:14px; color:var(--muted); }
+.pp-fit-list.not li::before { content:'✗'; color:var(--coral); }
+.pp-fit-list.not li a { color:var(--green); text-decoration:underline; }
+
+.pp-avatar-card { background:#fff; border:1px solid var(--sage); border-radius:16px; padding:32px; box-shadow:var(--shadow); }
+.pp-avatar-emoji { font-size:64px; text-align:center; margin-bottom:8px; }
+.pp-avatar-name { font-family:'DM Serif Display',serif; font-size:24px; color:var(--ink); text-align:center; }
+.pp-avatar-age { font-family:'Nunito',sans-serif; font-size:14px; color:var(--muted); text-align:center; margin-bottom:16px; }
+.pp-avatar-divider { border-top:1px solid var(--sage); margin:16px 0 20px; }
+.pp-avatar-label { font-family:'Nunito',sans-serif; font-weight:800; font-size:13px; color:var(--green); text-transform:uppercase; letter-spacing:.06em; margin-bottom:14px; }
+.pp-avatar-outcomes { list-style:none; display:flex; flex-direction:column; gap:12px; margin-bottom:20px; }
+.pp-avatar-outcomes li { font-family:'Nunito',sans-serif; font-size:14px; color:var(--ink); line-height:1.6; display:flex; gap:8px; }
+.pp-avatar-outcomes li::before { content:'→'; color:var(--gold); flex-shrink:0; font-weight:800; }
+.pp-avatar-quote { background:var(--sage-light); border-radius:10px; padding:16px; }
+.pp-avatar-stars { color:var(--gold); font-size:13px; margin-bottom:6px; }
+.pp-avatar-quote p { font-family:'Inter',sans-serif; font-size:13px; font-style:italic; color:var(--ink); line-height:1.6; margin-bottom:6px; }
+.pp-avatar-quote cite { font-family:'Nunito',sans-serif; font-size:11px; color:var(--muted); }
+
+.pp-chapters { background:#fff; padding:72px 24px; }
+.pp-chapter-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:36px; }
+.pp-chapter-card { background:var(--cream); border:1px solid var(--line); border-radius:12px; padding:20px; display:flex; gap:14px; }
+.pp-chapter-n { font-family:'DM Serif Display',serif; font-size:22px; color:var(--gold); flex-shrink:0; min-width:30px; }
+.pp-chapter-card h4 { font-size:16px; font-family:'Nunito',sans-serif; font-weight:800; color:var(--ink); margin-bottom:4px; }
+.pp-chapter-card p { font-size:13px; color:var(--muted); line-height:1.55; }
+
+.pp-preview { background:var(--cream); padding:72px 24px; }
+.pp-preview-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:36px; }
+.pp-preview-card { background:#fff; border-radius:12px; overflow:hidden; border:1px solid var(--line); box-shadow:var(--shadow); }
+.pp-preview-top { background:var(--ink); color:#fff; padding:24px; text-align:center; }
+.pp-preview-top .emoji { font-size:32px; margin-bottom:8px; }
+.pp-preview-top .label { font-family:'Nunito',sans-serif; font-size:11px; color:rgba(255,255,255,.6); text-transform:uppercase; letter-spacing:.06em; }
+.pp-preview-body { padding:18px 20px; }
+.pp-preview-body h4 { font-size:15px; font-family:'Nunito',sans-serif; font-weight:800; color:var(--ink); margin-bottom:6px; }
+.pp-preview-body p { font-size:13px; color:var(--muted); line-height:1.55; }
+
+.pp-guarantee { background:var(--green); padding:56px 24px; text-align:center; color:#fff; }
+.pp-guarantee .icon { font-size:40px; margin-bottom:12px; }
+.pp-guarantee h3 { color:#fff; font-size:24px; margin-bottom:10px; }
+.pp-guarantee p { color:rgba(255,255,255,.8); font-size:14px; max-width:480px; margin:0 auto; line-height:1.65; }
+.pp-guarantee-contact { font-family:'Nunito',sans-serif; font-weight:800; font-size:13px; color:var(--gold-light); margin-top:14px; }
+
+.pp-bridge { background:#fff; padding:56px 24px; text-align:center; }
+.pp-bridge h3 { font-size:24px; color:var(--ink); margin-bottom:10px; }
+.pp-bridge p { font-size:14px; color:var(--muted); max-width:480px; margin:0 auto 20px; line-height:1.65; }
+
+@media (max-width: 760px) {
+    .pp-hero-inner, .pp-built-inner { grid-template-columns:1fr; }
+    .pp-hero-visual { order:-1; }
+    .pp-chapter-grid { grid-template-columns:1fr; }
+    .pp-preview-grid { grid-template-columns:1fr; }
+}
+
+/* ─────────────────────────────────────
    LEGAL PAGES (Privacy, Cookies, Terms, Disclosures)
 ───────────────────────────────────── */
 .legal-page { background:var(--cream); min-height:100vh; padding:48px 0 80px; }
