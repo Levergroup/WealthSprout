@@ -137,7 +137,7 @@ async function submitToResend(payload) {
 const GETRESPONSE_LISTS = {
     KIT_STRIP: 'TODO_LIST_ID_KIT_STRIP', // homepage inline strip (#kitForm)
     WAITLIST: 'TODO_LIST_ID_WAITLIST',   // Money Lab waitlist (#waitlistForm)
-    FREE_KIT: 'TODO_LIST_ID_FREE_KIT',   // /free-kit opt-in (#optinForm)
+    FREE_KIT: 'KKOGG',                   // /free-kit opt-in (#optinForm)
 };
 
 async function subscribeToGetResponse(email, listId) {
