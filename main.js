@@ -197,6 +197,317 @@ if (waitlistForm) {
 }
 
 /* ─────────────────────────────────────
+   PRODUCT MATCH QUIZ
+   4-question quiz that matches a parent's child to the right
+   WealthSprout product. Mounts into any [data-quiz-root] element
+   found on the page (homepage + free-kit thank-you page). Result
+   links reuse the ?from=quiz&concern=&outcome= params that
+   personalizeHero() above already reads, so the destination
+   product page's hero adapts too.
+───────────────────────────────────── */
+(function initMatchQuiz() {
+    const roots = document.querySelectorAll('[data-quiz-root]');
+    if (!roots.length) return;
+
+    const QUESTIONS = [
+        {
+            id: 'age',
+            eyebrow: 'Question 1 of 4',
+            question: "How old is your child?",
+            subtext: "We'll match you to the right level — no guessing.",
+            options: [
+                { label: '5–8 years old', value: '5-8', icon: '🌱' },
+                { label: '9–12 years old', value: '9-12', icon: '🌿' },
+                { label: '13–15 years old', value: '13-15', icon: '🌳' },
+                { label: '16–18 years old', value: '16-18', icon: '🚀' },
+                { label: 'Multiple kids, different ages', value: 'multi', icon: '👨‍👩‍👧‍👦' },
+            ],
+        },
+        {
+            id: 'concern',
+            eyebrow: 'Question 2 of 4',
+            question: "What's your biggest money worry for your child?",
+            subtext: 'Pick the one that hits closest to home.',
+            options: [
+                { label: 'They have no concept of saving', value: 'saving', icon: '🐷' },
+                { label: "They don't understand where money comes from", value: 'earning', icon: '💡' },
+                { label: "They're almost an adult with zero financial skills", value: 'adulting', icon: '⏰' },
+                { label: 'I want them investing before they leave home', value: 'investing', icon: '📈' },
+                { label: 'I want to break generational money patterns', value: 'generational', icon: '🔄' },
+            ],
+        },
+        {
+            id: 'knowledge',
+            eyebrow: 'Question 3 of 4',
+            question: 'Where is your child right now with money?',
+            subtext: "Be honest — there's no wrong answer here.",
+            options: [
+                { label: "We haven't really talked about it yet", value: 'none', icon: '🤷' },
+                { label: 'They know save/spend but nothing deeper', value: 'basic', icon: '💰' },
+                { label: 'They get budgeting but not investing', value: 'intermediate', icon: '📊' },
+                { label: "They've heard of stocks/credit but don't get it", value: 'advanced', icon: '🎯' },
+            ],
+        },
+        {
+            id: 'outcome',
+            eyebrow: 'Question 4 of 4',
+            question: 'What does success look like to you?',
+            subtext: 'What would genuinely make you proud?',
+            options: [
+                { label: 'My child has a savings habit and loves money', value: 'habits', icon: '⭐' },
+                { label: 'My child can budget and has a business idea', value: 'business', icon: '💼' },
+                { label: 'My child understands investing and has a plan', value: 'plan', icon: '🗺️' },
+                { label: 'My child graduates ready to manage real money', value: 'ready', icon: '🎓' },
+            ],
+        },
+    ];
+
+    const FREE_KIT_URL = '/free-kit';
+    const FREE_KIT_CHECKS = [
+        'The 3-Jar System (Spend · Save · Give) with jar labels',
+        'Weekly Earning Tracker — chores to cash',
+        'My First Savings Goal worksheet',
+        'Parent Quick-Start Guide — set up in one weekend',
+    ];
+
+    const RESULTS = {
+        multi: {
+            product: 'The Complete WealthSprout Vault',
+            subtitle: 'All 4 age tiers in one bundle',
+            price: '$67',
+            cover: '🏆',
+            description: "You've got kids across multiple ages — and this is built for exactly that. Every concept, every tier, one complete family financial education.",
+            includes: [
+                'All 4 workbooks covering ages 5–18',
+                'Family Money Conversation Guide (20 pages)',
+                'Age-by-age scripts for money conversations',
+                'Monthly Money Date template',
+            ],
+            kitBridge: 'Not ready to commit to the full bundle? Start your family off with the Free Money Kit — the same 3-Jar System that kicks off every tier.',
+            url: '/programs/vault',
+        },
+        '5-8': {
+            product: 'Money Seeds',
+            subtitle: "A Kid's First Financial Playbook · Ages 5–8",
+            price: '$17',
+            cover: '🌱',
+            description: '40 illustrated pages that turn money from a mystery into a superpower — built for little hands, big curiosity, and one unforgettable weekend together.',
+            includes: [
+                'The 3-Jar System (Spend, Save, Give) in depth',
+                'My Savings Goal Adventure visual tracker',
+                'Needs vs. Wants sorting activities',
+                'Illustrated chapter guide + certificate of completion',
+            ],
+            kitBridge: 'The Free Money Kit is the perfect first step — it introduces the exact 3-Jar System your child will use inside Money Seeds.',
+            url: '/money-seeds',
+        },
+        '9-12': {
+            product: 'Money Moves',
+            subtitle: "The Smart Kid's Guide to Building Wealth · Ages 9–12",
+            price: '$24',
+            cover: '💡',
+            description: "52 pages covering compound interest, banking, micro-business, and real investing — for the kid who's already asked how the stock market works.",
+            includes: [
+                'Compound interest math with real exercises',
+                'How to start a micro-business (lemonade stand → Etsy)',
+                'Paper portfolio stock market exercise',
+                '30 / 90 / 365-day goal ladder',
+            ],
+            kitBridge: 'Start with the Free Money Kit to get the savings foundation in place — then Money Moves takes it to the next level.',
+            url: '/money-moves',
+        },
+        '13-15': {
+            product: 'Wealth Blueprint',
+            subtitle: "A Teen's Guide to Investing, Business & Real Money · Ages 13–15",
+            price: '$29',
+            cover: '📈',
+            description: '60 pages that treat your teen like the intelligent person they are. Stocks, ETFs, Roth IRAs, side hustles, and a real 5-year wealth roadmap.',
+            includes: [
+                'How to open a custodial brokerage account (step-by-step)',
+                'Roth IRA for Teens — why starting at 14 is a superpower',
+                'Side hustle playbook: freelancing, reselling, content',
+                '5-year money roadmap: from now to young adult',
+            ],
+            kitBridge: "Grab the Free Money Kit to start the conversation — it's designed for parents and kids to go through together, just like Wealth Blueprint.",
+            url: '/programs/wealth-blueprint',
+        },
+        '16-18': {
+            product: 'Launch Rich',
+            subtitle: "The High Schooler's Complete Money Playbook · Ages 16–18",
+            price: '$34',
+            cover: '🚀',
+            description: '70 pages. First paycheck decoded. Credit built before they need it. Roth IRA opened. College debt explained. Everything before they leave home.',
+            includes: [
+                'Your first paycheck decoded (taxes, withholding, take-home)',
+                'Credit 101 — build it before you ever need it',
+                'Roth IRA step-by-step with real brokerage comparisons',
+                '10-year wealth roadmap: age 17 to 27',
+            ],
+            kitBridge: 'While your teen dives into Launch Rich, the Free Money Kit is a great starting point to kick off the money conversation at home.',
+            url: '/programs/launch-rich',
+        },
+    };
+
+    function getResult(answers) {
+        return RESULTS[answers.age] || RESULTS['16-18'];
+    }
+
+    function buildProductUrl(baseUrl, answers) {
+        const params = new URLSearchParams({ from: 'quiz' });
+        if (answers.concern) params.set('concern', answers.concern);
+        if (answers.outcome) params.set('outcome', answers.outcome);
+        return `${baseUrl}?${params.toString()}`;
+    }
+
+    function escapeHtml(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+    }
+
+    function renderIncludeList(items, checkChar) {
+        return items.map(item => `
+            <div class="quiz-include-item"><span>${checkChar}</span><span>${escapeHtml(item)}</span></div>`).join('');
+    }
+
+    function renderIntro() {
+        return `
+            <div class="quiz-intro">
+                <div class="quiz-intro-banner">
+                    <span class="eyebrow eyebrow-gold">Free · 60 Seconds</span>
+                    <h2>Find the Right Program for Your Child</h2>
+                    <p>4 quick questions. Instant result. We'll match your child to the exact WealthSprout product built for their age and level — plus a free starter kit.</p>
+                </div>
+                <div class="quiz-perks">
+                    <span>⏱️ Takes 60 seconds</span>
+                    <span>🎯 Matched to your child's exact age &amp; level</span>
+                    <span>🎁 Free kit unlocked with every result</span>
+                </div>
+                <button type="button" class="btn btn-gold btn-block quiz-start" data-action="start">Find My Child's Match →</button>
+                <p class="quiz-fine">Taken by 3,400+ parents · No email required to see your result</p>
+            </div>`;
+    }
+
+    function renderQuestion(q, index, total, selected) {
+        const options = q.options.map(opt => `
+            <button type="button" class="quiz-option${selected === opt.value ? ' selected' : ''}" data-action="select" data-value="${escapeHtml(opt.value)}">
+                <span class="quiz-opt-icon">${opt.icon}</span>
+                <span class="quiz-opt-label">${escapeHtml(opt.label)}</span>
+                <span class="quiz-opt-check">✓</span>
+            </button>`).join('');
+
+        return `
+            <div class="quiz-question">
+                <div class="quiz-progress"><div class="quiz-progress-bar" style="width:${(index / total) * 100}%"></div></div>
+                <span class="eyebrow eyebrow-gold">${q.eyebrow}</span>
+                <h2>${escapeHtml(q.question)}</h2>
+                <p class="quiz-subtext">${escapeHtml(q.subtext)}</p>
+                <div class="quiz-options">${options}</div>
+                <button type="button" class="btn btn-green btn-block quiz-next" data-action="next"${selected ? '' : ' disabled'}>${index === total ? 'See My Result →' : 'Next →'}</button>
+            </div>`;
+    }
+
+    function renderResult(result, answers) {
+        return `
+            <div class="quiz-result">
+                <div class="quiz-result-header">
+                    <span class="eyebrow eyebrow-gold">Your Personalized Match</span>
+                    <div class="quiz-result-title">
+                        <span class="quiz-result-cover">${result.cover}</span>
+                        <div>
+                            <h2>${escapeHtml(result.product)}</h2>
+                            <p>${escapeHtml(result.subtitle)}</p>
+                        </div>
+                    </div>
+                    <p class="quiz-result-desc">${escapeHtml(result.description)}</p>
+                </div>
+
+                <div class="quiz-includes">
+                    <p class="quiz-includes-label">What's Inside</p>
+                    <div class="quiz-include-list">${renderIncludeList(result.includes, '✦')}</div>
+                </div>
+
+                <div class="quiz-divider"><span>Start here — it's free</span></div>
+
+                <div class="quiz-freekit">
+                    <div class="quiz-freekit-head">
+                        <span class="quiz-freekit-icon">🎁</span>
+                        <div>
+                            <p class="quiz-freekit-name">My First Money Kit</p>
+                            <p class="quiz-freekit-meta">12-page printable PDF · Instant download</p>
+                        </div>
+                        <span class="quiz-freekit-badge">Free</span>
+                    </div>
+                    <p class="quiz-freekit-bridge">${escapeHtml(result.kitBridge)}</p>
+                    <div class="quiz-include-list">${renderIncludeList(FREE_KIT_CHECKS, '✓')}</div>
+                    <a href="${FREE_KIT_URL}" class="btn btn-gold btn-block">Grab the Free Kit — $0 →</a>
+                </div>
+
+                <div class="quiz-paid">
+                    <div class="quiz-paid-head">
+                        <p class="quiz-paid-name">${escapeHtml(result.product)}</p>
+                        <span class="quiz-paid-price">${result.price}</span>
+                    </div>
+                    <p class="quiz-paid-sub">Ready to go deeper? This is your child's complete curriculum — not a preview.</p>
+                    <a href="${buildProductUrl(result.url, answers)}" class="btn btn-outline btn-block">Get ${escapeHtml(result.product)} — ${result.price} →</a>
+                </div>
+
+                <p class="quiz-guarantee">Instant PDF download · 30-day money-back guarantee</p>
+                <button type="button" class="quiz-restart" data-action="restart">↺ Retake the quiz</button>
+            </div>`;
+    }
+
+    function initQuiz(root) {
+        const totalQuestions = QUESTIONS.length;
+        let step = 0;
+        let answers = {};
+        let currentSelection = null;
+
+        function render() {
+            if (step === 0) {
+                root.innerHTML = renderIntro();
+            } else if (step <= totalQuestions) {
+                root.innerHTML = renderQuestion(QUESTIONS[step - 1], step, totalQuestions, currentSelection);
+            } else {
+                root.innerHTML = renderResult(getResult(answers), answers);
+            }
+        }
+
+        root.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-action]');
+            if (!btn) return;
+            const action = btn.dataset.action;
+
+            if (action === 'start') {
+                step = 1;
+                render();
+            } else if (action === 'select') {
+                currentSelection = btn.dataset.value;
+                render();
+            } else if (action === 'next') {
+                if (!currentSelection) return;
+                const q = QUESTIONS[step - 1];
+                answers = { ...answers, [q.id]: currentSelection };
+                currentSelection = null;
+                step += 1;
+                render();
+            } else if (action === 'restart') {
+                step = 0;
+                answers = {};
+                currentSelection = null;
+                render();
+            }
+        });
+
+        render();
+    }
+
+    roots.forEach(initQuiz);
+})();
+
+/* ─────────────────────────────────────
    COOKIE CONSENT — banner + preferences modal
    Stores choice in localStorage as `ws_cookie_consent`. Analytics/marketing
    scripts must call `window.wsHasConsent('analytics'|'marketing')` before
