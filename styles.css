@@ -497,6 +497,12 @@ img { max-width: 100%; display: block; }
 .nav-minimal { position:static; background:var(--white); border-bottom:1px solid var(--line); backdrop-filter:none; }
 .nav-minimal .nav-inner { justify-content:center; }
 
+/* product pages — logo left, single CTA right */
+.nav-product { position:static; background:var(--white); border-bottom:1px solid var(--sage); backdrop-filter:none; }
+.nav-product .nav-inner { height:64px; }
+.nav-cta-gold { background:var(--gold); color:var(--ink) !important; }
+.nav-cta-gold:hover { background:var(--gold-light) !important; }
+
 /* ─────────────────────────────────────
    FREE KIT PAGE (shared containers)
 ───────────────────────────────────── */
