@@ -708,6 +708,10 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .vlp-pcard ul li { display:flex; gap:6px; font-size:13px; color:var(--ink-mid); font-family:'Nunito',sans-serif; }
 .vlp-pcard ul li::before { content:'✓'; color:var(--green); font-weight:700; flex-shrink:0; }
 .vlp-pcard .retail-price { font-size:12px; color:var(--muted); font-family:'Nunito',sans-serif; font-weight:700; padding-top:10px; border-top:1px solid var(--line); }
+.vlp-pcard-seeds { border-left:4px solid var(--coral); }
+.vlp-pcard-moves { border-left:4px solid var(--green); }
+.vlp-pcard-blueprint { border-left:4px solid var(--ink); }
+.vlp-pcard-launch { border-left:4px solid var(--green-dark); }
 .vlp-bonus-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:20px; }
 .vlp-bonus { background:var(--sage-light); border-radius:var(--radius); padding:22px; margin-top:20px; }
 .vlp-bonus h4 { font-size:16px; font-family:'Nunito',sans-serif; font-weight:800; color:var(--green); margin-bottom:6px; }
@@ -745,6 +749,7 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .pp-hero { padding:56px 0 64px; color:#fff; }
 .pp-hero-charcoal { background:linear-gradient(140deg, var(--ink) 0%, var(--ink-mid) 100%); }
 .pp-hero-evergreen-dark { background:linear-gradient(140deg, var(--green-dark) 0%, var(--green) 100%); }
+.pp-hero-dark-premium { background:linear-gradient(140deg, var(--ink) 0%, var(--green) 100%); }
 .pp-hero-inner { max-width:1080px; margin:0 auto; padding:0 24px; display:grid; grid-template-columns:1.1fr .9fr; gap:48px; align-items:center; }
 .pp-hero-badge {
     display:inline-flex; align-items:center; gap:6px; background:rgba(240,165,0,.18);
@@ -773,6 +778,7 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .pp-mockup .title { font-family:'DM Serif Display',serif; font-size:20px; color:#fff; text-align:center; }
 .pp-mockup-charcoal { background:linear-gradient(145deg, var(--ink), var(--ink-mid)); }
 .pp-mockup-evergreen-dark { background:linear-gradient(145deg, var(--green-dark), var(--green)); }
+.pp-mockup-dark-premium { background:linear-gradient(145deg, var(--ink), var(--green)); }
 
 .pp-trustbar { background:#fff; border-bottom:1px solid var(--sage); padding:16px 24px; }
 .pp-trustbar-inner { max-width:1080px; margin:0 auto; display:flex; justify-content:center; gap:40px; flex-wrap:wrap; }
