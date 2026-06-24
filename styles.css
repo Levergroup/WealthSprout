@@ -843,11 +843,29 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .pp-bridge h3 { font-size:24px; color:var(--ink); margin-bottom:10px; }
 .pp-bridge p { font-size:14px; color:var(--muted); max-width:480px; margin:0 auto 20px; line-height:1.65; }
 
+.pp-format { background:#fff; padding:48px 24px; border-top:1px solid var(--line); }
+.pp-format-inner { max-width:1080px; margin:0 auto; }
+.pp-format-title { font-family:'Nunito',sans-serif; font-weight:800; font-size:13px; letter-spacing:.06em; text-transform:uppercase; color:var(--green); text-align:center; margin-bottom:32px; }
+.pp-format-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.pp-format-item { text-align:center; }
+.pp-format-icon { font-size:32px; margin-bottom:10px; }
+.pp-format-item h4 { font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; color:var(--ink); margin-bottom:6px; }
+.pp-format-item p { font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); line-height:1.55; }
+.pp-format-note { text-align:center; font-family:'Inter',sans-serif; font-size:13px; color:var(--muted); font-style:italic; margin-top:28px; }
+
+.pp-buyline { font-family:'Inter',sans-serif; font-size:12px; color:var(--muted); line-height:1.5; margin-top:10px; }
+.pp-hero-btns .pp-buyline { color:rgba(255,255,255,.72); margin-top:0; }
+.vlp-pricing .pp-buyline { color:rgba(255,255,255,.75); }
+
 @media (max-width: 760px) {
     .pp-hero-inner, .pp-built-inner { grid-template-columns:1fr; }
     .pp-hero-visual { order:-1; }
     .pp-chapter-grid { grid-template-columns:1fr; }
     .pp-preview-grid { grid-template-columns:1fr; }
+    .pp-format-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width: 480px) {
+    .pp-format-grid { grid-template-columns:1fr; }
 }
 
 /* ─────────────────────────────────────
