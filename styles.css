@@ -1027,6 +1027,32 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .blog-post-hero {
     background:linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, #2d7a50 100%);
     padding:56px 0 40px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+.blog-post-hero.has-image {
+    background:none;
+    position:relative;
+}
+.blog-post-hero.has-image::before {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to bottom, rgba(10,40,20,.72) 0%, rgba(10,40,20,.58) 100%);
+    z-index:1;
+}
+.blog-post-hero.has-image .legal-wrap {
+    position:relative;
+    z-index:2;
+}
+.blog-post-hero-img {
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
 }
 .blog-post-hero .blog-back { color:rgba(255,255,255,.75); }
 .blog-post-hero .blog-back:hover { color:#fff; }
