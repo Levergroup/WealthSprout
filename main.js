@@ -135,16 +135,24 @@ async function submitToResend(payload) {
    real campaignId from GetResponse for that list.
 ───────────────────────────────────── */
 const GETRESPONSE_LISTS = {
-    KIT_STRIP: 'TODO_LIST_ID_KIT_STRIP', // homepage inline strip (#kitForm)
-    WAITLIST: 'TODO_LIST_ID_WAITLIST',   // Money Lab waitlist (#waitlistForm)
-    FREE_KIT: 'KKOGG',                   // /free-kit opt-in (#optinForm)
+    KIT_STRIP: 'TODO_LIST_ID_KIT_STRIP',             // homepage inline strip (#kitForm)
+    WAITLIST: 'TODO_LIST_ID_WAITLIST',               // Money Lab waitlist (#waitlistForm)
+    FREE_KIT: 'KKOGG',                               // /free-kit opt-in (#optinForm)
+    VAULT_PRICE_WATCH: 'TODO_LIST_ID_VAULT_PRICE_WATCH', // Family Collection price-increase notify (#vaultNotifyForm)
 };
 
-async function subscribeToGetResponse(email, listId) {
+// Tag IDs (not list IDs) applied alongside a list on subscribe, e.g. to
+// segment "didn't buy yet, wants a heads-up" leads. Replace with the real
+// tag ID from GetResponse once the tag below has been created there.
+const GETRESPONSE_TAGS = {
+    VAULT_PRICE_WATCH: ['TODO_TAG_ID_VAULT_PRICE_INCREASE'], // tag: waitlist:vault-price-increase
+};
+
+async function subscribeToGetResponse(email, listId, tagIds) {
     const res = await fetch('/.netlify/functions/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, listId }),
+        body: JSON.stringify({ email, listId, ...(tagIds ? { tagIds } : {}) }),
     });
     if (!res.ok) throw new Error(`GetResponse subscribe failed: ${res.status}`);
     return res.json();
@@ -192,6 +200,31 @@ if (waitlistForm) {
             console.error('subscribeToGetResponse failed:', err);
         }
         waitlistForm.style.display = 'none';
+        if (msg) msg.classList.add('show');
+    });
+}
+
+/* ─────────────────────────────────────
+   VAULT PRICE-INCREASE NOTIFY FORM (Family Collection page)
+───────────────────────────────────── */
+const vaultNotifyForm = document.getElementById('vaultNotifyForm');
+if (vaultNotifyForm) {
+    vaultNotifyForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const input = vaultNotifyForm.querySelector('input');
+        const btn = vaultNotifyForm.querySelector('button');
+        const msg = document.getElementById('vaultNotifyMsg');
+        const email = input.value;
+        btn.disabled = true;
+        btn.textContent = 'Joining...';
+        // TODO: Replace with Supabase insert into `waitlist` table (columns: id, email, source, created_at)
+        await submitToSupabase('waitlist', { email, source: 'vault-price-increase', created_at: new Date().toISOString() });
+        try {
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.VAULT_PRICE_WATCH, GETRESPONSE_TAGS.VAULT_PRICE_WATCH);
+        } catch (err) {
+            console.error('subscribeToGetResponse failed:', err);
+        }
+        vaultNotifyForm.style.display = 'none';
         if (msg) msg.classList.add('show');
     });
 }
@@ -272,7 +305,7 @@ if (waitlistForm) {
 
     const RESULTS = {
         multi: {
-            product: 'The Complete WealthSprout Vault',
+            product: 'The WealthSprout Family Collection',
             subtitle: 'All 4 age tiers in one bundle',
             price: '$67',
             cover: '🏆',
