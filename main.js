@@ -672,6 +672,36 @@ if (vaultNotifyForm) {
 })();
 
 /* ─────────────────────────────────────
+   VAULT — sticky mobile bottom CTA bar
+   Shows once the visitor has scrolled past the hero. No-op on every
+   page except the Family Collection page, which is the only one
+   with #vlpStickyCta in the DOM.
+───────────────────────────────────── */
+const vlpStickyCta = document.getElementById('vlpStickyCta');
+if (vlpStickyCta) {
+    window.addEventListener('scroll', () => {
+        vlpStickyCta.classList.toggle('show', window.scrollY > 600);
+    });
+}
+
+/* ─────────────────────────────────────
+   ANALYTICS — Founding Member CTA clicks
+   Fires on every checkout-bound CTA tagged with [data-cta]. Uses
+   optional chaining so this is a safe no-op until GTM/dataLayer is
+   actually installed on the site.
+───────────────────────────────────── */
+document.querySelectorAll('[data-cta]').forEach(btn => {
+    btn.addEventListener('click', () => {
+        window.dataLayer?.push({
+            event: 'founding_member_cta_click',
+            cta_location: btn.dataset.cta,
+            price: 67,
+            page: 'family-collection',
+        });
+    });
+});
+
+/* ─────────────────────────────────────
    FREE KIT OPT-IN FORM (/free-kit)
 ───────────────────────────────────── */
 const optinForm = document.getElementById('optinForm');

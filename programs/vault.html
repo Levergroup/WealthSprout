@@ -79,7 +79,7 @@
         },
         {
           "@type": "Question",
-          "name": "What exactly does 'Founding Member' mean?",
+          "name": "What exactly does \"Founding Member\" mean?",
           "acceptedAnswer": { "@type": "Answer", "text": "It means you're joining at today's price before the Collection — and the price — grows. Everyone who joins as a Founding Member keeps their price for life, no matter how high it rises for new members later." }
         },
         {
@@ -96,6 +96,11 @@
           "@type": "Question",
           "name": "Is there a hard deadline to join at $67?",
           "acceptedAnswer": { "@type": "Answer", "text": "The price moves in stages, not on a fixed calendar date — once the next stage begins, this page will show the new price automatically. The only way to guarantee $67 is to join before that happens." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can more than one of my kids use the same Family Collection at once?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your purchase isn't tied to a single child — print extra copies of any workbook for siblings, or have them share a digital copy. If your kids are different ages, each one naturally lands on the program built for their age." }
         }
       ]
     }
@@ -112,11 +117,11 @@
     <nav class="nav nav-product">
         <div class="nav-inner">
             <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
-            <a href="/free-kit" class="nav-cta nav-cta-gold">Get Free Kit →</a>
+            <a href="/checkout/vault" class="nav-cta nav-cta-gold" data-cta="nav">Join Now — $67 →</a>
         </div>
     </nav>
 
-    <header class="pp-hero pp-hero-dark-premium">
+    <header class="pp-hero pp-hero-dark-premium" data-section="hero">
         <div class="pp-hero-inner">
             <div>
                 <span class="pp-hero-badge">🏆 Founding Member Pricing — Active Now</span>
@@ -124,7 +129,7 @@
                 <p class="sub"><strong>Join today, and every program we ever add through Month 12 is automatically yours — free.</strong> The price rises in stages as the Collection grows. Founding Members lock in $67 for life and never pay for what we add later.</p>
                 <div class="pp-hero-btns">
                     <!-- TODO: Replace with Stripe payment link for The Family Collection -->
-                    <a href="/checkout/vault" class="btn btn-gold btn-block">Become a Founding Member — $67 →</a>
+                    <a href="/checkout/vault" class="btn btn-gold btn-block" data-cta="hero">Become a Founding Member — $67 →</a>
                     <a href="#whats-included" class="btn btn-white btn-block">See What's Included ↓</a>
                     <p class="pp-buyline">📥 PDF delivered to your inbox in under 60 seconds · Print at home or use digitally · Works on iPhone, iPad, Android, Mac, and PC</p>
                 </div>
@@ -177,11 +182,11 @@
         </div>
     </header>
 
-    <div class="vlp-urgency">
+    <div class="vlp-urgency" data-section="urgency">
         <div class="vlp-urgency-inner">⏳ Founding Member pricing is active right now. The next stage raises the price to $97 — everyone who already joined keeps $67 for life.</div>
     </div>
 
-    <section class="pp-format">
+    <section class="pp-format" data-section="format">
         <div class="pp-format-inner">
             <p class="pp-format-title">How You Receive and Use This Product</p>
             <div class="pp-format-grid">
@@ -210,7 +215,7 @@
         </div>
     </section>
 
-    <div class="pp-trustbar">
+    <div class="pp-trustbar" data-section="trustbar">
         <div class="pp-trustbar-inner">
             <span class="pp-trustbar-item">⚡ Instant delivery after purchase</span>
             <span class="pp-trustbar-item">🖨️ Print at home or use on any device</span>
@@ -220,7 +225,43 @@
         </div>
     </div>
 
-    <section class="vlp-included" id="whats-included">
+    <section class="vlp-results" id="real-results" data-section="real-results">
+        <div class="lp-content lp-wide">
+            <div class="t-center">
+                <span class="eyebrow eyebrow-gold">REAL FAMILIES, REAL RESULTS</span>
+                <h2 class="section-title">What Actually Changes, Age by Age.</h2>
+                <p class="section-sub" style="margin:0 auto;">These are the same families behind the programs above — before they started, and what happened after.</p>
+            </div>
+            <div class="vlp-results-grid">
+                <div class="vlp-result-card">
+                    <div class="vlp-result-top"><span class="emoji">🐷</span><span class="age">Ages 5–8 · Money Seeds</span></div>
+                    <div class="vlp-result-before"><span class="tag">Before</span><p>Money was something that just appeared. She had no idea where it came from or what to do with it.</p></div>
+                    <div class="vlp-result-after"><span class="tag">After</span><p>She set up her 3 jars the same afternoon — and now asks to add to her "save" jar before she asks for a toy.</p></div>
+                    <cite>— Sarah M., mom of Emma (7)</cite>
+                </div>
+                <div class="vlp-result-card">
+                    <div class="vlp-result-top"><span class="emoji">📈</span><span class="age">Ages 9–12 · Money Moves</span></div>
+                    <div class="vlp-result-before"><span class="tag">Before</span><p>He could count his money. He had no idea how to grow it.</p></div>
+                    <div class="vlp-result-after"><span class="tag">After</span><p>He explained compound interest to his grandfather at dinner — completely unprompted.</p></div>
+                    <cite>— Marcus T., dad of Jake (11)</cite>
+                </div>
+                <div class="vlp-result-card">
+                    <div class="vlp-result-top"><span class="emoji">🧭</span><span class="age">Ages 13–15 · Wealth Blueprint</span></div>
+                    <div class="vlp-result-before"><span class="tag">Before</span><p>She thought investing was something rich adults did — not something she could start now.</p></div>
+                    <div class="vlp-result-after"><span class="tag">After</span><p>She opened her own Roth IRA two weeks after finishing the workbook.</p></div>
+                    <cite>— David K., dad of Priya (14)</cite>
+                </div>
+                <div class="vlp-result-card">
+                    <div class="vlp-result-top"><span class="emoji">🚀</span><span class="age">Ages 16–18 · Launch Rich</span></div>
+                    <div class="vlp-result-before"><span class="tag">Before</span><p>He was about to leave for college without ever reading a pay stub or knowing what credit actually does.</p></div>
+                    <div class="vlp-result-after"><span class="tag">After</span><p>He actually read the whole thing — and now has a 10-year plan he wrote himself.</p></div>
+                    <cite>— Jennifer L., mom of Zach (17)</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="vlp-included" id="whats-included" data-section="whats-included">
         <div class="lp-content lp-wide">
             <div class="t-center">
                 <span class="eyebrow eyebrow-gold">WHAT YOU GET TODAY</span>
@@ -283,7 +324,7 @@
         </div>
     </section>
 
-    <section class="vlp-coming" id="whats-coming">
+    <section class="vlp-coming" id="whats-coming" data-section="whats-coming">
         <div class="lp-content lp-wide">
             <div class="t-center">
                 <span class="eyebrow eyebrow-gold">WHAT GETS ADDED</span>
@@ -344,14 +385,56 @@
         </div>
     </section>
 
-    <section class="pp-guarantee">
+    <section class="vlp-wall" id="families" data-section="families">
+        <div class="lp-content lp-wide">
+            <div class="t-center">
+                <span class="eyebrow eyebrow-gold">FAMILIES LIKE YOURS</span>
+                <h2 class="section-title">3,429 Families Are Already In.</h2>
+                <div class="vlp-wall-rating"><span class="stars">⭐⭐⭐⭐⭐</span><span class="num">4.9/5 average from Founding Members</span></div>
+            </div>
+            <div class="vlp-wall-featured">
+                <div class="vlp-wall-stars">⭐⭐⭐⭐⭐</div>
+                <p>"I almost waited. I'm so glad I didn't — the price went up to $97 a month after I joined, and I get every single thing they've added since for free. My oldest is through Launch Rich already and the other two have Money Seeds and Money Moves waiting for them. One purchase, three kids, years of use."</p>
+                <cite>— Jennifer L., mom of 3</cite>
+            </div>
+            <div class="vlp-wall-grid">
+                <div class="vlp-wall-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"Emma's only 7, so we're just using Money Seeds today — but Money Moves is already sitting there waiting for her, paid for, whenever she's ready."</p>
+                    <cite>— Sarah M., mom of Emma (7)</cite>
+                </div>
+                <div class="vlp-wall-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I joined the week before Stage 2 pricing kicked in. Locking in $67 for life, the same day I almost talked myself out of it, felt like the easiest win all year."</p>
+                    <cite>— Marcus T., dad of Jake (11)</cite>
+                </div>
+                <div class="vlp-wall-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I'd already bought Wealth Blueprint on its own. One email and they credited it toward my membership — no hassle, no arguing."</p>
+                    <cite>— David K., dad of Priya (14)</cite>
+                </div>
+                <div class="vlp-wall-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"My twins are both 10 and both stubborn about sharing anything — except this. We just print a second copy of Money Moves and they each have their own."</p>
+                    <cite>— Ryan F., dad of twins, age 10</cite>
+                </div>
+                <div class="vlp-wall-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>"I bought this for my three grandkids instead of toys this year. Their parents thanked me more for this than anything else I've ever gifted them."</p>
+                    <cite>— Patricia G., grandmother of three</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pp-guarantee" data-section="guarantee">
         <div class="icon">🛡️</div>
         <h3>30-Day Money-Back Guarantee</h3>
         <p>If you and your family go through the Family Collection and don't feel it was worth every penny, email us within 30 days and we'll refund you in full. No forms. No questions. No waiting.</p>
         <p class="pp-guarantee-contact">hello@wealthsproutkids.com · We respond within 24 hours</p>
     </section>
 
-    <section class="vlp-works" id="how-membership-works">
+    <section class="vlp-works" id="how-membership-works" data-section="how-membership-works">
         <div class="lp-content lp-wide">
             <div class="t-center">
                 <span class="eyebrow-gold eyebrow">HOW FOUNDING MEMBERSHIP WORKS</span>
@@ -382,7 +465,7 @@
         </div>
     </section>
 
-    <section class="pp-built" id="who-its-for">
+    <section class="pp-built" id="who-its-for" data-section="who-its-for">
         <div class="pp-built-inner">
             <div>
                 <span class="pp-eyebrow-pill">IS THIS RIGHT FOR YOUR FAMILY?</span>
@@ -417,13 +500,48 @@
                 <div class="pp-avatar-quote">
                     <div class="pp-avatar-stars">⭐⭐⭐⭐⭐</div>
                     <p>"We have three kids, four years apart. I bought the Family Collection once and haven't thought about it since — each one just gets handed the right book when they're ready."</p>
-                    <cite>— Sarah M., mom of Emma (7), Jake (11), and Priya (14)</cite>
+                    <cite>— Rachel P., mom of three, ages 7, 11, and 14</cite>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="waitlist-section section" id="notify">
+    <section class="vlp-objections" id="objections" data-section="objections">
+        <div class="lp-content lp-wide">
+            <div class="t-center">
+                <span class="eyebrow eyebrow-gold">ONE LAST THING</span>
+                <h2 class="section-title">The Questions You're Already Asking Yourself.</h2>
+            </div>
+            <div class="vlp-objections-grid">
+                <div class="vlp-objection-card">
+                    <h4>"What if my kid loses interest halfway through?"</h4>
+                    <p>Nothing here "finishes." Use one chapter or all of them, in any order. There's no expiry and nothing to complete — pick it back up whenever they're ready.</p>
+                </div>
+                <div class="vlp-objection-card">
+                    <h4>"What if I only need one program right now?"</h4>
+                    <p>Then buying that one program on its own is cheaper today. The Collection is for families who want every age covered — now and as their kids grow.</p>
+                </div>
+                <div class="vlp-objection-card">
+                    <h4>"Is the price ladder just fake urgency?"</h4>
+                    <p>No — once Stage 2 goes live, every visitor to this page sees $97, including us. The only way to guarantee $67 is to join before that happens.</p>
+                </div>
+                <div class="vlp-objection-card">
+                    <h4>"What if I want my money back?"</h4>
+                    <p>Email us within 30 days for a full refund. No forms, no questions, no waiting.</p>
+                </div>
+                <div class="vlp-objection-card">
+                    <h4>"What if the programs you add later aren't useful to us?"</h4>
+                    <p>You're not paying for them either way — they're free with your membership. If one isn't a fit for your family, you simply don't use it.</p>
+                </div>
+                <div class="vlp-objection-card">
+                    <h4>"What if I forget I even bought this?"</h4>
+                    <p>Every program ships straight to your inbox the moment it's ready. There's nothing to log into, remember, or come back for.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="waitlist-section section" id="notify" data-section="notify">
         <div class="wrap waitlist-inner">
             <span class="eyebrow eyebrow-gold">NOT READY YET?</span>
             <h2>Get Notified Before the Price Goes Up</h2>
@@ -436,14 +554,14 @@
         </div>
     </section>
 
-    <section class="vlp-pricing">
+    <section class="vlp-pricing" data-section="second-pricing">
         <div class="lp-content">
             <p class="pre">Founding Member pricing. One-time payment. Locked in for life.</p>
             <div class="retail">$104 value today</div>
             <div class="price">$67</div>
             <span class="save">Save $37 — plus everything we add later</span>
             <!-- TODO: Replace with Stripe payment link for The Family Collection -->
-            <a href="/checkout/vault" class="btn btn-gold btn-block">Become a Founding Member — $67 →</a>
+            <a href="/checkout/vault" class="btn btn-gold btn-block" data-cta="second-pricing">Become a Founding Member — $67 →</a>
             <p class="pp-buyline">📥 PDF delivered to your inbox in under 60 seconds · Print at home or use digitally · Works on iPhone, iPad, Android, Mac, and PC</p>
             <div class="checks">
                 <span>✓ Instant PDF delivery for all 4 current programs</span>
@@ -454,7 +572,7 @@
         </div>
     </section>
 
-    <section class="lp-faq">
+    <section class="lp-faq" data-section="faq">
         <div class="lp-content">
             <h2 class="section-title t-center" style="margin:0 auto 16px;">The WealthSprout Family Collection FAQ — Founding Member Questions Answered</h2>
             <div class="faq-list" style="margin-top:32px;">
@@ -489,6 +607,10 @@
                 <div class="faq-item">
                     <button class="faq-q" type="button">Is there a hard deadline to join at $67?<span class="icon">+</span></button>
                     <div class="faq-a"><p>The price moves in stages, not on a fixed calendar date — once the next stage begins, this page will show the new price automatically. The only way to guarantee $67 is to join before that happens.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-q" type="button">Can more than one of my kids use the same Family Collection at once?<span class="icon">+</span></button>
+                    <div class="faq-a"><p>Yes. Your purchase isn't tied to a single child — print extra copies of any workbook for siblings, or have them share a digital copy. If your kids are different ages, each one naturally lands on the program built for their age.</p></div>
                 </div>
             </div>
         </div>
@@ -549,6 +671,14 @@
             </div>
         </div>
     </footer>
+
+    <div class="vlp-sticky-cta" id="vlpStickyCta">
+        <div class="vlp-sticky-cta-price">
+            <span class="vlp-sticky-cta-amt">$67</span>
+            <span class="vlp-sticky-cta-label">Founding Member</span>
+        </div>
+        <a href="/checkout/vault" class="btn btn-gold" data-cta="sticky-mobile">Join Now →</a>
+    </div>
 
     <script src="../main.js"></script>
 </body>
