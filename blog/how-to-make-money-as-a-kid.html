@@ -95,12 +95,37 @@
 
     <link rel="stylesheet" href="../styles.css">
     <style>
-        /* CTA Box Styles */
+        /* ── Article body readability ── */
+        .blog-article p {
+            margin-bottom: 1.5em;
+            line-height: 1.8;
+            font-size: 16.5px;
+            color: #2a2a2a;
+        }
+        .blog-article h2 {
+            margin-top: 2.4em;
+            margin-bottom: 0.6em;
+        }
+        .blog-article h3 {
+            margin-top: 1.8em;
+            margin-bottom: 0.5em;
+        }
+        /* Brand-green bold terms (activity names like "Babysitting.") */
+        .blog-article p > strong:first-child,
+        .blog-article li > strong:first-child {
+            color: #1E5C3A;
+            font-weight: 700;
+        }
+        /* All other inline strong stays dark but slightly green-tinted */
+        .blog-article strong {
+            color: #1a4a2e;
+        }
+        /* ── CTA Box Styles ── */
         .cta-box {
             background: linear-gradient(135deg, #1E5C3A 0%, #2d7a50 100%);
             border-radius: 16px;
             padding: 32px 36px;
-            margin: 36px 0;
+            margin: 40px 0;
             color: #fff;
         }
         .cta-box--gold {
@@ -112,7 +137,8 @@
             font-size: 11px;
             letter-spacing: .1em;
             text-transform: uppercase;
-            background: rgba(255,255,255,.2);
+            background: rgba(255,255,255,.25);
+            color: #fff;
             display: inline-block;
             padding: 4px 12px;
             border-radius: 100px;
@@ -121,15 +147,15 @@
         .cta-box-title {
             font-family: 'DM Serif Display', serif;
             font-size: 22px;
-            color: #fff;
+            color: #fff !important;
             margin: 0 0 12px;
             line-height: 1.3;
         }
         .cta-box-body {
-            font-size: 15px;
-            line-height: 1.65;
-            color: rgba(255,255,255,.9);
-            margin: 0 0 20px;
+            font-size: 15.5px;
+            line-height: 1.7;
+            color: #fff !important;
+            margin: 0 0 22px;
         }
         .cta-box-btn {
             display: inline-block;
@@ -138,70 +164,83 @@
             font-family: 'Nunito', sans-serif;
             font-weight: 800;
             font-size: 14px;
-            padding: 12px 24px;
+            padding: 13px 26px;
             border-radius: 8px;
             text-decoration: none;
             transition: opacity .2s;
         }
         .cta-box-btn:hover { opacity: .88; }
-        .cta-box-btn--gold {
-            color: #b87800;
-        }
+        .cta-box-btn--gold { color: #7a5000; }
+        /* ── Disclaimer ── */
         .disclaimer {
             font-size: 12px;
-            color: #888;
+            color: #999;
             border-top: 1px solid #eee;
             padding-top: 16px;
-            margin-top: 32px;
+            margin-top: 36px;
             font-style: italic;
         }
+        /* ── Table ── */
         .blog-article table {
             width: 100%;
             border-collapse: collapse;
-            margin: 24px 0;
+            margin: 28px 0;
             font-size: 14px;
         }
         .blog-article table th {
             background: #1E5C3A;
             color: #fff;
-            padding: 10px 14px;
+            padding: 12px 16px;
             text-align: left;
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
         }
         .blog-article table td {
-            padding: 10px 14px;
+            padding: 12px 16px;
             border-bottom: 1px solid #eee;
             vertical-align: top;
+            line-height: 1.55;
         }
-        .blog-article table tr:nth-child(even) td { background: #f8faf8; }
+        .blog-article table tr:nth-child(even) td { background: #f4f9f6; }
+        /* ── FAQ accordion ── */
         .blog-article details {
-            border: 1px solid #e0e8e4;
-            border-radius: 8px;
-            margin: 12px 0;
+            border: 1px solid #d6e8dc;
+            border-radius: 10px;
+            margin: 14px 0;
             overflow: hidden;
         }
         .blog-article details summary {
-            padding: 14px 18px;
+            padding: 15px 20px;
             font-family: 'Nunito', sans-serif;
             font-weight: 700;
             font-size: 15px;
             cursor: pointer;
-            background: #f8faf8;
+            background: #f4f9f6;
             list-style: none;
+            color: #1E5C3A;
         }
         .blog-article details summary::-webkit-details-marker { display: none; }
         .blog-article details summary::before {
             content: '+ ';
-            color: #1E5C3A;
-            font-weight: 800;
+            color: #F0A500;
+            font-weight: 900;
+        }
+        .blog-article details[open] summary {
+            background: #e8f4ed;
         }
         .blog-article details[open] summary::before { content: '− '; }
         .blog-article details p {
-            padding: 14px 18px;
+            padding: 16px 20px;
             margin: 0;
-            font-size: 14.5px;
-            line-height: 1.7;
+            font-size: 15px;
+            line-height: 1.75;
+            background: #fff;
+        }
+        /* ── Section divider ── */
+        .blog-article .section-divider {
+            border: none;
+            border-top: 2px solid #e8f4ed;
+            margin: 40px 0;
         }
     </style>
 </head>
@@ -228,7 +267,7 @@
             </div>
         </header>
 
-        <article class="legal-wrap blog-article">
+        <article class="legal-wrap blog-article" style="max-width:740px; padding-top:40px; padding-bottom:60px;">
 
             <p class="legal-intro">Learning how to make money as a kid isn't just about having cash for the latest video game — it's about building work ethic, understanding value, and developing financial skills that will compound for decades. The best part? Kids today have more creative, legitimate ways to earn than any generation before them.</p>
 
@@ -242,6 +281,7 @@
 
             <p>The goal isn't to turn childhood into a hustle. It's to give kids age-appropriate experiences with earning, so when the stakes get higher in adulthood, they've already built the instincts that matter.</p>
 
+            <hr class="section-divider">
             <h2>How Kids Ages 5–8 Can Make Money</h2>
 
             <p>Young kids can't run businesses, but they can absolutely start understanding the earn-spend-save cycle. The key is keeping opportunities simple, supervised, and tied to immediate results they can see and feel.</p>
@@ -256,6 +296,7 @@
 
             <p><strong>What to do with it:</strong> At this age, introduce a simple visual system. Use three clear jars labeled "Save," "Spend," and "Share." When they earn $3, help them split it: $1 in each jar. They'll see their savings grow, make intentional spending choices, and experience the joy of giving. This is the foundation of every wealth-building system they'll use later. Learn how to set it up in our guide to <a href="/blog/3-jar-system-for-kids">the 3-Jar System for kids</a>.</p>
 
+            <hr class="section-divider">
             <h2>Money-Making Ideas for Kids Ages 9–12</h2>
 
             <p>This is the golden age for kid entrepreneurship. Nine to twelve-year-olds have enough independence to take on real responsibility, but they're still young enough to be enthusiastic about creative projects. They can handle simple business math, manage a small schedule, and start thinking about earning with purpose.</p>
@@ -279,6 +320,7 @@
               <a href="/money-moves" class="cta-box-btn">Get Money Moves — $24 →</a>
             </div>
 
+            <hr class="section-divider">
             <h2>Money-Making Ideas for Teens Ages 13–15</h2>
 
             <p>Teenagers can start thinking like real entrepreneurs. They have the cognitive ability to plan ahead, market themselves, manage multiple clients, and understand more complex financial concepts like profit margins and hourly rates.</p>
@@ -302,6 +344,7 @@
               <a href="/programs/wealth-blueprint" class="cta-box-btn cta-box-btn--gold">Get Wealth Blueprint — $29 →</a>
             </div>
 
+            <hr class="section-divider">
             <h2>Ages 16–18: Real Income, Real Skills</h2>
 
             <p>At 16, the game changes. Teens can get traditional jobs, open their own bank accounts, and start building a real work history. But they also have opportunities their parents never had — remote work, freelancing, and online businesses that can scale beyond their zip code.</p>
@@ -316,6 +359,7 @@
 
             <p>This is also the age to introduce the concept of <strong>income streams</strong>. Having a part-time job plus a small freelance side business means they're never dependent on one source — that's psychological security as much as financial security.</p>
 
+            <hr class="section-divider">
             <h2>The Part Most Kids Skip: What to Do With the Money You Earn</h2>
 
             <p>Here's where most kids (and adults) stumble. Earning money feels great. Watching it disappear with nothing to show for it feels terrible. Without a simple system, money just evaporates into small purchases that don't matter a month later.</p>
@@ -332,6 +376,7 @@
 
             <p>For younger kids, <a href="/blog/3-jar-system-for-kids">the 3-Jar System</a> simplifies this to Save, Spend, and Share. As they get older, add the fourth category: Invest. What matters is the habit of dividing money with intention before it gets spent randomly.</p>
 
+            <hr class="section-divider">
             <h2>Age-by-Age Comparison: Earning Potential and Skills</h2>
 
             <table>
@@ -371,12 +416,14 @@
               </tbody>
             </table>
 
+            <hr class="section-divider">
             <h2>The Bottom Line</h2>
 
             <p>The best time to teach a kid about money is when they're earning some. Every dollar they make is a teaching moment — about value, about choices, about what they want their future to look like. The ideas in this guide aren't just ways to make money as a kid. They're the first chapters of a financial story that will define their adult life.</p>
 
             <p>Start where your child is. Pick one idea that fits their age and interests. Set up a simple money management system before the first dollar arrives. Then get out of the way and let them experience the pride of earning, the discipline of saving, and the freedom that comes from knowing how to make money work for them — not the other way around.</p>
 
+            <hr class="section-divider">
             <h2>Frequently Asked Questions</h2>
 
             <details>
