@@ -195,6 +195,7 @@ img { max-width: 100%; display: block; }
 }
 .hero h1 { font-size:clamp(34px,4vw,56px); margin-bottom:20px; }
 .hero h1 em { font-style:italic; color:var(--gold); }
+.hero-subtag { font-family:'DM Serif Display',serif; font-style:italic; font-size:22px; color:var(--gold); margin-bottom:18px; }
 .hero p { font-size:17px; color:rgba(255,255,255,.82); margin-bottom:34px; line-height:1.72; }
 .hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
 .hero-stats {
