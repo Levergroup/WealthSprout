@@ -296,12 +296,6 @@ if (vaultNotifyForm) {
     ];
 
     const FREE_KIT_URL = '/free-kit';
-    const FREE_KIT_CHECKS = [
-        'The 3-Jar System (Spend · Save · Give) with jar labels',
-        'Weekly Earning Tracker — chores to cash',
-        'My First Savings Goal worksheet',
-        'Parent Quick-Start Guide — set up in one weekend',
-    ];
 
     const RESULTS = {
         multi: {
@@ -409,8 +403,8 @@ if (vaultNotifyForm) {
         return `
             <div class="quiz-intro">
                 <div class="quiz-intro-banner">
-                    <span class="eyebrow eyebrow-gold">Free · 60 Seconds</span>
-                    <h2>Find the Right Program for Your Child</h2>
+                    <span class="eyebrow eyebrow-gold">Free · 60 seconds</span>
+                    <h2>Find the right financial curriculum for your child</h2>
                     <p>4 quick questions. Instant result. We'll match your child to the exact WealthSprout product built for their age and level — plus a free starter kit.</p>
                 </div>
                 <div class="quiz-perks">
@@ -443,10 +437,27 @@ if (vaultNotifyForm) {
     }
 
     function renderResult(result, answers) {
+        const showFreeKit = answers.age === '5-8' || answers.age === '9-12';
+        const freekit = !showFreeKit ? '' : `
+                <div class="quiz-divider"><span>Want to start for free first?</span></div>
+
+                <div class="quiz-freekit">
+                    <div class="quiz-freekit-head">
+                        <span class="quiz-freekit-icon">🎁</span>
+                        <div>
+                            <p class="quiz-freekit-name">My First Money Kit</p>
+                            <p class="quiz-freekit-meta">12-page printable PDF · Ages 5–10</p>
+                        </div>
+                        <span class="quiz-freekit-badge">FREE</span>
+                    </div>
+                    <p class="quiz-freekit-bridge">${escapeHtml(result.kitBridge)}</p>
+                    <a href="${FREE_KIT_URL}" class="btn btn-outline-gold btn-block">Grab the Free Kit — $0 →</a>
+                </div>`;
+
         return `
             <div class="quiz-result">
                 <div class="quiz-result-header">
-                    <span class="eyebrow eyebrow-gold">Your Personalized Match</span>
+                    <span class="eyebrow eyebrow-gold">Your personalized match</span>
                     <div class="quiz-result-title">
                         <span class="quiz-result-cover">${result.cover}</span>
                         <div>
@@ -458,24 +469,8 @@ if (vaultNotifyForm) {
                 </div>
 
                 <div class="quiz-includes">
-                    <p class="quiz-includes-label">What's Inside</p>
+                    <p class="quiz-includes-label">What's inside</p>
                     <div class="quiz-include-list">${renderIncludeList(result.includes, '✦')}</div>
-                </div>
-
-                <div class="quiz-divider"><span>Start here — it's free</span></div>
-
-                <div class="quiz-freekit">
-                    <div class="quiz-freekit-head">
-                        <span class="quiz-freekit-icon">🎁</span>
-                        <div>
-                            <p class="quiz-freekit-name">My First Money Kit</p>
-                            <p class="quiz-freekit-meta">12-page printable PDF · Instant download</p>
-                        </div>
-                        <span class="quiz-freekit-badge">Free</span>
-                    </div>
-                    <p class="quiz-freekit-bridge">${escapeHtml(result.kitBridge)}</p>
-                    <div class="quiz-include-list">${renderIncludeList(FREE_KIT_CHECKS, '✓')}</div>
-                    <a href="${FREE_KIT_URL}" class="btn btn-gold btn-block">Grab the Free Kit — $0 →</a>
                 </div>
 
                 <div class="quiz-paid">
@@ -483,11 +478,12 @@ if (vaultNotifyForm) {
                         <p class="quiz-paid-name">${escapeHtml(result.product)}</p>
                         <span class="quiz-paid-price">${result.price}</span>
                     </div>
-                    <p class="quiz-paid-sub">Ready to go deeper? This is your child's complete curriculum — not a preview.</p>
-                    <a href="${buildProductUrl(result.url, answers)}" class="btn btn-outline btn-block">Get ${escapeHtml(result.product)} — ${result.price} →</a>
+                    <p class="quiz-paid-sub">This is your child's complete curriculum — built specifically for their age and exactly where they are right now.</p>
+                    <a href="${buildProductUrl(result.url, answers)}" class="btn btn-green btn-block">Get ${escapeHtml(result.product)} — ${result.price} →</a>
                 </div>
 
                 <p class="quiz-guarantee">Instant PDF download · 30-day money-back guarantee</p>
+                ${freekit}
                 <button type="button" class="quiz-restart" data-action="restart">↺ Retake the quiz</button>
             </div>`;
     }
