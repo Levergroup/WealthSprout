@@ -98,11 +98,16 @@
         /* Section headings */
         .adv-body h2 {
             font-family: 'DM Serif Display', serif;
-            font-size: clamp(20px, 3.5vw, 26px);
+            font-size: clamp(22px, 4vw, 29px);
             color: #1E5C3A;
             margin: 2.6em 0 0.6em;
             line-height: 1.3;
         }
+        .adv-body h2::before {
+            content: "→ ";
+            color: #F0A500;
+        }
+        .comp-card-title::before { content: none; }
 
         /* Methodology box */
         .methodology-box {
@@ -345,7 +350,7 @@
         }
         .founding-box h2 {
             font-family: 'DM Serif Display', serif;
-            font-size: clamp(20px, 3.5vw, 24px);
+            font-size: clamp(22px, 4vw, 27px);
             color: #1E5C3A;
             margin: 0 0 14px;
         }
@@ -389,7 +394,7 @@
         }
         .final-cta h2 {
             font-family: 'DM Serif Display', serif;
-            font-size: clamp(20px, 4vw, 28px);
+            font-size: clamp(24px, 4.5vw, 33px);
             color: #fff;
             margin: 0 0 16px;
             line-height: 1.3;
@@ -570,7 +575,8 @@
                     <h2 class="comp-card-title" style="margin:0;">Khan Academy</h2>
                 </div>
                 <p>Khan Academy's personal finance course is genuinely well-made. It's free, comprehensive, and covers budgeting, credit, insurance, and taxes in detail. The brand carries trust that very few educational platforms have earned. If you're evaluating pure content quality, Khan delivers.</p>
-                <p>But it's built for classroom self-study, not parent-child engagement. There's no age-tiered progression — the same flat course gets presented to an 8-year-old and a 16-year-old. There are no printables, no guided exercises, no parent prompts. Your child watches videos and answers multiple-choice questions. That works if your child is self-motivated enough to complete video courses unprompted. Most aren't.</p>
+                <p>But it's built for classroom self-study, not parent-child engagement. There's no age-tiered progression — the same flat course gets presented to an 8-year-old and a 16-year-old.</p>
+                <p>There are no printables, no guided exercises, no parent prompts. Your child watches videos and answers multiple-choice questions. That works if your child is self-motivated enough to complete video courses unprompted. Most aren't.</p>
                 <div class="comp-best-for"><strong>Best for:</strong> A self-directed 16-year-old who will actually watch the videos without being reminded.</div>
                 <div class="comp-verdict">Excellent free resource for motivated older teenagers. Not a solution for families with younger kids or parents who want to be involved in the teaching process.</div>
             </div>
@@ -594,7 +600,8 @@
                     <h2 class="comp-card-title" style="margin:0;">Greenlight (Debit Card + App)</h2>
                 </div>
                 <p>Greenlight is genuinely excellent for what it does. It's a real money management tool — spending controls, savings goals, chore tracking, and a surprisingly capable investing feature. Kids get hands-on experience making spending decisions, setting goals, and watching money grow. The investing component is better than most fintech companies bother to build.</p>
-                <p>But Greenlight is a financial tool, not a financial education curriculum. It teaches habits through doing, but it doesn't explain the <em>why</em>. A child can use Greenlight for three years and still not understand compound interest or why index funds outperform actively managed funds. They'll know how to set a savings goal. They won't know what that savings should be invested in or why that matters. It costs $5.99 to $14.99 per month, ongoing, forever.</p>
+                <p>But Greenlight is a financial tool, not a financial education curriculum. It teaches habits through doing, but it doesn't explain the <em>why</em>. A child can use Greenlight for three years and still not understand compound interest or why index funds outperform actively managed funds.</p>
+                <p>They'll know how to set a savings goal. They won't know what that savings should be invested in or why that matters. It costs $5.99 to $14.99 per month, ongoing, forever.</p>
                 <div class="comp-best-for"><strong>Best for:</strong> Families who want a hands-on money management tool alongside a proper curriculum.</div>
                 <div class="comp-verdict">Use Greenlight AND a curriculum — they're not the same thing. One manages money in real time. The other teaches the concepts that make those management decisions informed.</div>
             </div>
@@ -618,7 +625,8 @@
                     <h2 class="comp-card-title" style="margin:0;">YouTube (Various Channels)</h2>
                 </div>
                 <p>YouTube has some genuinely excellent content creators who explain financial concepts clearly. Channels dedicated to personal finance, investing, and money management offer free, accessible content anytime. Some videos are better than most paid courses.</p>
-                <p>But there's no curriculum. No progression. No exercises or application. A child watches a compound interest video, understands it for eight minutes, then watches something else. There's no scaffolding, no age filter, no parental guidance structure, no deliverable. Passive consumption is not financial education. Understanding a concept in a video and being able to apply it six months later are entirely different outcomes.</p>
+                <p>But there's no curriculum. No progression. No exercises or application. A child watches a compound interest video, understands it for eight minutes, then watches something else.</p>
+                <p>There's no scaffolding, no age filter, no parental guidance structure, no deliverable. Passive consumption is not financial education. Understanding a concept in a video and being able to apply it six months later are entirely different outcomes.</p>
                 <div class="comp-best-for"><strong>Best for:</strong> Supplemental explanation of specific concepts when your child asks a question.</div>
                 <div class="comp-verdict">Great for explaining one concept at a time. Not a curriculum. Not even close.</div>
             </div>
@@ -681,7 +689,7 @@
                     <strong style="color:#F0A500;">One honest limitation:</strong> WealthSprout is a newer brand. It doesn't have 30 years of institutional history like Junior Achievement or Silicon Valley funding like Greenlight. What it has is a complete, professionally designed curriculum built specifically for the home use case that every other option ignores. Evaluate that on its merits.
                 </div>
 
-                <a href="/vault" class="ws-cta-btn">See Everything Included In The Library →</a>
+                <a href="/programs/vault" class="ws-cta-btn">See Everything Included In The Library →</a>
             </div>
 
             <hr class="adv-divider">
@@ -689,7 +697,8 @@
             <!-- FOUNDING MEMBER -->
             <div class="founding-box">
                 <h2>Founding Member Pricing Ends When the Next Product Drops</h2>
-                <p>The Family Library currently contains four core products. Over the next 12 months, additional products are being added — a Stock Market Starter Guide, a Young Entrepreneur Playbook, a Teen Investor's Handbook, a Side Hustle Bible, and more. Every product added increases the Library price permanently. Founding members receive every future addition automatically, at no extra cost, forever.</p>
+                <p>The Family Library currently contains four core products. Over the next 12 months, additional products are being added — a Stock Market Starter Guide, a Young Entrepreneur Playbook, a Teen Investor's Handbook, a Side Hustle Bible, and more.</p>
+                <p>Every product added increases the Library price permanently. Founding members receive every future addition automatically, at no extra cost, forever.</p>
                 <div class="price-row">
                     <span class="price-pill">Current: $67</span>
                     <span class="price-pill future">After next drop: $97</span>
@@ -701,8 +710,9 @@
             <!-- FINAL CTA -->
             <div class="final-cta">
                 <h2>There's No Perfect Option — But There Is One Complete One</h2>
-                <p>Every tool reviewed above has a legitimate use case. But if the question is which one gives a parent the most complete, home-usable, age-appropriate financial curriculum for kids 5 to 18 — the answer isn't complicated. The gap this article started with — a 15-year-old who doesn't know what an index fund is — is exactly what the Family Library is built to close. Starting at age 5, not age 15.</p>
-                <a href="/vault" class="final-cta-btn">See Everything Included In The Library →</a>
+                <p>Every tool reviewed above has a legitimate use case. But if the question is which one gives a parent the most complete, home-usable, age-appropriate financial curriculum for kids 5 to 18 — the answer isn't complicated.</p>
+                <p>The gap this article started with — a 15-year-old who doesn't know what an index fund is — is exactly what the Family Library is built to close. Starting at age 5, not age 15.</p>
+                <a href="/programs/vault" class="final-cta-btn">See Everything Included In The Library →</a>
             </div>
 
             <p class="disclaimer">This article contains affiliate links. WealthSprout may earn a commission if you purchase through our links, at no additional cost to you. All opinions are our own. This article is for informational and educational purposes only.</p>
@@ -711,9 +721,58 @@
     </main>
 
     <footer class="footer">
-        <div class="wrap footer-inner">
-            <a href="/" class="logo footer-logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
-            <p class="footer-copy">© 2026 WealthSprout. All rights reserved. · <a href="/privacy-policy">Privacy Policy</a> · <a href="/terms-of-service">Terms</a></p>
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
+                    <p>Financial literacy education for kids ages 5–18 — workbooks, guides, and tools that teach what school doesn't.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/wealthsprout" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+                        <a href="https://www.instagram.com/wealthsprout" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                        <a href="https://www.pinterest.com/wealthsprout" aria-label="Pinterest" target="_blank" rel="noopener">PN</a>
+                        <a href="https://www.tiktok.com/@wealthsprout" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="/free-kit">My First Money Kit</a></li>
+                        <li><a href="/money-seeds">Money Seeds</a></li>
+                        <li><a href="/money-moves">Money Moves</a></li>
+                        <li><a href="/programs/wealth-blueprint">Wealth Blueprint</a></li>
+                        <li><a href="/programs/launch-rich">Launch Rich</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/#how-it-works">How It Works</a></li>
+                        <li><a href="/#vault">The Family Collection</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:hello@wealthsproutkids.com">hello@wealthsproutkids.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/cookie-policy">Cookie Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/financial-disclaimer">Financial Disclaimer</a></li>
+                        <li><a href="/advertising-disclosure">Advertising Disclosure</a></li>
+                        <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 WealthSprout. All rights reserved. WealthSprout is an educational company. Nothing on this site constitutes financial advice. See our <a href="/financial-disclaimer">Financial Disclaimer</a>.</span>
+            </div>
         </div>
     </footer>
 

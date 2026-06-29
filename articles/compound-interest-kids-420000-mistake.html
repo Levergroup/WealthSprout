@@ -21,6 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -181,10 +182,14 @@
     }
     .article-body h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.6rem;
+      font-size: 1.75rem;
       color: #1E5C3A;
       margin: 2.4em 0 0.8em;
       line-height: 1.3;
+    }
+    .article-body h2::before {
+      content: "→ ";
+      color: #F0A500;
     }
     .article-body strong {
       color: #1E5C3A;
@@ -407,14 +412,6 @@
       transition: background 0.2s;
     }
     .cta-btn:hover { background: #d4920a; }
-    .cta-secondary {
-      display: block;
-      margin-top: 12px;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-    }
-    .cta-secondary:hover { color: #fff; }
 
     /* TESTIMONIALS */
     .testimonials { margin: 36px 0; }
@@ -462,7 +459,7 @@
     }
     .final-cta h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.8rem;
+      font-size: 1.95rem;
       color: #fff !important;
       margin: 0 0 12px !important;
       line-height: 1.3;
@@ -473,20 +470,17 @@
       font-size: 0.95rem;
     }
     .final-cta .cta-btn { font-size: 1rem; padding: 16px 32px; }
-    .final-cta .cta-secondary { color: rgba(255,255,255,0.65); }
-    .final-cta .cta-secondary:hover { color: #fff; }
 
-    /* FOOTER */
-    .site-footer {
-      background: #1A1A2E;
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 0.8rem;
-      line-height: 1.8;
+    /* DISCLAIMER */
+    .disclaimer {
+      font-size: 12px;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+      margin-top: 40px;
+      font-style: italic;
+      font-family: 'Inter', sans-serif;
     }
-    .site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-    .site-footer a:hover { color: #F0A500; }
 
     @media (max-width: 600px) {
       .article-hero img { height: 280px; }
@@ -503,7 +497,7 @@
 <!-- NAV -->
 <nav class="site-nav">
   <a href="/" class="logo">Wealth<span>Sprout</span>™</a>
-  <a href="/vault" class="nav-cta">Get The Library →</a>
+  <a href="/programs/vault" class="nav-cta">Get The Library →</a>
 </nav>
 
 <!-- HERO IMAGE -->
@@ -720,21 +714,27 @@
         <div class="step-num">1</div>
         <div class="step-content">
           <h3>Start with something physical</h3>
-          <p>Take a piece of paper. Any paper. Fold it in half. Fold it in half again. Keep folding. By fold 7, it's getting thick. By fold 10, it's hard to fold anymore. If you could keep folding it — by fold 42, mathematically, it would reach the moon. This is exponential growth. This is the same principle as compound interest. Kids who see this visual get it immediately. Growth that seems impossible becomes real when they hold the folded paper in their hands.</p>
+          <p>Take a piece of paper. Any paper. Fold it in half. Fold it in half again. Keep folding.</p>
+          <p>By fold 7, it's getting thick. By fold 10, it's hard to fold anymore. If you could keep folding it — by fold 42, mathematically, it would reach the moon. This is exponential growth. This is the same principle as compound interest.</p>
+          <p>Kids who see this visual get it immediately. Growth that seems impossible becomes real when they hold the folded paper in their hands.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">2</div>
         <div class="step-content">
           <h3>Do the math together</h3>
-          <p>Use a free compound interest calculator. Search "compound interest calculator" and use the investor.gov version. Don't explain it first. Just sit next to your child, pull it up, and let them help you fill it in. Starting amount: $0. Monthly contribution: $50. Interest rate: 8%. Starting age: whatever age they are today. Ending age: 65. Let them press the button. Let them see the number. Let them react first. Then go back and change the starting age to 25. Let them feel the difference. That's when the concept moves from abstract to visceral.</p>
+          <p>Use a free compound interest calculator. Search "compound interest calculator" and use the investor.gov version. Don't explain it first — just sit next to your child, pull it up, and let them help you fill it in.</p>
+          <p>Starting amount: $0. Monthly contribution: $50. Interest rate: 8%. Starting age: whatever age they are today. Ending age: 65. Let them press the button. Let them see the number. Let them react first.</p>
+          <p>Then go back and change the starting age to 25. Let them feel the difference. That's when the concept moves from abstract to visceral.</p>
         </div>
       </div>
       <div class="step-item">
         <div class="step-num">3</div>
         <div class="step-content">
           <h3>Make it real with a small action</h3>
-          <p>If they don't already have a savings account, open one together this week. If they do, log in together and look at the balance. Put $10 in it. Just $10. Then show them that this $10 — right now, today — will be worth roughly $217 by the time they're 65 if it earns 8% annually. $10 becoming $217. That's the moment it stops being math and starts being motivation. They don't need to fully understand the formula. They need to feel the pull of watching their own money grow.</p>
+          <p>If they don't already have a savings account, open one together this week. If they do, log in together and look at the balance.</p>
+          <p>Put $10 in it. Just $10. Then show them that this $10 — right now, today — will be worth roughly $217 by the time they're 65 if it earns 8% annually. $10 becoming $217.</p>
+          <p>That's the moment it stops being math and starts being motivation. They don't need to fully understand the formula. They need to feel the pull of watching their own money grow.</p>
         </div>
       </div>
     </div>
@@ -748,8 +748,7 @@
       <div class="cta-label">Ages 9–12 · Compound Interest Chapter Included</div>
       <h3>Money Moves — The Workbook That Makes This Math Stick</h3>
       <p>Includes the paper-folding visual, real math exercises, and a 30-day savings goal tracker. Designed for you and your child to work through together.</p>
-      <a href="https://wealthsproutkids.com/money-moves" class="cta-btn">Get Money Moves for $24 →</a>
-      <a href="https://wealthsproutkids.com/vault" class="cta-secondary">Or get the full Family Library (all ages 5–18) for $67 →</a>
+      <a href="/money-moves" class="cta-btn">Get Money Moves for $24 →</a>
     </div>
 
     <h2>The Complete Financial Education Your Child Actually Needs</h2>
@@ -800,19 +799,71 @@
     <!-- FINAL CTA -->
     <div class="final-cta">
       <h2>Give your child the financial education that changes the math.</h2>
-      <p>You learned about compound interest at some point. Maybe in your 20s. Maybe your 30s. Maybe just now, reading this article. You probably had a moment — quiet, a little uncomfortable — where you thought about what would be different if you'd known this at 10. That moment is worth something. Your child is the right age right now. The compound interest math doesn't care about good intentions. It responds to action.</p>
-      <a href="https://wealthsproutkids.com/vault" class="cta-btn">Get The WealthSprout Family Library →</a>
-      <a href="https://wealthsproutkids.com/money-moves" class="cta-secondary">Want just the ages 9–12 workbook? Get Money Moves for $24 →</a>
+      <p>You learned about compound interest at some point — maybe in your 20s, maybe your 30s, maybe just now, reading this article. You probably had a moment, quiet and a little uncomfortable, where you thought about what would be different if you'd known this at 10.</p>
+      <p>That moment is worth something. Your child is the right age right now. The compound interest math doesn't care about good intentions — it responds to action.</p>
+      <a href="/programs/vault" class="cta-btn">Get The WealthSprout Family Library →</a>
     </div>
+
+    <p class="disclaimer">This article contains affiliate links. WealthSprout may earn a commission if you purchase through our links, at no additional cost to you. All opinions are our own. This article is for informational and educational purposes only. All compound interest calculations in this article use $50/month contributions, 8% annual return, and monthly compounding; past investment performance does not guarantee future results. Consult a qualified financial advisor before making investment decisions for minors.</p>
 
   </div><!-- /.article-body -->
 </div><!-- /.article-wrap -->
 
 <!-- FOOTER -->
-<footer class="site-footer">
-  <p><a href="/">WealthSprout™</a> · Grow Smart. Start Young.</p>
-  <p style="margin-top:8px;"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/blog">Blog</a></p>
-  <p style="margin-top:12px; font-size:0.75rem; max-width:560px; margin-left:auto; margin-right:auto;">This article is for informational and educational purposes only. All compound interest calculations use $50/month contributions, 8% annual return, monthly compounding. Past investment performance does not guarantee future results. Consult a qualified financial advisor before making investment decisions for minors.</p>
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
+                <p>Financial literacy education for kids ages 5–18 — workbooks, guides, and tools that teach what school doesn't.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/wealthsprout" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+                    <a href="https://www.instagram.com/wealthsprout" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                    <a href="https://www.pinterest.com/wealthsprout" aria-label="Pinterest" target="_blank" rel="noopener">PN</a>
+                    <a href="https://www.tiktok.com/@wealthsprout" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="/free-kit">My First Money Kit</a></li>
+                    <li><a href="/money-seeds">Money Seeds</a></li>
+                    <li><a href="/money-moves">Money Moves</a></li>
+                    <li><a href="/programs/wealth-blueprint">Wealth Blueprint</a></li>
+                    <li><a href="/programs/launch-rich">Launch Rich</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="/#how-it-works">How It Works</a></li>
+                    <li><a href="/#vault">The Family Collection</a></li>
+                    <li><a href="/#faq">FAQ</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="mailto:hello@wealthsproutkids.com">hello@wealthsproutkids.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/financial-disclaimer">Financial Disclaimer</a></li>
+                    <li><a href="/advertising-disclosure">Advertising Disclosure</a></li>
+                    <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 WealthSprout. All rights reserved. WealthSprout is an educational company. Nothing on this site constitutes financial advice. See our <a href="/financial-disclaimer">Financial Disclaimer</a>.</span>
+        </div>
+    </div>
 </footer>
 
 </body>
