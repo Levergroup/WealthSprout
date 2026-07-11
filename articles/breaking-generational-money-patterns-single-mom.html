@@ -19,6 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -127,10 +128,14 @@
     }
     .article-body h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.5rem;
+      font-size: 1.65rem;
       color: #1E5C3A;
       margin: 2.8em 0 0.9em;
       line-height: 1.3;
+    }
+    .article-body h2::before {
+      content: "→ ";
+      color: #F0A500;
     }
     .article-body strong { color: #1E5C3A; font-weight: 700; }
     .article-body em { font-style: italic; color: #444; }
@@ -204,15 +209,6 @@
       border-radius: 8px;
       text-decoration: none;
     }
-    .cta-secondary-link {
-      display: block;
-      margin-top: 12px;
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.65) !important;
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-    .cta-secondary-link:hover { color: #fff !important; }
 
     /* TESTIMONIALS */
     .testimonials { margin: 36px 0; }
@@ -259,7 +255,7 @@
     }
     .final-cta h2 {
       font-family: 'DM Serif Display', serif;
-      font-size: 1.7rem;
+      font-size: 1.9rem;
       color: #fff !important;
       margin: 0 0 20px !important;
       line-height: 1.35;
@@ -290,22 +286,15 @@
       font-size: 1rem;
       padding: 16px 32px;
     }
-    .final-cta .cta-secondary-link {
-      margin-top: 14px;
-      font-size: 0.85rem;
+    .disclaimer {
+      font-size: 12px;
+      color: #aaa;
+      border-top: 1px solid #eee;
+      padding-top: 16px;
+      margin-top: 40px;
+      font-style: italic;
+      font-family: 'Inter', sans-serif;
     }
-
-    /* FOOTER */
-    .site-footer {
-      background: #1A1A2E;
-      color: rgba(255,255,255,0.5);
-      text-align: center;
-      padding: 32px 24px;
-      font-size: 0.8rem;
-      line-height: 1.8;
-    }
-    .site-footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
-    .site-footer a:hover { color: #F0A500; }
 
     @media (max-width: 600px) {
       .article-hero img { height: 280px; }
@@ -353,7 +342,9 @@
 
     <p>We talked <em>around</em> money constantly. We just never talked about it.</p>
 
-    <p>I didn't know what a credit score was until mine was already damaged. I didn't understand interest rates until I was paying 24% on a credit card I opened at 19 because someone on a college campus offered me a free T-shirt to sign up for it. I didn't know what a budget was — a real one, not just a vague sense of "don't spend too much" — until I was 27 and in enough financial pain to finally sit down and figure it out.</p>
+    <p>I didn't know what a credit score was until mine was already damaged. I didn't understand interest rates until I was paying 24% on a credit card I opened at 19 because someone on a college campus offered me a free T-shirt to sign up for it.</p>
+
+    <p>I didn't know what a budget was — a real one, not just a vague sense of "don't spend too much" — until I was 27 and in enough financial pain to finally sit down and figure it out.</p>
 
     <p class="punch">By then, I'd already made most of the expensive mistakes.</p>
 
@@ -433,8 +424,7 @@
       <div class="cta-label">Free · Ages 5–10 · Start This Weekend</div>
       <h3>My First Money Kit — The 3-Jar System, Fully Illustrated</h3>
       <p>12 pages. Jar labels to print, a weekly earning tracker, and a first savings goal worksheet. Free. Something you and your child can do together in 20 minutes.</p>
-      <a href="https://wealthsproutkids.com/free-kit" class="cta-btn-gold">Get My First Money Kit — Free →</a>
-      <a href="https://wealthsproutkids.com/vault" class="cta-secondary-link">Ready for the complete system? Get the WealthSprout Family Library for $67 →</a>
+      <a href="/free-kit" class="cta-btn-gold">Get My First Money Kit — Free →</a>
     </div>
 
     <h2>The Part Where I Talk About What Changed</h2>
@@ -514,18 +504,68 @@
       <p class="closing-body">They're learning whether money is something to fear or something to manage. Whether it's a source of stress or a tool they can learn to use.</p>
       <p class="closing-punch">Give them a framework for what they're watching. It changes everything.</p>
       <p class="cta-line">Start with the free kit. See what happens.</p>
-      <a href="https://wealthsproutkids.com/free-kit" class="cta-btn-gold">Get My First Money Kit — Free →</a>
-      <a href="https://wealthsproutkids.com/vault" class="cta-secondary-link">Ready for the complete system? Get the WealthSprout Family Library for $67 →</a>
+      <a href="/free-kit" class="cta-btn-gold">Get My First Money Kit — Free →</a>
     </div>
+
+    <p class="disclaimer">This article contains affiliate links. WealthSprout may earn a commission if you purchase through our links, at no additional cost to you. All opinions are our own. This article is for informational and educational purposes only. Individual financial experiences vary. WealthSprout is an educational company — nothing on this site constitutes financial advice. Consult a qualified financial advisor before making financial decisions.</p>
 
   </div><!-- /.article-body -->
 </div><!-- /.article-wrap -->
 
-<!-- FOOTER -->
-<footer class="site-footer">
-  <p><a href="/">WealthSprout™</a> · Grow Smart. Start Young.</p>
-  <p style="margin-top:8px;"><a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="/blog">Blog</a></p>
-  <p style="margin-top:12px; font-size:0.75rem; max-width:560px; margin-left:auto; margin-right:auto;">This article is for informational and educational purposes only. Individual financial experiences vary. WealthSprout is an educational company — nothing on this site constitutes financial advice.</p>
+<footer class="footer">
+    <div class="wrap">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
+                <p>Financial literacy education for kids ages 5–18 — workbooks, guides, and tools that teach what school doesn't.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/wealthsprout" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+                    <a href="https://www.instagram.com/wealthsprout" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                    <a href="https://www.pinterest.com/wealthsprout" aria-label="Pinterest" target="_blank" rel="noopener">PN</a>
+                    <a href="https://www.tiktok.com/@wealthsprout" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Programs</h4>
+                <ul>
+                    <li><a href="/free-kit">My First Money Kit</a></li>
+                    <li><a href="/money-seeds">Money Seeds</a></li>
+                    <li><a href="/money-moves">Money Moves</a></li>
+                    <li><a href="/programs/wealth-blueprint">Wealth Blueprint</a></li>
+                    <li><a href="/programs/launch-rich">Launch Rich</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#vault">The Family Collection</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="mailto:hello@wealthsproutkids.com">hello@wealthsproutkids.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="/privacy-policy">Privacy Policy</a></li>
+                    <li><a href="/cookie-policy">Cookie Policy</a></li>
+                    <li><a href="/terms-of-service">Terms of Service</a></li>
+                    <li><a href="/financial-disclaimer">Financial Disclaimer</a></li>
+                    <li><a href="/advertising-disclosure">Advertising Disclosure</a></li>
+                    <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 WealthSprout. All rights reserved. WealthSprout is an educational company. Nothing on this site constitutes financial advice. See our <a href="/financial-disclaimer">Financial Disclaimer</a>.</span>
+        </div>
+    </div>
 </footer>
 
 </body>
