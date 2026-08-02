@@ -25,6 +25,11 @@
       ],
       "destination": "https://www.wealthsproutkids.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/programs/vault",
+      "destination": "/vault",
+      "permanent": true
     }
   ],
   "builds": [
