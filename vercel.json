@@ -30,6 +30,16 @@
       "source": "/programs/vault",
       "destination": "/vault",
       "permanent": true
+    },
+    {
+      "source": "/programs/wealth-blueprint",
+      "destination": "/wealth-blueprint",
+      "permanent": true
+    },
+    {
+      "source": "/programs/launch-rich",
+      "destination": "/launch-rich",
+      "permanent": true
     }
   ],
   "builds": [
