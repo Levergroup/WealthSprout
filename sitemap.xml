@@ -99,6 +99,12 @@
 
   <!-- BLOG ARTICLES -->
   <url>
+    <loc>https://wealthsproutkids.com/blog/savings-goal-worksheet-for-kids</loc>
+    <lastmod>2026-08-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.wealthsproutkids.com/blog/3-jar-system-for-kids</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
