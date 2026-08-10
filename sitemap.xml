@@ -372,6 +372,12 @@
   </url>
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
+    <url>
+      <loc>https://wealthsproutkids.com/blog/teach-kids-about-money-this-weekend</loc>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+      <lastmod>2026-08-10</lastmod>
+    </url>
   <url>
     <loc>https://wealthsproutkids.com/blog/what-should-a-13-year-old-know-about-money</loc>
     <lastmod>2026-08-10</lastmod>
