@@ -373,6 +373,12 @@
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
 <url>
+  <loc>https://www.wealthsproutkids.com/blog/financial-literacy-for-teens-workbook</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-08-13</lastmod>
+</url>
+<url>
   <loc>https://www.wealthsproutkids.com/blog/how-to-teach-a-16-year-old-about-money</loc>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
