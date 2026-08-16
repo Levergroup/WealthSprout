@@ -14,7 +14,7 @@ Write and publish a complete, SEO-optimised blog post as a static HTML file. Eve
 
 - Blog posts about general money topics → save as `/blog/YOUR-SLUG.html`
 - The URL slug must be lowercase, hyphenated, keyword-rich, and match the H1 topic exactly
-- The canonical URL is `https://www.wealthsprout.com/blog/YOUR-SLUG`
+- The canonical URL is `https://www.wealthsproutkids.com/blog/YOUR-SLUG`
 
 ---
 
@@ -28,23 +28,31 @@ Write and publish a complete, SEO-optimised blog post as a static HTML file. Eve
 
 <meta name="description" content="[150–160 char description. Uses primary keyword naturally in first sentence. Ends with a clear action hook.]">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.wealthsprout.com/blog/YOUR-SLUG">
+<link rel="canonical" href="https://www.wealthsproutkids.com/blog/YOUR-SLUG">
 
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
-<meta property="og:url" content="https://www.wealthsprout.com/blog/YOUR-SLUG">
+<meta property="og:url" content="https://www.wealthsproutkids.com/blog/YOUR-SLUG">
 <meta property="og:title" content="[Same as title tag, without | WealthSprout]">
 <meta property="og:description" content="[Same as meta description]">
-<meta property="og:image" content="https://www.wealthsprout.com/blog/images/YOUR-SLUG-hero.jpg">
+<meta property="og:image" content="https://www.wealthsproutkids.com/blog/images/YOUR-SLUG-hero.jpg">
 <meta property="og:site_name" content="WealthSprout">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="[Same as og:title]">
 <meta name="twitter:description" content="[Same as meta description]">
-<meta name="twitter:image" content="https://www.wealthsprout.com/blog/images/YOUR-SLUG-hero.jpg">
+<meta name="twitter:image" content="https://www.wealthsproutkids.com/blog/images/YOUR-SLUG-hero.jpg">
 
-<link rel="llms" href="https://www.wealthsprout.com/llms.txt">
-<meta name="ai-content-declaration" content="https://www.wealthsprout.com/llms.txt">
+<link rel="alternate" type="text/plain" title="LLMs.txt" href="https://www.wealthsproutkids.com/llms.txt">
+<meta name="ai-content-declaration" content="https://www.wealthsproutkids.com/llms.txt">
+
+<!-- Hreflang — add ONLY when a Portuguese counterpart exists for this article.
+     If there is a /blog/pt/SLUG-PT version of this post, include all three tags:
+     <link rel="alternate" hreflang="en"    href="https://www.wealthsproutkids.com/blog/YOUR-SLUG">
+     <link rel="alternate" hreflang="pt-BR" href="https://www.wealthsproutkids.com/blog/pt/SLUG-PT">
+     <link rel="alternate" hreflang="x-default" href="https://www.wealthsproutkids.com/blog/YOUR-SLUG">
+     The matching hreflang tags must also appear on the PT article.
+     Omit entirely when no PT version exists yet. -->
 ```
 
 ### Favicon — use this exact tag, do not substitute external image URLs
@@ -62,16 +70,16 @@ Write and publish a complete, SEO-optimised blog post as a static HTML file. Eve
   "@type": "BlogPosting",
   "headline": "[Full H1 text]",
   "description": "[Meta description]",
-  "image": "https://www.wealthsprout.com/blog/images/YOUR-SLUG-hero.jpg",
+  "image": "https://www.wealthsproutkids.com/blog/images/YOUR-SLUG-hero.jpg",
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
   "author": { "@type": "Organization", "name": "WealthSprout" },
   "publisher": {
     "@type": "Organization",
     "name": "WealthSprout",
-    "logo": { "@type": "ImageObject", "url": "https://www.wealthsprout.com/logo.png" }
+    "logo": { "@type": "ImageObject", "url": "https://www.wealthsproutkids.com/logo.png" }
   },
-  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.wealthsprout.com/blog/YOUR-SLUG" }
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.wealthsproutkids.com/blog/YOUR-SLUG" }
 }
 ```
 
@@ -96,9 +104,9 @@ Write and publish a complete, SEO-optimised blog post as a static HTML file. Eve
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.wealthsprout.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.wealthsprout.com/blog" },
-    { "@type": "ListItem", "position": 3, "name": "[Article title]", "item": "https://www.wealthsprout.com/blog/YOUR-SLUG" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.wealthsproutkids.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.wealthsproutkids.com/blog" },
+    { "@type": "ListItem", "position": 3, "name": "[Article title]", "item": "https://www.wealthsproutkids.com/blog/YOUR-SLUG" }
   ]
 }
 ```
@@ -368,7 +376,7 @@ Push to the active development branch.
 - [ ] Canonical URL correct
 - [ ] All three JSON-LD blocks present (BlogPosting, FAQPage, BreadcrumbList)
 - [ ] Favicon uses the SVG emoji tag (not an external image URL)
-- [ ] Publisher logo URL is `https://www.wealthsprout.com/logo.png`
+- [ ] Publisher logo URL is `https://www.wealthsproutkids.com/logo.png`
 - [ ] `../styles.css` linked
 - [ ] `.blog-article h2::before` CSS added
 - [ ] H1 contains primary keyword
@@ -384,4 +392,6 @@ Push to the active development branch.
 - [ ] Disclaimer paragraph included
 - [ ] Canonical footer copied verbatim
 - [ ] Blog card added as first entry in `blog/index.html`
-- [ ] Both files in same commit
+- [ ] Sitemap entry added to `sitemap.xml`
+- [ ] If PT version exists: hreflang `en` + `pt-BR` + `x-default` tags added
+- [ ] All files in same commit

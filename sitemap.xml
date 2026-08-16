@@ -56,7 +56,15 @@
     <loc>https://www.wealthsproutkids.com/blog</loc>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
-    <lastmod>2026-08-02</lastmod>
+    <lastmod>2026-08-16</lastmod>
+  </url>
+
+  <!-- BLOG INDEX — PORTUGUÊS (pt-BR) -->
+  <url>
+    <loc>https://www.wealthsproutkids.com/blog/pt</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2026-08-16</lastmod>
   </url>
 
   <!-- ADVERTORIAL ARTICLES -->
@@ -445,4 +453,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- ============================================================ -->
+  <!-- BLOG PORTUGUÊS (pt-BR)                                       -->
+  <!-- Artigos em português vão em /blog/pt/[slug-em-portugues]     -->
+  <!-- Adicione cada artigo PT aqui com prioridade 0.7              -->
+  <!-- ============================================================ -->
+
 </urlset>

@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# English blog
+Allow: /blog/
+
+# Portuguese blog (pt-BR)
+Allow: /blog/pt/
+
 Sitemap: https://www.wealthsproutkids.com/sitemap.xml
