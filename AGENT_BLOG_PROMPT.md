@@ -210,25 +210,46 @@ Keep every paragraph under ~380 characters (roughly 2–3 sentences). If a parag
 
 ---
 
-## 7. CTAs — exactly ONE per box, opens in new tab
+## 7. CTAs — three per article, copy from components file
 
-Every CTA box (`<div class="blog-post-cta">` or `<div class="mid-cta">`) must contain **exactly one button** pointing to **one product**. No secondary "or try this instead" links.
+Every new article must include **three CTA blocks** copied verbatim from `/blog/components/ctas.html`.
 
-The button must have `target="_blank" rel="noopener"`:
+**Position 1 — Above the fold** (after the 2nd paragraph inside `<article>`):
+Copy the block labelled `CTA 1 — Above The Fold`. This is always the free-kit CTA regardless of topic.
+
+**Position 2 — Middle of article** (after the paragraph closest to the halfway point):
+Copy the age-matched block from `CTA 2 — Middle of Article`:
+- Ages 5–8 content → `CTA MID: Money Seeds`
+- Ages 9–12 content → `CTA MID: Money Moves`
+- Ages 13–15 / investing teens → `CTA MID: Wealth Blueprint`
+- Ages 16–18 / first job / credit → `CTA MID: Launch Rich`
+- General parent / all-ages content → `CTA MID: Family Collection`
+
+**Position 3 — End of article** (immediately before `</article>`):
+Copy the block labelled `CTA 3 — End of Article`. This is always the dual-button end CTA.
+
+Use the placeholder comments below so the insertion points are visible at a glance:
 
 ```html
-<div class="blog-post-cta">
-    <h3>CTA headline</h3>
-    <p>One or two sentence pitch.</p>
-    <a href="/free-kit" class="btn btn-gold" target="_blank" rel="noopener">Get the Free Money Kit →</a>
-</div>
-```
+<p>First introductory paragraph.</p>
 
-Match the CTA to the article's audience:
-- Ages 5–8 content → `/free-kit` (free) or `/money-seeds` ($17)
-- Ages 9–13 content → `/money-moves` ($24) or `/free-kit`
-- Ages 14–18 / teen content → `/programs/wealth-blueprint` ($29) or `/money-moves`
-- General parent audience → `/programs/vault` (The WealthSprout Family Library)
+<p>Second paragraph — keyword appears here.</p>
+
+<!-- CTA_ABOVE_FOLD_PLACEHOLDER -->
+<!-- paste CTA 1 block here -->
+
+<h2 id="section-1">...</h2>
+...body content...
+
+<!-- CTA_MIDDLE_PLACEHOLDER -->
+<!-- paste the age-matched CTA 2 block here -->
+
+...remaining content, FAQ, disclaimer, author bio...
+
+<!-- CTA_END_PLACEHOLDER -->
+<!-- paste CTA 3 block here -->
+</article>
+```
 
 ---
 

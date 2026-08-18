@@ -242,21 +242,46 @@ Máximo ~380 caracteres por parágrafo (2–3 frases). Uma ideia por parágrafo.
 
 ---
 
-## 7. CTAs — exatamente UM por caixa
+## 7. CTAs — três blocos por artigo, copiados do arquivo de componentes
+
+Todo novo artigo deve conter **três blocos de CTA** copiados literalmente de `/blog/components/ctas.html`.
+
+**Posição 1 — Acima da dobra** (após o 2º parágrafo dentro de `<article>`):
+Copie o bloco `CTA 1 — Above The Fold`. Sempre o CTA do Kit Gratuito, independente do tópico.
+
+**Posição 2 — Meio do artigo** (após o parágrafo mais próximo do ponto médio):
+Copie o bloco correspondente à faixa etária do público-alvo:
+- Crianças 5–8 → `CTA MID: Money Seeds`
+- Crianças 9–12 → `CTA MID: Money Moves`
+- Adolescentes 13–15 / investimentos → `CTA MID: Wealth Blueprint`
+- Adolescentes 16–18 / primeiro emprego / crédito → `CTA MID: Launch Rich`
+- Público geral / todas as idades → `CTA MID: Family Collection`
+
+**Posição 3 — Final do artigo** (imediatamente antes de `</article>`):
+Copie o bloco `CTA 3 — End of Article`. Sempre o CTA de botão duplo.
+
+Use os comentários de referência abaixo para que as posições fiquem visíveis:
 
 ```html
-<div class="blog-post-cta">
-    <h3>Headline do CTA em português</h3>
-    <p>Uma ou duas frases de pitch.</p>
-    <a href="/free-kit" class="btn btn-gold" target="_blank" rel="noopener">Baixar o Kit Gratuito →</a>
-</div>
-```
+<p>Primeiro parágrafo introdutório.</p>
 
-Produto certo por público:
-- Crianças 5–8 → `/free-kit` ou `/money-seeds`
-- Crianças 9–13 → `/money-moves` ou `/free-kit`
-- Adolescentes 14–18 → `/wealth-blueprint` ou `/money-moves`
-- Pais em geral → `/vault`
+<p>Segundo parágrafo — palavra-chave aparece aqui.</p>
+
+<!-- CTA_ABOVE_FOLD_PLACEHOLDER -->
+<!-- cole o bloco CTA 1 aqui -->
+
+<h2 id="secao-1">...</h2>
+...conteúdo do artigo...
+
+<!-- CTA_MIDDLE_PLACEHOLDER -->
+<!-- cole o bloco CTA 2 correspondente à faixa etária aqui -->
+
+...conteúdo restante, FAQ, aviso legal, bio da autora...
+
+<!-- CTA_END_PLACEHOLDER -->
+<!-- cole o bloco CTA 3 aqui -->
+</article>
+```
 
 ---
 
@@ -429,7 +454,8 @@ Publish (pt-BR): [Título do artigo]
 - [ ] Seção FAQ (4–6 Qs) coincide com FAQPage JSON-LD
 - [ ] 2–3 links internos para outros artigos WealthSprout
 - [ ] 2–3 links externos para fontes de autoridade
-- [ ] Exatamente UM botão CTA por caixa, com `target="_blank" rel="noopener"`
+- [ ] Três CTAs inseridos: above-fold (Kit Gratuito), meio (faixa etária), final (botão duplo)
+- [ ] Blocos de CTA copiados literalmente de `/blog/components/ctas.html`
 - [ ] Todos os links de produtos usam os caminhos corretos
 - [ ] Parágrafo de aviso legal incluído
 - [ ] Rodapé copiado literalmente (com `../../main.js`)
