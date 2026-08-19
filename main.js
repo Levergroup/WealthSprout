@@ -128,9 +128,9 @@ async function submitToResend(payload) {
 
 /* ─────────────────────────────────────
    GETRESPONSE INTEGRATION
-   Calls a Netlify Function (netlify/functions/subscribe.js) so the
+   Calls a Vercel Edge Function (/api/subscribe) so the
    GetResponse API key stays server-side instead of living in this file.
-   Set GETRESPONSE_API_KEY in the Netlify dashboard (Site settings ->
+   Set GETRESPONSE_API_KEY in the Vercel dashboard (Project settings ->
    Environment variables), then replace each TODO list ID below with the
    real campaignId from GetResponse for that list.
 ───────────────────────────────────── */
@@ -149,7 +149,7 @@ const GETRESPONSE_TAGS = {
 };
 
 async function subscribeToGetResponse(email, listId, tagIds) {
-    const res = await fetch('/.netlify/functions/subscribe', {
+    const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, listId, ...(tagIds ? { tagIds } : {}) }),
