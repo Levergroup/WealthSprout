@@ -15,6 +15,7 @@ Write and publish a complete, SEO-optimised blog post as a static HTML file. Eve
 - Blog posts about general money topics → save as `/blog/YOUR-SLUG.html`
 - The URL slug must be lowercase, hyphenated, keyword-rich, and match the H1 topic exactly
 - The canonical URL is `https://www.wealthsproutkids.com/blog/YOUR-SLUG`
+- **CRITICAL:** The domain is always `wealthsproutkids.com` — NEVER `wealthsprout.com`. Check every canonical, og:url, JSON-LD @id, and BreadcrumbList item URL before committing.
 
 ---
 
@@ -73,7 +74,18 @@ Write and publish a complete, SEO-optimised blog post as a static HTML file. Eve
   "image": "https://www.wealthsproutkids.com/blog/images/YOUR-SLUG-hero.jpg",
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
-  "author": { "@type": "Organization", "name": "WealthSprout" },
+  "author": {
+    "@type": "Person",
+    "name": "Maya Hartwell",
+    "url": "https://www.wealthsproutkids.com/about",
+    "image": "https://www.wealthsproutkids.com/images/maya-hartwell.jpg",
+    "jobTitle": "Lead Educator",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "WealthSprout",
+      "url": "https://www.wealthsproutkids.com"
+    }
+  },
   "publisher": {
     "@type": "Organization",
     "name": "WealthSprout",
@@ -186,13 +198,28 @@ Navigation:
 </nav>
 ```
 
-Back-to-blog link and category chip above the H1:
+Back-to-blog link, category chip, H1, **author block**, and date meta:
 ```html
 <header class="blog-post-hero">
     <div class="legal-wrap">
         <a href="/blog" class="blog-back">← Back to the Blog</a>
         <span class="blog-card-cat">CATEGORY</span>
         <h1>...</h1>
+        <div style="display:flex;align-items:center;gap:14px;margin:16px 0 24px;padding:16px 20px;background:rgba(255,255,255,0.12);border-radius:10px;border:1px solid rgba(255,255,255,0.18);">
+          <img src="/images/maya-hartwell.jpg"
+               alt="Maya Hartwell — WealthSprout founder and former math teacher"
+               width="52" height="52"
+               style="border-radius:50%;object-fit:cover;flex-shrink:0;"
+               onerror="this.style.display='none'">
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+              <a href="/about" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:#fff;text-decoration:none;">Maya Hartwell</a>
+              <span style="background:rgba(255,255,255,0.15);color:#F0A500;font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;padding:2px 10px;border-radius:100px;">Parent-Tested ✓</span>
+            </div>
+            <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin:3px 0 0 0;line-height:1.5;">Former math teacher · Mom of two · Founder, WealthSprout<br>
+            <span style="color:rgba(255,255,255,0.45);">Helping families build financial literacy since 2025</span></p>
+          </div>
+        </div>
         <div class="blog-post-meta">
             <span>📅 Month Day, Year</span>
             <span>·</span>
@@ -201,6 +228,8 @@ Back-to-blog link and category chip above the H1:
     </div>
 </header>
 ```
+
+**IMPORTANT:** Never use `<p class="author-byline">By Maya Hartwell</p>` — always use the full author block above.
 
 ---
 

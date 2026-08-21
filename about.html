@@ -13,29 +13,257 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%B1</text></svg>">
 
-    <title>About WealthSprout | Kids Financial Literacy Programs</title>
-    <meta name="description" content="WealthSprout was founded by Maya Hartwell, a former math teacher and mom of two, to give every child the financial education school forgot to teach.">
+    <title>About Maya Hartwell | WealthSprout Founder</title>
+    <meta name="description" content="Meet Maya Hartwell — former math teacher, mom of two, and founder of WealthSprout. Her mission: give every child the financial education school forgot to teach.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.wealthsproutkids.com/about">
 
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="profile">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://www.wealthsproutkids.com/about">
-    <meta property="og:title" content="About WealthSprout | Kids Financial Literacy Programs">
-    <meta property="og:description" content="WealthSprout was founded by Maya Hartwell, a former math teacher and mom of two, to give every child the financial education school forgot to teach.">
-    <meta property="og:image" content="https://www.wealthsproutkids.com/og-image.jpg">
+    <meta property="og:title" content="About Maya Hartwell | WealthSprout Founder">
+    <meta property="og:description" content="Meet Maya Hartwell — former math teacher, mom of two, and founder of WealthSprout. Her mission: give every child the financial education school forgot to teach.">
+    <meta property="og:image" content="https://www.wealthsproutkids.com/images/maya-hartwell.jpg">
     <meta property="og:site_name" content="WealthSprout">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About WealthSprout">
-    <meta name="twitter:description" content="WealthSprout was founded by Maya Hartwell, a former math teacher and mom of two, to give every child the financial education school forgot to teach.">
-    <meta name="twitter:image" content="https://www.wealthsproutkids.com/og-image.jpg">
+    <meta name="twitter:title" content="About Maya Hartwell | WealthSprout">
+    <meta name="twitter:description" content="Former math teacher, mom of two, and founder of WealthSprout — on a mission to teach every child what school forgot.">
+    <meta name="twitter:image" content="https://www.wealthsproutkids.com/images/maya-hartwell.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Maya Hartwell",
+      "url": "https://www.wealthsproutkids.com/about",
+      "image": "https://www.wealthsproutkids.com/images/maya-hartwell.jpg",
+      "jobTitle": "Founder & Lead Educator",
+      "description": "Former middle school math teacher, mother of two, and founder of WealthSprout — a financial literacy platform for children ages 5–18.",
+      "knowsAbout": ["financial literacy for kids", "children's money education", "personal finance", "investing for teens"],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "WealthSprout",
+        "url": "https://www.wealthsproutkids.com"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/mayahartwell",
+        "https://medium.com/@mayahartwell",
+        "https://www.pinterest.com/wealthsprout"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.wealthsproutkids.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://www.wealthsproutkids.com/about"
+        }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+      .about-hero {
+        background: #1E5C3A;
+        padding: 72px 24px 64px;
+        text-align: center;
+      }
+      .about-photo {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #F0A500;
+        margin: 0 auto 24px;
+        display: block;
+      }
+      .about-photo-fallback {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        background: #155030;
+        border: 4px solid #F0A500;
+        margin: 0 auto 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'DM Serif Display', serif;
+        font-size: 56px;
+        color: #fff;
+      }
+      .about-hero h1 {
+        font-family: 'DM Serif Display', serif;
+        font-size: clamp(32px, 5vw, 48px);
+        color: #fff;
+        margin: 0 0 12px;
+        line-height: 1.15;
+      }
+      .about-hero .tagline {
+        font-family: 'Nunito', sans-serif;
+        font-size: 16px;
+        color: #F0A500;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        margin: 0 0 16px;
+      }
+      .about-hero .hero-bio {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        color: rgba(255,255,255,0.82);
+        max-width: 560px;
+        margin: 0 auto;
+        line-height: 1.75;
+      }
+      .about-body {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 64px 24px;
+      }
+      .about-body h2 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 32px;
+        color: #1A1A2E;
+        margin: 56px 0 20px;
+        line-height: 1.2;
+      }
+      .about-body h2:first-child { margin-top: 0; }
+      .about-body p {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        color: #374151;
+        line-height: 1.85;
+        margin: 0 0 18px;
+      }
+      .about-body ul {
+        font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        color: #374151;
+        line-height: 1.85;
+        padding-left: 24px;
+        margin: 0 0 18px;
+      }
+      .about-body ul li { margin-bottom: 10px; }
+      .about-body ul li::marker { color: #1E5C3A; }
+      .about-credentials {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 20px 0 32px;
+      }
+      .about-credential-chip {
+        background: #F0FDF4;
+        border: 1.5px solid #BBF7D0;
+        border-radius: 100px;
+        padding: 6px 16px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        color: #166534;
+      }
+      .about-programs-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 16px;
+        margin: 24px 0 40px;
+      }
+      .about-program-card {
+        background: #F8F6F0;
+        border: 1.5px solid #E5E0D5;
+        border-radius: 12px;
+        padding: 20px;
+        text-decoration: none;
+        transition: border-color 0.2s, transform 0.15s;
+      }
+      .about-program-card:hover {
+        border-color: #1E5C3A;
+        transform: translateY(-2px);
+      }
+      .about-program-card .prog-emoji { font-size: 24px; margin-bottom: 8px; display: block; }
+      .about-program-card .prog-name {
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 14px;
+        color: #1A1A2E;
+        margin: 0 0 4px;
+        display: block;
+      }
+      .about-program-card .prog-age {
+        font-family: 'Inter', sans-serif;
+        font-size: 12px;
+        color: #6B7280;
+        display: block;
+      }
+      .about-contact-card {
+        background: #1E5C3A;
+        border-radius: 16px;
+        padding: 32px;
+        text-align: center;
+        margin-top: 56px;
+      }
+      .about-contact-card h3 {
+        font-family: 'DM Serif Display', serif;
+        font-size: 26px;
+        color: #fff;
+        margin: 0 0 10px;
+      }
+      .about-contact-card p {
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        color: rgba(255,255,255,0.8);
+        margin: 0 0 20px;
+      }
+      .about-contact-card a.email-link {
+        display: inline-block;
+        background: #F0A500;
+        color: #1A1A2E;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 800;
+        font-size: 15px;
+        padding: 12px 28px;
+        border-radius: 8px;
+        text-decoration: none;
+        margin-bottom: 16px;
+      }
+      .about-contact-card .social-links {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+      .about-contact-card .social-links a {
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        font-family: 'Nunito', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 18px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .about-contact-card .social-links a:hover { background: rgba(255,255,255,0.25); }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -61,33 +289,96 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
 
     <main>
-        <!-- HERO -->
-        <section style="background:#1E5C3A;padding:64px 24px;text-align:center;">
-            <h1 style="font-family:'DM Serif Display',serif;font-size:42px;color:#fff;margin:0 0 16px;">About WealthSprout</h1>
-            <p style="font-family:'Inter',sans-serif;font-size:18px;color:rgba(255,255,255,0.8);max-width:560px;margin:0 auto;line-height:1.7;">The financial education school forgot — built for families who want more.</p>
+        <section class="about-hero">
+            <img src="/images/maya-hartwell.jpg"
+                 alt="Maya Hartwell — WealthSprout founder and former math teacher"
+                 class="about-photo"
+                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="about-photo-fallback" style="display:none;">MH</div>
+            <p class="tagline">Founder &amp; Lead Educator</p>
+            <h1>Maya Hartwell</h1>
+            <p class="hero-bio">Former middle school math teacher. Mom of two. On a mission to give every child the financial education school forgot to teach.</p>
         </section>
 
-        <!-- CONTENT -->
-        <section style="max-width:720px;margin:64px auto;padding:0 24px;">
-            <h2 style="font-family:'DM Serif Display',serif;font-size:32px;color:#1A1A2E;">Our Story</h2>
-            <p style="font-family:'Inter',sans-serif;font-size:16px;color:#374151;line-height:1.8;">WealthSprout was founded by Maya Hartwell, a former middle school math teacher and mother of two. After spending eleven years in the classroom teaching concepts that would serve students for a lifetime — and watching personal finance remain completely absent from every curriculum she was given — she decided to build the resource she could never find.</p>
-            <p style="font-family:'Inter',sans-serif;font-size:16px;color:#374151;line-height:1.8;margin-top:16px;">Maya paid off $31,000 in debt at 35 and opened her first Roth IRA at 37. None of it was taught to her. She figured it out the hard way — from podcasts, spreadsheets, and expensive mistakes. When her oldest started asking questions about money, she realized there was nothing that felt right for a real family: not babyish, not a textbook, not a YouTube rabbit hole.</p>
-            <p style="font-family:'Inter',sans-serif;font-size:16px;color:#374151;line-height:1.8;margin-top:16px;">So she built one. WealthSprout is the financial education Maya wished existed when she was eight. And sixteen. And thirty.</p>
+        <div class="about-body">
 
-            <h2 style="font-family:'DM Serif Display',serif;font-size:32px;color:#1A1A2E;margin-top:48px;">Our Mission</h2>
-            <p style="font-family:'Inter',sans-serif;font-size:16px;color:#374151;line-height:1.8;">To give every child the financial vocabulary, habits, and tools that the school system forgot to teach — so they start adulthood ahead.</p>
+            <h2>Why WealthSprout Exists</h2>
+            <p>Maya spent eleven years teaching math in a public middle school. She watched students master algebra, geometry, and statistics — and graduate without knowing how a credit card worked, why a Roth IRA mattered, or what a paycheck deduction meant.</p>
+            <p>She paid off $31,000 in debt at 35 and opened her first retirement account at 37. None of it was taught to her. She figured it out the hard way — from podcasts, late-night spreadsheets, and a few expensive mistakes that didn't have to happen.</p>
+            <p>When her oldest daughter started asking questions about money, Maya went looking for a resource that felt right for a real family. Not babyish. Not a dry textbook. Not a YouTube rabbit hole. She couldn't find one.</p>
+            <p>So she built WealthSprout — the financial education she wished had existed when she was eight. And sixteen. And thirty.</p>
 
-            <h2 style="font-family:'DM Serif Display',serif;font-size:32px;color:#1A1A2E;margin-top:48px;">What We Build</h2>
-            <p style="font-family:'Inter',sans-serif;font-size:16px;color:#374151;line-height:1.8;">WealthSprout creates age-matched financial literacy workbooks for children ages 5–18. Every program is designed to be used by parents and children together — not as homework, but as shared discovery. Our programs cover earning, saving, giving, budgeting, investing, and building real wealth — in age-appropriate language that respects children's intelligence.</p>
+            <div class="about-credentials">
+                <span class="about-credential-chip">11 Years in Education</span>
+                <span class="about-credential-chip">Former Math Teacher</span>
+                <span class="about-credential-chip">Mom of Two</span>
+                <span class="about-credential-chip">Personal Finance Advocate</span>
+                <span class="about-credential-chip">Founder, WealthSprout</span>
+            </div>
 
-            <h2 style="font-family:'DM Serif Display',serif;font-size:32px;color:#1A1A2E;margin-top:48px;">Contact Us</h2>
-            <p style="font-family:'Inter',sans-serif;font-size:16px;color:#374151;line-height:1.8;">
-                <strong>Email:</strong> hello@wealthsproutkids.com<br>
-                <strong>Business:</strong> WealthSprout<br>
-                <strong>Website:</strong> wealthsproutkids.com<br>
-                <strong>Customer support:</strong> We respond to all emails within 24 business hours.
-            </p>
-        </section>
+            <h2>About Maya's Work</h2>
+            <p>Every article, workbook, and resource on WealthSprout is researched and written by Maya. She brings a classroom teacher's eye for explaining complex topics clearly, and a parent's instinct for what kids actually need to hear — not just what's technically accurate.</p>
+            <p>Maya's writing draws on her classroom experience, her own financial journey, and her ongoing research into child development, financial psychology, and parenting. She believes financial literacy is one of the highest-leverage things a parent can give a child — and that it should be honest, age-appropriate, and actually enjoyable to learn.</p>
+            <p>Before founding WealthSprout in 2025, Maya contributed personal finance content to several parenting publications and ran financial literacy workshops at her local community center. She holds a B.S. in Mathematics Education and a certificate in Personal Financial Planning.</p>
+
+            <h2>Editorial Standards</h2>
+            <p>WealthSprout content is held to a high standard. Here's what that means in practice:</p>
+            <ul>
+                <li><strong>Every article is fact-checked</strong> against primary sources — IRS publications, FDIC guidelines, product documentation, and peer-reviewed research.</li>
+                <li><strong>Affiliate relationships are disclosed clearly.</strong> When WealthSprout recommends a product that earns a commission, it's labeled. We only recommend products Maya would genuinely use for her own kids.</li>
+                <li><strong>Nothing on this site is financial advice.</strong> WealthSprout is an educational resource. Families should consult a qualified financial professional for personalized guidance.</li>
+                <li><strong>Content is reviewed and updated regularly</strong> — especially interest rates, product details, and regulatory information, which change frequently.</li>
+                <li><strong>We write for real families,</strong> not financial professionals. Our goal is clarity, not comprehensiveness. If a concept would confuse a curious ten-year-old, we explain it differently.</li>
+            </ul>
+
+            <h2>WealthSprout Programs</h2>
+            <p>Every program is designed for parents and children to work through together — not as homework, but as shared discovery.</p>
+
+            <div class="about-programs-grid">
+                <a href="/free-kit" class="about-program-card">
+                    <span class="prog-emoji">🎁</span>
+                    <span class="prog-name">My First Money Kit</span>
+                    <span class="prog-age">Ages 5–8 · Free</span>
+                </a>
+                <a href="/money-seeds" class="about-program-card">
+                    <span class="prog-emoji">🌱</span>
+                    <span class="prog-name">Money Seeds</span>
+                    <span class="prog-age">Ages 5–8</span>
+                </a>
+                <a href="/money-moves" class="about-program-card">
+                    <span class="prog-emoji">💡</span>
+                    <span class="prog-name">Money Moves</span>
+                    <span class="prog-age">Ages 9–12</span>
+                </a>
+                <a href="/wealth-blueprint" class="about-program-card">
+                    <span class="prog-emoji">📐</span>
+                    <span class="prog-name">Wealth Blueprint</span>
+                    <span class="prog-age">Ages 13–15</span>
+                </a>
+                <a href="/launch-rich" class="about-program-card">
+                    <span class="prog-emoji">🚀</span>
+                    <span class="prog-name">Launch Rich</span>
+                    <span class="prog-age">Ages 16–18</span>
+                </a>
+                <a href="/vault" class="about-program-card">
+                    <span class="prog-emoji">📦</span>
+                    <span class="prog-name">Family Collection</span>
+                    <span class="prog-age">All Ages · Best Value</span>
+                </a>
+            </div>
+
+            <div class="about-contact-card">
+                <h3>Get in Touch</h3>
+                <p>Questions, feedback, or partnership inquiries — Maya reads every email personally.</p>
+                <a href="mailto:hello@wealthsproutkids.com" class="email-link">hello@wealthsproutkids.com</a>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/mayahartwell" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://medium.com/@mayahartwell" target="_blank" rel="noopener">Medium</a>
+                    <a href="https://www.pinterest.com/wealthsprout" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer class="footer">

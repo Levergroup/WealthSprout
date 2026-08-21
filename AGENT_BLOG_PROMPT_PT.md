@@ -113,7 +113,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     "@type": "Person",
     "name": "Maya Hartwell",
     "url": "https://www.wealthsproutkids.com/about",
-    "description": "Ex-professora de matemática, mãe de dois filhos e fundadora do WealthSprout"
+    "image": "https://www.wealthsproutkids.com/images/maya-hartwell.jpg",
+    "jobTitle": "Lead Educator",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "WealthSprout",
+      "url": "https://www.wealthsproutkids.com"
+    }
   },
   "publisher": {
     "@type": "Organization",
@@ -219,7 +225,21 @@ Adicione este bloco de estilo inline logo depois:
             <a href="/blog/pt" class="blog-back">← Voltar ao Blog</a>
             <span class="blog-card-cat">CATEGORIA EM PORTUGUÊS</span>
             <h1>Seu H1 aqui</h1>
-            <p class="author-byline">Por Maya Hartwell</p>
+            <div style="display:flex;align-items:center;gap:14px;margin:16px 0 24px;padding:16px 20px;background:rgba(255,255,255,0.12);border-radius:10px;border:1px solid rgba(255,255,255,0.18);">
+              <img src="/images/maya-hartwell.jpg"
+                   alt="Maya Hartwell — fundadora do WealthSprout e ex-professora de matemática"
+                   width="52" height="52"
+                   style="border-radius:50%;object-fit:cover;flex-shrink:0;"
+                   onerror="this.style.display='none'">
+              <div>
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+                  <a href="/about" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:#fff;text-decoration:none;">Maya Hartwell</a>
+                  <span style="background:rgba(255,255,255,0.15);color:#F0A500;font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;padding:2px 10px;border-radius:100px;">Testado por Pais ✓</span>
+                </div>
+                <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin:3px 0 0 0;line-height:1.5;">Ex-professora de matemática · Mãe de dois · Fundadora, WealthSprout<br>
+                <span style="color:rgba(255,255,255,0.45);">Ajudando famílias a construir educação financeira desde 2025</span></p>
+              </div>
+            </div>
             <div class="blog-post-meta">
                 <span>📅 Dia Mês Ano</span>
                 <span>·</span>
