@@ -157,7 +157,20 @@
                 <a href="/blog/pt" class="blog-back">← Voltar ao Blog</a>
                 <span class="blog-card-cat">CATEGORIA EM PORTUGUÊS</span>
                 <h1>Seu Título Aqui: Com Palavra-Chave Principal</h1>
-                <p class="author-byline">Por Maya Hartwell</p>
+                <div style="display:flex;align-items:center;gap:12px;margin:12px 0 18px;padding:12px 16px;background:#1E5C3A;border-radius:10px;border:1px solid rgba(255,255,255,0.12);">
+                  <img src="http://herglowing.com/wp-content/uploads/2026/08/MAYAWEALTHSPROUT-scaled.jpg"
+                       alt="Maya Hartwell — fundadora do WealthSprout e ex-professora de matemática"
+                       width="44" height="44"
+                       style="border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,0.35);"
+                       onerror="this.src='/images/maya-hartwell-avatar.svg'">
+                  <div style="min-width:0;">
+                    <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px;">
+                      <a href="/about" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#fff;text-decoration:none;">Maya Hartwell</a>
+                      <span style="background:rgba(255,255,255,0.18);color:#F0A500;font-family:'Nunito',sans-serif;font-weight:700;font-size:10px;padding:2px 8px;border-radius:100px;white-space:nowrap;">Testado por Pais ✓</span>
+                    </div>
+                    <p style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.78);margin:0;line-height:1.4;">Ex-professora de matemática · Mãe de dois · Fundadora, WealthSprout</p>
+                  </div>
+                </div>
                 <div class="blog-post-meta">
                     <span>📅 Dia Mês Ano</span>
                     <span>·</span>
@@ -182,9 +195,14 @@
 
             <p>Segundo parágrafo. Comunique o que o leitor vai aprender. Palavra-chave principal aparece aqui de forma natural.</p>
 
-            <!-- APÓS O SEGUNDO PARÁGRAFO — CTA gratuito sempre -->
-            <!-- CTA_ABOVE_FOLD_PLACEHOLDER -->
-            <!-- Copie o bloco "CTA 1 — Above The Fold" de /blog/components/ctas.html -->
+            <!-- CTA 1: Acima da dobra — Kit Grátis -->
+            <div style="background:#1E5C3A;border-radius:12px;padding:20px 24px;margin:28px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+              <div style="flex:1;min-width:200px;">
+                <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:#F0A500;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.05em;">Grátis para sua família 🌱</p>
+                <p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.85);margin:0;line-height:1.6;">Baixe o Kit de Dinheiro WealthSprout — 12 páginas, entrega imediata, e seu filho terá o primeiro sistema de poupança funcionando neste fim de semana.</p>
+              </div>
+              <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;">Baixar Kit Grátis →</a>
+            </div>
 
             <h2 id="secao-1">Título da Seção 1 — com palavra-chave</h2>
 
@@ -194,16 +212,18 @@
 
             <p>Conteúdo. Links internos para outros artigos WealthSprout (pelo menos 2–3 ao longo do artigo).</p>
 
-            <!-- NO PONTO MÉDIO DO CONTEÚDO — CTA correspondente à faixa etária -->
-            <!-- CTA_MIDDLE_PLACEHOLDER -->
-            <!--
-                Escolha o bloco correto de /blog/components/ctas.html:
-                  Crianças 5–8   → "CTA MID: Money Seeds"
-                  Crianças 9–12  → "CTA MID: Money Moves"
-                  Adolescentes 13–15 → "CTA MID: Wealth Blueprint"
-                  Adolescentes 16–18 → "CTA MID: Launch Rich"
-                  Público geral  → "CTA MID: Family Collection"
-            -->
+            <!-- CTA 2: Meio — escolha o bloco correspondente à faixa etária do artigo -->
+            <!-- Substitua este bloco pelo adequado (ver AGENT_BLOG_PROMPT_PT.md Seção 7): -->
+            <!-- 5–8: Money Seeds | 9–12: Money Moves | 13–15: Wealth Blueprint | 16–18: Launch Rich | geral: Family Collection -->
+            <div style="background:#1E5C3A;border-radius:12px;padding:22px 24px;margin:32px 0;">
+              <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#F0A500;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.06em;">Todas as idades 5–18</p>
+              <p style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;color:#ffffff;margin:0 0 8px 0;line-height:1.3;">A Coleção da Família WealthSprout</p>
+              <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.8);margin:0 0 16px 0;line-height:1.65;">Todos os programas para idades 5–18 em um único pacote. Todos os produtos futuros adicionados à sua conta automaticamente.</p>
+              <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                <a href="https://www.wealthsproutkids.com/vault" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">Ser Membro Fundador — $67 →</a>
+                <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:transparent;color:rgba(255,255,255,0.8);font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.3);">Ou comece grátis →</a>
+              </div>
+            </div>
 
             <h2 id="secao-3">Título da Seção 3</h2>
 
@@ -230,9 +250,17 @@
                 <p><strong>Sobre Maya Hartwell:</strong> Maya foi professora de matemática por uma década antes de perceber que os conceitos mais importantes — juros compostos, pontuação de crédito, como o dinheiro realmente cresce — nunca faziam parte do currículo escolar. Ela criou o WealthSprout para mudar isso.</p>
             </div>
 
-            <!-- APÓS TODO O CONTEÚDO — CTA duplo sempre -->
-            <!-- CTA_END_PLACEHOLDER -->
-            <!-- Copie o bloco "CTA 3 — End of Article" de /blog/components/ctas.html -->
+            <!-- CTA 3: Final — botão duplo -->
+            <div style="background:#F8F6F0;border-top:3px solid #F0A500;border-radius:0 0 12px 12px;padding:28px 24px;margin:40px 0 20px 0;">
+              <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#F0A500;margin:0 0 8px 0;text-transform:uppercase;letter-spacing:0.06em;">Comece neste fim de semana →</p>
+              <p style="font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1A1A2E;margin:0 0 10px 0;line-height:1.3;">A educação financeira que seu filho merece começa com uma decisão.</p>
+              <p style="font-family:'Inter',sans-serif;font-size:14px;color:#6B7280;margin:0 0 20px 0;line-height:1.7;">Baixe o Kit de Dinheiro grátis — 12 páginas, entrega imediata, leva uma manhã de sábado. Ou explore o currículo completo em wealthsproutkids.com.</p>
+              <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:13px 24px;border-radius:8px;text-decoration:none;">Baixar Kit Grátis →</a>
+                <a href="https://www.wealthsproutkids.com/vault" style="display:inline-block;background:transparent;color:#1E5C3A;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:13px 20px;border-radius:8px;text-decoration:none;border:1.5px solid #1E5C3A;">Ver Todos os Programas</a>
+              </div>
+              <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:14px 0 0 0;">✓ Entrega digital imediata &nbsp;·&nbsp; ✓ Funciona em qualquer dispositivo &nbsp;·&nbsp; ✓ Garantia de 30 dias</p>
+            </div>
 
         </article>
     </main>

@@ -225,19 +225,18 @@ Adicione este bloco de estilo inline logo depois:
             <a href="/blog/pt" class="blog-back">← Voltar ao Blog</a>
             <span class="blog-card-cat">CATEGORIA EM PORTUGUÊS</span>
             <h1>Seu H1 aqui</h1>
-            <div style="display:flex;align-items:center;gap:14px;margin:16px 0 24px;padding:16px 20px;background:rgba(255,255,255,0.12);border-radius:10px;border:1px solid rgba(255,255,255,0.18);">
-              <img src="/images/maya-hartwell.jpg"
+            <div style="display:flex;align-items:center;gap:12px;margin:12px 0 18px;padding:12px 16px;background:#1E5C3A;border-radius:10px;border:1px solid rgba(255,255,255,0.12);">
+              <img src="http://herglowing.com/wp-content/uploads/2026/08/MAYAWEALTHSPROUT-scaled.jpg"
                    alt="Maya Hartwell — fundadora do WealthSprout e ex-professora de matemática"
-                   width="52" height="52"
-                   style="border-radius:50%;object-fit:cover;flex-shrink:0;"
-                   onerror="this.style.display='none'">
-              <div>
-                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-                  <a href="/about" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:#fff;text-decoration:none;">Maya Hartwell</a>
-                  <span style="background:rgba(255,255,255,0.15);color:#F0A500;font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;padding:2px 10px;border-radius:100px;">Testado por Pais ✓</span>
+                   width="44" height="44"
+                   style="border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,0.35);"
+                   onerror="this.src='/images/maya-hartwell-avatar.svg'">
+              <div style="min-width:0;">
+                <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px;">
+                  <a href="/about" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#fff;text-decoration:none;">Maya Hartwell</a>
+                  <span style="background:rgba(255,255,255,0.18);color:#F0A500;font-family:'Nunito',sans-serif;font-weight:700;font-size:10px;padding:2px 8px;border-radius:100px;white-space:nowrap;">Testado por Pais ✓</span>
                 </div>
-                <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin:3px 0 0 0;line-height:1.5;">Ex-professora de matemática · Mãe de dois · Fundadora, WealthSprout<br>
-                <span style="color:rgba(255,255,255,0.45);">Ajudando famílias a construir educação financeira desde 2025</span></p>
+                <p style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.78);margin:0;line-height:1.4;">Ex-professora de matemática · Mãe de dois · Fundadora, WealthSprout</p>
               </div>
             </div>
             <div class="blog-post-meta">
@@ -262,23 +261,112 @@ Máximo ~380 caracteres por parágrafo (2–3 frases). Uma ideia por parágrafo.
 
 ---
 
-## 7. CTAs — três blocos por artigo, copiados do arquivo de componentes
+## 7. CTAs — três blocos por artigo (HTML completo abaixo)
 
-Todo novo artigo deve conter **três blocos de CTA** copiados literalmente de `/blog/components/ctas.html`.
+> **REGRA CRÍTICA:** Artigos em português usam EXCLUSIVAMENTE CTAs da marca WealthSprout.
+> NUNCA inclua links de afiliados Acorns (afflat3e1.com) em artigos PT.
 
-**Posição 1 — Acima da dobra** (após o 2º parágrafo dentro de `<article>`):
-Copie o bloco `CTA 1 — Above The Fold`. Sempre o CTA do Kit Gratuito, independente do tópico.
+Todo novo artigo deve conter **três blocos de CTA** nas posições abaixo.
 
-**Posição 2 — Meio do artigo** (após o parágrafo mais próximo do ponto médio):
-Copie o bloco correspondente à faixa etária do público-alvo:
-- Crianças 5–8 → `CTA MID: Money Seeds`
-- Crianças 9–12 → `CTA MID: Money Moves`
-- Adolescentes 13–15 / investimentos → `CTA MID: Wealth Blueprint`
-- Adolescentes 16–18 / primeiro emprego / crédito → `CTA MID: Launch Rich`
-- Público geral / todas as idades → `CTA MID: Family Collection`
+---
 
-**Posição 3 — Final do artigo** (imediatamente antes de `</article>`):
-Copie o bloco `CTA 3 — End of Article`. Sempre o CTA de botão duplo.
+### CTA 1 — Acima da dobra (após o 2º parágrafo dentro de `<article>`)
+
+```html
+<div style="background:#1E5C3A;border-radius:12px;padding:20px 24px;margin:28px 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+  <div style="flex:1;min-width:200px;">
+    <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:#F0A500;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.05em;">Grátis para sua família 🌱</p>
+    <p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.85);margin:0;line-height:1.6;">Baixe o Kit de Dinheiro WealthSprout — 12 páginas, entrega imediata, e seu filho terá o primeiro sistema de poupança funcionando neste fim de semana.</p>
+  </div>
+  <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;">Baixar Kit Grátis →</a>
+</div>
+```
+
+---
+
+### CTA 2 — Meio do artigo (após o parágrafo mais próximo do ponto médio)
+
+Escolha **um** bloco com base na faixa etária do público-alvo:
+
+**Para crianças 5–8 anos:**
+```html
+<div style="background:#F8F6F0;border:2px solid #F28B6E;border-radius:12px;padding:20px 24px;margin:32px 0;">
+  <div style="flex:1;min-width:200px;">
+    <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#F28B6E;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.06em;">Para idades 5–8</p>
+    <p style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;color:#1A1A2E;margin:0 0 8px 0;line-height:1.3;">Money Seeds — O Currículo Financeiro Completo</p>
+    <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 14px 0;line-height:1.65;">40 páginas ilustradas ensinando ganhar, poupar e dar por meio de atividades que as crianças realmente querem fazer.</p>
+    <a href="https://www.wealthsproutkids.com/money-seeds" style="display:inline-block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">Ver Money Seeds — $17 →</a>
+  </div>
+</div>
+```
+
+**Para crianças 9–12 anos:**
+```html
+<div style="background:#F8F6F0;border:2px solid #1E5C3A;border-radius:12px;padding:20px 24px;margin:32px 0;">
+  <div style="flex:1;min-width:200px;">
+    <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#1E5C3A;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.06em;">Para idades 9–12</p>
+    <p style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;color:#1A1A2E;margin:0 0 8px 0;line-height:1.3;">Money Moves — Conceitos Reais para Mentes Prontas</p>
+    <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 14px 0;line-height:1.65;">52 páginas cobrindo juros compostos com matemática real, orçamento, investimento introdutório e como iniciar um micro-negócio.</p>
+    <a href="https://www.wealthsproutkids.com/money-moves" style="display:inline-block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">Ver Money Moves — $24 →</a>
+  </div>
+</div>
+```
+
+**Para adolescentes 13–15 anos:**
+```html
+<div style="background:#F8F6F0;border:2px solid #1A1A2E;border-radius:12px;padding:20px 24px;margin:32px 0;">
+  <div style="flex:1;min-width:200px;">
+    <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#1A1A2E;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.06em;">Para idades 13–15</p>
+    <p style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;color:#1A1A2E;margin:0 0 8px 0;line-height:1.3;">Wealth Blueprint — A Educação Financeira que a Escola Pulou</p>
+    <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 14px 0;line-height:1.65;">60 páginas cobrindo ações, ETFs, configuração de Roth IRA, fundos de índice e formas de ganhar dinheiro extra.</p>
+    <a href="https://www.wealthsproutkids.com/wealth-blueprint" style="display:inline-block;background:#1A1A2E;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">Ver Wealth Blueprint — $29 →</a>
+  </div>
+</div>
+```
+
+**Para adolescentes 16–18 anos:**
+```html
+<div style="background:#F8F6F0;border:2px solid #143d27;border-radius:12px;padding:20px 24px;margin:32px 0;">
+  <div style="flex:1;min-width:200px;">
+    <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#143d27;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.06em;">Para idades 16–18</p>
+    <p style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;color:#1A1A2E;margin:0 0 8px 0;line-height:1.3;">Launch Rich — Tudo que a Escola Pulou Antes da Vida Real</p>
+    <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 14px 0;line-height:1.65;">70 páginas cobrindo primeiro salário, crédito antes dos 18, empréstimos estudantis e um roteiro de riqueza de 10 anos.</p>
+    <a href="https://www.wealthsproutkids.com/launch-rich" style="display:inline-block;background:#143d27;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">Ver Launch Rich — $34 →</a>
+  </div>
+</div>
+```
+
+**Para público geral / todas as idades (fallback):**
+```html
+<div style="background:#1E5C3A;border-radius:12px;padding:22px 24px;margin:32px 0;">
+  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#F0A500;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.06em;">Todas as idades 5–18</p>
+  <p style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;color:#ffffff;margin:0 0 8px 0;line-height:1.3;">A Coleção da Família WealthSprout</p>
+  <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.8);margin:0 0 16px 0;line-height:1.65;">Todos os programas para idades 5–18 em um único pacote. Todos os produtos futuros adicionados à sua conta automaticamente.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+    <a href="https://www.wealthsproutkids.com/vault" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">Ser Membro Fundador — $67 →</a>
+    <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:transparent;color:rgba(255,255,255,0.8);font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,0.3);">Ou comece grátis →</a>
+  </div>
+</div>
+```
+
+---
+
+### CTA 3 — Final do artigo (imediatamente antes de `</article>`)
+
+```html
+<div style="background:#F8F6F0;border-top:3px solid #F0A500;border-radius:0 0 12px 12px;padding:28px 24px;margin:40px 0 20px 0;">
+  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#F0A500;margin:0 0 8px 0;text-transform:uppercase;letter-spacing:0.06em;">Comece neste fim de semana →</p>
+  <p style="font-family:'DM Serif Display',Georgia,serif;font-size:22px;color:#1A1A2E;margin:0 0 10px 0;line-height:1.3;">A educação financeira que seu filho merece começa com uma decisão.</p>
+  <p style="font-family:'Inter',sans-serif;font-size:14px;color:#6B7280;margin:0 0 20px 0;line-height:1.7;">Baixe o Kit de Dinheiro grátis — 12 páginas, entrega imediata, leva uma manhã de sábado. Ou explore o currículo completo em wealthsproutkids.com.</p>
+  <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+    <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:13px 24px;border-radius:8px;text-decoration:none;">Baixar Kit Grátis →</a>
+    <a href="https://www.wealthsproutkids.com/vault" style="display:inline-block;background:transparent;color:#1E5C3A;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:13px 20px;border-radius:8px;text-decoration:none;border:1.5px solid #1E5C3A;">Ver Todos os Programas</a>
+  </div>
+  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:14px 0 0 0;">✓ Entrega digital imediata &nbsp;·&nbsp; ✓ Funciona em qualquer dispositivo &nbsp;·&nbsp; ✓ Garantia de 30 dias</p>
+</div>
+```
+
+---
 
 Use os comentários de referência abaixo para que as posições fiquem visíveis:
 
@@ -287,19 +375,19 @@ Use os comentários de referência abaixo para que as posições fiquem visívei
 
 <p>Segundo parágrafo — palavra-chave aparece aqui.</p>
 
-<!-- CTA_ABOVE_FOLD_PLACEHOLDER -->
-<!-- cole o bloco CTA 1 aqui -->
+<!-- CTA 1: Acima da dobra — Kit Grátis -->
+<!-- [cole o bloco CTA 1 acima] -->
 
 <h2 id="secao-1">...</h2>
 ...conteúdo do artigo...
 
-<!-- CTA_MIDDLE_PLACEHOLDER -->
-<!-- cole o bloco CTA 2 correspondente à faixa etária aqui -->
+<!-- CTA 2: Meio — correspondente à faixa etária -->
+<!-- [cole o bloco CTA 2 acima] -->
 
 ...conteúdo restante, FAQ, aviso legal, bio da autora...
 
-<!-- CTA_END_PLACEHOLDER -->
-<!-- cole o bloco CTA 3 aqui -->
+<!-- CTA 3: Final — botão duplo -->
+<!-- [cole o bloco CTA 3 acima] -->
 </article>
 ```
 
@@ -474,8 +562,9 @@ Publish (pt-BR): [Título do artigo]
 - [ ] Seção FAQ (4–6 Qs) coincide com FAQPage JSON-LD
 - [ ] 2–3 links internos para outros artigos WealthSprout
 - [ ] 2–3 links externos para fontes de autoridade
-- [ ] Três CTAs inseridos: above-fold (Kit Gratuito), meio (faixa etária), final (botão duplo)
-- [ ] Blocos de CTA copiados literalmente de `/blog/components/ctas.html`
+- [ ] Três CTAs inseridos: above-fold (Kit Grátis), meio (faixa etária), final (botão duplo)
+- [ ] Blocos de CTA copiados literalmente da Seção 7 deste documento
+- [ ] NENHUM link de afiliado Acorns (afflat3e1.com) no artigo
 - [ ] Todos os links de produtos usam os caminhos corretos
 - [ ] Parágrafo de aviso legal incluído
 - [ ] Rodapé copiado literalmente (com `../../main.js`)
