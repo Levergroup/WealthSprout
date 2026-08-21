@@ -359,5 +359,31 @@
   </footer>
 
   <script src="../main.js"></script>
+
+<!-- Geo-detection: swap Acorns CTA to Free Kit for non-US visitors -->
+<script>
+(function() {
+  fetch('https://ipapi.co/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var country = data.country_code;
+      if (country !== 'US') {
+        document.querySelectorAll('a[href*="afflat3e1.com"]').forEach(function(link) {
+          var parentBox = link.closest('div[style*="background:#1E5C3A"]') ||
+                          link.closest('div[style*="background:#F8F6F0"]') ||
+                          link.closest('div[style*="background:#1A1A2E"]');
+          if (parentBox) {
+            link.href = 'https://www.wealthsproutkids.com/free-kit';
+            link.textContent = 'Get Free Money Kit →';
+            link.removeAttribute('rel');
+            var disclaimer = parentBox.querySelector('p[style*="rgba(255,255,255,0.3"]');
+            if (disclaimer) disclaimer.style.display = 'none';
+          }
+        });
+      }
+    })
+    .catch(function() {});
+})();
+</script>
 </body>
 </html>
