@@ -1277,6 +1277,14 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .blog-post-cta { background:var(--green); border-radius:var(--radius); padding:36px; text-align:center; }
 .blog-post-cta h3 { color:#fff; font-size:22px; margin-bottom:10px; }
 .blog-post-cta p { color:rgba(255,255,255,.8); font-size:14px; margin-bottom:20px; line-height:1.6; }
+.cta-box { background:#F8F6F0; border:2px solid #1E5C3A; border-radius:12px; padding:24px; margin:32px 0; }
+.cta-box h3 { font-family:'DM Serif Display',serif; font-size:20px; color:#1A1A2E; margin:0 0 10px; }
+.cta-box p { font-family:'Inter',sans-serif; font-size:14px; color:#374151; line-height:1.7; margin:0 0 16px; }
+.cta-box--secondary { border-color:#F0A500; }
+.btn-primary { display:inline-block; background:#1E5C3A; color:#fff; font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; padding:12px 22px; border-radius:8px; text-decoration:none; }
+.btn-primary:hover { background:#155030; }
+.btn-secondary { display:inline-block; background:#F0A500; color:#1A1A2E; font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; padding:12px 22px; border-radius:8px; text-decoration:none; }
+.btn-secondary:hover { background:#e09500; }
 
 /* ─────────────────────────────────────
    COOKIE CONSENT — banner + preferences modal
