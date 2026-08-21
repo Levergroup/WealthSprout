@@ -1166,6 +1166,33 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .blog-post-meta .blog-card-cat { margin-bottom:0; }
 .blog-article { background:#fff; }
 
+/* ── Article two-column layout (sidebar + content) ───────────────── */
+.article-layout {
+  display:block;
+  max-width:760px;
+  margin:0 auto;
+  padding:0 24px;
+}
+.article-sidebar { display:none; }
+.article-content .legal-wrap { max-width:none; padding:0; margin:0; }
+@media (min-width:1024px) {
+  .article-layout {
+    display:grid;
+    grid-template-columns:240px 1fr;
+    gap:48px;
+    max-width:1100px;
+    align-items:start;
+    padding:0 24px;
+  }
+  .article-sidebar {
+    position:sticky;
+    top:24px;
+    height:fit-content;
+  }
+  .article-content .legal-wrap { max-width:760px; padding:0 24px; margin:0; }
+}
+/* ─────────────────────────────────────────────────────────────────── */
+
 /* ── Table of Contents (collapsible card) ─────────────────────────── */
 .blog-article details {
   background:#F8F6F0;
