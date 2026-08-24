@@ -135,10 +135,10 @@ async function submitToResend(payload) {
    real campaignId from GetResponse for that list.
 ───────────────────────────────────── */
 const GETRESPONSE_LISTS = {
-    KIT_STRIP: 'TODO_LIST_ID_KIT_STRIP',             // homepage inline strip (#kitForm)
-    WAITLIST: 'TODO_LIST_ID_WAITLIST',               // Money Lab waitlist (#waitlistForm)
-    FREE_KIT: 'KKOGG',                               // /free-kit opt-in (#optinForm)
-    VAULT_PRICE_WATCH: 'TODO_LIST_ID_VAULT_PRICE_WATCH', // Family Collection price-increase notify (#vaultNotifyForm)
+    KIT_STRIP: 'KKOGG',                                // homepage inline strip (#kitForm)
+    WAITLIST: 'KKOGG',                                 // Money Lab waitlist (#waitlistForm)
+    FREE_KIT: 'KKOGG',                                 // /free-kit opt-in (#optinForm)
+    VAULT_PRICE_WATCH: 'KKOGG',                        // Family Collection price-increase notify (#vaultNotifyForm)
 };
 
 // Tag IDs (not list IDs) applied alongside a list on subscribe, e.g. to
@@ -723,23 +723,10 @@ if (optinForm) {
         optinBtnLabel.textContent = 'Sending...';
 
         try {
-            // TODO: Replace with Supabase insert into `leads` table (columns: id, email, source: 'free-kit', created_at)
-            await submitToSupabase('leads', { email, source: 'free-kit', created_at: new Date().toISOString() });
-        } catch (err) {
-            console.error('submitToSupabase failed:', err);
-        }
-
-        try {
-            // TODO: Replace with real welcome email trigger (subject "Your Free Money Kit is Here 🌱", placeholder PDF URL)
-            await submitToResend({ email, subject: 'Your Free Money Kit is Here 🌱' });
-        } catch (err) {
-            console.error('submitToResend failed:', err);
-        }
-
-        try {
             await subscribeToGetResponse(email, GETRESPONSE_LISTS.FREE_KIT);
         } catch (err) {
             console.error('subscribeToGetResponse failed:', err);
+            // Still redirect — don't block the user over a background API hiccup
         }
 
         localStorage.setItem('ws_email', email);

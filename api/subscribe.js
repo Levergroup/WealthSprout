@@ -9,7 +9,22 @@ module.exports = async function handler(req, res) {
   }
 
   const GETRESPONSE_API_KEY = process.env.GETRESPONSE_API_KEY;
-  const GETRESPONSE_LIST_ID = process.env.GETRESPONSE_LIST_ID || 'KKOGG';
+  if (!GETRESPONSE_API_KEY) {
+    console.error('GETRESPONSE_API_KEY is not set');
+    return res.status(500).json({ error: 'Server misconfigured' });
+  }
+
+  // Use listId from request body; fall back to env var; then hardcoded default
+  const listId = req.body?.listId || process.env.GETRESPONSE_LIST_ID || 'KKOGG';
+  const tagIds = req.body?.tagIds;
+
+  const contact = {
+    email,
+    campaign: { campaignId: listId },
+  };
+  if (tagIds && Array.isArray(tagIds) && tagIds.length > 0) {
+    contact.tags = tagIds.map(id => ({ tagId: id }));
+  }
 
   try {
     const grResponse = await fetch('https://api.getresponse.com/v3/contacts', {
@@ -18,20 +33,16 @@ module.exports = async function handler(req, res) {
         'Content-Type': 'application/json',
         'X-Auth-Token': `api-key ${GETRESPONSE_API_KEY}`,
       },
-      body: JSON.stringify({
-        email,
-        campaign: { campaignId: GETRESPONSE_LIST_ID },
-      }),
+      body: JSON.stringify(contact),
     });
 
-    const success = grResponse.status === 202 || grResponse.status === 409;
-    if (!success) {
-      const errorText = await grResponse.text();
-      console.error('GetResponse error:', grResponse.status, errorText);
-      return res.status(500).json({ error: 'Failed to subscribe' });
+    if (grResponse.status === 202 || grResponse.status === 409) {
+      return res.status(200).json({ success: true });
     }
 
-    return res.status(200).json({ success: true });
+    const errorBody = await grResponse.text();
+    console.error('GetResponse error:', grResponse.status, errorBody);
+    return res.status(500).json({ error: 'Failed to subscribe', detail: errorBody });
   } catch (err) {
     console.error('Subscribe error:', err);
     return res.status(500).json({ error: 'Server error' });
