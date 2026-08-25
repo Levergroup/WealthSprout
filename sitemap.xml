@@ -395,6 +395,12 @@
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
 <url>
+  <loc>https://wealthsproutkids.com/blog/bank-account-for-minors</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-08-25</lastmod>
+</url>
+<url>
   <loc>https://wealthsproutkids.com/blog/bank-accounts-for-kids</loc>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
