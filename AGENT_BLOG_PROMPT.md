@@ -181,55 +181,100 @@ This adds the brand gold arrow to every editorial H2. If any H2 is used for a no
 
 ## 5. Page structure
 
-Use this wrapper for the article body:
+### CRITICAL RULES — violations break the layout:
+- ❌ NEVER use `<header class="header">` or `<header class="nav-wrap">` or `<header class="site-header">` — these are the OLD broken nav patterns
+- ❌ NEVER use `<p class="author-byline">By Maya Hartwell</p>` — this is the OLD broken author line
+- ❌ NEVER put `<h1>` inside `<article>` — the H1 belongs in the hero header, not the article body
+- ❌ NEVER put the hero image inside `<article>` — the hero image belongs in `<header class="blog-post-hero has-image">`
+- ✅ The author block belongs at the **TOP of `<article>`**, not inside the hero header
+
+### Complete page body structure — copy this exactly:
 
 ```html
-<article class="legal-wrap blog-article">
-  <!-- all article content here -->
-</article>
-```
+<body class="page-blog">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN2W2R7T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
-Navigation:
-```html
 <nav class="nav nav-minimal">
     <div class="nav-inner">
         <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
     </div>
 </nav>
-```
 
-Back-to-blog link, category chip, H1, **author block**, and date meta:
-```html
-<header class="blog-post-hero">
-    <div class="legal-wrap">
-        <a href="/blog" class="blog-back">← Back to the Blog</a>
-        <span class="blog-card-cat">CATEGORY</span>
-        <h1>...</h1>
-        <div style="display:flex;align-items:center;gap:14px;margin:16px 0 24px;padding:16px 20px;background:rgba(255,255,255,0.12);border-radius:10px;border:1px solid rgba(255,255,255,0.18);">
-          <img src="/images/maya-hartwell.jpg"
-               alt="Maya Hartwell — WealthSprout founder and former math teacher"
-               width="52" height="52"
-               style="border-radius:50%;object-fit:cover;flex-shrink:0;"
-               onerror="this.style.display='none'">
-          <div>
-            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
-              <a href="/about" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;color:#fff;text-decoration:none;">Maya Hartwell</a>
-              <span style="background:rgba(255,255,255,0.15);color:#F0A500;font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;padding:2px 10px;border-radius:100px;">Parent-Tested ✓</span>
+<main>
+    <header class="blog-post-hero has-image">
+        <img src="/blog/images/YOUR-SLUG-hero.jpg" alt="[Descriptive alt text]" class="blog-post-hero-img">
+        <div class="legal-wrap">
+            <a href="/blog" class="blog-back">← Back to the Blog</a>
+            <span class="blog-card-cat">Kids &amp; Money</span>
+            <h1>[Full article title — H1 goes HERE, not in the article body]</h1>
+            <div class="blog-post-meta">
+                <span>📅 Month Day, Year</span>
+                <span>·</span>
+                <span>X min read</span>
             </div>
-            <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.7);margin:3px 0 0 0;line-height:1.5;">Former math teacher · Mom of two · Founder, WealthSprout<br>
-            <span style="color:rgba(255,255,255,0.45);">Helping families build financial literacy since 2025</span></p>
+        </div>
+    </header>
+
+    <article class="legal-wrap blog-article">
+
+        <!-- AUTHOR BLOCK — always first inside <article> -->
+        <div style="display:flex;align-items:center;gap:12px;margin:12px 0 18px;padding:12px 16px;background:#1E5C3A;border-radius:10px;border:1px solid rgba(255,255,255,0.12);">
+          <img src="http://herglowing.com/wp-content/uploads/2026/08/MAYAWEALTHSPROUT-scaled.jpg"
+               alt="Maya Hartwell — WealthSprout founder and former math teacher"
+               width="44" height="44"
+               style="border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid rgba(255,255,255,0.35);"
+               onerror="this.src='/images/maya-hartwell-avatar.svg'">
+          <div style="min-width:0;">
+            <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:3px;">
+              <a href="/about" style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#fff;text-decoration:none;">Maya Hartwell</a>
+              <span style="background:rgba(255,255,255,0.18);color:#F0A500;font-family:'Nunito',sans-serif;font-weight:700;font-size:10px;padding:2px 8px;border-radius:100px;white-space:nowrap;">Parent-Tested ✓</span>
+            </div>
+            <p style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.78);margin:0;line-height:1.4;">Former math teacher · Mom of two · Founder, WealthSprout</p>
           </div>
         </div>
-        <div class="blog-post-meta">
-            <span>📅 Month Day, Year</span>
-            <span>·</span>
-            <span>X min read</span>
-        </div>
-    </div>
-</header>
-```
 
-**IMPORTANT:** Never use `<p class="author-byline">By Maya Hartwell</p>` — always use the full author block above.
+        <!-- TABLE OF CONTENTS — collapsible, no class on <details> -->
+        <details>
+            <summary>Table of Contents</summary>
+            <ul>
+                <li><a href="#section-1">Section One</a></li>
+                <li><a href="#section-2">Section Two</a></li>
+                <!-- add all H2 anchors -->
+                <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+        </details>
+
+        <p>First introductory paragraph...</p>
+
+        <!-- CTA: Above Fold — Free Kit (always first CTA, regardless of topic) -->
+        <!-- paste CTA 1 block from /blog/components/ctas.html here -->
+
+        <p>Second paragraph...</p>
+
+        <h2 id="section-1">...</h2>
+        <!-- body content... -->
+
+        <!-- CTA: Middle — age-matched program (see Section 7) -->
+        <!-- paste the age-matched CTA 2 block from /blog/components/ctas.html here -->
+
+        <!-- remaining content, FAQ, author bio... -->
+
+        <!-- CTA: End of Article -->
+        <!-- paste CTA 3 block from /blog/components/ctas.html here -->
+
+    </article>
+</main>
+
+[FOOTER — see Section 10]
+
+[GEO-DETECTION SCRIPT — if article has Acorns affiliate links, see Section 8a]
+
+</body>
+</html>
+```
 
 ---
 
@@ -294,6 +339,57 @@ Use the placeholder comments below so the insertion points are visible at a glan
 | The WealthSprout Family Library (bundle) | `/programs/vault` |
 
 Never link to `/vault`, `/checkout/anything`, or `/quiz`. Those paths do not exist.
+
+---
+
+## 8a. Acorns "Our Top Pick" box — banking and account articles only
+
+When an article recommends Acorns Early (kids checking accounts, kids bank accounts, debit cards for kids, opening bank accounts for children), insert this box right before the first `<h2>` section heading in the article body. Do **not** add it to general money-habit, investing, or printable articles.
+
+```html
+<!-- Acorns: Our Top Pick -->
+<div style="background:#1E5C3A;border-radius:12px;padding:20px 24px;margin:28px 0;">
+  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#F0A500;margin:0 0 10px 0;">⭐ Our Top Pick</p>
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div style="flex:1;min-width:200px;">
+      <p style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin:0 0 4px 0;line-height:1.2;">Acorns Early</p>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.78);margin:0 0 14px 0;line-height:1.5;">Best kids money app for ages 6–18 · Debit card + investing in one app · Parent controls included</p>
+      <a href="https://afflat3e1.com/trk/lnk/5E828A06-8554-4BF3-8576-07BA20472566/?o=23652&c=918277&a=168701&k=7A7B7402252608C67B08307BA57410B0&l=24652" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;">Open Free Account →</a>
+    </div>
+  </div>
+  <p style="font-family:'Inter',sans-serif;font-size:10px;color:rgba(255,255,255,0.3);margin:12px 0 0 0;border-top:1px solid rgba(255,255,255,0.12);padding-top:10px;">Sponsored · WealthSprout may earn a commission if you sign up through our link, at no extra cost to you.</p>
+</div>
+```
+
+**Geo-detection script:** Any article containing the Acorns affiliate link (`afflat3e1.com`) MUST include this script immediately before `</body>`. It swaps Acorns links to the free-kit URL for non-US visitors:
+
+```html
+<!-- Geo-detection: swap Acorns CTA to Free Kit for non-US visitors -->
+<script>
+(function() {
+  fetch('https://ipapi.co/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var country = data.country_code;
+      if (country !== 'US') {
+        document.querySelectorAll('a[href*="afflat3e1.com"]').forEach(function(link) {
+          var parentBox = link.closest('div[style*="background:#1E5C3A"]') ||
+                          link.closest('div[style*="background:#F8F6F0"]') ||
+                          link.closest('div[style*="background:#1A1A2E"]');
+          if (parentBox) {
+            link.href = 'https://www.wealthsproutkids.com/free-kit';
+            link.textContent = 'Get Free Money Kit →';
+            link.removeAttribute('rel');
+            var disclaimer = parentBox.querySelector('p[style*="rgba(255,255,255,0.3"]');
+            if (disclaimer) disclaimer.style.display = 'none';
+          }
+        });
+      }
+    })
+    .catch(function() {});
+})();
+</script>
+```
 
 ---
 
