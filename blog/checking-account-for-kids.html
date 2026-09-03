@@ -211,13 +211,20 @@
 
     <p>Here's the thing nobody tells you: the right age to open a checking account for your kid isn't about age at all.</p>
 
-<!-- CTA: Above Fold — Free Kit -->
+
+<!-- CTA: Above Fold — Acorns -->
 <div style="background:#1E5C3A;border-radius:12px;padding:20px 24px;margin:28px 0;">
-  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#F0A500;margin:0 0 6px 0;">Free Resource</p>
-  <p style="font-family:'DM Serif Display',serif;font-size:20px;color:#fff;margin:0 0 6px 0;line-height:1.25;">Get the Free Kids Money Kit</p>
-  <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.78);margin:0 0 14px 0;line-height:1.5;">Activities, lessons &amp; printables — free for parents of kids ages 5–18.</p>
-  <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;">Get the Free Kit →</a>
+  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#F0A500;margin:0 0 10px 0;">⭐ Our Top Pick</p>
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+    <div style="flex:1;min-width:200px;">
+      <p style="font-family:'DM Serif Display',serif;font-size:22px;color:#fff;margin:0 0 4px 0;line-height:1.2;">Acorns Early</p>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.78);margin:0 0 14px 0;line-height:1.5;">Best kids money app for ages 6–18 · Debit card + investing in one app · Parent controls included</p>
+      <a href="https://afflat3e1.com/trk/lnk/5E828A06-8554-4BF3-8576-07BA20472566/?o=23652&c=918277&a=168701&k=7A7B7402252608C67B08307BA57410B0&l=24652" rel="nofollow sponsored" target="_blank" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;">Open Free Account →</a>
+    </div>
+  </div>
+  <p style="font-family:'Inter',sans-serif;font-size:10px;color:rgba(255,255,255,0.3);margin:12px 0 0 0;border-top:1px solid rgba(255,255,255,0.12);padding-top:10px;">Sponsored · WealthSprout may earn a commission if you sign up through our link, at no extra cost to you.</p>
 </div>
+
 
 
 
@@ -542,6 +549,28 @@
     </div>
     </article>
 </main>
+
+
+<script>
+(function() {
+  fetch('https://ipapi.co/json/')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.country_code !== 'US') {
+        document.querySelectorAll('a[href*="afflat3e1.com"]').forEach(function(link) {
+          var parentBox = link.closest('div[style*="background:#1E5C3A"]');
+          if (parentBox) {
+            link.href = 'https://www.wealthsproutkids.com/free-kit';
+            link.textContent = 'Get Free Money Kit →';
+            link.removeAttribute('rel');
+            var disclaimer = parentBox.querySelector('p[style*="rgba(255,255,255,0.3"]');
+            if (disclaimer) disclaimer.style.display = 'none';
+          }
+        });
+      }
+    }).catch(function() {});
+})();
+</script>
 
 <!-- Author Bio Footer -->
 <div style="max-width:740px;margin:48px auto 0;padding:0 24px;">
