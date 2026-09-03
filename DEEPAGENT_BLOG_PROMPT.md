@@ -47,7 +47,8 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
     "author": {
       "@type": "Person",
       "name": "Maya Hartwell",
-      "url": "https://www.wealthsproutkids.com/about"
+      "url": "https://www.wealthsproutkids.com/about",
+      "description": "Former math teacher, mom of two, editor of WealthSprout"
     },
     "publisher": {
       "@type": "Organization",
@@ -67,10 +68,35 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
 </head>
 <body>
 
-<!-- NAVIGATION — always this exact minimal nav, no other nav patterns -->
-<nav class="nav nav-minimal">
+<!-- NAVIGATION — full site nav with all links and Programs dropdown -->
+<nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="nav-item-drop">
+        <a href="/#programs" class="nav-drop-label">Programs <span class="car">▾</span></a>
+        <div class="nav-megadrop">
+          <a href="/free-kit" class="mega-link"><span class="mega-icon">🌱</span><div class="mega-text"><h5>My First Money Kit</h5><p>Ages 5–10</p></div><span class="mega-price">Free</span></a>
+          <a href="/money-seeds" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">🐷</span><div class="mega-text"><h5>Money Seeds</h5><p>Ages 5–8</p></div><span class="mega-price">$17</span></a>
+          <a href="/money-moves" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">📈</span><div class="mega-text"><h5>Money Moves</h5><p>Ages 9–12</p></div><span class="mega-price">$24</span></a>
+          <a href="/wealth-blueprint" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">🧭</span><div class="mega-text"><h5>Wealth Blueprint</h5><p>Ages 13–15</p></div><span class="mega-price">$29</span></a>
+          <a href="/launch-rich" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">🚀</span><div class="mega-text"><h5>Launch Rich</h5><p>Ages 16–18</p></div><span class="mega-price">$34</span></a>
+          <div class="mega-divider"></div>
+          <a href="/vault" class="mega-link mega-vault" target="_blank" rel="noopener"><span class="mega-icon">⭐</span><div class="mega-text"><h5>The Family Collection</h5><p>All 4 + bonus guide</p></div><span class="mega-price">$67</span></a>
+        </div>
+      </li>
+      <li><a href="/#how-it-works">How It Works</a></li>
+      <li><a href="/#vault">The Family Collection</a></li>
+      <li><a href="/#faq">FAQ</a></li>
+      <li><a href="/blog">Blog</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/coming-soon" class="nav-signin">Sign In</a></li>
+      <li><a href="/free-kit" class="nav-cta">Get the Free Kit →</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 
@@ -125,17 +151,12 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
     <p>Opening paragraph...</p>
     <p>Second paragraph...</p>
 
-    <!-- CTA BOX — appears after first 1-2 paragraphs, ONCE only -->
-    <!-- For general/parenting articles: use the Free Kit box -->
-    <div style="background:#1E5C3A;border-radius:12px;padding:20px 24px;margin:28px 0;">
-      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#F0A500;margin:0 0 6px 0;">Free Resource</p>
-      <p style="font-family:'DM Serif Display',serif;font-size:20px;color:#fff;margin:0 0 6px 0;line-height:1.25;">Get the Free Kids Money Kit</p>
-      <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.78);margin:0 0 14px 0;line-height:1.5;">Activities, lessons &amp; printables — free for parents of kids ages 5–18.</p>
-      <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;">Get the Free Kit →</a>
-    </div>
+    <!-- ══════════════════════════════════════════════════
+         CTA BOX — appears after first 1-2 paragraphs
+         Choose ONE type based on article topic:
+         ══════════════════════════════════════════════════ -->
 
-    <!-- For banking/fintech articles: use Acorns "Our Top Pick" box INSTEAD of Free Kit -->
-    <!--
+    <!-- TYPE A: Banking / fintech articles → Acorns "Our Top Pick" -->
     <div style="background:#1E5C3A;border-radius:12px;padding:20px 24px;margin:28px 0;">
       <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#F0A500;margin:0 0 10px 0;">⭐ Our Top Pick</p>
       <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
@@ -147,19 +168,31 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
       </div>
       <p style="font-family:'Inter',sans-serif;font-size:10px;color:rgba(255,255,255,0.3);margin:12px 0 0 0;border-top:1px solid rgba(255,255,255,0.12);padding-top:10px;">Sponsored · WealthSprout may earn a commission if you sign up through our link, at no extra cost to you.</p>
     </div>
+
+    <!-- TYPE B: General / parenting / education articles → Free Kit box -->
+    <!--
+    <div style="background:#1E5C3A;border-radius:12px;padding:20px 24px;margin:28px 0;">
+      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:#F0A500;margin:0 0 6px 0;">Free Resource</p>
+      <p style="font-family:'DM Serif Display',serif;font-size:20px;color:#fff;margin:0 0 6px 0;line-height:1.25;">Get the Free Kids Money Kit</p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.78);margin:0 0 14px 0;line-height:1.5;">Activities, lessons &amp; printables — free for parents of kids ages 5–18.</p>
+      <a href="https://www.wealthsproutkids.com/free-kit" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:14px;padding:12px 22px;border-radius:8px;text-decoration:none;white-space:nowrap;">Get the Free Kit →</a>
+    </div>
     -->
 
     <!-- REST OF ARTICLE CONTENT -->
     <h2 id="section-1">Section Heading</h2>
     <p>Content paragraphs...</p>
 
-    <!-- NO additional CTA boxes mid-article or at the footer. ONE CTA box only. -->
+    <!-- For banking articles: add 1-2 more Acorns CTAs mid-article and near the end -->
+    <!-- Use varied sub-headlines: "💡 Skip the Research", "🚀 Ready to Open Today?", etc. -->
+
+    <p class="disclaimer">This article may contain affiliate links. WealthSprout earns a small commission if you purchase through our links, at no extra cost to you. We only recommend products we believe in. Nothing in this article constitutes financial advice — see our <a href="/financial-disclaimer">Financial Disclaimer</a>.</p>
 
   </article>
 </main>
 
-<!-- Geo-detection: swap Acorns CTA to Free Kit for non-US visitors (only needed on banking articles with Acorns link) -->
-<!-- <script>
+<!-- Geo-detection: swap Acorns CTA to Free Kit for non-US visitors (banking articles only) -->
+<script>
 (function() {
   fetch('https://ipapi.co/json/')
     .then(function(r) { return r.json(); })
@@ -178,8 +211,115 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
       }
     }).catch(function() {});
 })();
-</script> -->
+</script>
 
+<!-- Author Bio Footer -->
+<div style="max-width:740px;margin:48px auto 0;padding:0 24px;">
+  <div style="background:#F8F6F0;border-radius:12px;padding:24px 28px;display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;">
+    <img src="/images/maya-hartwell.jpg"
+         alt="Maya Hartwell — Lead Educator at WealthSprout"
+         width="72" height="72"
+         style="border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid #A8C5A0;"
+         onerror="this.style.display='none'">
+    <div style="flex:1;min-width:200px;">
+      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;color:#1A1A2E;margin:0 0 4px;">Maya Hartwell</p>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 10px;">Lead Educator at WealthSprout · Former math teacher · Financial literacy curriculum developer for ages 5–18</p>
+      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;line-height:1.7;margin:0;">Maya created WealthSprout because she spent a decade teaching math and watching the financial concepts that matter most — compound interest, how credit works, what a paycheck actually means — never appear in any curriculum. Every program she builds is the guide she wishes existed when she was teaching.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Product Showcase -->
+<div style="background:#1E5C3A;margin-top:56px;padding:48px 24px;">
+  <div style="max-width:900px;margin:0 auto;">
+    <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#F0A500;text-transform:uppercase;letter-spacing:0.1em;text-align:center;margin:0 0 8px;">The WealthSprout Curriculum</p>
+    <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:28px;color:#ffffff;text-align:center;margin:0 0 32px;line-height:1.2;">Age-Matched Financial Education · Ages 5–18</h2>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:28px;">
+
+      <a href="/free-kit" style="background:rgba(255,255,255,0.1);border-radius:10px;padding:16px;text-decoration:none;text-align:center;border:1px solid rgba(255,255,255,0.15);display:block;">
+        <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;color:#F0A500;margin:0 0 6px;text-transform:uppercase;letter-spacing:0.05em;">Ages 5–10 · Free</p>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:16px;color:#ffffff;margin:0 0 4px;line-height:1.2;">My First Money Kit</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.6);margin:0;">The 3-Jar System →</p>
+      </a>
+
+      <a href="/money-seeds" style="background:rgba(255,255,255,0.08);border-radius:10px;padding:16px;text-decoration:none;text-align:center;border:1px solid rgba(255,255,255,0.12);display:block;">
+        <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;color:#A8C5A0;margin:0 0 6px;text-transform:uppercase;letter-spacing:0.05em;">Ages 5–8 · $17</p>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:16px;color:#ffffff;margin:0 0 4px;line-height:1.2;">Money Seeds</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.6);margin:0;">Earn, save, give →</p>
+      </a>
+
+      <a href="/money-moves" style="background:rgba(255,255,255,0.08);border-radius:10px;padding:16px;text-decoration:none;text-align:center;border:1px solid rgba(255,255,255,0.12);display:block;">
+        <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;color:#A8C5A0;margin:0 0 6px;text-transform:uppercase;letter-spacing:0.05em;">Ages 9–12 · $24</p>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:16px;color:#ffffff;margin:0 0 4px;line-height:1.2;">Money Moves</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.6);margin:0;">Compound interest →</p>
+      </a>
+
+      <a href="/wealth-blueprint" style="background:rgba(255,255,255,0.08);border-radius:10px;padding:16px;text-decoration:none;text-align:center;border:1px solid rgba(255,255,255,0.12);display:block;">
+        <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;color:#A8C5A0;margin:0 0 6px;text-transform:uppercase;letter-spacing:0.05em;">Ages 13–15 · $29</p>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:16px;color:#ffffff;margin:0 0 4px;line-height:1.2;">Wealth Blueprint</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.6);margin:0;">Stocks &amp; Roth IRA →</p>
+      </a>
+
+      <a href="/launch-rich" style="background:rgba(255,255,255,0.08);border-radius:10px;padding:16px;text-decoration:none;text-align:center;border:1px solid rgba(255,255,255,0.12);display:block;">
+        <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;color:#A8C5A0;margin:0 0 6px;text-transform:uppercase;letter-spacing:0.05em;">Ages 16–18 · $34</p>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:16px;color:#ffffff;margin:0 0 4px;line-height:1.2;">Launch Rich</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.6);margin:0;">First job &amp; credit →</p>
+      </a>
+
+      <a href="/vault" style="background:#F0A500;border-radius:10px;padding:16px;text-decoration:none;text-align:center;display:block;">
+        <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:11px;color:#1A1A2E;margin:0 0 6px;text-transform:uppercase;letter-spacing:0.05em;">All Ages · $67</p>
+        <p style="font-family:'DM Serif Display',Georgia,serif;font-size:16px;color:#1A1A2E;margin:0 0 4px;line-height:1.2;">Family Collection</p>
+        <p style="font-family:'Inter',sans-serif;font-size:12px;color:#1A1A2E;margin:0;font-weight:700;">Everything →</p>
+      </a>
+
+    </div>
+
+    <div style="text-align:center;">
+      <a href="/free-kit" style="display:inline-block;background:#ffffff;color:#1E5C3A;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;padding:14px 32px;border-radius:8px;text-decoration:none;">Start Free — Download the Money Kit →</a>
+      <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.5);margin:10px 0 0;">Instant PDF · No credit card · Works for all ages</p>
+    </div>
+  </div>
+</div>
+
+<!-- Site Footer -->
+<footer style="background:#1A1A2E;padding:32px 24px;">
+  <div style="max-width:900px;margin:0 auto;">
+
+    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;margin-bottom:24px;">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="/images/logo.svg" alt="WealthSprout" width="28" height="28" onerror="this.style.display='none'">
+        <span style="font-family:'DM Serif Display',Georgia,serif;font-size:18px;color:#ffffff;">Wealth<span style="color:#F0A500;">Sprout</span>&#8482;</span>
+      </div>
+      <p style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.5);margin:0;font-style:italic;">Grow Smart. Start Young.</p>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:12px 24px;margin-bottom:24px;">
+      <a href="/programs" style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;">Programs</a>
+      <a href="/free-kit" style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;">Free Kit</a>
+      <a href="/vault" style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;">Family Collection</a>
+      <a href="/blog" style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;">Blog</a>
+      <a href="/about" style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;">About</a>
+      <a href="/contact" style="font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,0.6);text-decoration:none;">Contact</a>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:12px 20px;margin-bottom:20px;">
+      <a href="/privacy-policy" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;">Privacy Policy</a>
+      <a href="/terms-of-service" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;">Terms of Service</a>
+      <a href="/financial-disclaimer" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;">Financial Disclaimer</a>
+      <a href="/affiliate-disclosure" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;">Affiliate Disclosure</a>
+      <a href="mailto:hello@wealthsproutkids.com" style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;">hello@wealthsproutkids.com</a>
+    </div>
+
+    <p style="font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,0.25);margin:0;line-height:1.6;">
+      &#169; 2026 WealthSprout&#8482; &middot; For educational purposes only. Nothing on this site constitutes financial advice.
+      WealthSprout is an independent educational publisher. &middot; <a href="https://www.wealthsproutkids.com" style="color:rgba(255,255,255,0.25);text-decoration:none;">wealthsproutkids.com</a>
+    </p>
+
+  </div>
+</footer>
+
+<script src="../main.js"></script>
 </body>
 </html>
 ```
@@ -189,27 +329,32 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
 ## STRICT RULES — NEVER BREAK THESE
 
 ### ❌ FORBIDDEN patterns (never use these):
-- `<header class="header">` — old nav, BANNED
-- `<nav class="nav">` without `nav-minimal` class — BANNED
-- `<header class="nav-wrap">` — BANNED
-- `<header class="site-header">` — BANNED
+- `<nav class="nav nav-minimal">` — logo-only nav, BANNED on blog articles
+- `<header class="header">` — old nav pattern, BANNED
+- `<header class="nav-wrap">` or `<header class="site-header">` — BANNED
 - Hero image placed INSIDE `<article>` as an inline `<img>` — BANNED
 - `<details class="toc-box">` or `<details open>` — BANNED, use plain `<details>`
 - `<p class="author-byline">By Maya Hartwell</p>` — BANNED, use the green author box
-- Multiple CTA boxes in one article — BANNED, max 1 CTA box per article
-- `og:url` pointing to `www.wealthsprout.com` — BANNED, must be `www.wealthsproutkids.com`
+- `og:url` or publisher logo pointing to `www.wealthsprout.com` — BANNED, must be `www.wealthsproutkids.com`
 - `Founder, WealthSprout` for Maya's title — BANNED, use `Editor, WealthSprout`
+- `<div class="author-bio">` — BANNED, use the Author Bio Footer block at the bottom
+- Article body content inside `<header>` — BANNED, all article content goes inside `<article>`
+- Omitting the Author Bio Footer, Product Showcase, or Site Footer — BANNED
 
 ### ✅ REQUIRED patterns (always use these):
-- Nav: `<nav class="nav nav-minimal">` with only the logo link
-- Hero header: `<header class="blog-post-hero has-image">` with `blog-post-hero-img` class on img
-- Author box: the green div with Maya's photo — inside `<header>`, below `<h1>`, above `.blog-post-meta`
+- Nav: full site nav with Programs dropdown, all links, Sign In and "Get the Free Kit →" buttons
+- Hero header: `<header class="blog-post-hero has-image">` with `blog-post-hero-img` class on img — inside `<main>`
+- All article content inside `<article class="legal-wrap blog-article">` — never inside `<header>`
+- Author box: green div with Maya's photo — inside `<header>`, below `<h1>`, above `.blog-post-meta`
 - Maya's title: **"Editor, WealthSprout"** (not Founder)
 - Date meta: `<span>📅 Month D, YYYY</span> <span>·</span> <span>N min read</span>`
 - Table of Contents: plain `<details><summary>Table of Contents</summary>...</details>`
-- ONE CTA box: after the first 1-2 paragraphs of the article, using the green box design above
-- Paragraphs: keep them SHORT (2-4 sentences max). Break long paragraphs into multiple shorter ones.
-- Hero image path: `/blog/images/[slug]-hero.jpg` (filename matches the article slug)
+- CTA box in article body: after first 1-2 paragraphs (Acorns for banking topics, Free Kit for general)
+- Banking articles: add 2–3 total Acorns CTAs throughout the article with varied sub-headlines
+- Geo-detection script: required on all banking/Acorns articles (swaps to Free Kit for non-US)
+- Author Bio Footer: always included, after `</main>`, before the Product Showcase
+- Product Showcase: always included, after Author Bio Footer
+- Site Footer: always included, after Product Showcase
 - Canonical domain: always `https://www.wealthsproutkids.com`
 - GTM: always include the GTM snippet in `<head>` with ID `GTM-PN2W2R7T`
 - Stylesheet: `<link rel="stylesheet" href="../styles.css">`
@@ -220,7 +365,6 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
 - H2 headings for major sections, H3 for subsections
 - Use bold `<strong>` to highlight key terms, not entire sentences
 - Lists (`<ul>`, `<ol>`) to break up dense info — use them generously
-- No more than 1 CTA box in the entire article body
 
 ### CATEGORIES (use one of these exactly):
 - `Kids &amp; Money`
@@ -235,14 +379,21 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
 
 ## QUICK CHECKLIST BEFORE SUBMITTING
 
-- [ ] `nav-minimal` nav (logo only, no links)
-- [ ] `blog-post-hero has-image` header with hero image
-- [ ] Author box (green card) inside hero, below H1
+- [ ] Full site nav (with Programs dropdown, all 8 links)
+- [ ] `<main>` wrapping `<header>` and `<article>`
+- [ ] `blog-post-hero has-image` header with hero image (`class="blog-post-hero-img"`)
+- [ ] Author box (green card) inside hero, below H1, above `.blog-post-meta`
 - [ ] Maya's title says "Editor, WealthSprout"
 - [ ] Date + read time in `.blog-post-meta`
 - [ ] `<details>` Table of Contents (no class, no open)
-- [ ] Exactly 1 CTA box in article body
+- [ ] CTA box in article body (Acorns for banking, Free Kit for general)
+- [ ] Banking articles: geo-detection script included
+- [ ] `<p class="disclaimer">` at end of article body
+- [ ] Author Bio Footer block (after `</main>`)
+- [ ] Product Showcase block (after Author Bio Footer)
+- [ ] Site Footer block (after Product Showcase)
 - [ ] Short paragraphs throughout
 - [ ] Canonical URL uses `wealthsproutkids.com`
 - [ ] GTM tag present in `<head>`
+- [ ] Publisher logo URL uses `wealthsproutkids.com` (not `wealthsprout.com`)
 - [ ] Hero image path: `/blog/images/[slug]-hero.jpg`
