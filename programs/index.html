@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior:smooth;">
+<head>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PN2W2R7T');</script>
+<!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%B1</text></svg>">
+    <title>Financial Literacy Programs for Kids Ages 5–18 | WealthSprout</title>
+    <meta name="description" content="Age-matched financial literacy workbooks for children ages 5–18. From the 3-Jar System at 5 to Roth IRA setup at 17. Find the right program for your child.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="WealthSprout">
+    <link rel="canonical" href="https://www.wealthsproutkids.com/programs">
+    <link rel="llms" href="https://www.wealthsproutkids.com/llms.txt">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:url" content="https://www.wealthsproutkids.com/programs">
+    <meta property="og:title" content="Financial Literacy Programs for Kids Ages 5–18 | WealthSprout">
+    <meta property="og:description" content="Age-matched financial literacy workbooks for children ages 5–18. From the 3-Jar System at 5 to Roth IRA setup at 17. Find the right program for your child.">
+    <meta property="og:image" content="https://www.wealthsproutkids.com/og-image.jpg">
+    <meta property="og:site_name" content="WealthSprout">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Financial Literacy Programs for Kids Ages 5–18 | WealthSprout">
+    <meta name="twitter:description" content="Age-matched financial literacy workbooks for children ages 5–18. From the 3-Jar System at 5 to Roth IRA setup at 17.">
+    <meta name="twitter:image" content="https://www.wealthsproutkids.com/og-image.jpg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "WealthSprout Programs",
+      "description": "Age-matched financial literacy programs for children ages 5–18.",
+      "url": "https://www.wealthsproutkids.com/programs",
+      "publisher": {
+        "@type": "Organization",
+        "name": "WealthSprout",
+        "url": "https://www.wealthsproutkids.com"
+      },
+      "hasPart": [
+        {"@type": "Product", "name": "My First Money Kit", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}},
+        {"@type": "Product", "name": "Money Seeds", "offers": {"@type": "Offer", "price": "17", "priceCurrency": "USD"}},
+        {"@type": "Product", "name": "Money Moves", "offers": {"@type": "Offer", "price": "24", "priceCurrency": "USD"}},
+        {"@type": "Product", "name": "Wealth Blueprint", "offers": {"@type": "Offer", "price": "29", "priceCurrency": "USD"}},
+        {"@type": "Product", "name": "Launch Rich", "offers": {"@type": "Offer", "price": "34", "priceCurrency": "USD"}},
+        {"@type": "Product", "name": "The WealthSprout Family Collection", "offers": {"@type": "Offer", "price": "67", "priceCurrency": "USD"}}
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* ── Programs page responsive grid ── */
+        .prog-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .prog-placeholder {
+            border-radius: 16px;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .prog-placeholder-inner {
+            text-align: center;
+            padding: 32px;
+        }
+        .prog-placeholder-inner .icon { font-size: 64px; margin: 0; }
+        .prog-placeholder-inner .name {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 22px;
+            color: #ffffff;
+            margin: 12px 0 0;
+        }
+        .prog-placeholder-inner .sub {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255,255,255,0.65);
+            margin: 6px 0 0;
+        }
+        .prog-checklist { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
+        .prog-check-row { display: flex; align-items: flex-start; gap: 10px; }
+        .prog-check-row .tick { color: #F0A500; font-weight: 700; flex-shrink: 0; }
+        .prog-check-row p { font-family: 'Inter', sans-serif; font-size: 14px; color: #374151; margin: 0; line-height: 1.55; }
+        .prog-label-row { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+        .prog-age-badge {
+            background: #D4E8D0; color: #1E5C3A;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px;
+            padding: 4px 12px; border-radius: 100px; text-transform: uppercase;
+        }
+        .prog-price-label {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 22px; color: #1A1A2E;
+        }
+        .prog-section-label {
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px;
+            color: #1E5C3A; text-transform: uppercase; letter-spacing: 0.08em;
+            margin: 0 0 12px;
+        }
+        .prog-h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 34px; color: #1A1A2E; margin: 0 0 12px; line-height: 1.15;
+        }
+        .prog-p {
+            font-family: 'Inter', sans-serif; font-size: 16px;
+            color: #374151; line-height: 1.75; margin: 0 0 8px;
+        }
+        .prog-cta-green {
+            display: inline-block; background: #1E5C3A; color: #ffffff;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px;
+            padding: 16px 32px; border-radius: 8px; text-decoration: none;
+        }
+        .prog-cta-dark {
+            display: inline-block; background: #1A1A2E; color: #ffffff;
+            font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px;
+            padding: 16px 32px; border-radius: 8px; text-decoration: none;
+        }
+        /* age nav strip */
+        .age-nav { background: #1A1A2E; }
+        .age-nav-inner { max-width: 900px; margin: 0 auto; display: flex; overflow-x: auto; scrollbar-width: none; }
+        .age-nav-inner::-webkit-scrollbar { display: none; }
+        .age-nav-inner a {
+            flex-shrink: 0; padding: 14px 20px;
+            font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 13px;
+            color: rgba(255,255,255,0.6); text-decoration: none;
+            border-bottom: 2px solid transparent; white-space: nowrap;
+            transition: color .15s, border-color .15s;
+        }
+        .age-nav-inner a:hover { color: #ffffff; }
+        .age-nav-inner a.gold { color: #F0A500; border-bottom-color: #F0A500; font-weight: 800; }
+        /* add-on cards */
+        .addon-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 48px; }
+        .addon-card {
+            background: #F8F6F0; border-radius: 12px; padding: 20px;
+            text-decoration: none; display: block; border: 1px solid #E5E7EB;
+            transition: box-shadow .15s;
+        }
+        .addon-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,.08); }
+        .addon-card .icon { font-size: 32px; margin: 0 0 10px; }
+        .addon-card .meta { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px; color: #1E5C3A; text-transform: uppercase; letter-spacing: 0.06em; margin: 0 0 6px; }
+        .addon-card h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 18px; color: #1A1A2E; margin: 0 0 8px; line-height: 1.2; }
+        .addon-card p { font-family: 'Inter', sans-serif; font-size: 13px; color: #6B7280; margin: 0; line-height: 1.5; }
+        .accessory-strip { background: #F8F6F0; border-radius: 12px; padding: 24px 28px; }
+        .accessory-strip h4 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: #1E5C3A; text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 16px; }
+        .accessory-chips { display: flex; flex-wrap: wrap; gap: 10px; }
+        .accessory-chip {
+            background: #ffffff; border: 1px solid #E5E7EB; border-radius: 8px;
+            padding: 10px 16px; text-decoration: none; display: flex; align-items: center; gap: 8px;
+        }
+        .accessory-chip .chip-icon { font-size: 18px; }
+        .accessory-chip .chip-name { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 13px; color: #1A1A2E; margin: 0; }
+        .accessory-chip .chip-price { font-family: 'Inter', sans-serif; font-size: 11px; color: #9CA3AF; margin: 0; }
+        /* vault grid chips */
+        .vault-chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; max-width: 600px; margin: 0 auto 32px; }
+        .vault-chip { background: rgba(255,255,255,0.1); border-radius: 8px; padding: 12px; text-align: center; }
+        .vault-chip p { font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 12px; color: rgba(255,255,255,0.75); margin: 0; }
+        /* mobile */
+        @media (max-width: 767px) {
+            .prog-grid { grid-template-columns: 1fr; gap: 32px; }
+            .prog-grid .prog-placeholder { aspect-ratio: 3/2; max-height: 220px; }
+            .prog-grid-img-right .prog-placeholder { order: -1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN2W2R7T"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li class="nav-item-drop">
+                    <a href="/programs" class="nav-drop-label">Programs <span class="car">▾</span></a>
+                    <div class="nav-megadrop">
+                        <a href="/free-kit" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">🌱</span><div class="mega-text"><h5>My First Money Kit</h5><p>Ages 5–10</p></div><span class="mega-price">Free</span></a>
+                        <a href="/money-seeds" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">🐷</span><div class="mega-text"><h5>Money Seeds</h5><p>Ages 5–8</p></div><span class="mega-price">$17</span></a>
+                        <a href="/money-moves" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">📈</span><div class="mega-text"><h5>Money Moves</h5><p>Ages 9–12</p></div><span class="mega-price">$24</span></a>
+                        <a href="/wealth-blueprint" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">🧭</span><div class="mega-text"><h5>Wealth Blueprint</h5><p>Ages 13–15</p></div><span class="mega-price">$29</span></a>
+                        <a href="/launch-rich" class="mega-link" target="_blank" rel="noopener"><span class="mega-icon">🚀</span><div class="mega-text"><h5>Launch Rich</h5><p>Ages 16–18</p></div><span class="mega-price">$34</span></a>
+                        <div class="mega-divider"></div>
+                        <a href="/vault" class="mega-link mega-vault" target="_blank" rel="noopener"><span class="mega-icon">⭐</span><div class="mega-text"><h5>The Family Collection</h5><p>All 4 + bonus guide</p></div><span class="mega-price">$67</span></a>
+                        <div class="mega-divider"></div>
+                        <a href="/programs" class="mega-link" style="justify-content:center;"><div class="mega-text" style="text-align:center;"><h5 style="color:#1E5C3A;">View All Programs →</h5></div></a>
+                    </div>
+                </li>
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/vault">The Family Collection</a></li>
+                <li><a href="/#faq">FAQ</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/coming-soon" class="nav-signin">Sign In</a></li>
+                <li><a href="/free-kit" class="nav-cta">Get the Free Kit →</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ══════════════════════════════════════
+         SECTION 1 — HERO
+    ══════════════════════════════════════ -->
+    <section style="background:#1E5C3A;padding:64px 24px 48px;">
+        <div style="max-width:760px;margin:0 auto;text-align:center;">
+            <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#F0A500;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 12px;">The WealthSprout Curriculum</p>
+            <h1 style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#ffffff;margin:0 0 16px;line-height:1.15;">Financial Education Built for Every Age</h1>
+            <p style="font-family:'Inter',sans-serif;font-size:17px;color:rgba(255,255,255,0.8);max-width:580px;margin:0 auto 28px;line-height:1.7;">Six age-matched programs that grow with your child — from their first savings jar at 5 to their first Roth IRA at 17. Each one meets them exactly where they are.</p>
+            <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+                <a href="/free-kit" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;">Start Free →</a>
+                <a href="/vault" style="display:inline-block;background:transparent;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:700;font-size:15px;padding:14px 28px;border-radius:8px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.4);">See the Full Collection — $67</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 2 — AGE NAVIGATOR STRIP
+    ══════════════════════════════════════ -->
+    <section class="age-nav">
+        <div class="age-nav-inner">
+            <a href="#free-kit">Ages 5–10 · Free</a>
+            <a href="#money-seeds">Ages 5–8 · $17</a>
+            <a href="#money-moves">Ages 9–12 · $24</a>
+            <a href="#wealth-blueprint">Ages 13–15 · $29</a>
+            <a href="#launch-rich">Ages 16–18 · $34</a>
+            <a href="#add-ons">Add-Ons</a>
+            <a href="#vault" class="gold">Family Collection $67 ★</a>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 3 — FREE KIT
+    ══════════════════════════════════════ -->
+    <section id="free-kit" style="padding:80px 24px;background:#F8F6F0;">
+        <div class="prog-grid">
+            <div class="prog-placeholder" style="background:#1E5C3A;">
+                <div class="prog-placeholder-inner">
+                    <p class="icon">🌱</p>
+                    <p class="name">My First Money Kit</p>
+                    <p class="sub">28 pages · Instant PDF</p>
+                </div>
+            </div>
+            <div>
+                <div class="prog-label-row">
+                    <span class="prog-age-badge">Ages 5–10</span>
+                    <span style="background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;padding:4px 12px;border-radius:100px;">FREE</span>
+                </div>
+                <h2 class="prog-h2">My First Money Kit</h2>
+                <p class="prog-p">The starting point for every WealthSprout family. 28 pages built around the Spend-Save-Give system — the three-jar method that turns every dollar a child receives into a real money lesson. Most families have their jars set up within one Saturday morning.</p>
+                <p class="prog-section-label">What is inside:</p>
+                <div class="prog-checklist">
+                    <div class="prog-check-row"><span class="tick">✓</span><p>The 3-Jar System — Spend, Save, Give — with printable jar labels your child decorates themselves</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>My First Savings Goal Worksheet — your child picks a goal, sets a timeline, tracks it weekly</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Parent Quick-Start Guide — five minutes to set up, no finance background needed</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>What Is Money? visual explainer for young kids who are just starting to understand value</p></div>
+                </div>
+                <a href="/free-kit" class="prog-cta-green">Download Free — Instant Access →</a>
+                <p style="font-family:'Inter',sans-serif;font-size:12px;color:#9CA3AF;margin:10px 0 0;">No credit card · Print at home · Works on any device</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 4 — MONEY SEEDS
+    ══════════════════════════════════════ -->
+    <section id="money-seeds" style="padding:80px 24px;background:#ffffff;">
+        <div class="prog-grid prog-grid-img-right">
+            <div>
+                <div class="prog-label-row">
+                    <span class="prog-age-badge">Ages 5–8</span>
+                    <span class="prog-price-label">$17</span>
+                </div>
+                <h2 class="prog-h2">Money Seeds</h2>
+                <p class="prog-p">The first full financial literacy workbook in the WealthSprout curriculum. Forty illustrated pages that teach earning, saving, and giving through activities early readers can do with their parents — not homework, but shared discovery.</p>
+                <p class="prog-p" style="margin-bottom:24px;">By page ten, most children understand the difference between needs and wants without prompting. By the end, they have set their first real savings goal and built the habit of splitting money every time they receive it.</p>
+                <p class="prog-section-label">What is inside:</p>
+                <div class="prog-checklist">
+                    <div class="prog-check-row"><span class="tick">✓</span><p>The 3-Jar System in depth — spend, save, give ratios with tracking pages</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Needs vs wants — illustrated activities for early learners</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>My first savings goal — set a target, draw it, track it week by week</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>40 illustrated pages · Certificate of completion · Parent guide</p></div>
+                </div>
+                <a href="/money-seeds" class="prog-cta-green">Get Money Seeds — $17 →</a>
+            </div>
+            <div class="prog-placeholder" style="background:#F28B6E;">
+                <div class="prog-placeholder-inner">
+                    <p class="icon">🐷</p>
+                    <p class="name">Money Seeds</p>
+                    <p class="sub">40 pages · Ages 5–8</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 5 — MONEY MOVES
+    ══════════════════════════════════════ -->
+    <section id="money-moves" style="padding:80px 24px;background:#F8F6F0;">
+        <div class="prog-grid">
+            <div class="prog-placeholder" style="background:#1E5C3A;">
+                <div class="prog-placeholder-inner">
+                    <p class="icon">📈</p>
+                    <p class="name">Money Moves</p>
+                    <p class="sub">52 pages · Ages 9–12</p>
+                </div>
+            </div>
+            <div>
+                <div class="prog-label-row">
+                    <span class="prog-age-badge">Ages 9–12</span>
+                    <span class="prog-price-label">$24</span>
+                </div>
+                <h2 class="prog-h2">Money Moves</h2>
+                <p class="prog-p">Real concepts for minds that are ready. Fifty-two pages covering compound interest with actual math, budgeting, an introduction to investing, and how to start a first micro-business. No dumbing down.</p>
+                <p class="prog-p" style="margin-bottom:24px;">Most kids who finish this workbook ask if they can open a bank account the same week. They have calculated what compound interest does to $100 over fifty years and they want to start immediately.</p>
+                <p class="prog-section-label">What is inside:</p>
+                <div class="prog-checklist">
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Compound interest with real numbers — the math that changes how kids see money forever</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Their first real budget — based on actual income from allowance, chores, or jobs</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Paper portfolio activity — tracking real stocks with pretend money before using real money</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>52 pages · 16-week tracker · Certificate · Parent guide</p></div>
+                </div>
+                <a href="/money-moves" class="prog-cta-green">Get Money Moves — $24 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 6 — WEALTH BLUEPRINT
+    ══════════════════════════════════════ -->
+    <section id="wealth-blueprint" style="padding:80px 24px;background:#ffffff;">
+        <div class="prog-grid prog-grid-img-right">
+            <div>
+                <div class="prog-label-row">
+                    <span class="prog-age-badge">Ages 13–15</span>
+                    <span class="prog-price-label">$29</span>
+                </div>
+                <h2 class="prog-h2">Wealth Blueprint</h2>
+                <p class="prog-p">The financial education school skipped. Sixty pages covering stocks, ETFs, Roth IRA setup, index funds, side hustles, and a complete five-year wealth roadmap. Written for teenagers who are ready to be treated like the intelligent future investors they are.</p>
+                <p class="prog-p" style="margin-bottom:24px;">A teenager who finishes this workbook understands why a Roth IRA opened at 15 is worth $400,000 more at retirement than one opened at 25 — and they want to open one immediately.</p>
+                <p class="prog-section-label">What is inside:</p>
+                <div class="prog-checklist">
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Roth IRA setup walkthrough — step-by-step account opening with Fidelity</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Stocks vs ETFs vs index funds — exactly what to buy with a first $100</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Paper portfolio + 16-week investment tracker with real stock prices</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>60 pages · 5-year wealth roadmap · Certificate · Parent guide</p></div>
+                </div>
+                <a href="/wealth-blueprint" class="prog-cta-dark">Get Wealth Blueprint — $29 →</a>
+            </div>
+            <div class="prog-placeholder" style="background:#1A1A2E;">
+                <div class="prog-placeholder-inner">
+                    <p class="icon">🧭</p>
+                    <p class="name" style="color:#F0A500;">Wealth Blueprint</p>
+                    <p class="sub">60 pages · Ages 13–15</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 7 — LAUNCH RICH
+    ══════════════════════════════════════ -->
+    <section id="launch-rich" style="padding:80px 24px;background:#F8F6F0;">
+        <div class="prog-grid">
+            <div class="prog-placeholder" style="background:linear-gradient(135deg,#1A1A2E,#2E2E42);">
+                <div class="prog-placeholder-inner">
+                    <p class="icon">🚀</p>
+                    <p class="name" style="color:#F0A500;">Launch Rich</p>
+                    <p class="sub">70 pages · Ages 16–18</p>
+                </div>
+            </div>
+            <div>
+                <div class="prog-label-row">
+                    <span class="prog-age-badge">Ages 16–18</span>
+                    <span class="prog-price-label">$34</span>
+                </div>
+                <h2 class="prog-h2">Launch Rich</h2>
+                <p class="prog-p">Everything school skipped before real life began. Seventy pages covering first paycheck decoded line by line, credit building before 18, student loans explained without the spin, investing first income, and a ten-year wealth roadmap from 17 to 27.</p>
+                <p class="prog-p" style="margin-bottom:24px;">The financial operating system most adults wish they had before their first job arrived.</p>
+                <p class="prog-section-label">What is inside:</p>
+                <div class="prog-checklist">
+                    <div class="prog-check-row"><span class="tick">✓</span><p>First paycheck decoder — every deduction explained, W-4 setup done right</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Credit building before 18 — four methods, 12-month plan to 700+ score</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>Student loans — the real cost calculator and questions to ask before signing anything</p></div>
+                    <div class="prog-check-row"><span class="tick">✓</span><p>70 pages · 16-week tracker · 10-year roadmap · Certificate</p></div>
+                </div>
+                <a href="/launch-rich" class="prog-cta-dark">Get Launch Rich — $34 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 8 — ADD-ONS
+    ══════════════════════════════════════ -->
+    <section id="add-ons" style="padding:72px 24px;background:#ffffff;">
+        <div style="max-width:900px;margin:0 auto;">
+            <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#F0A500;text-transform:uppercase;letter-spacing:0.1em;text-align:center;margin:0 0 8px;">Go Deeper</p>
+            <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:32px;color:#1A1A2E;text-align:center;margin:0 0 8px;">Specialized Guides</h2>
+            <p style="font-family:'Inter',sans-serif;font-size:15px;color:#6B7280;text-align:center;max-width:520px;margin:0 auto 40px;line-height:1.7;">Topic-specific guides that pair with any core program. Each covers one subject in full depth.</p>
+
+            <div class="addon-grid">
+                <a href="/young-entrepreneur" class="addon-card">
+                    <p class="icon">📦</p>
+                    <p class="meta">Ages 10–16 · $27</p>
+                    <h3>Young Entrepreneur Playbook</h3>
+                    <p>Business thinking, opportunity spotting, first customer, first dollar. 31 pages.</p>
+                </a>
+                <a href="/stock-market-guide" class="addon-card">
+                    <p class="icon">📊</p>
+                    <p class="meta">Ages 13–18 · $17</p>
+                    <h3>Stock Market Starter Guide</h3>
+                    <p>Stocks, ETFs, index funds. What to buy with a first $100. Account setup. 20 pages.</p>
+                </a>
+                <a href="/credit-first-job" class="addon-card">
+                    <p class="icon">💳</p>
+                    <p class="meta">Ages 16–18 · $17</p>
+                    <h3>Credit & First Job Pack</h3>
+                    <p>Credit scores, W-4 setup, first paycheck decoded. Everything before adulthood. 20 pages.</p>
+                </a>
+                <a href="/first-business-playbook" class="addon-card">
+                    <p class="icon">🏪</p>
+                    <p class="meta">Ages 9–12 · $17</p>
+                    <h3>First Business Playbook</h3>
+                    <p>Idea generation, pricing, first customer, tracking profits. A real business plan. 20 pages.</p>
+                </a>
+            </div>
+
+            <div class="accessory-strip">
+                <h4>Add to Any Program</h4>
+                <div class="accessory-chips">
+                    <a href="/money-journal" class="accessory-chip">
+                        <span class="chip-icon">📓</span>
+                        <div>
+                            <p class="chip-name">My Money Journal</p>
+                            <p class="chip-price">30-day tracker · $9</p>
+                        </div>
+                    </a>
+                    <a href="/money-notepad" class="accessory-chip">
+                        <span class="chip-icon">📋</span>
+                        <div>
+                            <p class="chip-name">My Money Notepad</p>
+                            <p class="chip-price">30-week tracker · $7</p>
+                        </div>
+                    </a>
+                    <a href="/side-hustle-sheet" class="accessory-chip">
+                        <span class="chip-icon">💡</span>
+                        <div>
+                            <p class="chip-name">20 Side Hustles Sheet</p>
+                            <p class="chip-price">Ideas for ages 8–18 · $7</p>
+                        </div>
+                    </a>
+                    <a href="/free-kit" class="accessory-chip">
+                        <span class="chip-icon">🏷️</span>
+                        <div>
+                            <p class="chip-name">Printable Jar Labels</p>
+                            <p class="chip-price">Spend Save Give · $4</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SECTION 9 — FAMILY COLLECTION
+    ══════════════════════════════════════ -->
+    <section id="vault" style="padding:80px 24px;background:#1E5C3A;">
+        <div style="max-width:760px;margin:0 auto;text-align:center;">
+            <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#F0A500;text-transform:uppercase;letter-spacing:0.1em;margin:0 0 12px;">⭐ Best Value · Founding Member Price</p>
+            <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:38px;color:#ffffff;margin:0 0 16px;line-height:1.15;">The WealthSprout Family Collection</h2>
+            <p style="font-family:'Inter',sans-serif;font-size:17px;color:rgba(255,255,255,0.8);max-width:560px;margin:0 auto 28px;line-height:1.7;">Every program for ages 5–18 in one founding member bundle. All future products added to your account automatically. Price rises when the next program launches.</p>
+
+            <div class="vault-chips">
+                <div class="vault-chip"><p>✓ Money Seeds</p></div>
+                <div class="vault-chip"><p>✓ Money Moves</p></div>
+                <div class="vault-chip"><p>✓ Wealth Blueprint</p></div>
+                <div class="vault-chip"><p>✓ Launch Rich</p></div>
+                <div class="vault-chip"><p>✓ All Future Programs</p></div>
+            </div>
+
+            <div style="margin-bottom:12px;">
+                <span style="font-family:'DM Serif Display',Georgia,serif;font-size:48px;color:#F0A500;">$67</span>
+                <span style="font-family:'Inter',sans-serif;font-size:16px;color:rgba(255,255,255,0.5);margin-left:12px;">vs $103+ separately</span>
+            </div>
+            <a href="/vault" style="display:inline-block;background:#F0A500;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:17px;padding:18px 40px;border-radius:10px;text-decoration:none;margin-bottom:12px;">Get the Family Collection — $67 →</a>
+            <p style="font-family:'Inter',sans-serif;font-size:12px;color:rgba(255,255,255,0.4);margin:0;">✓ Instant PDF access · ✓ 30-day guarantee · ✓ All ages 5–18 covered</p>
+        </div>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         SITE FOOTER
+    ══════════════════════════════════════ -->
+    <footer class="footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
+                    <p>Financial literacy education for kids ages 5–18 — workbooks, guides, and tools that teach what school doesn't.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/wealthsprout" aria-label="Facebook" target="_blank" rel="noopener">FB</a>
+                        <a href="https://www.instagram.com/wealthsprout" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+                        <a href="https://www.pinterest.com/wealthsprout" aria-label="Pinterest" target="_blank" rel="noopener">PN</a>
+                        <a href="https://www.tiktok.com/@wealthsprout" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Programs</h4>
+                    <ul>
+                        <li><a href="/free-kit">My First Money Kit</a></li>
+                        <li><a href="/money-seeds">Money Seeds</a></li>
+                        <li><a href="/money-moves">Money Moves</a></li>
+                        <li><a href="/wealth-blueprint">Wealth Blueprint</a></li>
+                        <li><a href="/launch-rich">Launch Rich</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="/#how-it-works">How It Works</a></li>
+                        <li><a href="/vault">The Family Collection</a></li>
+                        <li><a href="/#faq">FAQ</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:hello@wealthsproutkids.com">hello@wealthsproutkids.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="/privacy-policy">Privacy Policy</a></li>
+                        <li><a href="/cookie-policy">Cookie Policy</a></li>
+                        <li><a href="/terms-of-service">Terms of Service</a></li>
+                        <li><a href="/financial-disclaimer">Financial Disclaimer</a></li>
+                        <li><a href="/advertising-disclosure">Advertising Disclosure</a></li>
+                        <li><a href="/affiliate-disclosure">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 WealthSprout. All rights reserved. WealthSprout is an educational company. Nothing on this site constitutes financial advice. See our <a href="/financial-disclaimer">Financial Disclaimer</a>.</span>
+                <p style="font-size:12px;color:#9CA3AF;text-align:center;margin-top:8px;">WealthSprout · hello@wealthsproutkids.com · <a href="/about" style="color:#9CA3AF;">About Us</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main.js"></script>
+</body>
+</html>
