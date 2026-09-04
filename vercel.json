@@ -41,15 +41,5 @@
       "destination": "/launch-rich",
       "permanent": true
     }
-  ],
-  "builds": [
-    {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "**",
-      "use": "@vercel/static"
-    }
   ]
 }
