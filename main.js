@@ -403,12 +403,12 @@ if (vaultNotifyForm) {
         return `
             <div class="quiz-intro">
                 <div class="quiz-intro-banner">
-                    <span class="eyebrow eyebrow-gold">Free · 60 seconds</span>
+                    <span class="eyebrow eyebrow-gold">Free · 30 seconds</span>
                     <h2>Find the right financial curriculum for your child</h2>
                     <p>4 quick questions. Instant result. We'll match your child to the exact WealthSprout product built for their age and level — plus a free starter kit.</p>
                 </div>
                 <div class="quiz-perks">
-                    <span>⏱️ Takes 60 seconds</span>
+                    <span>⏱️ Takes 30 seconds</span>
                     <span>🎯 Matched to your child's exact age &amp; level</span>
                     <span>🎁 Free kit unlocked with every result</span>
                 </div>
