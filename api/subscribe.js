@@ -19,7 +19,7 @@ module.exports = async function handler(req, res) {
   console.log('[subscribe] API key present, length=', GETRESPONSE_API_KEY.length);
 
   // Use listId from request body; fall back to env var; then hardcoded default
-  const listId = req.body?.listId || process.env.GETRESPONSE_LIST_ID || 'KKOGG';
+  const listId = req.body?.listId || process.env.GETRESPONSE_LIST_ID || 'uuZ44';
   console.log('[subscribe] listId=', listId);
   const tagIds = req.body?.tagIds;
 

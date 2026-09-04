@@ -135,10 +135,10 @@ async function submitToResend(payload) {
    real campaignId from GetResponse for that list.
 ───────────────────────────────────── */
 const GETRESPONSE_LISTS = {
-    KIT_STRIP: 'KKOGG',                                // homepage inline strip (#kitForm)
-    WAITLIST: 'KKOGG',                                 // Money Lab waitlist (#waitlistForm)
-    FREE_KIT: 'KKOGG',                                 // /free-kit opt-in (#optinForm)
-    VAULT_PRICE_WATCH: 'KKOGG',                        // Family Collection price-increase notify (#vaultNotifyForm)
+    KIT_STRIP: 'uuZ44',                                // homepage inline strip (#kitForm)
+    WAITLIST: 'uuZ44',                                 // Money Lab waitlist (#waitlistForm)
+    FREE_KIT: 'uuZ44',                                 // /free-kit opt-in (#optinForm)
+    VAULT_PRICE_WATCH: 'uuZ44',                        // Family Collection price-increase notify (#vaultNotifyForm)
 };
 
 // Tag IDs (not list IDs) applied alongside a list on subscribe, e.g. to
