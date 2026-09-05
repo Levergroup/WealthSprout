@@ -304,6 +304,13 @@
   </url>
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
+<url>
+  <loc>https://wealthsproutkids.com/blog/money-lessons-for-9-year-olds</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-05</lastmod>
+</url>
+
   <url>
     <loc>https://www.wealthsproutkids.com/blog/how-do-i-open-a-bank-account-for-my-child</loc>
     <changefreq>monthly</changefreq>
