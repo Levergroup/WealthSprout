@@ -407,21 +407,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     btn.textContent = 'Sending…';
     btn.disabled = true;
 
-    // Fire API in background — redirect regardless of result (same pattern as free-kit form)
+    // Fire analytics events
     try {
       if (typeof fbq === 'function') { fbq('track', 'Lead'); }
       if (typeof gtag === 'function') { gtag('event', 'generate_lead', { event_category: 'advertorial' }); }
       if (window.dataLayer) { window.dataLayer.push({ event: 'lead_form_submit', form_id: 'advertorial-form' }); }
     } catch (e) {}
 
+    // Await the API call before redirecting — navigating away cancels in-flight fetches.
+    // Redirect regardless of success/failure (same pattern as free-kit form).
     fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email })
-    }).catch(function () {});
-
-    localStorage.setItem('ws_email', email);
-    window.location.href = '/free-kit/thank-you';
+    })
+      .catch(function () {})
+      .finally(function () {
+        localStorage.setItem('ws_email', email);
+        window.location.href = '/free-kit/thank-you';
+      });
   });
 })();
 </script>
