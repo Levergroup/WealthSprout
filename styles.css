@@ -1133,7 +1133,7 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .blog-back:hover { text-decoration:underline; }
 .blog-post-hero {
     background:linear-gradient(135deg, var(--green-dark) 0%, var(--green) 60%, #2d7a50 100%);
-    padding:56px 0 40px;
+    padding:80px 0 40px;
     background-size:cover;
     background-position:center;
     position:relative;
