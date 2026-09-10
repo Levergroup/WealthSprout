@@ -421,7 +421,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email })
     })
-      .catch(function () {})
+      .then(function (res) {
+        return res.json().then(function (data) {
+          // DEBUG: show raw response before redirecting
+          console.log('[advertorial] api status=' + res.status, data);
+          var dbg = document.createElement('pre');
+          dbg.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#1a1a2e;color:#f0a500;font-size:12px;padding:10px;z-index:9999;white-space:pre-wrap;';
+          dbg.textContent = 'API ' + res.status + ': ' + JSON.stringify(data);
+          document.body.appendChild(dbg);
+          return new Promise(function (resolve) { setTimeout(resolve, 5000); });
+        });
+      })
+      .catch(function (err) {
+        console.error('[advertorial] fetch error:', err);
+      })
       .finally(function () {
         localStorage.setItem('ws_email', email);
         window.location.href = '/free-kit/thank-you';
