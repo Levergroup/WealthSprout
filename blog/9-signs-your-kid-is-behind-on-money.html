@@ -404,39 +404,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
     emailInput.style.borderColor = '#D1D5DB';
-    var originalText = btn.textContent;
     btn.textContent = 'Sending…';
     btn.disabled = true;
+
+    // Fire API in background — redirect regardless of result (same pattern as free-kit form)
+    try {
+      if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+      if (typeof gtag === 'function') { gtag('event', 'generate_lead', { event_category: 'advertorial' }); }
+      if (window.dataLayer) { window.dataLayer.push({ event: 'lead_form_submit', form_id: 'advertorial-form' }); }
+    } catch (e) {}
 
     fetch('/api/subscribe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: email })
-    })
-      .then(function (res) { return res.json(); })
-      .then(function (data) {
-        if (data && (data.ok || data.success)) {
-          if (typeof fbq === 'function') { fbq('track', 'Lead'); }
-          if (typeof gtag === 'function') { gtag('event', 'generate_lead', { event_category: 'advertorial' }); }
-          if (window.dataLayer) { window.dataLayer.push({ event: 'lead_form_submit', form_id: 'advertorial-form' }); }
-          window.location.href = '/free-kit/thank-you';
-        } else {
-          throw new Error(data && data.error ? data.error : 'Subscription failed');
-        }
-      })
-      .catch(function (err) {
-        btn.textContent = originalText;
-        btn.disabled = false;
-        emailInput.style.borderColor = '#EF4444';
-        var existing = form.querySelector('.adv-error');
-        if (!existing) {
-          var msg = document.createElement('p');
-          msg.className = 'adv-error';
-          msg.style.cssText = 'font-family:Inter,sans-serif;font-size:13px;color:#EF4444;margin:8px 0 0;';
-          msg.textContent = 'Something went wrong — please try again.';
-          form.appendChild(msg);
-        }
-      });
+    }).catch(function () {});
+
+    localStorage.setItem('ws_email', email);
+    window.location.href = '/free-kit/thank-you';
   });
 })();
 </script>
