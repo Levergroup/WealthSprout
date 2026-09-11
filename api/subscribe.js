@@ -23,10 +23,11 @@ module.exports = async function handler(req, res) {
   console.log('[subscribe] listId=', listId);
   const tagIds = req.body?.tagIds;
 
-  const contact = {
-    email,
-    campaign: { campaignId: listId },
-  };
+     const contact = {
+     email,
+     campaign: { campaignId: listId },
+     dayOfCycle: 0,
+   };
   if (tagIds && Array.isArray(tagIds) && tagIds.length > 0) {
     contact.tags = tagIds.map(id => ({ tagId: id }));
   }
