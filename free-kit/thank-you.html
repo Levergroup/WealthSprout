@@ -21,6 +21,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
+<!--
+  PENDING: 5 checkout links below are placeholders. Once the portal
+  (app.wealthsproutkids.com) is published, replace with the real URLs:
+    /checkout/money-seeds      -> app.wealthsproutkids.com/programs/money-seeds
+    /checkout/money-moves      -> app.wealthsproutkids.com/programs/money-moves
+    /checkout/wealth-blueprint -> app.wealthsproutkids.com/programs/wealth-blueprint
+    /checkout/launch-rich      -> app.wealthsproutkids.com/programs/launch-rich
+    /vault                     -> app.wealthsproutkids.com/programs/[VAULT SLUG - CONFIRM]
+  Confirm all 5 slugs against the live portal before swapping — do not assume
+  they match this list without checking, since the portal was only seen via
+  a temporary Lovable preview URL, not the published domain.
+-->
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN2W2R7T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -32,72 +44,220 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </nav>
     <main class="optin-page">
         <div class="optin-wrap">
-            <div class="confirm-box">
-                <div class="check">📬</div>
-                <h1>Check your inbox! Your free kit is on its way.</h1>
-                <p>It should land within the next few minutes. If you don't see it, peek in spam or promotions.</p>
+            <!-- Shrunk confirmation — kept short so the offer sits above the fold -->
+            <div class="confirm-box" style="padding:16px 20px 6px;margin-bottom:0;">
+                <div class="check" style="font-size:26px;margin-bottom:2px;">📬</div>
+                <h1 style="font-size:19px;margin:0 0 4px;line-height:1.3;">Check your inbox! Your free kit is on its way.</h1>
+                <p style="font-size:13px;color:#6B7280;margin:0;">It should land within a few minutes — check spam or promotions if not.</p>
             </div>
-            <!-- ONE-TIME OFFER — Family Collection -->
-            <div style="max-width:680px;margin:28px auto;padding:0 20px;">
+
+            <!-- AGE SELECTOR -->
+            <div style="max-width:680px;margin:16px auto 0;padding:0 20px;text-align:center;">
+                <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 10px;">Which age is your child?</p>
+                <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+                    <button type="button" id="age-5-8-btn" onclick="selectAge('5-8')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 5–8</button>
+                    <button type="button" id="age-9-12-btn" onclick="selectAge('9-12')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#F8F6F0;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 9–12</button>
+                    <button type="button" id="age-13-15-btn" onclick="selectAge('13-15')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#F8F6F0;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 13–15</button>
+                    <button type="button" id="age-16-18-btn" onclick="selectAge('16-18')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#F8F6F0;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 16–18</button>
+                </div>
+            </div>
+
+            <!-- ONE-TIME OFFER — Money Seeds (Ages 5–8) -->
+            <div id="offer-5-8" style="max-width:680px;margin:16px auto;padding:0 20px;display:block;">
               <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
-                <!-- Gold header bar -->
                 <div style="background:#F0A500;padding:10px 24px;text-align:center;">
                   <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#1A1A2E;margin:0;text-transform:uppercase;letter-spacing:0.1em;">
                     🎉 New Subscriber Offer — This Page Only
                   </p>
                 </div>
-                <!-- Main body — light not dark -->
                 <div style="background:#FFFFFF;padding:28px 32px;">
-                  <!-- Two column layout -->
                   <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
-                    <!-- Left: content -->
                     <div>
-                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 5–18 · Complete Curriculum</p>
-                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">The WealthSprout Family Collection</h2>
-                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">Every program for ages 5–18 — from the 3-Jar System at 5 to Roth IRA setup at 17. One purchase covers all your children, forever. Founding member price rises with each new program added.</p>
-                      <!-- What's included -->
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 5–8 · 40-Page Workbook</p>
+                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Money Seeds: A Kid's First Financial Playbook</h2>
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">The exact next step after the free kit — a full illustrated workbook that turns the 3-Jar System into a complete first course in earning, saving, and giving.</p>
                       <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
-                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What you get instantly:</p>
+                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
                         <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Money Seeds (Ages 5–8)</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Money Moves (Ages 9–12)</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Wealth Blueprint (Ages 13–15)</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Launch Rich (Ages 16–18)</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ All future programs</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Instant PDF delivery</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ The 3-Jar System, in depth</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ My Savings Goal Adventure</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Needs vs. Wants activities</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Certificate of Completion</p>
                         </div>
                       </div>
                     </div>
-                    <!-- Right: price block -->
                     <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
-                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#9CA3AF;margin:0 0 2px;text-decoration:line-through;">$103 separately</p>
-                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$67</p>
-                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#F0A500;margin:4px 0 0;">Save $36</p>
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#9CA3AF;margin:0 0 2px;text-decoration:line-through;">$17 separately</p>
+                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$9</p>
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#F0A500;margin:4px 0 0;">Save $8</p>
                       <div style="border-top:1px solid #E5E7EB;margin:10px 0;"></div>
-                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:0;">Founding member price</p>
+                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:0;">New subscriber price</p>
                     </div>
                   </div>
-                  <!-- Urgency bar -->
                   <div style="background:#FEF3C7;border:1px solid #F0A500;border-radius:8px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
                     <span style="font-size:16px;flex-shrink:0;">⏰</span>
-                    <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:#92400E;margin:0;">This offer is only available on this page. When you close it, it's gone — the next time you see the Family Collection it will be full price.</p>
+                    <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:#92400E;margin:0;">This price is only available on this page. Close it, and Money Seeds goes back to $17.</p>
                   </div>
-                  <!-- CTA -->
-                  <a href="/vault" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
-                    Get the Complete Collection — $67 →
+                  <a href="/checkout/money-seeds" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
+                    Get Money Seeds — $9 →
                   </a>
                   <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
-                    ✓ Instant access · ✓ 30-day guarantee · ✓ All ages 5–18
+                    ✓ Instant access · ✓ 30-day guarantee · ✓ Ages 5–8
                   </p>
                 </div>
               </div>
-              <!-- Decline link -->
-              <p style="text-align:center;margin:14px 0 0;">
+            </div>
+
+            <!-- ONE-TIME OFFER — Money Moves (Ages 9–12) -->
+            <div id="offer-9-12" style="max-width:680px;margin:16px auto;padding:0 20px;display:none;">
+              <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
+                <div style="background:#F0A500;padding:10px 24px;text-align:center;">
+                  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#1A1A2E;margin:0;text-transform:uppercase;letter-spacing:0.1em;">
+                    🎉 New Subscriber Offer — This Page Only
+                  </p>
+                </div>
+                <div style="background:#FFFFFF;padding:28px 32px;">
+                  <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
+                    <div>
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 9–12 · 52-Page Workbook</p>
+                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Money Moves: The Smart Kid's Guide to Building Wealth</h2>
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">For kids ready to go further — banking, compound interest, budgeting, and their first taste of investing, built specifically for ages 9–12.</p>
+                      <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
+                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ How banks really work</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Compound interest, with real math</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Kid-friendly budgeting basics</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Intro to investing & the stock market</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#9CA3AF;margin:0 0 2px;text-decoration:line-through;">$24 separately</p>
+                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$14</p>
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#F0A500;margin:4px 0 0;">Save $10</p>
+                      <div style="border-top:1px solid #E5E7EB;margin:10px 0;"></div>
+                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:0;">New subscriber price</p>
+                    </div>
+                  </div>
+                  <div style="background:#FEF3C7;border:1px solid #F0A500;border-radius:8px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+                    <span style="font-size:16px;flex-shrink:0;">⏰</span>
+                    <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:#92400E;margin:0;">This price is only available on this page. Close it, and Money Moves goes back to $24.</p>
+                  </div>
+                  <a href="/checkout/money-moves" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
+                    Get Money Moves — $14 →
+                  </a>
+                  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
+                    ✓ Instant access · ✓ 30-day guarantee · ✓ Ages 9–12
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ONE-TIME OFFER — Wealth Blueprint (Ages 13–15) -->
+            <div id="offer-13-15" style="max-width:680px;margin:16px auto;padding:0 20px;display:none;">
+              <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
+                <div style="background:#F0A500;padding:10px 24px;text-align:center;">
+                  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#1A1A2E;margin:0;text-transform:uppercase;letter-spacing:0.1em;">
+                    🎉 New Subscriber Offer — This Page Only
+                  </p>
+                </div>
+                <div style="background:#FFFFFF;padding:28px 32px;">
+                  <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
+                    <div>
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 13–15 · 60-Page Workbook</p>
+                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Wealth Blueprint: A Teen's Guide to Investing, Business & Building Real Money</h2>
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">For teens ready to go deeper — real brokerage accounts, actual stock concepts, and a side hustle roadmap. Not a dumbed-down cartoon version of money.</p>
+                      <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
+                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Stock market deep dive</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Opening a first brokerage account</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Roth IRA for Teens</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Side Hustle Playbook</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#9CA3AF;margin:0 0 2px;text-decoration:line-through;">$29 separately</p>
+                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$24</p>
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#F0A500;margin:4px 0 0;">Save $5</p>
+                      <div style="border-top:1px solid #E5E7EB;margin:10px 0;"></div>
+                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:0;">New subscriber price</p>
+                    </div>
+                  </div>
+                  <div style="background:#FEF3C7;border:1px solid #F0A500;border-radius:8px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+                    <span style="font-size:16px;flex-shrink:0;">⏰</span>
+                    <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:#92400E;margin:0;">This price is only available on this page. Close it, and Wealth Blueprint goes back to $29.</p>
+                  </div>
+                  <a href="/checkout/wealth-blueprint" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
+                    Get Wealth Blueprint — $24 →
+                  </a>
+                  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
+                    ✓ Instant access · ✓ 30-day guarantee · ✓ Ages 13–15
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- ONE-TIME OFFER — Launch Rich (Ages 16–18) -->
+            <div id="offer-16-18" style="max-width:680px;margin:16px auto;padding:0 20px;display:none;">
+              <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
+                <div style="background:#F0A500;padding:10px 24px;text-align:center;">
+                  <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#1A1A2E;margin:0;text-transform:uppercase;letter-spacing:0.1em;">
+                    🎉 New Subscriber Offer — This Page Only
+                  </p>
+                </div>
+                <div style="background:#FFFFFF;padding:28px 32px;">
+                  <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
+                    <div>
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 16–18 · 70-Page Guide</p>
+                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Launch Rich: The High Schooler's Complete Money Playbook</h2>
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">For teens about to launch — first paycheck, credit building, a first Roth IRA, and a real investing framework before college or their first job.</p>
+                      <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
+                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ First paycheck, decoded</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Credit 101</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Opening a first Roth IRA</p>
+                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Investing your first $100–$1,000</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
+                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#9CA3AF;margin:0 0 2px;text-decoration:line-through;">$34 separately</p>
+                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$29</p>
+                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#F0A500;margin:4px 0 0;">Save $5</p>
+                      <div style="border-top:1px solid #E5E7EB;margin:10px 0;"></div>
+                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:0;">New subscriber price</p>
+                    </div>
+                  </div>
+                  <div style="background:#FEF3C7;border:1px solid #F0A500;border-radius:8px;padding:10px 16px;margin-bottom:16px;display:flex;align-items:center;gap:10px;">
+                    <span style="font-size:16px;flex-shrink:0;">⏰</span>
+                    <p style="font-family:'Nunito',sans-serif;font-weight:700;font-size:13px;color:#92400E;margin:0;">This price is only available on this page. Close it, and Launch Rich goes back to $34.</p>
+                  </div>
+                  <a href="/checkout/launch-rich" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
+                    Get Launch Rich — $29 →
+                  </a>
+                  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
+                    ✓ Instant access · ✓ 30-day guarantee · ✓ Ages 16–18
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Secondary — bundle upgrade, no longer the lead offer -->
+            <div style="max-width:680px;margin:0 auto;padding:0 20px;text-align:center;">
+              <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 14px;">
+                Want every program instead? <a href="/vault" style="color:#1E5C3A;font-weight:700;text-decoration:underline;">Get all 4 — ages 5 to 18 — for $67</a> <span style="text-decoration:line-through;color:#9CA3AF;">$103</span>
+              </p>
+              <p style="text-align:center;margin:0 0 0;">
                 <a href="#find-match" style="font-family:'Inter',sans-serif;font-size:13px;color:#9CA3AF;text-decoration:none;">
-                  No thanks — I'll find my child's match with the quiz ↓
+                  Have more than one child, or still not sure? Take our full quiz ↓
                 </a>
               </p>
             </div>
+
             <!-- Separator before quiz -->
             <div id="find-match" style="max-width:680px;margin:40px auto 0;padding:0 20px;">
               <div style="display:flex;align-items:center;gap:16px;">
@@ -112,6 +272,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </main>
+    <script>
+      var ageBrackets = ['5-8', '9-12', '13-15', '16-18'];
+      function selectAge(age) {
+        ageBrackets.forEach(function (a) {
+          var offer = document.getElementById('offer-' + a);
+          var btn = document.getElementById('age-' + a + '-btn');
+          if (a === age) {
+            offer.style.display = 'block';
+            btn.style.background = '#1E5C3A';
+            btn.style.color = '#ffffff';
+          } else {
+            offer.style.display = 'none';
+            btn.style.background = '#F8F6F0';
+            btn.style.color = '#1A1A2E';
+          }
+        });
+      }
+    </script>
     <script src="../main.js"></script>
 </body>
 </html>
