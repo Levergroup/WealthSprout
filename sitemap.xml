@@ -341,30 +341,34 @@
   <priority>0.7</priority>
   <lastmod>2026-09-06</lastmod>
 </url>
-  <url>
-    <loc>https://www.wealthsproutkids.com/blog/how-to-open-a-roth-ira-for-a-minor</loc>
-    <lastmod>2026-09-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+<url>
+  <loc>https://wealthsproutkids.com/blog/how-to-open-a-roth-ira-for-a-minor</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-05</lastmod>
+</url>
+<url>
   <loc>https://wealthsproutkids.com/blog/money-lessons-for-9-year-olds</loc>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
   <lastmod>2026-09-05</lastmod>
 </url>
-
-  <url>
-    <loc>https://www.wealthsproutkids.com/blog/how-do-i-open-a-bank-account-for-my-child</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <lastmod>2026-09-04</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.wealthsproutkids.com/blog/9-signs-your-kid-is-behind-on-money</loc>
-    <lastmod>2026-09-04</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<url>
+  <loc>https://wealthsproutkids.com/blog/how-do-i-open-a-bank-account-for-my-child</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-04</lastmod>
+</url>
+<url>
+  <loc>https://wealthsproutkids.com/blog/9-signs-your-kid-is-behind-on-money</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+  <lastmod>2026-09-04</lastmod>
+</url>
+<url>
+  <loc>https://wealthsproutkids.com/blog/custodial-brokerage-account</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-12</lastmod>
+</url>
 </urlset>
