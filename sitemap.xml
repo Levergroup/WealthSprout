@@ -326,6 +326,12 @@
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
 <url>
+  <loc>https://wealthsproutkids.com/blog/best-money-books-for-kids</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-16</lastmod>
+</url>
+<url>
   <loc>https://wealthsproutkids.com/blog/what-is-a-roth-ira-for-teens</loc>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
