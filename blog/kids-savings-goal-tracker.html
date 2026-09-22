@@ -151,6 +151,149 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles.css">
+
+    <style>
+    /* ── ARTICLE READABILITY SYSTEM ── */
+    .pull-quote {
+      border-left: 4px solid #F0A500;
+      background: #FEF9EC;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 20px;
+      color: #1A1A2E;
+      font-style: italic;
+    }
+    .cta-box-green {
+      background: #1E5C3A;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      color: white;
+    }
+    .cta-box-green .cta-label {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      color: #A8C5A0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .cta-box-green h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 22px;
+      color: white;
+      margin: 0 0 10px;
+    }
+    .cta-box-green p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin: 0 0 16px;
+      max-width: 100%;
+    }
+    .cta-box-green .cta-btn {
+      display: inline-block;
+      background: #F0A500;
+      color: #1A1A2E;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .tip-box {
+      background: #FEF3C7;
+      border: 1px solid #F0A500;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .tip-box .tip-icon { font-size: 20px; flex-shrink: 0; }
+    .tip-box .tip-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #92400E;
+      line-height: 1.7;
+    }
+    .tip-box .tip-text strong {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .stat-box {
+      background: #F8F6F0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      text-align: center;
+      border-bottom: 3px solid #1E5C3A;
+    }
+    .stat-box .stat-number {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 40px;
+      color: #1E5C3A;
+      line-height: 1;
+    }
+    .stat-box .stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 6px;
+    }
+    .product-cta {
+      background: white;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .product-cta .product-emoji { font-size: 36px; flex-shrink: 0; }
+    .product-cta .product-info { flex: 1; min-width: 200px; }
+    .product-cta .product-name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 18px;
+      color: #1A1A2E;
+      margin: 0 0 4px;
+    }
+    .product-cta .product-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #6B7280;
+      margin: 0 0 12px;
+    }
+    .product-cta .product-btn {
+      display: inline-block;
+      background: #1E5C3A;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .blog-article h2 { margin-top: 32px; margin-bottom: 12px; }
+    .blog-article h3 { margin-top: 32px; margin-bottom: 12px; }
+    @media (max-width: 768px) {
+      .product-cta { flex-direction: column; }
+      .cta-box-green { padding: 20px 16px; }
+    }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -257,6 +400,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <p>According to <a href="https://ngpf.org/blog/question-of-the-day/question-of-the-day-by-what-age-are-money-habits-formed/" target="_blank" rel="noopener noreferrer">research highlighted by NGPF</a>, money habits are largely formed by age 7. That means the window for shaping how your child thinks about saving is shorter than most parents realize — and more powerful than a single conversation will ever be.</p>
 
+<div class="stat-box">
+  <div class="stat-number">3x</div>
+  <div class="stat-label">Kids who write down a specific savings goal save three times faster than kids who save with no goal. The tracker makes the goal real.</div>
+</div>
+
 <h2 id="what-school-doesnt-teach-kids-about-setting-and-reaching-money-goals">What School Doesn't Teach Kids About Setting and Reaching Money Goals</h2>
 
 <p>Schools teach kids what money is. They almost never teach kids what money does — or how to make it work toward something meaningful to them personally. There's a massive difference between knowing a quarter is worth 25 cents and knowing how to save 20 quarters toward a specific goal you care about.</p>
@@ -270,6 +418,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>Here's what actually happens when a child colors in another segment of their savings chart: their brain releases a small hit of dopamine. Progress feels good. That feeling gets associated with saving — not spending — and over time, that association becomes a habit.</p>
 
 <p>A visual savings tracker also externalizes the goal. Instead of it living in a vague "someday" space in their head, it's on the fridge. Every time they walk past it, they're reminded of what they're working toward — which makes saying no to impulse spending a decision they're making for themselves, not a rule you're imposing on them.</p>
+
+<div class="tip-box">
+  <div class="tip-icon">⭐</div>
+  <div class="tip-text"><strong>Pro Tip</strong>Have your child draw a picture of what they are saving for on the tracker. The visual makes it personal — and kids are far more motivated by something they can see than an abstract dollar amount.</div>
+</div>
 
 <h2 id="how-to-use-the-free-kids-savings-goal-tracker-step-by-step">How to Use the Free Kids Savings Goal Tracker Step by Step</h2>
 
@@ -300,15 +453,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <h2 id="how-to-keep-kids-motivated-until-they-hit-their-savings-goal">How to Keep Kids Motivated Until They Hit Their Savings Goal</h2>
 
 <p>The first week is easy. Week three, when the tracker is only 30% full and the goal still feels far away, is where most kids bail. Building in motivation checkpoints ahead of time prevents that dropout.</p>
-<!-- CTA MID: Money Seeds (ages 5–8) -->
-<div style="background:#F8F6F0;border:2px solid #F28B6E;border-radius:12px;padding:20px 24px;margin:32px 0;">
-  <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
-    <div style="flex:1;min-width:200px;">
-      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;color:#F28B6E;margin:0 0 6px 0;text-transform:uppercase;letter-spacing:0.06em;">For ages 5–8</p>
-      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:20px;color:#1A1A2E;margin:0 0 8px 0;line-height:1.3;">Money Seeds — The Complete Financial Curriculum</p>
-      <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 14px 0;line-height:1.65;">40 illustrated pages teaching earning, saving, and giving through activities kids actually want to do. The 3-Jar System in depth. Savings goals they set themselves.</p>
-      <a href="https://www.wealthsproutkids.com/money-seeds" style="display:inline-block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:13px;padding:10px 20px;border-radius:8px;text-decoration:none;">See Money Seeds — $17 →</a>
-    </div>
+<div class="product-cta">
+  <div class="product-emoji">🌱</div>
+  <div class="product-info">
+    <div class="product-name">Money Seeds — Ages 5–8</div>
+    <div class="product-desc">40-page illustrated workbook covering earning, saving, giving, and the 3-Jar System. Designed to do together in one weekend.</div>
+    <a href="https://app.wealthsproutkids.com/checkout/money-seeds" class="product-btn">Get Money Seeds — $17 →</a>
   </div>
 </div>
 
@@ -327,6 +477,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>There are apps that do this, and some are genuinely well-designed. But for children under 12, the physical act of coloring in a chart beats tapping a screen — and here's why. Physical trackers live in the real world. They catch your child's eye while they're eating breakfast. They require a crayon and a moment of intentional attention, making each deposit feel ceremonial rather than automatic.</p>
 
 <p>Digital tools are better for teenagers managing multiple goals or learning to use financial apps as part of building adult money skills. But for a 7-year-old saving for a LEGO set? Print the thing. Tape it to the fridge. Watch what happens.</p>
+
+<div class="cta-box-green">
+  <div class="cta-label">🌱 Free Resource</div>
+  <h3>Get the Free Kids Money Kit</h3>
+  <p>28 pages of activities, trackers, and the 3-Jar System — free for parents of kids ages 5–18. Instant PDF download.</p>
+  <a href="/free-kit" class="cta-btn">Download Free — No Credit Card →</a>
+</div>
 
 <h2 id="download-your-free-kids-savings-goal-tracker-kit-today">Download Your Free Kids Savings Goal Tracker Kit Today</h2>
 
@@ -370,6 +527,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li>Start with the free Money Kit — it's 12 pages, costs nothing, and gives your child their first real savings system today → <a href="https://wealthsproutkids.com/free-kit">wealthsproutkids.com/free-kit</a></li>
   </ol>
 </section>
+
+<div class="product-cta">
+  <div class="product-emoji">📈</div>
+  <div class="product-info">
+    <div class="product-name">Money Moves — Ages 9–12</div>
+    <div class="product-desc">52 pages covering compound interest, budgeting, intro investing, and how to start a first business. Real concepts, no dumbing down.</div>
+    <a href="https://app.wealthsproutkids.com/checkout/money-moves" class="product-btn">Get Money Moves — $24 →</a>
+  </div>
+</div>
 
             <div class="blog-byline">
                 <div class="blog-byline-mark">🌱</div>

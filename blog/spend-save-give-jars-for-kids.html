@@ -157,6 +157,149 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../styles.css">
+
+    <style>
+    /* ── ARTICLE READABILITY SYSTEM ── */
+    .pull-quote {
+      border-left: 4px solid #F0A500;
+      background: #FEF9EC;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 20px;
+      color: #1A1A2E;
+      font-style: italic;
+    }
+    .cta-box-green {
+      background: #1E5C3A;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 32px 0;
+      color: white;
+    }
+    .cta-box-green .cta-label {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 11px;
+      color: #A8C5A0;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+    .cta-box-green h3 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 22px;
+      color: white;
+      margin: 0 0 10px;
+    }
+    .cta-box-green p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.8);
+      margin: 0 0 16px;
+      max-width: 100%;
+    }
+    .cta-box-green .cta-btn {
+      display: inline-block;
+      background: #F0A500;
+      color: #1A1A2E;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 15px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .tip-box {
+      background: #FEF3C7;
+      border: 1px solid #F0A500;
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 24px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .tip-box .tip-icon { font-size: 20px; flex-shrink: 0; }
+    .tip-box .tip-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      color: #92400E;
+      line-height: 1.7;
+    }
+    .tip-box .tip-text strong {
+      display: block;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .stat-box {
+      background: #F8F6F0;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      text-align: center;
+      border-bottom: 3px solid #1E5C3A;
+    }
+    .stat-box .stat-number {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 40px;
+      color: #1E5C3A;
+      line-height: 1;
+    }
+    .stat-box .stat-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #6B7280;
+      margin-top: 6px;
+    }
+    .product-cta {
+      background: white;
+      border: 1.5px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 32px 0;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .product-cta .product-emoji { font-size: 36px; flex-shrink: 0; }
+    .product-cta .product-info { flex: 1; min-width: 200px; }
+    .product-cta .product-name {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 18px;
+      color: #1A1A2E;
+      margin: 0 0 4px;
+    }
+    .product-cta .product-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #6B7280;
+      margin: 0 0 12px;
+    }
+    .product-cta .product-btn {
+      display: inline-block;
+      background: #1E5C3A;
+      color: white;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .blog-article h2 { margin-top: 32px; margin-bottom: 12px; }
+    .blog-article h3 { margin-top: 32px; margin-bottom: 12px; }
+    @media (max-width: 768px) {
+      .product-cta { flex-direction: column; }
+      .cta-box-green { padding: 20px 16px; }
+    }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -257,6 +400,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 <p>Each jar represents one money behavior:</p><ul><li><strong>Spend</strong> — money for right now, small purchases, everyday wants</li><li><strong>Save</strong> — money set aside for a bigger goal, held back on purpose</li><li><strong>Give</strong> — money intentionally set apart for others, a cause, or a charity</li></ul><p>It's tactile. It's visual. And it works because kids can <em>see</em> their money grow — or shrink — in real time.</p><p>Abstract ideas like budgeting become concrete when a child physically drops coins into a jar and watches the levels change.</p>
 
+<div class="pull-quote">"When a child decorates their own jar and puts their name on it, something shifts. It becomes theirs. And children protect what belongs to them."</div>
+
             <h2 id="the-psychology-behind-the-3-jar-system-for-kids">The Psychology Behind the 3-Jar System for Kids</h2>
             <p>Children between ages 5 and 12 learn best through physical interaction, not explanation. Handing a child three jars and letting them divide money themselves activates a decision-making process that a worksheet simply can't replicate.</p><p>There's also something powerful about making saving feel like a <em>choice</em> rather than a rule. When kids control which jar gets filled, they develop an internal relationship with money — one built on agency rather than obligation. <a href='https://ngpf.org/blog/' target='_blank' rel='noopener'>Research on how early money habits shape financial behavior</a> consistently shows that children who practice saving behavior before age 10 carry those habits into adulthood.</p><p>The Give jar does something especially important. It teaches delayed gratification and empathy simultaneously — two of the strongest predictors of long-term financial wellbeing. That's a lot of weight for a mason jar to carry, but it delivers every time.</p>
 
@@ -265,6 +410,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <h2 id="how-much-money-goes-in-each-jar-age-by-age-breakdown">How Much Money Goes in Each Jar? Age-by-Age Breakdown</h2>
             <p>There's no single right split — but there are starting points that actually work by age. The <a href='https://www.consumerfinance.gov/consumer-tools/money-as-you-grow/' target='_blank' rel='noopener'>age-by-age money milestones from the Consumer Financial Protection Bureau</a> confirm that younger children need simpler frameworks with fewer moving parts.</p><p>Here's a practical breakdown:</p><ul><li><strong>Ages 4–6:</strong> 70% Spend / 20% Save / 10% Give — keep the Save and Give amounts small so success feels achievable fast</li><li><strong>Ages 7–10:</strong> 60% Spend / 30% Save / 10% Give — kids this age can hold a savings goal in mind for 4–8 weeks</li><li><strong>Ages 11–13:</strong> 50% Spend / 40% Save / 10% Give — introduce the idea that the Save jar could eventually move to a real bank account</li><li><strong>Ages 14+:</strong> Let them choose their own split, with a floor of 10% for both Save and Give — ownership of the decision is more important than the exact numbers</li></ul><p>These percentages aren't rules — they're launching pads. The goal is a habit, not a perfect formula.</p>
+
+<div class="tip-box">
+  <div class="tip-icon">💡</div>
+  <div class="tip-text"><strong>The Right Split</strong>Start with 50% Spend, 40% Save, 10% Give. These are not rules — they are starting points. Let your child adjust the ratio as they get comfortable with the habit. The splitting itself matters more than the percentages.</div>
+</div>
 
             <h2 id="teaching-moments-what-to-say-when-your-kid-uses-each-jar">Teaching Moments: What to Say When Your Kid Uses Each Jar</h2>
             <p>The jars do half the work. Your words do the other half. Most parents skip this part, which is exactly why the system fades out after two weeks.</p><p>When your child spends from the Spend jar, say something like: <em>"That's what that money was for — good choice."</em> Affirm the decision without over-praising it. When they add to the Save jar, ask: <em>"How much closer are you to your goal now?"</em> — this keeps the target alive in their mind rather than letting saving feel like hoarding.</p><p>The Give jar often sparks the richest conversations. Ask your child: <em>"Who do you want to help with this?"</em> Let them own the answer completely. You're not steering toward a particular charity — you're reinforcing that giving is a choice they get to make, and that it matters.</p>
@@ -286,6 +436,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <h2 id="common-mistakes-parents-make-with-the-jar-system-and-how-to-avoid-them">Common Mistakes Parents Make With the Jar System (and How to Avoid Them)</h2>
             <p>The biggest mistake isn't doing it wrong — it's stopping. Most families try the jars for a few weeks, hit a busy patch, and quietly abandon the routine. Consistency matters more than perfection here.</p><p>Watch out for these common missteps:</p><ul><li><strong>Overcomplicating the split.</strong> If your child is 6, a 70/20/10 breakdown is plenty. Don't introduce sub-categories or side accounts before the basic habit is locked in.</li><li><strong>Making Give non-negotiable in a punishing way.</strong> If your child resents putting money in the Give jar, the lesson backfires. Keep it light and let them lead the purpose.</li><li><strong>Raiding the jars for "just this once."</strong> Borrowing from the Save jar to cover a Spend-jar shortage teaches the wrong lesson immediately. Hold the line.</li><li><strong>Forgetting to revisit the Save jar goal.</strong> If kids don't remember what they're saving for, saving loses meaning fast. Check in weekly — just one question, one minute.</li></ul><p>The system is forgiving. Pick it back up whenever it lapses, without making it a big deal.</p>
+
+<div class="cta-box-green">
+  <div class="cta-label">🌱 Free Resource</div>
+  <h3>Get the Free Kids Money Kit</h3>
+  <p>28 pages of activities, trackers, and the 3-Jar System — free for parents of kids ages 5–18. Instant PDF download.</p>
+  <a href="/free-kit" class="cta-btn">Download Free — No Credit Card →</a>
+</div>
 
             <h2 id="how-to-level-up-the-jar-system-as-your-child-grows">How to Level Up the Jar System as Your Child Grows</h2>
             <p>The three-jar method isn't just a kindergarten activity — it scales. When your child hits 10 or 11, it's the right time to introduce a real savings account alongside the Save jar, so they can see their money earning interest for the first time.</p><p>Around age 13, you can introduce a simple tracking sheet — nothing elaborate, just a running log of what goes in and what comes out. That single habit is the foundation of every budget an adult will ever build. For deeper skill-building beyond the jars, <a href='https://wealthsproutkids.com/money-seeds'>explore the Money Seeds program for deeper learning</a>, which takes kids from basic money habits through investing concepts in an age-appropriate sequence.</p><p>The end goal isn't three jars on a shelf forever.</p><p>It's a teenager who automatically thinks in categories when money arrives — spend, save, give — because that pattern was wired in early and practiced consistently. The jars are the training wheels. The habit is what lasts.</p>
@@ -315,6 +472,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ol>
 
             <p>The hardest part of teaching kids about money isn't the knowledge — it's knowing where to start. The spend, save, give jar system gives you a starting point that works on day one, builds naturally over time, and costs nothing to set up. If you want the labels, the tracking tools, and the exact conversation guide already built for you, <a href='https://wealthsproutkids.com/free-kit'>grab the free Money Kit at wealthsproutkids.com/free-kit</a> and have your child's first real money system in place before the week is out.</p>
+
+<div class="product-cta">
+  <div class="product-emoji">🌱</div>
+  <div class="product-info">
+    <div class="product-name">Money Seeds — Ages 5–8</div>
+    <div class="product-desc">40-page illustrated workbook covering earning, saving, giving, and the 3-Jar System. Designed to do together in one weekend.</div>
+    <a href="https://app.wealthsproutkids.com/checkout/money-seeds" class="product-btn">Get Money Seeds — $17 →</a>
+  </div>
+</div>
 
             <div class="blog-byline">
                 <div class="blog-byline-mark">🌱</div>
