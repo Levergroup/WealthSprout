@@ -326,6 +326,12 @@
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
 <url>
+  <loc>https://wealthsproutkids.com/blog/teach-kids-stock-market</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-23</lastmod>
+</url>
+<url>
   <loc>https://wealthsproutkids.com/blog/credit-score-explained-for-teens</loc>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
