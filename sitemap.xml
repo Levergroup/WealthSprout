@@ -338,6 +338,12 @@
   </url>
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
+<url>
+  <loc>https://wealthsproutkids.com/blog/compound-interest-for-kids-explained</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-24</lastmod>
+</url>
 
 <url>
   <loc>https://wealthsproutkids.com/blog/how-to-explain-investing-to-a-child</loc>
