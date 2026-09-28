@@ -338,6 +338,12 @@
   </url>
 
   <!-- Blog articles added automatically by Abacus SEO workflow -->
+<url>
+  <loc>https://wealthsproutkids.com/blog/financial-lessons-for-teenagers</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-09-28</lastmod>
+</url>
   <url>
     <loc>https://www.wealthsproutkids.com/blog/what-is-investing-for-kids</loc>
     <changefreq>monthly</changefreq>
