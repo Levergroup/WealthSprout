@@ -960,4 +960,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+<url>
+  <loc>https://wealthsproutkids.com/blog/how-to-teach-kids-about-taxes</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-10-06</lastmod>
+</url>
 </urlset>
