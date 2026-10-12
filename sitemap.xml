@@ -986,6 +986,12 @@
 </url>
   <!-- Blog articles added automatically by Abacus SEO workflow -->
 <url>
+  <loc>https://wealthsproutkids.com/blog/kids-money-habits</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+  <lastmod>2026-10-12</lastmod>
+</url>
+<url>
   <loc>https://www.wealthsproutkids.com/blog/50-30-20-budget-for-kids</loc>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
