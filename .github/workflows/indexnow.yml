@@ -1,0 +1,73 @@
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Ping IndexNow for changed pages
+        run: |
+          python3 <<'PYEOF'
+          import subprocess, json, urllib.request, urllib.error, sys
+
+          BASE = "https://www.wealthsproutkids.com"
+          KEY = "df412947aae04c0b9888d262cd56fe47"
+          HOST = "www.wealthsproutkids.com"
+          KEY_LOCATION = f"{BASE}/{KEY}.txt"
+
+          SKIP = {"free-kit/thank-you", "free-kit/index", "coming-soon"}
+
+          result = subprocess.run(
+              ["git", "diff", "--name-only", "--diff-filter=AM", "HEAD^", "HEAD"],
+              capture_output=True, text=True, check=True,
+          )
+          urls = []
+          for f in result.stdout.strip().splitlines():
+              if not f.endswith(".html"):
+                  continue
+              slug = f[:-5]
+              if slug in SKIP:
+                  continue
+              if slug == "index":
+                  url = BASE + "/"
+              elif slug.endswith("/index"):
+                  url = BASE + "/" + slug[:-6]
+              else:
+                  url = BASE + "/" + slug
+              urls.append(url)
+
+          if not urls:
+              print("No eligible HTML pages changed — skipping IndexNow ping.")
+              sys.exit(0)
+
+          payload = {
+              "host": HOST,
+              "key": KEY,
+              "keyLocation": KEY_LOCATION,
+              "urlList": urls,
+          }
+          print(f"Submitting {len(urls)} URL(s):")
+          for u in urls:
+              print(f"  {u}")
+
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow",
+              data=json.dumps(payload).encode(),
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST",
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  print(f"IndexNow: HTTP {resp.status}")
+          except urllib.error.HTTPError as e:
+              body = e.read().decode()
+              print(f"IndexNow error: HTTP {e.code} — {body}")
+              sys.exit(1)
+          PYEOF
