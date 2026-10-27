@@ -1056,4 +1056,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://www.wealthsproutkids.com/blog/investing-for-kids-book</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2026-10-27</lastmod>
+  </url>
 </urlset>
