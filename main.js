@@ -413,7 +413,7 @@ if (vaultNotifyForm) {
                     <span>🎁 Free kit unlocked with every result</span>
                 </div>
                 <button type="button" class="btn btn-gold btn-block quiz-start" data-action="start">Find My Child's Match →</button>
-                <p class="quiz-fine">Taken by 3,400+ parents · No email required to see your result</p>
+                <p class="quiz-fine">No email required to see your result</p>
             </div>`;
     }
 
