@@ -148,13 +148,16 @@ const GETRESPONSE_TAGS = {
     VAULT_PRICE_WATCH: ['TODO_TAG_ID_VAULT_PRICE_INCREASE'], // tag: waitlist:vault-price-increase
 };
 
-async function subscribeToGetResponse(email, listId, tagIds) {
+async function subscribeToGetResponse(email, listId, tagIds, formName) {
     const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, listId, ...(tagIds ? { tagIds } : {}) }),
     });
     if (!res.ok) throw new Error(`GetResponse subscribe failed: ${res.status}`);
+    // Analytics: successful email signup -> GA4 key event (via GTM). Never send the email itself.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: 'generate_lead', form_name: formName || 'unknown' });
     return res.json();
 }
 
@@ -170,7 +173,7 @@ if (kitForm) {
         btn.disabled = true;
         await submitToSupabase('leads', { email, source: 'kit-strip' });
         try {
-            await subscribeToGetResponse(email, GETRESPONSE_LISTS.KIT_STRIP);
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.KIT_STRIP, null, 'home_kit_strip');
         } catch (err) {
             console.error('subscribeToGetResponse failed:', err);
         }
@@ -195,7 +198,7 @@ if (waitlistForm) {
         // TODO: Replace with Supabase insert into `waitlist` table (columns: id, email, created_at)
         await submitToSupabase('waitlist', { email, created_at: new Date().toISOString() });
         try {
-            await subscribeToGetResponse(email, GETRESPONSE_LISTS.WAITLIST);
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.WAITLIST, null, 'money_lab_waitlist');
         } catch (err) {
             console.error('subscribeToGetResponse failed:', err);
         }
@@ -220,7 +223,7 @@ if (vaultNotifyForm) {
         // TODO: Replace with Supabase insert into `waitlist` table (columns: id, email, source, created_at)
         await submitToSupabase('waitlist', { email, source: 'vault-price-increase', created_at: new Date().toISOString() });
         try {
-            await subscribeToGetResponse(email, GETRESPONSE_LISTS.VAULT_PRICE_WATCH, GETRESPONSE_TAGS.VAULT_PRICE_WATCH);
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.VAULT_PRICE_WATCH, GETRESPONSE_TAGS.VAULT_PRICE_WATCH, 'vault_price_watch');
         } catch (err) {
             console.error('subscribeToGetResponse failed:', err);
         }
@@ -723,13 +726,13 @@ if (optinForm) {
         optinBtnLabel.textContent = 'Sending...';
 
         try {
-            await subscribeToGetResponse(email, GETRESPONSE_LISTS.FREE_KIT);
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.FREE_KIT, null, 'free_kit');
         } catch (err) {
             console.error('subscribeToGetResponse failed:', err);
             // Still redirect — don't block the user over a background API hiccup
         }
 
         localStorage.setItem('ws_email', email);
-        window.location.href = `/free-kit/thank-you?email=${encodeURIComponent(email)}`;
+        window.location.href = '/free-kit/thank-you';
     });
 }
