@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior:smooth;">
+<html lang="en">
 <head>
     <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -12,257 +12,229 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%B1</text></svg>">
-    <title>Check Your Inbox | WealthSprout</title>
+    <title>Your Free Money Kit Is Ready | WealthSprout</title>
     <meta name="robots" content="noindex, nofollow">
     <link rel="llms" href="https://www.wealthsproutkids.com/llms.txt">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
+    <style>
+        .ty-page { background: var(--cream, #F8F6F0); padding-bottom: 40px; }
+        .ty-wrap { max-width: 640px; margin: 0 auto; padding: 0 16px; }
+
+        /* Hero — kept short so the download button clears a 375x667 viewport */
+        .ty-hero { background: var(--white, #fff); border-bottom: 1px solid var(--line, #E5E7EB); text-align: center; padding: 22px 16px 24px; }
+        .ty-pill { display: inline-block; background: #D1FAE5; color: #065F46; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; padding: 5px 14px; border-radius: 100px; margin: 0 0 12px; }
+        .ty-hero h1 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(25px, 5.4vw, 36px); color: var(--ink, #1A1A2E); line-height: 1.18; margin: 0 0 10px; }
+        .ty-sub { font-family: 'Inter', sans-serif; font-size: 15px; color: var(--muted, #6B7280); line-height: 1.55; max-width: 430px; margin: 0 auto 18px; }
+        .ty-dl { display: block; max-width: 330px; margin: 0 auto 8px; background: var(--green, #1E5C3A); color: #fff; font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; padding: 15px 24px; border-radius: 10px; text-decoration: none; }
+        .ty-dl:hover { background: var(--green-mid, #2a7a4f); }
+        .ty-dl-meta { font-family: 'Inter', sans-serif; font-size: 12px; color: #9CA3AF; margin: 0 0 6px; }
+        .ty-dl-note { font-family: 'Inter', sans-serif; font-size: 13px; color: var(--muted, #6B7280); line-height: 1.5; max-width: 380px; margin: 0 auto; }
+
+        /* Cards */
+        .ty-card { background: var(--white, #fff); border: 1px solid var(--line, #E5E7EB); border-radius: 12px; padding: 20px 22px; margin-top: 16px; }
+        .ty-card h2 { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 12px; color: var(--green, #1E5C3A); text-transform: uppercase; letter-spacing: .07em; margin: 0 0 8px; }
+        .ty-card p { font-family: 'Inter', sans-serif; font-size: 14.5px; color: #374151; line-height: 1.65; margin: 0 0 8px; }
+        .ty-card p:last-child { margin-bottom: 0; }
+
+        /* Age block */
+        .ty-age { background: var(--white, #fff); border: 1px solid var(--line, #E5E7EB); border-radius: 12px; padding: 24px 22px; margin-top: 16px; text-align: center; }
+        .ty-age-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px; color: var(--green, #1E5C3A); text-transform: uppercase; letter-spacing: .08em; margin: 0 0 6px; }
+        .ty-age h2 { font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(21px, 4.4vw, 27px); color: var(--ink, #1A1A2E); margin: 0 0 7px; line-height: 1.25; }
+        .ty-age-sub { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted, #6B7280); margin: 0 0 18px; }
+        .ty-chips { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+        @media (min-width: 520px) { .ty-chips { grid-template-columns: repeat(4, 1fr); } }
+        .ty-chip { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; color: var(--green, #1E5C3A); background: var(--cream, #F8F6F0); border: 2px solid var(--green, #1E5C3A); border-radius: 10px; padding: 15px 10px; cursor: pointer; transition: background .15s, color .15s; }
+        .ty-chip:hover { background: var(--green, #1E5C3A); color: #fff; }
+        .ty-chip[aria-pressed="true"] { background: var(--green, #1E5C3A); color: #fff; }
+
+        /* Offer cards — visible by default so a no-JS visitor sees all four stacked */
+        .ty-offer { border: 2px solid var(--green, #1E5C3A); border-radius: 12px; background: #F0FDF4; padding: 22px; margin-top: 16px; text-align: left; }
+        .js .ty-offer { display: none; }
+        .js .ty-offer.is-active { display: block; }
+        .ty-offer-label { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 11px; color: var(--green, #1E5C3A); text-transform: uppercase; letter-spacing: .07em; margin: 0 0 6px; }
+        .ty-offer h3 { font-family: 'DM Serif Display', Georgia, serif; font-size: 22px; color: var(--ink, #1A1A2E); margin: 0 0 8px; line-height: 1.25; }
+        .ty-offer-line { font-family: 'Inter', sans-serif; font-size: 14.5px; color: #374151; line-height: 1.6; margin: 0 0 14px; }
+        .ty-offer ul { list-style: none; padding: 0; margin: 0 0 16px; }
+        .ty-offer li { font-family: 'Inter', sans-serif; font-size: 14px; color: #374151; line-height: 1.55; padding-left: 22px; position: relative; margin-bottom: 9px; }
+        .ty-offer li:last-child { margin-bottom: 0; }
+        .ty-offer li::before { content: "✓"; position: absolute; left: 0; color: var(--green, #1E5C3A); font-weight: 700; }
+        .ty-price { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 15px; color: var(--ink, #1A1A2E); margin: 0 0 12px; }
+        .ty-buy { display: block; background: var(--gold, #F0A500); color: var(--ink, #1A1A2E); font-family: 'Nunito', sans-serif; font-weight: 800; font-size: 16px; padding: 15px 24px; border-radius: 10px; text-decoration: none; text-align: center; margin: 0 0 10px; }
+        .ty-buy:hover { background: var(--gold-light, #FFB930); }
+        .ty-inside { display: block; text-align: center; font-family: 'Inter', sans-serif; font-size: 13.5px; color: var(--green, #1E5C3A); text-decoration: underline; text-underline-offset: 2px; margin: 0 0 12px; }
+        .ty-trust { font-family: 'Inter', sans-serif; font-size: 11.5px; color: #9CA3AF; text-align: center; margin: 0; }
+
+        /* Links under the cards */
+        .ty-links { text-align: center; margin: 18px 0 0; font-family: 'Inter', sans-serif; font-size: 13.5px; line-height: 2; }
+        .ty-links a { color: var(--green, #1E5C3A); text-decoration: underline; text-underline-offset: 2px; }
+        .ty-links span { color: #9CA3AF; margin: 0 8px; }
+
+        /* Footer */
+        .ty-footer { border-top: 1px solid var(--line, #E5E7EB); text-align: center; padding: 22px 16px; font-family: 'Inter', sans-serif; font-size: 12.5px; color: var(--muted, #6B7280); }
+        .ty-footer p { margin: 0 0 6px; }
+        .ty-footer p:last-child { margin-bottom: 0; }
+        .ty-footer a { color: var(--muted, #6B7280); text-decoration: underline; text-underline-offset: 2px; }
+        .ty-footer a:hover { color: var(--green, #1E5C3A); }
+        .ty-footer .sep { margin: 0 6px; color: #9CA3AF; }
+
+        @media (min-width: 640px) { .ty-hero { padding: 40px 24px 36px; } }
+    </style>
+    <script>document.documentElement.className += ' js';</script>
 </head>
 <body>
-<!--
-  Buy buttons point at on-site product pages with freekit UTMs, not at a
-  checkout host. Prices shown here are list prices and must stay in sync
-  with each product page and with what checkout actually charges.
--->
     <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN2W2R7T"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+
     <nav class="nav nav-minimal">
         <div class="nav-inner">
             <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
         </div>
     </nav>
-    <main class="optin-page">
-        <div class="optin-wrap">
-            <!-- Shrunk confirmation — kept short so the offer sits above the fold -->
-            <div class="confirm-box" style="padding:16px 20px 14px;margin-bottom:0;">
-                <div class="check" style="font-size:26px;margin-bottom:2px;">📬</div>
-                <h1 style="font-size:19px;margin:0 0 10px;line-height:1.3;">Your free Money Kit is ready.</h1>
-                <a href="https://drive.google.com/uc?export=download&amp;id=188TEQ7uRl7CAygOHvRJt4q3pC8Vt2MEr" download id="kit-download" style="display:block;max-width:300px;margin:0 auto 6px;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:14px 24px;border-radius:10px;text-decoration:none;text-align:center;">Download my free Money Kit</a>
-                <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0 0 6px;">12 pages · PDF</p>
-                <p style="font-size:13px;color:#6B7280;margin:0;">It's also on its way to your inbox. Check spam or Promotions if you don't see it.</p>
+
+    <main class="ty-page">
+
+        <section class="ty-hero">
+            <span class="ty-pill">You're in</span>
+            <h1>Your free Money Kit is ready.</h1>
+            <p class="ty-sub">Download it, print the jar labels, and let your child decorate their own jars this weekend.</p>
+            <a href="https://drive.google.com/uc?export=download&amp;id=188TEQ7uRl7CAygOHvRJt4q3pC8Vt2MEr" download id="kit-download" class="ty-dl">Download my free Money Kit</a>
+            <p class="ty-dl-meta">12 pages · PDF</p>
+            <p class="ty-dl-note">It's also on its way to your inbox. Check spam or Promotions if you don't see it.</p>
+        </section>
+
+        <div class="ty-wrap">
+
+            <div class="ty-card">
+                <h2>Your one job today</h2>
+                <p>Print the jar labels. Let your child color them and write their name on each jar. Mason jars, old pasta jars or plastic cups all work.</p>
+                <p>That's it. Once the jar has their name on it, it's theirs.</p>
             </div>
 
-            <!-- AGE SELECTOR -->
-            <div style="max-width:680px;margin:16px auto 0;padding:0 20px;text-align:center;">
-                <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 10px;">Which age is your child?</p>
-                <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
-                    <button type="button" id="age-5-8-btn" onclick="selectAge('5-8')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 5–8</button>
-                    <button type="button" id="age-9-12-btn" onclick="selectAge('9-12')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#F8F6F0;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 9–12</button>
-                    <button type="button" id="age-13-15-btn" onclick="selectAge('13-15')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#F8F6F0;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 13–15</button>
-                    <button type="button" id="age-16-18-btn" onclick="selectAge('16-18')" style="flex:1 1 140px;max-width:220px;padding:14px 12px;border-radius:10px;border:2px solid #1E5C3A;background:#F8F6F0;color:#1A1A2E;font-family:'Nunito',sans-serif;font-weight:800;font-size:15px;cursor:pointer;">Ages 16–18</button>
+            <div class="ty-card">
+                <h2>What happens next</h2>
+                <p>Over the next two weeks Maya will send a few short emails, one tip at a time. To make sure they reach you, add hello@wealthsproutkids.com to your contacts.</p>
+            </div>
+
+            <div class="ty-age">
+                <p class="ty-age-label">Next step</p>
+                <h2>How old is your child?</h2>
+                <p class="ty-age-sub">Pick an age and we'll show the workbook built for it.</p>
+                <div class="ty-chips" role="group" aria-label="Choose an age range">
+                    <button type="button" class="ty-chip" data-age="5-8" aria-pressed="false" aria-controls="offer-5-8">5-8</button>
+                    <button type="button" class="ty-chip" data-age="9-12" aria-pressed="false" aria-controls="offer-9-12">9-12</button>
+                    <button type="button" class="ty-chip" data-age="13-15" aria-pressed="false" aria-controls="offer-13-15">13-15</button>
+                    <button type="button" class="ty-chip" data-age="16-18" aria-pressed="false" aria-controls="offer-16-18">16-18</button>
                 </div>
             </div>
 
-            <!-- ONE-TIME OFFER — Money Seeds (Ages 5–8) -->
-            <div id="offer-5-8" style="max-width:680px;margin:16px auto;padding:0 20px;display:block;">
-              <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
-                <div style="background:#FFFFFF;padding:28px 32px;">
-                  <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
-                    <div>
-                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 5–8 · 40-Page Workbook</p>
-                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Money Seeds: A Kid's First Financial Playbook</h2>
-                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">The exact next step after the free kit — a full illustrated workbook that turns the 3-Jar System into a complete first course in earning, saving, and giving.</p>
-                      <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
-                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ The 3-Jar System, in depth</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ My Savings Goal Adventure</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Needs vs. Wants activities</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Certificate of Completion</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
-                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$17</p>
-                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:6px 0 0;">One-time purchase</p>
-                    </div>
-                  </div>
-                  <a href="/money-seeds?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-5-8" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
-                    See Money Seeds — $17 →
-                  </a>
-                  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
-                    Instant download · 30-day guarantee · Secure checkout
-                  </p>
-                </div>
-              </div>
+            <div class="ty-offer" id="offer-5-8">
+                <p class="ty-offer-label">Next step for ages 5-8</p>
+                <h3>Money Seeds</h3>
+                <p class="ty-offer-line">A 40-page illustrated workbook that builds on the 3-jar system.</p>
+                <ul>
+                    <li>Split every dollar into Spend, Save and Give, so your child sees where their money goes.</li>
+                    <li>Learn the difference between needs and wants, so small choices get easier.</li>
+                    <li>Set a first savings goal and see when they will reach it, so waiting feels worth it.</li>
+                </ul>
+                <p class="ty-price">$17 · instant download</p>
+                <a href="https://app.wealthsproutkids.com/checkout/money-seeds?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-5-8" class="ty-buy" data-slug="money-seeds">Get Money Seeds - $17</a>
+                <a href="/money-seeds" class="ty-inside" data-slug="money-seeds">See what's inside</a>
+                <p class="ty-trust">Instant download · 30-day money-back guarantee · Secure checkout by Stripe</p>
             </div>
 
-            <!-- ONE-TIME OFFER — Money Moves (Ages 9–12) -->
-            <div id="offer-9-12" style="max-width:680px;margin:16px auto;padding:0 20px;display:none;">
-              <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
-                <div style="background:#FFFFFF;padding:28px 32px;">
-                  <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
-                    <div>
-                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 9–12 · 52-Page Workbook</p>
-                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Money Moves: The Smart Kid's Guide to Building Wealth</h2>
-                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">For kids ready to go further — banking, compound interest, budgeting, and their first taste of investing, built specifically for ages 9–12.</p>
-                      <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
-                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ How banks really work</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Compound interest, with real math</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Kid-friendly budgeting basics</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Intro to investing & the stock market</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
-                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$24</p>
-                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:6px 0 0;">One-time purchase</p>
-                    </div>
-                  </div>
-                  <a href="/money-moves?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-9-12" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
-                    See Money Moves — $24 →
-                  </a>
-                  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
-                    Instant download · 30-day guarantee · Secure checkout
-                  </p>
-                </div>
-              </div>
+            <div class="ty-offer" id="offer-9-12">
+                <p class="ty-offer-label">Next step for ages 9-12</p>
+                <h3>Money Moves</h3>
+                <p class="ty-offer-line">A 52-page workbook for kids who are ready for real concepts, not just jars.</p>
+                <ul>
+                    <li>Work out compound interest and see why saving early adds up.</li>
+                    <li>Build a real budget from allowance or chore money.</li>
+                    <li>Explain what a stock is in their own words and sketch a first kid-sized business plan.</li>
+                </ul>
+                <p class="ty-price">$24 · instant download</p>
+                <a href="https://app.wealthsproutkids.com/checkout/money-moves?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-9-12" class="ty-buy" data-slug="money-moves">Get Money Moves - $24</a>
+                <a href="/money-moves" class="ty-inside" data-slug="money-moves">See what's inside</a>
+                <p class="ty-trust">Instant download · 30-day money-back guarantee · Secure checkout by Stripe</p>
             </div>
 
-            <!-- ONE-TIME OFFER — Wealth Blueprint (Ages 13–15) -->
-            <div id="offer-13-15" style="max-width:680px;margin:16px auto;padding:0 20px;display:none;">
-              <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
-                <div style="background:#FFFFFF;padding:28px 32px;">
-                  <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
-                    <div>
-                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 13–15 · 60-Page Workbook</p>
-                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Wealth Blueprint: A Teen's Guide to Investing, Business & Building Real Money</h2>
-                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">For teens ready to go deeper — real brokerage accounts, actual stock concepts, and a side hustle roadmap. Not a dumbed-down cartoon version of money.</p>
-                      <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
-                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Stock market deep dive</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Opening a first brokerage account</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Roth IRA for Teens</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Side Hustle Playbook</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
-                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$29</p>
-                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:6px 0 0;">One-time purchase</p>
-                    </div>
-                  </div>
-                  <a href="/wealth-blueprint?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-13-15" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
-                    See Wealth Blueprint — $29 →
-                  </a>
-                  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
-                    Instant download · 30-day guarantee · Secure checkout
-                  </p>
-                </div>
-              </div>
+            <div class="ty-offer" id="offer-13-15">
+                <p class="ty-offer-label">Next step for ages 13-15</p>
+                <h3>Wealth Blueprint</h3>
+                <p class="ty-offer-line">A 60-page workbook on the money lessons school often skips.</p>
+                <ul>
+                    <li>Understand the difference between stocks, ETFs and index funds.</li>
+                    <li>See how a custodial brokerage account is opened, step by step.</li>
+                    <li>Explore six ways a teenager can earn money now.</li>
+                </ul>
+                <p class="ty-price">$29 · instant download</p>
+                <a href="https://app.wealthsproutkids.com/checkout/wealth-blueprint?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-13-15" class="ty-buy" data-slug="wealth-blueprint">Get Wealth Blueprint - $29</a>
+                <a href="/wealth-blueprint" class="ty-inside" data-slug="wealth-blueprint">See what's inside</a>
+                <p class="ty-trust">Instant download · 30-day money-back guarantee · Secure checkout by Stripe</p>
             </div>
 
-            <!-- ONE-TIME OFFER — Launch Rich (Ages 16–18) -->
-            <div id="offer-16-18" style="max-width:680px;margin:16px auto;padding:0 20px;display:none;">
-              <div style="border-radius:16px;overflow:hidden;border:2px solid #F0A500;box-shadow:0 4px 24px rgba(0,0,0,0.10);">
-                <div style="background:#FFFFFF;padding:28px 32px;">
-                  <div style="display:grid;grid-template-columns:1fr auto;gap:24px;align-items:flex-start;">
-                    <div>
-                      <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 6px;">Ages 16–18 · 70-Page Guide</p>
-                      <h2 style="font-family:'DM Serif Display',Georgia,serif;font-size:26px;color:#1A1A2E;margin:0 0 10px;line-height:1.2;">Launch Rich: The High Schooler's Complete Money Playbook</h2>
-                      <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0 0 16px;line-height:1.7;">For teens about to launch — first paycheck, credit building, a first Roth IRA, and a real investing framework before college or their first job.</p>
-                      <div style="background:#F8F6F0;border-radius:8px;padding:14px 16px;margin-bottom:20px;">
-                        <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.06em;margin:0 0 10px;">What's inside:</p>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;">
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ First paycheck, decoded</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Credit 101</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Opening a first Roth IRA</p>
-                          <p style="font-family:'Inter',sans-serif;font-size:13px;color:#374151;margin:0;">✓ Investing your first $100–$1,000</p>
-                        </div>
-                      </div>
-                    </div>
-                    <div style="text-align:center;min-width:140px;padding:16px;background:#F8F6F0;border-radius:10px;border:1px solid #E5E7EB;">
-                      <p style="font-family:'DM Serif Display',Georgia,serif;font-size:42px;color:#1E5C3A;margin:0;line-height:1;">$34</p>
-                      <p style="font-family:'Inter',sans-serif;font-size:10px;color:#9CA3AF;margin:6px 0 0;">One-time purchase</p>
-                    </div>
-                  </div>
-                  <a href="/launch-rich?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-16-18" style="display:block;background:#1E5C3A;color:#ffffff;font-family:'Nunito',sans-serif;font-weight:800;font-size:16px;padding:16px 24px;border-radius:10px;text-decoration:none;text-align:center;margin-bottom:10px;">
-                    See Launch Rich — $34 →
-                  </a>
-                  <p style="font-family:'Inter',sans-serif;font-size:11px;color:#9CA3AF;margin:0;text-align:center;">
-                    Instant download · 30-day guarantee · Secure checkout
-                  </p>
-                </div>
-              </div>
+            <div class="ty-offer" id="offer-16-18">
+                <p class="ty-offer-label">Next step for ages 16-18</p>
+                <h3>Launch Rich</h3>
+                <p class="ty-offer-line">A 70-page workbook on the money side of college and a first job.</p>
+                <ul>
+                    <li>Read a first paycheck and see what taxes and deductions take.</li>
+                    <li>Learn how credit is built and what student loans really cost.</li>
+                    <li>Plan where a first $100, $500 and $1,000 could go, in order.</li>
+                </ul>
+                <p class="ty-price">$34 · instant download</p>
+                <a href="https://app.wealthsproutkids.com/checkout/launch-rich?utm_source=freekit&amp;utm_medium=thankyou&amp;utm_campaign=age-16-18" class="ty-buy" data-slug="launch-rich">Get Launch Rich - $34</a>
+                <a href="/launch-rich" class="ty-inside" data-slug="launch-rich">See what's inside</a>
+                <p class="ty-trust">Instant download · 30-day money-back guarantee · Secure checkout by Stripe</p>
             </div>
 
-            <!-- Secondary — bundle upgrade, no longer the lead offer -->
-            <div style="max-width:680px;margin:0 auto;padding:0 20px;text-align:center;">
-              <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 14px;">
-                Want every program instead? <a href="/vault" style="color:#1E5C3A;font-weight:700;text-decoration:underline;">Get all 4 — ages 5 to 18 — for $67</a>
-              </p>
-              <p style="text-align:center;margin:0 0 0;">
-                <a href="#find-match" style="font-family:'Inter',sans-serif;font-size:13px;color:#9CA3AF;text-decoration:none;">
-                  Have more than one child, or still not sure? Take our full quiz ↓
-                </a>
-              </p>
-            </div>
+            <p class="ty-links">
+                <a href="/quiz">Not sure? Take the quick quiz</a>
+                <span>·</span>
+                <a href="/vault">More than one child? See the Family Collection</a>
+            </p>
 
-            <!-- What happens next -->
-            <div style="max-width:680px;margin:28px auto 0;padding:0 20px;">
-              <div style="background:#F8F6F0;border:1px solid #E5E7EB;border-radius:12px;padding:20px 24px;">
-                <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:11px;color:#1E5C3A;text-transform:uppercase;letter-spacing:0.08em;margin:0 0 8px;">What happens next</p>
-                <p style="font-family:'Inter',sans-serif;font-size:14px;color:#374151;margin:0;line-height:1.7;">Over the next two weeks Maya will send a few short emails, one tip at a time. To make sure they reach you, add us to your contacts, or move our first email to your Primary inbox.</p>
-              </div>
-            </div>
-
-            <!-- Separator before quiz -->
-            <div id="find-match" style="max-width:680px;margin:40px auto 0;padding:0 20px;">
-              <div style="display:flex;align-items:center;gap:16px;">
-                <div style="flex:1;height:1px;background:#E5E7EB;"></div>
-                <p style="font-family:'Nunito',sans-serif;font-weight:800;font-size:12px;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.1em;margin:0;white-space:nowrap;">Or — Find Your Child's Match</p>
-                <div style="flex:1;height:1px;background:#E5E7EB;"></div>
-              </div>
-              <p style="font-family:'Inter',sans-serif;font-size:14px;color:#6B7280;text-align:center;margin:10px 0 0;line-height:1.6;">Not sure which WealthSprout program fits your child? Take 30 seconds — we'll match them to the exact right program for their age and level.</p>
-            </div>
-            <div class="quiz-card" id="quiz">
-                <div class="quiz-app" data-quiz-root></div>
-            </div>
         </div>
     </main>
-    <footer style="background:#F8F6F0;border-top:1px solid #E5E7EB;text-align:center;padding:24px 20px;margin-top:40px;">
-        <p style="font-family:'Inter',sans-serif;font-size:13px;color:#6B7280;margin:0 0 6px;">
-            <a href="/privacy-policy" style="color:#6B7280;text-decoration:underline;">Privacy</a>
-            <span style="margin:0 6px;">·</span>
-            <a href="/terms-of-service" style="color:#6B7280;text-decoration:underline;">Terms</a>
-            <span style="margin:0 6px;">·</span>
-            <a href="/refund-policy" style="color:#6B7280;text-decoration:underline;">Refund Policy</a>
-        </p>
-        <p style="font-family:'Inter',sans-serif;font-size:12px;color:#9CA3AF;margin:0;">© 2026 WealthSprout</p>
-    </footer>
-    <script>
-      var ageBrackets = ['5-8', '9-12', '13-15', '16-18'];
-      function selectAge(age) {
-        ageBrackets.forEach(function (a) {
-          var offer = document.getElementById('offer-' + a);
-          var btn = document.getElementById('age-' + a + '-btn');
-          if (a === age) {
-            offer.style.display = 'block';
-            btn.style.background = '#1E5C3A';
-            btn.style.color = '#ffffff';
-          } else {
-            offer.style.display = 'none';
-            btn.style.background = '#F8F6F0';
-            btn.style.color = '#1A1A2E';
-          }
-        });
-      }
 
-      var kitBtn = document.getElementById('kit-download');
-      if (kitBtn) {
-        kitBtn.addEventListener('click', function () {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({ event: 'kit_download' });
+    <footer class="ty-footer">
+        <p>
+            <a href="/privacy-policy">Privacy</a><span class="sep">·</span><a href="/terms-of-service">Terms</a><span class="sep">·</span><a href="/refund-policy">Refund Policy</a>
+        </p>
+        <p>Educational content only. Not financial advice.</p>
+    </footer>
+
+    <script>
+    (function () {
+        var dl = function (obj) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(obj); };
+
+        document.querySelectorAll('.ty-chip').forEach(function (chip) {
+            chip.addEventListener('click', function () {
+                var age = this.getAttribute('data-age');
+                document.querySelectorAll('.ty-chip').forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+                this.setAttribute('aria-pressed', 'true');
+                document.querySelectorAll('.ty-offer').forEach(function (o) { o.classList.remove('is-active'); });
+                var card = document.getElementById('offer-' + age);
+                if (card) { card.classList.add('is-active'); }
+                dl({ event: 'age_selected', age_bracket: age });
+            });
         });
-      }
+
+        document.querySelectorAll('.ty-buy').forEach(function (b) {
+            b.addEventListener('click', function () { dl({ event: 'offer_click', product_slug: this.getAttribute('data-slug') }); });
+        });
+
+        document.querySelectorAll('.ty-inside').forEach(function (b) {
+            b.addEventListener('click', function () { dl({ event: 'see_inside_click', product_slug: this.getAttribute('data-slug') }); });
+        });
+
+        var kit = document.getElementById('kit-download');
+        if (kit) { kit.addEventListener('click', function () { dl({ event: 'kit_download' }); }); }
+    }());
     </script>
-    <script src="../main.js"></script>
 </body>
 </html>
