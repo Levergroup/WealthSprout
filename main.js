@@ -732,7 +732,16 @@ if (optinForm) {
             // Still redirect — don't block the user over a background API hiccup
         }
 
-        localStorage.setItem('ws_email', email);
+        // Read on the thank-you page to attach the chosen age bracket to this lead.
+        try {
+            sessionStorage.setItem('ws_lead_email', email);
+        } catch (err) { /* storage blocked — thank-you page skips the age POST */ }
+
+        // Guarded: an unguarded throw here would stop the redirect below.
+        try {
+            localStorage.setItem('ws_email', email);
+        } catch (err) { /* storage blocked */ }
+
         window.location.href = '/free-kit/thank-you';
     });
 }

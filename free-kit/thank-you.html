@@ -212,6 +212,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     (function () {
         var dl = function (obj) { window.dataLayer = window.dataLayer || []; window.dataLayer.push(obj); };
 
+        // Fires at most once per session. The email is cleared before the request
+        // goes out, so a second tap finds nothing and sends nothing.
+        function sendAgeGroup(age) {
+            var email;
+            try {
+                email = sessionStorage.getItem('ws_lead_email');
+                if (!email) { return; }
+                sessionStorage.removeItem('ws_lead_email');
+            } catch (err) { return; }
+
+            try {
+                fetch('https://app.wealthsproutkids.com/api/age-group', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email, age_group: age }),
+                    keepalive: true
+                }).catch(function () {});
+            } catch (err) {}
+        }
+
         document.querySelectorAll('.ty-chip').forEach(function (chip) {
             chip.addEventListener('click', function () {
                 var age = this.getAttribute('data-age');
@@ -221,6 +241,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 var card = document.getElementById('offer-' + age);
                 if (card) { card.classList.add('is-active'); }
                 dl({ event: 'age_selected', age_bracket: age });
+                sendAgeGroup(age);
             });
         });
 
