@@ -1,0 +1,21 @@
+name: Check blog markdown
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/**/*.html'
+      - 'scripts/check-markdown.py'
+  pull_request:
+    paths:
+      - 'blog/**/*.html'
+      - 'scripts/check-markdown.py'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail if any article body still contains raw Markdown
+        run: python3 scripts/check-markdown.py

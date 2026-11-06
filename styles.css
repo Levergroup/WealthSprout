@@ -1096,6 +1096,18 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .legal-wrap a { color:var(--green); text-decoration:underline; text-decoration-color:var(--sage); }
 .legal-wrap a:hover { color:var(--green-mid); }
 .legal-wrap strong { color:var(--ink); }
+.legal-wrap em { font-style:italic; color:inherit; }
+.legal-wrap blockquote {
+    border-left:4px solid var(--gold); background:var(--cream);
+    padding:14px 20px; margin:24px 0; border-radius:0 8px 8px 0;
+    font-family:'Inter',sans-serif; font-size:15.5px; font-style:italic;
+    color:var(--ink-mid); line-height:1.8;
+}
+.legal-wrap blockquote p:last-child { margin-bottom:0; }
+.legal-wrap hr { border:0; border-top:1px solid var(--line); margin:32px 0; }
+.legal-wrap table { width:100%; border-collapse:collapse; margin:20px 0; font-family:'Inter',sans-serif; font-size:14.5px; }
+.legal-wrap th, .legal-wrap td { border:1px solid var(--line); padding:10px 12px; text-align:left; line-height:1.6; }
+.legal-wrap th { background:var(--cream); font-family:'Nunito',sans-serif; font-weight:700; color:var(--green); }
 .legal-contact { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px 26px; margin-top:32px; }
 .legal-contact p:last-child { margin-bottom:0; }
 
