@@ -1,0 +1,21 @@
+name: Check sitemap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sitemap.xml'
+      - 'scripts/check-sitemap.py'
+  pull_request:
+    paths:
+      - 'sitemap.xml'
+      - 'scripts/check-sitemap.py'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Every <loc> must be on https://www.wealthsproutkids.com and unique
+        run: python3 scripts/check-sitemap.py
