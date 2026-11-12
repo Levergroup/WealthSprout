@@ -148,7 +148,7 @@ const GETRESPONSE_TAGS = {
     VAULT_PRICE_WATCH: ['TODO_TAG_ID_VAULT_PRICE_INCREASE'], // tag: waitlist:vault-price-increase
 };
 
-async function subscribeToGetResponse(email, listId, tagIds, formName) {
+async function subscribeToGetResponse(email, listId, tagIds, formName, meta) {
     const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -157,7 +157,12 @@ async function subscribeToGetResponse(email, listId, tagIds, formName) {
     if (!res.ok) throw new Error(`GetResponse subscribe failed: ${res.status}`);
     // Analytics: successful email signup -> GA4 key event (via GTM). Never send the email itself.
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({ event: 'generate_lead', form_name: formName || 'unknown' });
+    window.dataLayer.push({
+        event: 'generate_lead',
+        form_name: formName || 'unknown',
+        page_path: window.location.pathname,
+        ...(meta || {}),
+    });
     return res.json();
 }
 
@@ -703,12 +708,13 @@ document.querySelectorAll('[data-cta]').forEach(btn => {
 /* ─────────────────────────────────────
    FREE KIT OPT-IN FORM (/free-kit)
 ───────────────────────────────────── */
-const optinForm = document.getElementById('optinForm');
-if (optinForm) {
-    const optinInput = document.getElementById('optinEmail');
-    const optinError = document.getElementById('optinError');
-    const optinBtn = document.getElementById('optinSubmit');
+// The page carries this form twice (hero and bottom); both share one handler.
+document.querySelectorAll('[data-form="free-kit-email"]').forEach((optinForm) => {
+    const optinInput = optinForm.querySelector('input[type="email"]');
+    const optinError = optinForm.querySelector('.fk-form-error');
+    const optinBtn = optinForm.querySelector('.fk-submit-btn');
     const optinBtnLabel = optinBtn.querySelector('.fk-btn-label');
+    const formPosition = optinForm.getAttribute('data-form-position') || 'hero';
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     optinForm.addEventListener('submit', async (e) => {
@@ -726,7 +732,10 @@ if (optinForm) {
         optinBtnLabel.textContent = 'Sending...';
 
         try {
-            await subscribeToGetResponse(email, GETRESPONSE_LISTS.FREE_KIT, null, 'free_kit');
+            await subscribeToGetResponse(email, GETRESPONSE_LISTS.FREE_KIT, null, 'free_kit', {
+                form_id: 'free_kit',
+                form_position: formPosition,
+            });
         } catch (err) {
             console.error('subscribeToGetResponse failed:', err);
             // Still redirect — don't block the user over a background API hiccup
@@ -744,4 +753,4 @@ if (optinForm) {
 
         window.location.href = '/free-kit/thank-you';
     });
-}
+});

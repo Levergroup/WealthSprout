@@ -13,22 +13,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>%F0%9F%8C%B1</text></svg>">
 
-    <title>Get the Free Money Kit | WealthSprout</title>
-    <meta name="description" content="The free 12-page Money Kit introduces the 3-Jar System in one sitting. Most kids have their jars set up within an hour.">
+    <title>My First Money Kit — Free Printable for Kids Ages 5–10 | WealthSprout</title>
+    <meta name="description" content="My First Money Kit is a free 28-page printable for kids ages 5–10. It introduces the 3-Jar System in one sitting.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://www.wealthsproutkids.com/free-kit">
 
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_US">
     <meta property="og:url" content="https://www.wealthsproutkids.com/free-kit">
-    <meta property="og:title" content="Get the Free Money Kit | WealthSprout">
-    <meta property="og:description" content="The free 12-page Money Kit introduces the 3-Jar System in one sitting. Most kids have their jars set up within an hour.">
+    <meta property="og:title" content="My First Money Kit — Free Printable for Kids Ages 5–10 | WealthSprout">
+    <meta property="og:description" content="My First Money Kit is a free 28-page printable for kids ages 5–10. It introduces the 3-Jar System in one sitting.">
     <meta property="og:image" content="https://www.wealthsproutkids.com/og-image.jpg">
     <meta property="og:site_name" content="WealthSprout">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Get the Free Money Kit | WealthSprout">
-    <meta name="twitter:description" content="The free 12-page Money Kit introduces the 3-Jar System in one sitting. Most kids have their jars set up within an hour.">
+    <meta name="twitter:title" content="My First Money Kit — Free Printable for Kids Ages 5–10">
+    <meta name="twitter:description" content="My First Money Kit is a free 28-page printable for kids ages 5–10. It introduces the 3-Jar System in one sitting.">
     <meta name="twitter:image" content="https://www.wealthsproutkids.com/og-image.jpg">
 
     <link rel="llms" href="https://www.wealthsproutkids.com/llms.txt">
@@ -37,6 +37,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="/images/free-kit/free-kit-hero-mockup.webp" fetchpriority="high">
 
     <link rel="stylesheet" href="../styles.css">
 </head>
@@ -58,23 +59,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></div>
             </div>
 
-            <p class="fk-microstats">Ages 5–18 &nbsp;·&nbsp; 12-page printable PDF &nbsp;·&nbsp; $0 to start</p>
+            <p class="fk-microstats">Ages 5–10 &nbsp;·&nbsp; 28-page printable PDF &nbsp;·&nbsp; $0 to start</p>
 
-            <div class="fk-hero">
-                <span class="fk-eyebrow">FREE — INSTANT DELIVERY TO YOUR INBOX</span>
-                <h1>Give Your Child Their First Real Money Win — This Weekend.</h1>
-                <p class="sub">The free 12-page Money Kit introduces the 3-Jar System in one sitting. Most kids have their jars set up within an hour. Parents tell us their kids ask to do it again the next day.</p>
-            </div>
+            <!-- ABOVE THE FOLD: copy + form on the left, mockup on the right (desktop) -->
+            <div class="fk-split">
 
-            <div class="fk-mockup-wrap">
-                <div class="fk-mockup">
-                    <span class="fk-mockup-brand">WealthSprout™</span>
-                    <div class="emoji">🌱</div>
-                    <div class="title">My First Money Kit</div>
-                    <div class="meta">Ages 5–10 · 12 Pages</div>
-                    <span class="fk-mockup-accent"></span>
+                <div class="fk-split-head fk-hero">
+                    <span class="fk-eyebrow">FREE — INSTANT DELIVERY TO YOUR INBOX</span>
+                    <h1>Give Your Child Their First Real Money Win — This Weekend.</h1>
+                    <p class="sub">My First Money Kit is a free 28-page printable for kids ages 5–10. It introduces the 3-Jar System in one sitting.</p>
                 </div>
-                <p class="fk-mockup-caption">Printable PDF · Instant delivery · No credit card</p>
+
+                <div class="fk-split-visual">
+                    <figure class="fk-heroshot">
+                        <img src="/images/free-kit/free-kit-hero-mockup.webp"
+                             alt="My First Money Kit cover with two inside pages"
+                             width="1600" height="1200"
+                             fetchpriority="high" decoding="async">
+                    </figure>
+                </div>
+
+                <div class="fk-split-form">
+                    <p class="fk-need"><strong>What you'll need:</strong> 3 empty jars, crayons, a printer (or a tablet), and about 45 minutes.</p>
+
+                    <div class="fk-form-card">
+                        <form id="optinForm" data-form="free-kit-email" data-form-position="hero" novalidate>
+                            <p class="fk-form-label">WHERE SHOULD WE SEND IT?</p>
+                            <input type="email" id="optinEmail" name="email" autocomplete="email" placeholder="Enter your email address" required>
+                            <p class="fk-form-error" id="optinError">Please enter a valid email address.</p>
+                            <button type="submit" class="fk-submit-btn" id="optinSubmit" data-cta="free-kit-submit">
+                                <span class="fk-spinner"></span>
+                                <span class="fk-btn-label">Send Me My First Money Kit →</span>
+                            </button>
+                            <p class="fk-form-note">We'll email your PDF right away. Check your spam or promotions tab if you don't see it.</p>
+                            <p class="fk-form-trust">🔒 Your information is safe. We never share or sell your data.</p>
+                        </form>
+                    </div>
+
+                    <p class="fk-older"><a href="/quiz">Have a tween or teen (11–18)? Take the 30-second quiz to find the right program →</a></p>
+                </div>
+
             </div>
 
             <div class="fk-inside">
@@ -82,39 +106,97 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div class="fk-inside-row">
                     <span class="fk-check">✓</span>
                     <div>
-                        <h5>The 3-Jar System — Spend, Save &amp; Give</h5>
-                        <p>Illustrated jar labels your child colors and cuts out themselves. Most families set these up in under 30 minutes.</p>
+                        <h5>6 short chapters</h5>
+                        <p>What Is Money, Needs vs Wants, The 3-Jar System, My First Savings Goal, How to Earn Money, and The Power of Giving.</p>
                     </div>
                 </div>
                 <div class="fk-inside-row">
                     <span class="fk-check">✓</span>
                     <div>
-                        <h5>My First Savings Goal Worksheet</h5>
-                        <p>One page. Your child picks a goal, sets a timeline, and tracks it week by week. The first real financial habit they'll ever build.</p>
+                        <h5>Hands-on activities</h5>
+                        <p>Including a weekly earning tracker, and a 10-question money quiz.</p>
                     </div>
                 </div>
                 <div class="fk-inside-row">
                     <span class="fk-check">✓</span>
                     <div>
-                        <h5>Parent Quick-Start Guide</h5>
-                        <p>Five minutes and you're ready to go. No finance background needed. Written for parents who didn't learn this stuff either.</p>
+                        <h5>Illustrated jar labels</h5>
+                        <p>Your child colors and cuts them out — they're on page 25, ready to print.</p>
+                    </div>
+                </div>
+                <div class="fk-inside-row">
+                    <span class="fk-check">✓</span>
+                    <div>
+                        <h5>A savings goal thermometer</h5>
+                        <p>Your child colors it in as they get closer to the goal they picked.</p>
+                    </div>
+                </div>
+                <div class="fk-inside-row">
+                    <span class="fk-check">✓</span>
+                    <div>
+                        <h5>A Certificate of Completion</h5>
+                        <p>Something to sign and put on the fridge when they finish all six chapters.</p>
+                    </div>
+                </div>
+                <div class="fk-inside-row">
+                    <span class="fk-check">✓</span>
+                    <div>
+                        <h5>A 2-page parent quick-start</h5>
+                        <p>A simple weekend plan. No finance background needed.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="fk-urgency"><span>⏱ Your kit is ready the moment you submit</span></div>
+            <!-- LOOK INSIDE -->
+            <section class="fk-look" aria-labelledby="fk-look-title">
+                <h3 id="fk-look-title">Look inside</h3>
+                <p class="fk-look-sub">A few of the pages your child will fill in. Tap any page to see it larger.</p>
+                <ul class="fk-look-grid">
+                    <li>
+                        <button type="button" class="fk-look-item"
+                                data-full="/images/free-kit/free-kit-page-jars.webp"
+                                data-caption="Activity 3: Fill Your Jars — a practice table for splitting $5, $20 and $1 across the Spend, Save and Give jars, plus a colouring box for each jar.">
+                            <img src="/images/free-kit/free-kit-page-jars.webp"
+                                 alt="Activity page titled Fill Your Jars, with a table for splitting amounts across the spend, save and give jars"
+                                 width="1104" height="1428" loading="lazy" decoding="async">
+                            <span class="fk-look-cap">Fill Your Jars</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fk-look-item"
+                                data-full="/images/free-kit/free-kit-page-earning-tracker.webp"
+                                data-caption="Activity 5: My Weekly Earning Tracker — four weeks of rows for jobs done and money earned, a total, and boxes to split that total into the three jars.">
+                            <img src="/images/free-kit/free-kit-page-earning-tracker.webp"
+                                 alt="Activity page titled My Weekly Earning Tracker, with four weekly rows for jobs done and money earned"
+                                 width="1104" height="1428" loading="lazy" decoding="async">
+                            <span class="fk-look-cap">Weekly Earning Tracker</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fk-look-item"
+                                data-full="/images/free-kit/free-kit-page-certificate.webp"
+                                data-caption="Certificate of Completion — a printable certificate with space for the child's name, the date and a parent signature, awarded after all six chapters.">
+                            <img src="/images/free-kit/free-kit-page-certificate.webp"
+                                 alt="Certificate of Completion page with blank lines for the child's name, date and a parent signature"
+                                 width="1104" height="1428" loading="lazy" decoding="async">
+                            <span class="fk-look-cap">Certificate of Completion</span>
+                        </button>
+                    </li>
+                </ul>
+            </section>
 
-            <div class="fk-form-card">
-                <form id="optinForm" data-form="free-kit-email" novalidate>
-                    <p class="fk-form-label">WHERE SHOULD WE SEND IT?</p>
-                    <input type="email" id="optinEmail" name="email" placeholder="Enter your email address" required>
-                    <p class="fk-form-error" id="optinError">Please enter a valid email address.</p>
-                    <button type="submit" class="fk-submit-btn" id="optinSubmit" data-cta="free-kit-submit">
+            <!-- SECOND FORM (same handler, same fields) -->
+            <div class="fk-form-card fk-form-card-bottom">
+                <form id="optinFormBottom" data-form="free-kit-email" data-form-position="bottom" novalidate>
+                    <p class="fk-form-label">SEND ME MY FIRST MONEY KIT</p>
+                    <input type="email" id="optinEmailBottom" name="email" autocomplete="email" placeholder="Enter your email address" required>
+                    <p class="fk-form-error" id="optinErrorBottom">Please enter a valid email address.</p>
+                    <button type="submit" class="fk-submit-btn" id="optinSubmitBottom" data-cta="free-kit-submit">
                         <span class="fk-spinner"></span>
-                        <span class="fk-btn-label">Send Me the Free Money Kit →</span>
+                        <span class="fk-btn-label">Send Me My First Money Kit →</span>
                     </button>
+                    <p class="fk-form-note">We'll email your PDF right away. Check your spam or promotions tab if you don't see it.</p>
                     <p class="fk-form-trust">🔒 Your information is safe. We never share or sell your data.</p>
-                    <p class="fk-form-fine">Free kit delivered instantly. Unsubscribe anytime.</p>
                 </form>
             </div>
 
@@ -142,16 +224,67 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <p>The kit costs nothing. If you don't love it, you've lost nothing. We include a parent guide so you know exactly how to use it — even if you've never talked to your kids about money before.</p>
             </div>
 
+            <p class="fk-older fk-older-bottom"><a href="/quiz">Have a tween or teen (11–18)? Take the 30-second quiz to find the right program →</a></p>
+
             <p class="fk-secondary-cta">Already know which program you need? <a href="/#programs">See all programs →</a></p>
 
         </div>
     </main>
+
+    <!-- Lightbox for the Look inside pages -->
+    <div class="fk-lightbox" id="fkLightbox" role="dialog" aria-modal="true" aria-labelledby="fkLightboxCap" hidden>
+        <button type="button" class="fk-lightbox-close" id="fkLightboxClose" aria-label="Close">&times;</button>
+        <figure class="fk-lightbox-fig">
+            <img id="fkLightboxImg" src="" alt="" width="1104" height="1428">
+            <figcaption id="fkLightboxCap"></figcaption>
+        </figure>
+    </div>
 
     <footer class="fk-legal-footer">
         <p class="links"><a href="/blog">Blog</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/cookie-policy">Cookie Policy</a> · <a href="/terms-of-service">Terms of Service</a> · <a href="/refund-policy">Refund Policy</a> · <a href="/financial-disclaimer">Financial Disclaimer</a> · <a href="/advertising-disclosure">Advertising Disclosure</a> · <a href="/affiliate-disclosure">Affiliate Disclosure</a></p>
         <p class="copy">© 2026 WealthSprout™. All rights reserved. WealthSprout is an educational company. Nothing on this site constitutes financial advice. See our <a href="/financial-disclaimer">Financial Disclaimer</a>.</p>
     </footer>
 
+    <script>
+    /* Look inside lightbox — keyboard accessible, no dependencies */
+    (function () {
+        var box = document.getElementById('fkLightbox');
+        if (!box) { return; }
+        var img = document.getElementById('fkLightboxImg');
+        var cap = document.getElementById('fkLightboxCap');
+        var closeBtn = document.getElementById('fkLightboxClose');
+        var opener = null;
+
+        function open(btn) {
+            opener = btn;
+            var inner = btn.querySelector('img');
+            img.src = btn.getAttribute('data-full');
+            img.alt = inner ? inner.getAttribute('alt') : '';
+            cap.textContent = btn.getAttribute('data-caption') || '';
+            box.hidden = false;
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+        }
+        function close() {
+            box.hidden = true;
+            document.body.style.overflow = '';
+            img.src = '';
+            if (opener) { opener.focus(); opener = null; }
+        }
+
+        document.querySelectorAll('.fk-look-item').forEach(function (btn) {
+            btn.addEventListener('click', function () { open(btn); });
+        });
+        closeBtn.addEventListener('click', close);
+        box.addEventListener('click', function (e) { if (e.target === box) { close(); } });
+        document.addEventListener('keydown', function (e) {
+            if (box.hidden) { return; }
+            if (e.key === 'Escape') { close(); }
+            // keep focus inside the dialog
+            if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+        });
+    }());
+    </script>
     <script src="../main.js"></script>
 </body>
 </html>
