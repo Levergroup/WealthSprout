@@ -796,7 +796,10 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .fk-lightbox-close:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
 
 @media (min-width:600px) {
-    .fk-look-grid { grid-template-columns:repeat(3,1fr); }
+    .fk-look-grid { grid-template-columns:repeat(2,1fr); }
+}
+@media (min-width:900px) {
+    .fk-look-grid { grid-template-columns:repeat(4,1fr); }
 }
 @media (min-width:1024px) {
     body[data-page="free-kit-optin"] .optin-wrap { max-width:1040px; }
