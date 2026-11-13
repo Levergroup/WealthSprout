@@ -1395,6 +1395,12 @@ body[data-page="free-kit-optin"] { padding-top:40px; }
 .cta-box--secondary { border-color:#F0A500; }
 .btn-primary { display:inline-block; background:#1E5C3A; color:#fff; font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; padding:12px 22px; border-radius:8px; text-decoration:none; }
 .btn-primary:hover { background:#155030; }
+/* .legal-wrap a (0,2,0) otherwise beats .btn-primary (0,1,0) and paints the
+   label green on a green button, so the text disappears. */
+.legal-wrap a.btn-primary { color:#fff; text-decoration:none; }
+.legal-wrap a.btn-primary:hover { color:#fff; }
+.legal-wrap a.btn-secondary { color:#1A1A2E; text-decoration:none; }
+.legal-wrap a.btn-secondary:hover { color:#1A1A2E; }
 .btn-secondary { display:inline-block; background:#F0A500; color:#1A1A2E; font-family:'Nunito',sans-serif; font-weight:800; font-size:14px; padding:12px 22px; border-radius:8px; text-decoration:none; }
 .btn-secondary:hover { background:#e09500; }
 
