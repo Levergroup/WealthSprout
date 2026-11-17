@@ -39,6 +39,12 @@ def article_text(html):
     return body, text
 
 
+# A paragraph whose own text opens with "- " or "* " is a Markdown bullet that
+# was never converted. Tags are stripped before the line-start checks above, so
+# "<p>- item</p>" reads as mid-line text and slips past them.
+BULLET_PARAGRAPH = re.compile(r'<p\b[^>]*>\s*(?:<[^>]+>\s*)*[-*]\s+\S', re.I)
+
+
 def check(path):
     html = open(path, encoding='utf-8').read()
     body, text = article_text(html)
@@ -49,6 +55,9 @@ def check(path):
         n = len(pat.findall(text))
         if n:
             problems.append(f'{label} x{n}')
+    n = len(BULLET_PARAGRAPH.findall(body))
+    if n:
+        problems.append(f'bullet paragraph <p>- x{n}')
     # A body delivered as one long line has lost its block structure.
     if body.strip() and '\n' not in body.strip() and len(body) > 2000:
         problems.append('article body has no line breaks')
