@@ -371,7 +371,7 @@ if (vaultNotifyForm) {
             subtitle: "The High Schooler's Complete Money Playbook · Ages 16–18",
             price: '$34',
             cover: '🚀',
-            description: '70 pages. First paycheck decoded. Credit built before they need it. Roth IRA opened. College debt explained. Everything before they leave home.',
+            description: '60 pages. First paycheck decoded. Credit built before they need it. Roth IRA opened. College debt explained. Everything before they leave home.',
             includes: [
                 'Your first paycheck decoded (taxes, withholding, take-home)',
                 'Credit 101 — build it before you ever need it',
