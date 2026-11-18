@@ -82,6 +82,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             padding: 32px;
         }
         .prog-placeholder-inner .icon { font-size: 64px; margin: 0; }
+        /* Real product shot in the same slot as .prog-placeholder. */
+        .prog-shot {
+            display: block; width: 100%; height: auto; border-radius: 16px;
+            box-shadow: 0 18px 36px rgba(0,0,0,0.16);
+        }
         .prog-placeholder-inner .name {
             font-family: 'DM Serif Display', Georgia, serif;
             font-size: 22px;
@@ -174,7 +179,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         @media (max-width: 767px) {
             .prog-grid { grid-template-columns: 1fr; gap: 32px; }
             .prog-grid .prog-placeholder { aspect-ratio: 3/2; max-height: 220px; }
-            .prog-grid-img-right .prog-placeholder { order: -1; }
+            .prog-grid-img-right .prog-placeholder,
+            .prog-grid-img-right .prog-shot-wrap { order: -1; }
+            .prog-shot { max-width: 340px; margin: 0 auto; }
         }
     </style>
 </head>
@@ -301,12 +308,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
                 <a href="https://app.wealthsproutkids.com/checkout/money-seeds" class="prog-cta-green">Get Money Seeds — $17 →</a>
             </div>
-            <div class="prog-placeholder" style="background:#F28B6E;">
-                <div class="prog-placeholder-inner">
-                    <p class="icon">🐷</p>
-                    <p class="name">Money Seeds</p>
-                    <p class="sub">40 pages · Ages 5–8</p>
-                </div>
+            <div class="prog-shot-wrap">
+                <img class="prog-shot" src="/images/products/money-seeds/money-seeds-hero-mockup.webp"
+                     alt="Money Seeds printable workbook for kids ages 5–8: cover and activity pages"
+                     width="2000" height="1500" loading="lazy" decoding="async">
             </div>
         </div>
     </section>

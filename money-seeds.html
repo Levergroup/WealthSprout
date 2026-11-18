@@ -22,13 +22,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:url" content="https://www.wealthsproutkids.com/money-seeds">
     <meta property="og:title" content="Money Seeds — A Kid's First Financial Playbook | WealthSprout">
     <meta property="og:description" content="A 40-page illustrated workbook for ages 5–8 covering the 3-Jar System, needs vs. wants, and your child's first savings goal. Built for early readers.">
-    <meta property="og:image" content="https://www.wealthsproutkids.com/og-image.jpg">
+    <meta property="og:image" content="https://www.wealthsproutkids.com/images/products/money-seeds/money-seeds-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Money Seeds printable workbook for kids ages 5–8: cover and activity pages">
     <meta property="og:site_name" content="WealthSprout">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Money Seeds — A Kid's First Financial Playbook">
     <meta name="twitter:description" content="A 40-page illustrated workbook for ages 5–8 covering the 3-Jar System, needs vs. wants, and your child's first savings goal.">
-    <meta name="twitter:image" content="https://www.wealthsproutkids.com/og-image.jpg">
+    <meta name="twitter:image" content="https://www.wealthsproutkids.com/images/products/money-seeds/money-seeds-og.jpg">
+    <meta name="twitter:image:alt" content="Money Seeds printable workbook for kids ages 5–8: cover and activity pages">
 
     <link rel="llms" href="https://www.wealthsproutkids.com/llms.txt">
     <meta name="ai-content-declaration" content="https://www.wealthsproutkids.com/llms.txt">
@@ -104,6 +108,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- LCP candidate: the hero mockup is the largest element above the fold. -->
+    <link rel="preload" as="image" href="/images/products/money-seeds/money-seeds-hero-mockup.webp" type="image/webp" fetchpriority="high">
+
+    <style>
+    /* Hero mockup — real product shot replaces the old .pp-mockup placeholder. */
+    .ms-hero-shot {
+        display:block; width:100%; max-width:440px; height:auto; margin:0 auto;
+        border-radius:12px; box-shadow:0 20px 40px rgba(0,0,0,.22);
+    }
+
+    /* styles.css sets .pp-hero-visual{order:-1} under 760px, which lifts the
+       mockup above the headline and pushes the CTA off a 667px-tall screen.
+       The brief requires the image below the headline with the button in view. */
+    @media (max-width:760px) {
+        .pp-hero .pp-hero-visual { order:0; margin-top:24px; }
+        .pp-hero { padding:16px 0 48px; }
+        .pp-hero h1 { font-size:26px; line-height:1.18; margin-bottom:10px; }
+        .pp-hero .sub { font-size:14.5px; line-height:1.55; margin-bottom:16px; }
+        .pp-hero-badge { margin-bottom:12px; }
+        .pp-hero-btns { gap:10px; margin-bottom:14px; }
+        .ms-hero-shot { max-width:340px; }
+    }
+
+    /* Two of the four captions wrap to a second line, which otherwise leaves the
+       white cards at uneven heights. Stretch each card to the tallest in the row. */
+    .fk-look-grid > li { display:flex; }
+    .fk-look-grid > li > .fk-look-item { flex:1; display:flex; flex-direction:column; }
+    .fk-look-grid > li > .fk-look-item .fk-look-cap { margin-top:auto; padding-top:10px; }
+
+    /* The shared .nav-cta wraps to two lines inside a 65px nav on a phone. */
+    .ms-navcta-short { display:none; }
+    @media (max-width:620px) {
+        .ms-navcta-full { display:none; }
+        .ms-navcta-short { display:inline; }
+        .nav-product .nav-cta { white-space:nowrap; padding:9px 14px; font-size:13px; }
+    }
+    </style>
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -114,7 +156,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <nav class="nav nav-product">
         <div class="nav-inner">
             <a href="/" class="logo"><span class="logo-mark">🌱</span>Wealth<span>Sprout</span></a>
-            <a href="https://app.wealthsproutkids.com/checkout/money-seeds" class="nav-cta nav-cta-gold">Get Money Seeds — $17 →</a>
+            <a href="https://app.wealthsproutkids.com/checkout/money-seeds" class="nav-cta nav-cta-gold"><span class="ms-navcta-full">Get Money Seeds — $17 →</span><span class="ms-navcta-short">Get it — $17 →</span></a>
         </div>
     </nav>
 
@@ -138,11 +180,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
             <div class="pp-hero-visual">
                 <div class="pp-mockup-wrap">
-                    <div class="pp-mockup pp-mockup-coral">
-                        <span class="pp-mockup-brand">WealthSprout™</span>
-                        <div class="emoji">🐷</div>
-                        <div class="title">Money Seeds</div>
-                    </div>
+                    <img class="ms-hero-shot"
+                         src="/images/products/money-seeds/money-seeds-hero-mockup.webp"
+                         alt="Money Seeds printable workbook for kids ages 5–8: cover and activity pages"
+                         width="2000" height="1500"
+                         loading="eager" fetchpriority="high" decoding="async">
                 </div>
                 <div class="pp-hero-chips">
                     <span class="pp-chip">40 Pages</span>
@@ -272,40 +314,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <section class="pp-preview">
         <div class="lp-content">
             <h3 class="section-title t-center">A Look Inside</h3>
-            <div class="pp-preview-grid">
-                <div class="pp-preview-card">
-                    <div class="pp-preview-top">
-                        <div class="emoji">🫙</div>
-                        <span class="label">Page 6</span>
-                    </div>
-                    <div class="pp-preview-body">
-                        <h4>The 3-Jar System</h4>
-                        <p>The concept that changes everything — splitting every dollar into Spend, Save, and Give before it's gone.</p>
-                    </div>
-                </div>
-                <div class="pp-preview-card">
-                    <div class="pp-preview-top">
-                        <div class="emoji">🎯</div>
-                        <span class="label">Page 8</span>
-                    </div>
-                    <div class="pp-preview-body">
-                        <h4>My Savings Goal</h4>
-                        <p>A real goal with a real timeline — and a tracker to watch the progress every week.</p>
-                    </div>
-                </div>
-                <div class="pp-preview-card">
-                    <div class="pp-preview-top">
-                        <div class="emoji">📝</div>
-                        <span class="label">Page 12</span>
-                    </div>
-                    <div class="pp-preview-body">
-                        <h4>Quiz Time!</h4>
-                        <p>A 10-question money challenge that turns the whole workbook into one final game.</p>
-                    </div>
-                </div>
+            <div class="fk-look" style="margin-top:28px;">
+                <p class="fk-look-sub">Four of the pages your child will fill in. Tap any page to see it larger.</p>
+                <ul class="fk-look-grid">
+                    <li>
+                        <button type="button" class="fk-look-item"
+                                data-full="/images/products/money-seeds/money-seeds-page-earning-tracker.webp"
+                                data-caption="Chapter 2 · Tracker — Track What I Earn This Week: a line for each day's job and what it paid, a weekly total, and a thermometer to colour in as the savings goal gets closer.">
+                            <img src="/images/products/money-seeds/money-seeds-page-earning-tracker.webp"
+                                 alt="Track What I Earn This Week tracker page from the Money Seeds workbook"
+                                 width="1104" height="1429" loading="lazy" decoding="async">
+                            <span class="fk-look-cap">Earning Tracker · Ch 2</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fk-look-item"
+                                data-full="/images/products/money-seeds/money-seeds-page-jar-labels.webp"
+                                data-caption="Chapter 3 · Activity — Set Up My 3-Jar System Today: printable Spend, Save and Give labels to cut out, fill in and tape to real jars, with the 50/40/10 split on each one.">
+                            <img src="/images/products/money-seeds/money-seeds-page-jar-labels.webp"
+                                 alt="Printable Spend, Save and Give jar labels from the Money Seeds workbook"
+                                 width="1104" height="1429" loading="lazy" decoding="async">
+                            <span class="fk-look-cap">3-Jar Labels · Ch 3</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fk-look-item"
+                                data-full="/images/products/money-seeds/money-seeds-page-needs-vs-wants.webp"
+                                data-caption="Chapter 5 · Activity — Sort These Into Needs and Wants: twelve picture cards to sort into two columns, from medicine and school books to candy and a third pair of shoes.">
+                            <img src="/images/products/money-seeds/money-seeds-page-needs-vs-wants.webp"
+                                 alt="Sort These Into Needs and Wants activity page from the Money Seeds workbook"
+                                 width="1104" height="1429" loading="lazy" decoding="async">
+                            <span class="fk-look-cap">Needs vs Wants · Ch 5</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="fk-look-item"
+                                data-full="/images/products/money-seeds/money-seeds-page-chore-chart.webp"
+                                data-caption="Chapter 2 · Chores and Earning — Chores + Pay = Your First Business: a worked example chore chart showing what each job earns and what a full week adds up to, with a note for parents.">
+                            <img src="/images/products/money-seeds/money-seeds-page-chore-chart.webp"
+                                 alt="Chore chart page showing what each job earns from the Money Seeds workbook"
+                                 width="1104" height="1429" loading="lazy" decoding="async">
+                            <span class="fk-look-cap">Chore Chart · Ch 2</span>
+                        </button>
+                    </li>
+                </ul>
             </div>
-            <!-- TODO: Replace text previews with real workbook page screenshots when the Money Seeds PDF is finalized -->
-            <p style="text-align:center;font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);font-style:italic;margin-top:28px;">Previews show sample content. Full workbook delivered as an instant PDF download.</p>
+            <p style="text-align:center;font-family:'Inter',sans-serif;font-size:14px;color:var(--muted);font-style:italic;margin-top:28px;">Full workbook delivered as an instant PDF download.</p>
         </div>
     </section>
 
@@ -459,6 +513,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </footer>
 
+    <!-- Lightbox (same component as /free-kit and /first-business-playbook) -->
+    <div class="fk-lightbox" id="fkLightbox" role="dialog" aria-modal="true" aria-labelledby="fkLightboxCap" hidden>
+        <button type="button" class="fk-lightbox-close" id="fkLightboxClose" aria-label="Close">&times;</button>
+        <figure class="fk-lightbox-fig">
+            <img id="fkLightboxImg" src="" alt="" width="1104" height="1429">
+            <figcaption id="fkLightboxCap"></figcaption>
+        </figure>
+    </div>
+
+    <script>
+    /* Look inside lightbox — same behaviour as /free-kit */
+    (function () {
+        var box = document.getElementById('fkLightbox');
+        if (!box) { return; }
+        var img = document.getElementById('fkLightboxImg');
+        var cap = document.getElementById('fkLightboxCap');
+        var closeBtn = document.getElementById('fkLightboxClose');
+        var opener = null;
+
+        function open(btn) {
+            opener = btn;
+            var inner = btn.querySelector('img');
+            img.src = btn.getAttribute('data-full');
+            img.alt = inner ? inner.getAttribute('alt') : '';
+            cap.textContent = btn.getAttribute('data-caption') || '';
+            box.hidden = false;
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+        }
+        function close() {
+            box.hidden = true;
+            document.body.style.overflow = '';
+            img.src = '';
+            if (opener) { opener.focus(); opener = null; }
+        }
+
+        document.querySelectorAll('.fk-look-item').forEach(function (btn) {
+            btn.addEventListener('click', function () { open(btn); });
+        });
+        closeBtn.addEventListener('click', close);
+        box.addEventListener('click', function (e) { if (e.target === box) { close(); } });
+        document.addEventListener('keydown', function (e) {
+            if (box.hidden) { return; }
+            if (e.key === 'Escape') { close(); }
+            if (e.key === 'Tab') { e.preventDefault(); closeBtn.focus(); }
+        });
+    }());
+    </script>
     <script src="main.js"></script>
 
 </body>
