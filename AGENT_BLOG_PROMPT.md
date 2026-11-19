@@ -15,7 +15,7 @@ Write and publish a complete, SEO-optimised blog post as a static HTML file. Eve
 - Blog posts about general money topics → save as `/blog/YOUR-SLUG.html`
 - The URL slug must be lowercase, hyphenated, keyword-rich, and match the H1 topic exactly
 - The canonical URL is `https://www.wealthsproutkids.com/blog/YOUR-SLUG`
-- **CRITICAL:** The domain is always `wealthsproutkids.com` — NEVER `wealthsprout.com`. Check every canonical, og:url, JSON-LD @id, and BreadcrumbList item URL before committing.
+- **CRITICAL:** The domain is always `wealthsproutkids.com` — NEVER `wealthsprout.com`. Every absolute URL (canonical, og:url, JSON-LD, sitemap `<loc>`) must start with `https://www.wealthsproutkids.com/` (with `www`). A sitemap entry without `www` fails the Check sitemap GitHub workflow. Check every canonical, og:url, JSON-LD @id, and BreadcrumbList item URL before committing.
 
 ---
 
@@ -538,6 +538,6 @@ Push to the active development branch.
 - [ ] Disclaimer paragraph included
 - [ ] Canonical footer copied verbatim
 - [ ] Blog card added as first entry in `blog/index.html`
-- [ ] Sitemap entry added to `sitemap.xml`
+- [ ] Sitemap entry added to `sitemap.xml` as `<loc>https://www.wealthsproutkids.com/blog/SLUG</loc>` (with `www`), then run `python3 scripts/check-sitemap.py` and it must print OK (use `--fix` if it does not)
 - [ ] If PT version exists: hreflang `en` + `pt-BR` + `x-default` tags added
 - [ ] All files in same commit

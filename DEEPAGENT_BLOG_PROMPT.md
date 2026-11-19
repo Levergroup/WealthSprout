@@ -393,7 +393,8 @@ Every blog article must be a complete `.html` file. Use this skeleton — do not
 - [ ] Product Showcase block (after Author Bio Footer)
 - [ ] Site Footer block (after Product Showcase)
 - [ ] Short paragraphs throughout
-- [ ] Canonical URL uses `wealthsproutkids.com`
+- [ ] Canonical URL uses `https://www.wealthsproutkids.com/` (with `www`)
+- [ ] Sitemap `<loc>` uses `https://www.wealthsproutkids.com/` (with `www`); run `python3 scripts/check-sitemap.py` before committing
 - [ ] GTM tag present in `<head>`
 - [ ] Publisher logo URL uses `wealthsproutkids.com` (not `wealthsprout.com`)
 - [ ] Hero image path: `/blog/images/[slug]-hero.jpg`

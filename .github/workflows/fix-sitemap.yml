@@ -1,0 +1,35 @@
+name: Auto-fix sitemap host
+
+# Automated posts sometimes add a <loc> without "www". Instead of failing and
+# emailing, repair it and commit. Commits made with GITHUB_TOKEN do not
+# re-trigger workflows, so this cannot loop.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'sitemap.xml'
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Repair non-www or duplicate <loc> entries
+        run: python3 scripts/check-sitemap.py --fix
+
+      - name: Commit the fix if anything changed
+        run: |
+          if ! git diff --quiet sitemap.xml; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add sitemap.xml
+            git commit -m "Auto-fix sitemap host (www)"
+            git push origin HEAD:main
+          fi
+
+      - name: Fail only if something is still wrong
+        run: python3 scripts/check-sitemap.py

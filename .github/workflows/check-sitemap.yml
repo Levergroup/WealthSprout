@@ -1,11 +1,8 @@
 name: Check sitemap
 
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'sitemap.xml'
-      - 'scripts/check-sitemap.py'
+  # Pushes to main are repaired by fix-sitemap.yml, which re-runs this check
+  # and fails only if the problem cannot be fixed automatically.
   pull_request:
     paths:
       - 'sitemap.xml'
