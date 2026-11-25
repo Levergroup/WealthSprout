@@ -546,9 +546,8 @@ if (vaultNotifyForm) {
 
 /* ─────────────────────────────────────
    COOKIE CONSENT — banner + preferences modal
-   Stores choice in localStorage as `ws_cookie_consent`. Analytics/marketing
-   scripts must call `window.wsHasConsent('analytics'|'marketing')` before
-   loading — nothing is injected until the visitor has chosen.
+   Stores choice in localStorage as `ws_cookie_consent`. Choices are passed to Google Tag Manager via Consent Mode v2 (default
+   snippet sits before GTM in each page's <head>; see updateGoogleConsent).
 ───────────────────────────────────── */
 (function initCookieConsent() {
     const STORAGE_KEY = 'ws_cookie_consent';
@@ -561,10 +560,26 @@ if (vaultNotifyForm) {
         }
     }
 
+    // Tell Google Tag Manager (Consent Mode v2) what the visitor chose.
+    // Google tags (GA4, Google Ads) honor this automatically. For any other tag
+    // (e.g. Meta Pixel) set its consent requirement in GTM to ad_storage.
+    function updateGoogleConsent(consent) {
+        const a = consent.analytics ? 'granted' : 'denied';
+        const m = consent.marketing ? 'granted' : 'denied';
+        window.dataLayer = window.dataLayer || [];
+        if (typeof window.gtag === 'function') {
+            window.gtag('consent', 'update', {
+                analytics_storage: a, ad_storage: m, ad_user_data: m, ad_personalization: m
+            });
+        }
+        window.dataLayer.push({ event: 'ws_consent_update', ws_consent_analytics: consent.analytics, ws_consent_marketing: consent.marketing });
+    }
+
     function saveConsent(analytics, marketing) {
         const consent = { necessary: true, analytics, marketing, ts: new Date().toISOString() };
         localStorage.setItem(STORAGE_KEY, JSON.stringify(consent));
         document.dispatchEvent(new CustomEvent('ws-cookie-consent', { detail: consent }));
+        updateGoogleConsent(consent);
         return consent;
     }
 
@@ -573,18 +588,10 @@ if (vaultNotifyForm) {
         return !!(consent && consent[category]);
     };
 
-    // TODO: hook real tracking snippets here, gated by consent:
-    // if (window.wsHasConsent('analytics')) { /* load GA4 (gtag.js) */ }
-    // if (window.wsHasConsent('marketing')) { /* load Meta Pixel */ }
     function applyConsent() {
         const consent = getConsent();
         if (!consent) return;
-        if (consent.analytics) {
-            // TODO: inject GA4 gtag.js snippet
-        }
-        if (consent.marketing) {
-            // TODO: inject Meta Pixel snippet
-        }
+        updateGoogleConsent(consent);
     }
 
     function injectMarkup() {
